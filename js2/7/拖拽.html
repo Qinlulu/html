@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{width:100px;height:100px;background: red;position: absolute;left:50px;top:50px;cursor: move;}
+	</style>
+</head>
+<body>
+	<div id='box'></div>
+	<script>
+			//按下 box的时候  mousedown
+				// mousemove 鼠标移动的时候
+		var box=document.getElementById('box');
+		
+		    box.onmousedown=function(e){
+		    	var  eve=e || window.event;
+
+		    	var x= eve.clientX-box.offsetLeft;
+		    	var y= eve.clientY-box.offsetTop;
+                document.onmousemove=function(e){
+                	var event=e || window.event;
+                	var left=event.clientX-x;
+                	var  top=event.clientY-y;
+                	var  maxW=document.documentElement.clientWidth-box.offsetWidth;
+                	var maxH=document.documentElement.clientHeight-box.offsetHeight;
+                	 if(left<0)left=0;
+                	 if(top<0)top=0;
+                	 if(left>maxW)left=maxW;
+                	 if(top>maxH)top=maxH;
+                	box.style.left=left+'px';
+                	box.style.top=top+'px';
+                }		    		
+		    }
+
+		    box.onmouseup=function(){
+		    	document.onmousemove=null;
+		    }
+	</script>
+</body>
+</html>

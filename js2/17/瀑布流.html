@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		img{width:165px;}
+		#main{margin:0 auto; position: relative;}
+		.box{float: left; padding:15px  0  0 15px;}
+		.pic{padding:5px;border:1px solid red;border-radius: 3px}
+	</style>
+	<script>
+
+
+		window.onload=function(){
+
+
+			var json={data:[{"src":"1.jpg"},{"src":'2.jpg'},{'src':'3.jpg'},{'src':"4.jpg"}]}
+
+  console.log(json.data[1].src)
+			//获取大盒子
+			var main=document.getElementById('main');
+			//获取所的boxclass名字的盒子
+			function getClassName(parent,clsName){
+					var elemes=parent.getElementsByTagName('*');
+					var arr=[]
+					  for(var i=0;i<elemes.length;i++){
+					  		if(elemes[i].className==clsName){
+					  			 arr.push(elemes[i])
+					  		}
+					  }
+					return  arr
+  			}
+
+  	  window.onscroll=function(){
+  	  	//滚动高度+可视区的高度>last盒子box距离顶部的距离+box.offsetHeight/2
+
+  	  	var  top=document.documentElement.scrollTop  || document.body.scrollTop;
+  	  	var clientH=document.documentElement.clientHeight;
+  	  	var box=getClassName(main,'box');
+  	  	 var lastH=box[box.length-1].offsetTop+Math.floor(box[box.length-1].offsetHeight/2);
+  	  	 if(lastH<top+clientH){
+  	  	 	/*<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/1.jpg" alt="">
+				 </div>
+			</div>*/
+         for(var i=0;i<json.data.length;i++){ 
+			var  newBox=document.createElement('div');
+			     newBox.className='box';
+			     main.appendChild(newBox);
+			var  newPic=document.createElement('div');
+			     newPic.className='pic';
+			     newBox.appendChild(newPic);
+			 var newImg=document.createElement('img');
+			     newImg.src='img/'+json.data[i].src
+			     newPic.appendChild(newImg); 
+			}
+
+
+    
+			waterfall(main,'box');
+
+  	  	 }
+
+
+
+  	  }
+
+
+
+
+
+waterfall(main,'box');
+
+  	function waterfall(parent,clsName){ 	
+  			//放到一个变量里
+  			var box=getClassName(parent,clsName);
+  			//盒子的实际宽度
+  			var w=box[0].offsetWidth;
+  			//获取整个的列数
+  			var cols=Math.floor(document.documentElement.clientWidth/w)
+  			//获取盒子的宽度  以便于居中显示
+  			 parent.style.width=w*cols+'px';
+
+            //记录高度值
+  			 var temp=[];
+  			 for(var i=0;i<box.length;i++){
+  			 		if(i<cols){
+  			 			temp.push(box[i].offsetHeight);
+  			 		}else{
+  			 		//获取数组里的最小的 高度值
+  			 		var minH=Math.min.apply(null,temp)
+  			 		//获取最小值所在的下标
+  			 		var index=temp.indexOf(minH);
+  			 		//给盒子进行 定位
+  			 			box[i].style.position='absolute';
+  			 			//距离上面的距离 是最小的盒子的高度
+  			 			box[i].style.top=minH+'px';
+  			 			//距离左边的距离 是所在的列数乘以 每列的宽度
+  			 			//box[i].style.left=box[index].offsetLeft+'px'
+  			 			box[i].style.left=index*w+'px';
+  			 			//然后把新的高度 赋值到记录盒子高度的数组里
+  			 			temp[index]=temp[index]+box[i].offsetHeight;
+
+  			 		}
+  			 }
+
+        }
+
+    //求数组中的最小值 Math.min.apply(null,数组名)
+		}
+
+
+	</script>
+</head>
+<body>
+	<div id='main'>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/1.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/2.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/3.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/4.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/5.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/6.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/7.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/8.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/9.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/10.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/11.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/12.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/12.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/13.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/14.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/15.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/16.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/17.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/18.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/19.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/20.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/21.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/22.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/23.jpg" alt="">
+				 </div>
+			</div>
+			<div class='box'>
+				 <div class='pic'>
+				 	<img src="img/24.jpg" alt="">
+				 </div>
+			</div>
+
+	</div>
+</body>
+</html>

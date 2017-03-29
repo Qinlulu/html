@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button id='btn'>单击</button>
+	<script>
+		//偏移量大小: offsetWidth width+padding+border 
+		//位置：offsetLeft  offsetTop
+        //客户区
+        //clientHeight  clientWidth width+padding
+        //可视区大小
+        //document.docum
+
+        entElement.clientWidth
+        //滚动大小
+        //scrollTop scrollLeft
+        //document.documentElement.scrollTop || document.body.scrollTop
+
+        //getComputedStyle(obj,null)[style]
+        //obj.currentStyle[style]
+
+        //事件流
+        //html事件处理程序
+        //DOM0级事件处理程序
+        //DOM2级事件处理程序
+        //添加(绑定)事件处理程序
+        //元素.addEventListener(事件,函数名/匿名函数,执行阶段false/true) //false 冒泡阶段  true 捕获阶段
+         //按照顺序依次执行
+        //删除事件处理程序
+        //元素.removeEventListener(事件，函数名,false/true)
+        //IE事件处理程序
+           //添加(绑定)事件处理程序
+           //元素.attachEvent(on+事件,函数名/匿名函数)
+           //同时触发事件，执行顺序不固定
+           //删除事件程序
+           //元素.detachEvent(on+事件,函数名)
+     var  btn=document.getElementById('btn');
+       function say(){
+       	alert('你好');
+       }
+       function  say1(){
+       	alert('你不好');
+       }
+
+     btn.attachEvent('onclick',say);
+     btn.attachEvent('onclick',say1) ;
+     btn.attachEvent('onclick',function(){alert('1501F')})  
+     btn.detachEvent('onclick',say);
+     btn.detachEvent('onclick',say1)
+     btn.detachEvent('onclick',function(){alert('1501F')})
+	</script>
+</body>
+</html>

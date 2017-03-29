@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{width:200px; height:200px ;background: red;position:absolute;}
+
+	</style>
+</head>
+<body>
+<div id='box'>dfdsfdsf</div>
+	<script>
+var  box=document.getElementById('box');
+var  clientW=document.documentElement.clientWidth;
+//标准模式下的高
+var  clientH=document.documentElement.clientHeight;
+	box.style.left=(clientW-box.offsetWidth)/2+'px'
+	box.style.top=(clientH-box.offsetHeight)/2+"px"
+	</script>
+</body>
+</html>

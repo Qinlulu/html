@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//判断是否为非数字   是返回true
+	//如果是数字 返回false
+		console.log(isNaN(123)) 
+
+//修改函数  isNaN
+		/*function reverse(fn){
+			return function(value){
+				return !fn(value)
+				//!isNaN(123)
+			}
+
+		}*/
+		
+		function reverse(fn,value){
+			return !fn(value)
+		}
+		console.log(reverse(isNaN,123))
+
+	</script>
+</body>
+</html>

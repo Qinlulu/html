@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{width:100px; height:100px; background: red; position: absolute;left:0; top:0; cursor: move
+	</style>
+</head>
+<body>
+<div id='box'></div>
+	<script>
+			var box=document.getElementById('box')
+        //鼠标距离浏览器的距离
+        // event.clientX   event.clientY
+        //鼠标距离屏幕的距离
+        //event .screenX   event.screenY
+			 document.onmousemove=function(e){
+			 	var event= e || window.event;
+			 //	 console.log("X坐标"+event.clientX+";Y 坐标"+event.clientY)
+			   
+			   box.style.left=event.clientX-box.offsetWidth/2+'px';
+			   box.style.top=event.clientY-box.offsetHeight/2+'px';
+			 }
+
+
+	</script>
+</body>
+</html>

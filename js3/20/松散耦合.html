@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.bg{background: blue;}
+	</style>
+</head>
+<body>
+	<button>充值</button>
+	<button>222</button>
+	<button>333</button>
+	<button>4444</button>
+	<p>余额不足,请充值</p>   
+	<script>
+		var btn=document.getElementsByTagName('button');
+		var p=document.getElementsByTagName('p');
+		//btn[0].style.background='red'
+		btn[0].className='bg';
+		// 50 
+		//	//事件函数 事件处理  松散
+		var val=0;
+		btn[0].onclick=function(){
+			//10  20
+			if(getVal()){
+				p[0].innerHTML='充值成功'+val+'元'
+			}
+		}
+ 
+ ///
+      function  getVal(){
+      		var num=Math.round(Math.random()*10)+10  
+			val+=num;
+			if(val>50){
+				return true;
+			}else{
+				return false;
+			}
+      }
+
+ 
+for(var i=0;i<10;i++){
+	 var newP=document.createElement('p');
+	     newP.innerHTML=i;
+	     document.body.appendChild(newP);
+}
+
+var str="";
+
+for(var i=0;i<10;i++){
+	str+="<p>"+i+"</p>"
+}
+
+//创建一个文档片段
+var  flag=document.createDocumentFragment();
+
+
+
+		
+
+
+	</script>
+</body>
+</html>

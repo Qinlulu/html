@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bg{width:200px; background:rgb(200,40,123);}
+
+	</style>
+</head>
+<body>
+  <input type="range" max='5' min='0' value='1' step='0.1' id='myrange'>
+ <div  class='bg'>你好</div>
+	<script>
+	//style.width   clientWidth  offsetWidth(padding border content)
+			var  divs=document.getElementsByTagName('div');
+			var myrange=document.getElementById('myrange');
+		/*	console.log(divs[0].stylesheets.width)
+			console.log(divs[0].stylesheets.border)
+			console.log(divs[0].stylesheets.marginTop)
+			console.log(divs[0].stylesheets.backgroundColor)*/
+			//divs[0].style["height"]='300px';
+    	//标准浏览器下
+
+    	//console.log(getComputedStyle(divs[0],null).background);
+   
+       var reg=/[\d\.]+/g;
+       var arr=  getComputedStyle(divs[0],null).background.match(reg)
+        console.log(getComputedStyle(divs[0],null).background)
+       	console.log(arr)
+       	//0 255 
+       
+       	myrange.onmousemove=function(){
+       			var val= myrange.value
+       			console.log(val)
+       	var r=Math.round(Math.max(Math.min(arr[0]*val,255),0));
+       	var g=Math.round(Math.max(Math.min(arr[1]*val,255),0));
+       	var b=Math.round(Math.max(Math.min(arr[2]*val,255),0));
+  
+       	divs[0].style.background='rgb('+r+","+g+","+b+')';
+
+       	}
+
+
+
+       /*	console.log("r"+arr[0])
+       	console.log('g'+arr[1])
+       	console.log('b'+arr[2])*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="text" placeholder="请输入身份证号" id="te">
+<button id="bu">查询</button>
+
+	<script>
+	
+	/*var  reg=new RegExp('表达式',"修饰符");
+	var reg=/表达式/修饰符
+	*/
+	var  str='12.125.4.7';
+	//var  reg=new RegExp('B','i');
+	//邮政编码 184028
+	//var reg=/^\d{6}$/;
+	//手机号码 11位数字 1  [34578]  9位数字 
+//	var  reg=/^1[34578]\d{9}$/
+	//身份证号 
+var te=document.getElementById('te')
+var bu=document.getElementById('bu')
+
+
+bu.onclick=function(){
+	var reg=/^\d{1,18}$/
+	console.log(te.value)
+	console.log(te.value.length)
+	console.log(reg.test(te.value));
+}
+	
+	//QQ号
+	var aa="14465485265"
+	var reg=/^\d{6,11}$/
+	console.log(reg.test(aa))
+    //IP地址：
+    //172.168.1   .2
+    //2  .21 .34  .122
+    //17 .1  .176 .22
+    //1-3位的数字. 1-3位的数字.1-3位的数字.1-3位的数字
+     var reg=/(\d{1,3}\.){3}\d{1,3}/
+	console.log(reg.test(str));
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//不可扩展   
+	//密封 
+	//冻结
+	//不可变的对象(类)
+
+  function Range(name,age){
+  		this.name=name;
+  		this.age=age;
+  		this.say1=function(){
+  			alert(this.age)
+  		}
+  		//freeze(this);
+  }
+//原型上的方法在实例里删除不掉
+//构造函数的里的方法可以删除掉delete
+ Range.prototype={
+ 		constructor:Range,
+ 		say:function(){
+ 			alert(this.name)
+ 		}
+ }
+
+  function  freeze(o){
+  		var props=Object.getOwnPropertyNames(o);
+  		 for(var i=0;i<props.length;i++){
+  		 		Object.defineProperty(o,props[i],{
+  		 			writable:false,
+  		 			enumerable:false,
+  		 			configurable:false
+  		 		})
+  		 }
+  		 
+  		 return o;
+  }
+
+
+
+  var p=new Range('zs',18);
+      p.age=20
+    //  delete  p.name
+      console.log(p);
+
+      delete  p.say1//年龄  构造函数
+       delete  p.say//名称  原型方法
+
+/*var obj={
+	num1:3,
+	num2:10,
+	say:function(){
+		alert('aaa')
+	}
+}*/
+	
+
+/*
+delete obj.say
+var arr=	Object.getOwnPropertyNames(obj)
+console.log(arr)*/
+	</script>
+</body>
+</html>

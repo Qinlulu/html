@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#back{width:50px; height:100px; position:fixed;
+			right:10px; bottom:10px; background: #ccc;
+			text-align: center; display: none;}
+
+	</style>
+</head>
+<body>
+<div id='back'>返<br/>回<br/>顶<br/>部</div>
+<img src="bj.png" alt="">
+	<script>
+		//滚动的距离 卷走的距离
+		//scrollTop  scrollLeft
+var back=document.getElementById('back');
+		window.onscroll=function(){
+		//console.log(document.documentElement.scrollTop) //FF
+		//console.log(document.body.scrollTop) //谷歌
+		var   scrollTop=document.documentElement.scrollTop || document.body.scrollTop
+   
+ 		var  clientH=document.documentElement.clientHeight;
+//如果scrollTop>一屏的高度的时候 .则back显示。否则隐藏
+			if(scrollTop>clientH){
+				back.style.display='block'
+			}else{
+				back.style.display='none'
+			}
+		}
+
+
+	back.onclick=function(){
+document.documentElement.scrollTop =0
+document.body.scrollTop=0
+	}
+
+	</script>
+</body>
+</html>

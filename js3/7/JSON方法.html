@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+			//JSON 对象有两个方法：stringify()和parse()。在最简单的情况下，这两个方法分别用于把
+//JavaScript对象序列化为JSON字符串和把JSON字符串解析为原生JavaScript值
+var  obj={
+	      name:'zs',
+	      age:18,
+	      sex:'男',
+	      book:{
+	      	  name:'js高级程序设计',
+	      	  price:18.7
+	      }
+}
+//JSON.stringify(对象名,数组/函数(过滤),是否缩进)
+//默认情况下，JSON.stringify()输出的JSON字符串不包含任何空格字符或
+//缩进  忽略值为undefined的属性
+var  objText=JSON.stringify(obj,['name','age',"book",'price'],"----");
+ console.log(objText)
+	
+
+
+	</script>
+</body>
+</html>

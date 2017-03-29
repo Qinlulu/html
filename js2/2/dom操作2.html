@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>111111 <a href="#">删除</a></li>
+		<li>2222222<a href="#">删除</a></li>
+		<li>33333<a href="#">删除</a></li>
+		<li>444<a href="#">删除</a></li>
+	</ul>
+	<button id='btn'>添加</button><input type="text" id='info'>
+	<script>
+		var  btn=document.getElementById('btn');
+		var  info=document.getElementById('info');
+		var  uls=document.getElementsByTagName('ul');
+		var  a=document.getElementsByTagName('a');
+
+removeLi()
+function  removeLi(){
+		for(var i=0;i<a.length;i++){
+			   a[i].onclick=function(){
+			   	 uls[0].removeChild(this.parentNode);
+			   }
+		}
+}
+
+ btn.onclick=function(){
+    
+    if(info.value==""){
+             alert('请输入信息')
+    }else{ 
+  
+      //创建li .innerHTML=info.value
+      var newLi=document.createElement('li');
+      //newLi.innerHTML=info.value+'<a href="#">删除</a>'
+      //创建文本节点
+      var  newText=document.createTextNode(info.value);
+       newLi.appendChild(newText);
+      //创建a节点  
+      var  newA=document.createElement('a');
+           newA.href='#';
+           newA.innerHTML='删除'
+        newLi.appendChild(newA);
+
+        //newA的添加事件
+        newA.onclick=function(){
+        	uls[0].removeChild(this.parentNode)
+        }
+
+ 
+        uls[0].appendChild(newLi);
+         // removeLi()
+		
+   }
+
+ }
+
+
+
+	</script>
+</body>
+</html>

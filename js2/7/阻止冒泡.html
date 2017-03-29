@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <style>
+		#box{width:400px; height:200px;background: red}
+	 </style>
+</head>
+<body>
+	<div id='box'>
+		<h1>标题文字</h1>
+	</div>
+	<script>
+	//阻止冒泡
+	//dom标准浏览器下 event.stopPropagation() // 停止传播
+	//IE浏览器下 event.cancelBubble=true //取消冒泡=true
+			var box=document.getElementById('box'),
+			h1=document.getElementsByTagName('h1');
+			h1[0].onclick=function(e){
+				var event=e ||  window.event;
+				alert('单击了标题文字');
+			//	event.stopPropagation();
+			 //   event.cancelBubble=true;
+            stopPropagation(event);
+
+			}
+			box.onclick=function(e){
+				var eve=e || window.event;
+				alert(' 单击了 box');
+				stopPropagation(eve);
+				
+			}
+
+			document.body.onclick=function(){
+				alert('单击了整个页面')
+			}
+
+		function  stopPropagation(type){
+				if(type.stopPropagation){
+					type.stopPropagation()
+				}else{
+					type.cancelBubble=true;
+				}
+		}
+	</script>
+</body>
+</html>

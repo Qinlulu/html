@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   *{margin:0;padding: 0}
+       #box{width: 300px;height: 300px;border: 1px solid red; margin: 20px auto;}
+       #box ul li{float: left;width: 73px;text-align: center;line-height: 20px;border: 1px solid blue;}
+       ul,li{list-style: none;}
+       .bg{background: red}
+       #count div{display: none;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<ul id='list'>
+			<li class='bg'>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id='count'>
+			<div  style='display: block'>11111111111111111111</div>
+			<div>2222222222222222222</div>
+			<div>3333333333333</div>
+			<div>4444444444444444</div>
+		</div>
+	</div>
+	<script>
+	//把面向过程改成面向对象
+	//把变量改成属性
+	//把函数变成原型上的方法
+
+	
+
+	  	   var  box=document.getElementById('box');
+	 	   var  uls=box.getElementsByTagName('ul')[0];
+	 	   var  lis=uls.getElementsByTagName('li');
+	 	   var  count=document.getElementById('count');
+	 	   var  odiv=count.getElementsByTagName('div');
+	 	   var  num=0;
+	 	   var timer=null;
+	 	   for(var i=0;i<lis.length;i++){ 
+	 	   	    lis[i].index=i;
+		 	   	lis[i].onmouseover=function(){
+                     	changBj(this.index);
+                     	    num=this.index;
+
+		 	   	}
+	 	   }		
+           function  changBj(id){
+           	for (var j = 0;j<lis.length; j++) {
+                      	   lis[j].className='';
+                      	   odiv[j].style.display='none';
+                      } 
+
+                      lis[id].className='bg';
+                      odiv[id].style.display='block';
+           }
+    //自动播放
+
+    function  autoPlay(){
+    	timer=setInterval(function(){
+    	num++;
+    	if(num>lis.length-1)num=0
+    	console.log(num)
+    	changBj(num);
+
+
+    },3000)
+    }
+     autoPlay()
+
+    //滑过ul清除定时器
+    uls.onmouseover=function(){
+    	clearInterval(timer);
+    }
+    //离开ul继续播放
+    uls.onmouseout=function(){
+    	autoPlay()
+    }
+   
+	</script>
+</body>
+</html>

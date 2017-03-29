@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var arr=[4,16,9,8]
+	
+	function  sqrt(num){
+		return Math.sqrt(num)
+	}
+
+      function  map(fn,arry){
+      	 var temp=[]
+      	 /*for(var i=0;i<arry.length;i++){
+      	 	temp.push(fn(arry[i]));
+      	 }*/
+      	 each(function(n){
+      	 	temp.push(fn(n));
+      	 },arry)
+      	 return  temp;
+      }
+
+   function  each(fn,arry){
+   	    for(var i=0;i<arry.length;i++){
+   	    	fn(arry[i])
+   	    }
+   }
+  
+  var classbw=['张婧','杨明欣','兰天','赵航','马朝','张磊','张子豪','王道奎']
+
+     function addClass(name){
+     	return "1501D"+name;
+     }
+
+
+    function  map1(fn,arry){
+    	  var temp=[];
+    	  each(function(n){
+    	  	temp.push(fn(n))
+    	  },arry)
+           
+           return temp;
+
+    }
+
+console.log(map1(addClass,classbw))
+
+   console.log(map(sqrt,arr))
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   <h1 id='tt' title='标题'  ><span>更多</span>标题文字<a href="#">百度</a></h1>
+   <img src="a.jpg" >
+   <input type="checkbox" checked="checked">
+	<script>
+	var   tt=document.getElementById('tt');
+
+       console.log(tt.firstChild.nextSibling.nodeValue);
+
+    
+   	//节点属性：
+   	//节点类型nodeTye      节点名字nodeName  节点值 nodeValue
+//元素节点     	 1				SPAN              null
+//文本节点       3              #text           文本自身
+//属性节点       2              属性名             属性值
+
+    
+
+	</script>
+</body>
+</html>

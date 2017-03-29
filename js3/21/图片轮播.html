@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+		 *{margin:0;padding: 0}
+		li{list-style: none}
+		#pic{width:500px; height:250px;margin:120px auto;position:relative;}
+		#pic ul{width:1500px; height:100px; }
+		#pic ul li{width:500px;float: left; height:250px;}
+		ul{
+			position:absolute;
+		}
+		ol{
+			width:300px;
+			height:40px;
+			line-height:40px;
+			text-align: center;
+			position:absolute;
+			left:100px;
+			bottom:15px;
+			background:#EEE;
+		}
+		ol li{
+			float: left;
+			width:98px;
+			background:#ccc;
+			margin:1px;
+		} 
+		img{
+			width:500px;
+			height:250px;
+		}
+		span,mark{
+			position:absolute;
+			border:50px solid transparent;
+			top:55px;
+		}
+		span{
+			border-right-color:red;
+			left:-30px;
+		}
+		mark{
+			border-left-color:blue;
+			right:-30px;
+			background:transparent;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id='pic'>
+		<ul id="ul">
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>	
+		</ul>
+		<ol id="ol">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+		<span id="span"></span>
+		<mark id="mark"></mark>
+	</div>
+	<script src="move.js"></script>
+	<script>
+
+		 var ul=document.getElementById('ul')
+		 var lis=ul.getElementsByTagName('li')
+		 var pic=document.getElementById("pic")
+		 var ol=document.getElementById("ol")
+		 var liss=ol.getElementsByTagName('li')
+		 var offW=lis[0].offsetWidth
+		 var time=null
+		 var sum=0
+
+
+	</script>
+	
+</body>
+</html>

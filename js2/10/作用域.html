@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//全局变量  ，局部变量 
+		//显示声明  隐式声明
+		//变量从里往外依次查找，这叫作用域链
+/*		var  num=4
+		 function  fn(){
+		 	 console.log(num)
+		 	 var num=7;
+		 	 console.log(num)
+		 }
+
+		 fn()*/
+ /*  var  num=4
+    function  fn(){
+    	  num=5;
+    	console.log(num)
+    }
+console.log(num)
+*/
+
+//基本类型 值 引用类型  object  array  地址
+
+var  a=4
+var b=a;
+    b=5
+     console.log(a)
+
+var arr=[5,2]
+var temp=arr;
+    temp[0]='bw'
+    console.log(arr)     
+
+var obj={user:"张三"}
+var  json=obj;
+  json.user='李四'
+  console.log(obj.user)
+
+  var a=3;
+  var b="admin";
+  var c=a+b;
+console.log(c)
+
+
+
+	</script>
+</body>
+</html>

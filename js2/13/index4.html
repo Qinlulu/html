@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var   arr=["男",'女','男','男','女','女',"女"]
+		//统计一下几个男生
+		//男生前面加班级1501D 
+
+	
+		var arrr=[];
+
+		function fun(value){
+			if(value=="男"){	
+				return "1501D"+value
+			}else{	
+				return value
+			}
+		}
+		function each(fn,arry){
+			for(var i=0;i<arry.length;i++){
+				fn(arr[i])
+			}
+
+		}
+
+		function map(fn,arry){
+			var arrr=[];
+			each(function(n){arrr.push(fn(n))},arry)
+			return arrr
+		}
+		console.log(map(fun,arr))
+
+
+
+		function Man( sum,value){
+			if(value=="男"){
+				sum++
+			}
+			return sum
+		}
+		function reMan(fn,a,arry){
+			each(function(n){a=fn(a,n)},arry)
+			return "男生的个数"+a
+		}
+		console.log(reMan(Man,0,arr))
+
+
+
+
+
+		function Nan( suu,value){
+			if(value=="女"){
+				suu++
+			}
+			return suu
+		}	
+
+function reNan(fn,a,arry){
+			each(function(n){a=fn(a,n)},arry)
+			return "女生的个数"+a
+		}
+		console.log(reNan(Nan,0,arr))
+		
+
+
+
+
+
+
+
+
+
+
+
+
+		/*for(var i=0;i<arr.length;i++){
+			if(arr[i]=="男"){
+				nan.push(arr[i])
+				arrr.push("1501D"+arr[i])
+
+			}else{
+				nv.push(arr[i])
+				arrr.push(arr[i])
+			}
+		}
+		var nan1=nan.length;
+		var nv1=nv.length;
+		alert("男生的个数"+nan1)
+		alert("女生的个数"+nv1)
+		alert(arrr)*/
+	</script>
+</body>
+</html>

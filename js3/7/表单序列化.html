@@ -1,0 +1,63 @@
+f<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="a.html">
+		用户名：<input type="text" required><br>
+		密码：<input type="password" required><br>
+		<input type="submit" value='登录'>
+		<input type="reset" value='取消'>
+		<input type="button" value='注册'>
+		<strong id='login'>登录</strong>
+		
+	</form>
+	<script>
+		var myforms=document.forms;
+		var elements=myforms[0].elements;
+/*		var  login=document.getElementById('login');
+	 //document.forms表示的表单
+	 //表单.elements表示的表单元素
+		console.log(myforms[0].elements.length)
+		console.log(myforms[0].elements[0])
+//方法1：
+elements[4].onclick=function(){
+		//表单名 .submit();
+		var reg=/^\w{3,12}$/
+		var reg1=/^\d{6,}$/
+		var  result=reg.test(elements[0].value)  &&  reg1.test(elements[1].value)
+		if(result){
+			myforms[0].submit();
+		}
+		
+}
+login.onclick=function(){
+        myforms[0].submit();
+}
+*/
+
+ //方法2:          
+     //表单名.onsubmit=function(){}
+
+    myforms[0].onsubmit=function(){
+             //用户名3 12位 字母数字下划线
+             var reg=/^\w{3,12}$/
+             var reg1=/^\d{6,}$/
+             if(!reg.test(elements[0].value)){
+             	alert('用户名不正确');
+             	return false
+             }else if(!reg1.test(elements[1].value)){
+             	alert('密码不正确');
+             	return false
+             }else{
+             	return true
+             }
+     }   
+
+
+
+	</script>
+</body>
+</html>

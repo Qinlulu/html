@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select >
+		 
+	</select>
+	<select >
+	
+	</select>
+
+	<script>
+
+var json={
+	 data:[{
+            name:'朝阳',
+            option:[{name:'国贸'},{name:"CBD"},{"name":"大望路"},{"name":"双井"}]
+	 },
+	 {
+	 		name:'海淀',
+	 		option:[{name:"中关村"},{"name":"上地"},{"name":"西二旗"}]
+	 },
+	 {
+	 		name:'昌平',
+	 		option:[{name:'天通苑'},{name:"永丰"},{name:'立水桥'}]
+	 }]
+}
+
+
+		var  sl=document.getElementsByTagName('select');
+		//选中value  select.value  选中项的option的value ,如果没有value ，option的text
+		//selectedIndex 选中项的索引
+		sl[0].onchange=function(){
+                //console.log(sl[0].value)
+              //  console.log(sl[0].selectedIndex);
+         sl[1].innerHTML='';
+         var index=sl[0].selectedIndex;
+        
+ for(var i=0;i<json.data[index].option.length;i++){
+     var newOption=document.createElement('option');
+         newOption.text=json.data[index].option[i].name;
+         sl[1].appendChild(newOption)
+
+}
+
+		}
+
+
+	for(var i=0;i<json.data.length;i++){
+		var newOption=document.createElement('option');
+		    newOption.text=json.data[i].name;
+		    sl[0].appendChild(newOption);
+	}
+
+
+	</script>
+</body>
+</html>

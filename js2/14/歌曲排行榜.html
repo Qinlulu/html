@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{
+			width:500px;
+			margin: 0 auto;
+			border: 1px solid #ccc;
+			border-collapse: collapse;
+		}
+		td{
+			border: 1px solid red;
+			height:30px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td colspan="2">音乐排行榜</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" name="ck"></td>
+				<td>自由飞行</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ck"></td>
+				<td>自由飞行</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ck"></td>
+				<td>自由飞行</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ck"></td>
+				<td>自由飞行</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2"><input type="checkbox" id="btn">全选<input type="button" value="删除" id="shan"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="添加" id="tian"><input type="text" id="tex"></td>
+			</tr>
+		</tfoot>
+	</table>
+
+	<script>
+	//获取所有的复选框
+		var ck=document.getElementsByName("ck")
+	//获取全选按钮
+		var btn=document.getElementById("btn")
+
+	//点击复选框的时候  改变背景颜色
+	for(var i=0;i<ck.length;i++){
+		ck[i].onclick=function(){
+   	  if(this.checked){
+   	  	 this.parentNode.parentNode.style.background='#ccc'
+   	  }else{
+   	  	 this.parentNode.parentNode.style.background=''
+   	  }
+   }
+}
+		//点击全选时    背景改变颜色
+		btn.onclick=function(){
+			for(var i=0;i<ck.length;i++){
+				ck[i].checked=btn.checked
+				 if(this.checked){
+   	  	 			ck[i].parentNode.parentNode.style.background='#ccc'
+			   	  }else{
+			   	  	 ck[i].parentNode.parentNode.style.background=''
+			   	  }
+			}
+		}
+
+		
+		//获取输入的内容
+		var  tex=document.getElementById("tex")
+		//添加按钮
+		var  tian=document.getElementById("tian")
+		
+	
+		var table=document.getElementsByTagName("table")
+		var tBody=table[0].tBodies
+
+		//追加到table中
+		tian.onclick=function(){
+			if(tex.value==""){
+					alert("不能为空")
+			}else{
+			//建立新的节点
+			var Newtr=document.createElement("tr")
+			var Newtd=document.createElement("td")
+			var Newtdd=document.createElement("td")
+			var Newput=document.createElement("input")
+			Newput.name="ck"
+			Newput.type="checkbox"
+			tBody[0].appendChild(Newtr)
+			Newtr.appendChild(Newtdd)
+			Newtdd.appendChild(Newput)
+			Newtr.appendChild(Newtd)
+			Newtd.innerHTML=tex.value
+		
+
+			Newput.onclick=function(){
+				if(this.checked){
+					this.parentNode.parentNode.style.background="#ccc"
+				}else{
+					this.parentNode.parentNode.style.background=""
+				}
+			}
+		}
+		}
+
+		//点击删除按钮时 
+		var shan=document.getElementById("shan")
+		shan.onclick=function(){
+			var num=0
+			for(var i=0;i<ck.length;i++){
+				
+			if(ck[i].checked){
+					num++
+				}
+			}
+
+			if(num==0){
+				alert("请选择删除项")
+			}else{
+				for(var i=ck.length-1;i>=0;i--){
+					if(ck[i].checked){
+						tBody[0].removeChild(ck[i].parentNode.parentNode)
+					}
+					
+				}
+				
+			}
+
+		}
+		
+		
+		
+
+	</script>
+</body>
+</html>

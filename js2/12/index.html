@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	input{
+		width:150px;
+		height:35px;
+		background:#ccc;
+	}
+	</style>
+</head>
+<body>
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<input type="button" value="点击" id="btn">
+
+	<script>
+		var inps=document.getElementsByTagName('input')
+		var btn=document.getElementById("btn")
+
+
+
+		for(var i=0;i<inps.length;i++){
+				
+			inps[i].onkeyup=function(){
+				if(inps[0].value==""){
+					btn.disabled=true
+					btn.style.background="#ccc"
+				}else if(inps[1].value==""){
+					btn.disabled=true
+					btn.style.background="#ccc"
+				}else if(inps[2].value==""){
+					btn.disabled=true
+					btn.style.background="#ccc"
+				}else if(inps[3].value==""){
+					btn.disabled=true
+					btn.style.background="#ccc"
+				}else{
+					btn.disabled=false
+					btn.style.background="red"		
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<textarea  cols="30" rows="10" id='text' maxlength="20"></textarea>
+<span>你还可以输入20个字符</span>
+	<script>
+		//事件类型：
+		//第一类：UI事件 window 
+		//load  加载  unload 卸载
+		//onscroll 滚动  
+		//onresize 调整窗口大小
+		//onerror  页面发生错误的时候
+		//onselect  内容选中时
+
+		//第二类： 鼠标事件 
+	/*	mouseover 
+		mouseout
+
+		mousedown
+		mouseup
+		mousemove
+
+		click
+		dbclick
+
+		mouseenter  不冒泡
+		mouseleave  不冒泡*/
+		//第三类： 键盘事件
+
+	/*	keydown   按下任意键
+		keypress  按下字符键
+		keyup    释放
+
+   A   keydown  keypress  keyup
+   1   keydown  keyup
+*/
+var text=document.getElementById('text');
+var span=document.getElementsByTagName('span');
+    text.onkeyup=function(){
+        var textL=text.value.length  
+    	  span[0].innerHTML='你还可以输入'+(20-textL)+'个字符'
+
+    }
+ //焦点事件  表单元素
+ //focus 	获取焦点
+ //blur     失去焦点
+
+
+
+
+	</script>
+</body>
+</html>

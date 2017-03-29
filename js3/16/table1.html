@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{width:600px;border-collapse: collapse;}
+		tr td,tr  th{border:1px solid red;width:120px;}
+		tr th{background: #ccc}
+	</style>
+</head>
+<body>
+	<table id='tab'>
+		<thead>
+			<tr>
+				<th colspan="4">学生信息</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>学号</td>
+				<td>学费</td>
+				<td>年龄</td>
+				<td>体重</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>20000</td>
+				<td>18</td>
+				<td>60</td>
+				
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>18000</td>
+				<td>20</td>
+				<td>50</td>
+				
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>23000</td>
+				<td>25</td>
+				<td>55</td>
+				
+			</tr>
+		
+		</tbody>
+		
+	</table>
+
+	<script>
+		
+	var  table=document.getElementById('tab');
+	var  tbody=table.tBodies[0]; //tbody
+	var  trs=tbody.rows;  //所有行
+	var  onetd=trs[0].cells  //第一行的所有列
+	var  start=null;	//开始位置
+	var  state=null;   //是否拖拽
+	var   end=null;    //结束位置
+	var  prevx=null;
+
+
+	//在最后插入一列
+     for(var i=0;i<trs.length;i++){
+     	var  newTd=trs[i].insertCell(4);
+     	     newTd.innerHTML='123'
+     	     newTd.style.display='none';
+     	    
+     }
+
+     //遍历第一行的单元格
+     //且移动时 进行操作
+   for(var i=0;i<onetd.length;i++){
+   			 onetd[i].index=i;
+   			 onetd[i].onmousedown=function(){
+   			 	start=this.index;
+   			 	state='drag';
+   			 	console.log(start)
+   			 }
+   }
+
+  document.onmousemove=function(e){
+  	var  event=e || window.event;
+  	var target=event.target || event.srcElement;
+  	var x=event.clientX;
+  		end=target.index;
+  	  console.log(target.index)
+    // console.log(x)
+     //如果按下了     并且   开始位置不等于结束位置
+    if(state=='drag'  &&  start!=end){
+       
+       if( (x<prevx && start>end)  ||  (start<end  &&  x>prevx)){
+             
+       		if(start<end){
+       			end=end+1;
+       		}
+
+       	   for(var m=0;m<trs.length;m++){
+       	   		trs[m].insertBefore(trs[m].cells[start],trs[m].cells[end]);
+       	   }	
+
+
+       }
+
+
+
+    }
+
+	prevx=x;
+
+
+
+  } 
+
+
+ document.onmouseup=function(){
+   
+   state=null;
+
+ }
+
+
+	// insertBefore(内容,哪个对象之前位置)
+	</script>
+</body>
+</html>

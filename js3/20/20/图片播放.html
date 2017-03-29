@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='myjq.js'></script>
+	<script src='move.js'></script>
+	<style>
+		*{margin:0;padding: 0;color:#fff; font-size: 18px}
+		ul,li{list-style: none}
+		#pic{width:200px; height:200px; margin-left:200px; margin-top:50px;border:1px solid red; position: relative;}
+		#pic ul{width:800px; height:100px; }
+		#pic ul li{width:200px;float: left; height:100px;}
+		#header{height:40px;margin-bottom: 1px;}
+		#header ol li{float: left;width:49px; background: #ccc;margin-right: 1px; text-align: center;line-height: 40px;}
+       #left,#right{width:20px; height:20px; background: #000;color:#fff;top:80px; position: absolute;}
+       #left{left:10px}
+       #right{right:10px;}
+	</style>
+</head>
+<body>
+	
+	<div id='pic'>
+	<div id='header'>
+		<ol>
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ol>
+</div>
+		<ul>
+			<li style='background: red;'>1111</li>
+			<li style='background: blue;'>2222</li>
+			<li style='background: green;'>3333</li>
+			<li style='background: orange;'>4444</li>
+		</ul>
+		<div id='left'>左</div>
+		<div id='right'>右</div>
+	</div>
+<script>
+var timer=null;
+var  index=0;
+var len=$('ul').find('li').eles.length;
+function  autoplay(){
+	$('ul').animate(-200,'marginLeft',function(){
+				index++;
+				if(index>len-1)index=0;
+				console.log(index)
+				moveLeft();
+	})
+
+}
+
+function  moveLeft(){
+	$('ul').eq(0).eles[0].appendChild($('ul').find('li').eq(0).eles[0]);
+		$('ul').css('marginLeft','0px');
+}
+
+timer=setInterval(autoplay,2000);
+
+$('#header').hover(function(){
+	 clearInterval(timer);
+},function(){
+
+	timer=setInterval(autoplay,2000);
+})
+
+$('ol').find('li').click(function(){
+	var to=	$(this).index()
+	console.log(to);
+	var from=index;
+	while(from!=to){
+		 from++;
+		 if(from>len-1)from=0;
+		  moveLeft();
+	}
+
+        index=to;
+})
+
+
+$('#right').click(function(){
+    clearInterval(timer);
+	 autoplay();
+})
+
+$('#left').click(function(){
+	 clearInterval(timer);
+	 index--;
+	 if(index<0) index=len-1;
+
+		moveRight();
+	 $('ul').animate(0,'marginLeft');
+
+
+})
+
+function  moveRight(){
+	 $('ul').eq(0).eles[0].insertBefore($('ul').find('li').eq(len-1).eles[0],$('ul').find('li').eq(0).eles[0]);
+	 $("ul").css('marginLeft','-200px');
+}
+
+/*$("#pic").hover(function(){
+	$('#left').show();
+	$('#right').show();
+	clearInterval(timer)
+},function(){
+	 $("#left").hide();
+	 $('#right').hide();
+	 timer=setInterval(autoplay,2000);
+})*/
+</script>
+
+</body>
+</html>

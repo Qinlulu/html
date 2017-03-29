@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//工厂模式
+		function createO(name,age){
+			var  o=new Object();
+			o.name=name;
+			o.age=age;
+			o.show=function(){
+				alert(this.name)
+			}
+			return  o;
+		}	
+
+    var  p1=createO('张安',16);
+    var  p2=createO('李四',29);
+   //对象 constr+ctor 构造函数属性
+    console.log(p1.constructor)
+    console.log(p2.constructor)
+//优点：工厂模式虽然解决了创建多个相似对象的问题，
+//缺点：但却没有解决对象识别的问题
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

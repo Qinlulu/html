@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul>
+	<li>111111</li>
+	<li>2222222</li>
+	<li>3333333</li>
+	<li>4444444</li>
+	<!-- <li>55555555</li> -->
+</ul>
+	<script>
+	//查找节点 
+	//3种
+	//Id: document.getElementById('id名')  唯一
+	//TagName: document.getELementsByTagName('tagName') 数组 nodeList   *
+	//name: document.getElementsByName('name')  数组  nodeList
+   
+   //插入节点
+   //父节点.appendChild(子节点)
+
+   //创建一个文本节点 55555
+   //创建一个元素节点 li 
+   //然后把55555放到li 
+   //在把li放到ul 里 
+   
+  //创建文本节点
+  //document.createTextNode('文本')
+  //创建元素节点
+  //document.createElement('元素名')
+  var   uls=document.getElementsByTagName('ul')
+  var   newText=document.createTextNode('5555555');
+  var   newLi=document.createElement('li');
+         newLi.appendChild(newText)
+        console.log(newLi)
+        uls[0].appendChild(newLi)
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

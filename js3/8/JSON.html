@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//JSON   stringify
+		var obj={
+			  name:'zs',
+			  sex:'男',
+			  birth:'2000-1-1',
+			  book:{
+			  	 name:'js程序',
+			  	 price:15
+			  }
+		}
+
+	var objText=JSON.stringify(obj,function(key,value){
+                     /* switch(key){
+                      	case  "name":
+                      	return  value+'欢迎你';
+                        case  "birth":
+                        return   new Date().getFullYear()-new Date(value).getFullYear();
+                      	case  "price":
+                      	return  value+"元"
+                      	default:
+                      	return value;
+                      }   */
+
+                     if(key=="name" ){
+                     		//return new Date().getFullYear()-new Date(value).getFullYear();
+                       return  value+'欢迎你'
+                     }else{
+                     	return value
+                     }
+
+	},4)
+ console.log(objText)
+	</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style>
+		*{margin:0;padding: 0}
+		ul,li{list-style: none}
+		#pic{width:300px; height:200px; margin-left:200px; margin-top:50px;border:1px solid red; position: relative;}
+		#pic ul{width:1200px; height:200px; }
+		#pic ul li{width:300px;float: left; height:200px;}
+		#pic ol{position: absolute;left:50px;bottom:5px;}
+		#pic ol li{float: left;width:30px; background: #f4f4f4;margin-right:20px; text-align: center;line-height: 30px;}
+		#left,#right{position: absolute;top:100px;width:20px; height:20px;background: #000;color:#fff;}
+		#left{left:10px;}
+        #right{right:10px;}
+	</style>
+</head>
+<body>
+
+	<div id='pic'>
+
+		<ul id='list'>
+			<li style='background: red;'>1111</li>
+			<li style='background: blue;'>2222</li>
+			<li style='background: green;'>3333</li>
+			<li style='background: yellow;'>4444</li>
+		</ul>
+		<ol id='nums'>
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ol>
+		<div id='left'>左</div>
+		<div id='right'>右</div>
+	</div>
+	<script>
+	     //自动播放
+	     //鼠标滑过pic 停止
+	     //鼠标离开pic继续播放
+	     //单击li播放哪个
+	     //单击箭头播放上一张或者下一张
+	     //move
+    var  pic=document.getElementById('pic'),
+    	 list=document.getElementById('list'),
+    	 pics=list.getElementsByTagName('li'),
+    	 ols=document.getElementById('nums'),
+    	 nums=ols.getElementsByTagName('li'),
+    	 timer=null,
+    	 index=0,
+    	 len=pics.length,
+    	 left=document.getElementById('left'),
+    	 right=document.getElementById('right')
+
+    	 //自动播放
+    	 timer= setInterval(play,2000)
+  function play(){
+		      index++;
+    	 	 if(index>len-1)index=0;
+    	 	 //追加一张到最后
+              moveLeft();
+              //改变ol li的背景色
+              changeBg(index);
+  }
+   
+  function   moveLeft(){
+  		  	list.appendChild(pics[0])
+    	 	list.style.marginLeft=0;
+  }
+
+  function  changeBg(id){
+  			for(var m=0;m<len;m++){
+         		nums[m].style.background='#f4f4f4';
+         	}
+    	 	nums[id].style.background='red'
+  }
+
+  //鼠标滑过pic清除定时器
+  //鼠标离开继续播放
+pic.onmouseover=function(){
+	  clearInterval(timer);
+}
+pic.onmouseout=function(){
+		 timer= setInterval(play,2000)
+}
+//单击哪个播放哪个
+ 
+ for(var i=0;i<nums.length;i++){
+ 		 nums[i].index=i;
+ 		 nums[i].onclick=function(){	
+             var from=index;
+             var to=this.index;
+              changeBg(this.index);
+               while(from!=to){
+              	from++;
+              	if(from>len-1)from=0;
+              	moveLeft();
+
+              }	  
+              index=to;
+ 		 }
+ }
+
+//下一张
+
+right.onclick=function(){
+	 play();
+} 
+
+left.onclick=function(){
+	index--;
+	if(index<0) index=len-1;
+	list.insertBefore(pics[len-1],pics[0]);
+	changeBg(index);
+}
+
+
+
+	</script>
+</body>
+</html>

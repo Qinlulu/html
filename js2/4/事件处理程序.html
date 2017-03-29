@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button id='btn' onclick="alert('nihao ')">单击</button>
+	<script>
+	var  btn=document.getElementById('btn');
+//事件处理程序   以on开头 
+//HTML事件处理程序  ：结构样式 行为的分离
+//DOM0事件处理程序 :  优点：没有兼容问题 ，可以跨平台
+//缺点：不能同时添加多个事件
+//元素.事件=function(){}
+//元素.事件=函数名;
+//删除DOM0事件：元素.事件=null
+function  say(){
+	alert('你好')
+}
+function say1(){
+	alert('你不好 ')
+}
+
+/*btn.onclick=say
+btn.onclick=null*/
+	</script>
+</body>
+</html>

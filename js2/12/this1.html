@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button disabled id='btn'>注册</button>
+	<input type="text">
+	<input type="password">
+	<script>
+	   var  num=3;
+	   var  json={
+	   		 num:2,
+	   		 dbl:function(){
+	   		 	return  this.num=this.num*2;
+	   		 }
+	   }
+      var  json1={
+      	 num:5
+      }
+    //  console.log(json1.result());
+
+ //call apply 
+//方法名(函数名).call(指向对象的作用域,参数1,参数2，参数3...)    window  不写   null
+//方法名(函数名).apply(指向对象的作用域,数组arguments array[])   
+//console.log(json.dbl.call(json1));
+json.dbl.apply(json1);
+console.log(json1.num);
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   *{margin:0; padding:0;}
+	   .bg{background: red}
+	   .cl{color: blue}
+	</style>
+	<style>
+		body{background: #ccc}
+	</style>
+</head>
+<body>
+<div class='bg cl'>你好</div>
+<p>这是段落</p>
+<h1>ddd</h1>
+<h2>sdfsdd</h2>
+	<script>
+		console.log(document.styleSheets.length)
+		var one=document.styleSheets[0];
+		console.log(one.cssRules.length);
+		console.log(one.rules.length)
+		var rules=one.cssRules?one.cssRules:one.rules;
+		console.log(rules.length)
+    
+        console.log(rules[1].selectorText)
+        console.log(rules[1].cssText);
+        console.log(rules[1].style.cssText)
+
+       for(var i=0;i<rules.length;i++){
+       		console.log(rules[i].selectorText+"  "+rules[i].style.cssText);
+       }
+     //插入一条规则  样式
+     one.insertRule("p{background:yellow}",1);
+     one.addRule('h1',"background:orange",rules.length)
+   console.log(rules.length)
+   //删除规则
+     one.deleteRule(0)
+     one.removeRule(rules.length-1)
+  //创建一个style样式表
+
+  var  newStyle=document.createElement('style');
+  var  head=document.getElementsByTagName('head');
+  	   head[0].appendChild(newStyle);
+       //newStyle.innerHTML="h2{background:blue}"
+       //newStyle.cssText="h2{background:green}"//?
+  var newS=document.styleSheets[document.styleSheets.length-1]  //???????
+  var newRules=newS.cssRules  || newS.rules;
+   		newS.insertRule("h2{background:green}",newRules.length)
+ 		newS.insertRule("h2{font-size:55px}",newRules.length)
+ //IE
+ 	document.createStyleSheet()
+	</script>
+</body>
+</html>

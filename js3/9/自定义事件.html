@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	function MyEvent(type){
+			this.iname=type;  //保存事件的类型
+			this[type]=[];  //保存事件处理程序
+	}
+    
+    MyEvent.prototype={
+    	constructor:MyEvent,
+    	addEvent:function(func){
+                 this[this.iname].push(func); 
+                 //把一个函数追加到数组中
+    	},
+    	fire:function(str){   //执行 exec  this[exec][0]()
+    		this[str][0]();	
+    	}
+    }
+var  m=new MyEvent('exec')
+	 m.addEvent(function(){
+	 	alert('你好')
+	 })
+
+	 m.fire('exec');
+
+
+
+
+	</script>
+</body>
+</html>

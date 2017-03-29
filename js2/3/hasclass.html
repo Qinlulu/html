@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<h1 class='a  box   test'></h1>
+	<p class='box'></p>
+	<ul>
+		<li class='a'>1111</li>
+		<li class='box a'>222</li>
+		<li class='b box bg'>333</li>
+		<li class='bg'>444</li>
+		<li class='b'>555</li>
+	</ul>
+	<script>
+		var  h1=document.getElementsByTagName('h1')
+//判断标签里是否含有某一个样式
+	/*	  function  hasClass(obj,clsName){
+		  	if(obj.className.indexOf(clsName)>=0){
+		  		return true
+		  	}else{
+		  		return false
+		  	}
+
+		  }	*/
+
+	  function  hasClass(obj,clsName){
+	     var arr=obj.className.split(/\s+/);
+	//     /\s+/  \s代表的是空格 +代表的是1到多个空格
+		for(var i=0;i<arr.length;i++){
+			  if(arr[i]==clsName){
+			  	return true
+			  	break;
+			  }
+		}
+         return  false
+          
+		  }
+
+
+console.log(hasClass(h1[0],'test222'))
+
+  //  console.log(h1[0].className.split(/\s+/))
+
+
+		    //h1  box 
+		 /*   if(h1[0].className.indexOf('box')>=0){
+		    	return  true
+		    }else{
+		    	return  false
+		    }
+*/
+     /* var arr=	h1[0].className.split(' ')
+      console.log(arr)
+      for(var i=0;i<arr.length;i++){
+  			if(arr[i]=='box'){
+  				return  true
+  			}else{
+  				return  false
+  			}
+  }
+*/
+
+
+	</script>
+</body>
+</html>

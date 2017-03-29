@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//图书馆借书:
+		//书名  作者  书号   借书人 流水号(2016919193421123) 借阅时间
+		//1万 100次 
+		//内部数据  书名   作者  书号
+		//外部数据   借书人 流水号   借阅时间
+
+function  Book(name,author,isbn){
+	  this.name=name;
+	  this.author=author;
+      this.isbn=isbn;
+}
+
+var Nbk=(function(){
+		var book={};//创建一个书的对象
+		return {
+			getBook:function(name,author,isbn){
+				if(book[isbn]){
+					return  book[isbn];
+				}else{
+					var b=new Book(name,author,isbn);
+					 book[isbn]=b;
+					 return  book[isbn];
+				}
+			}
+		}
+
+})()
+console.log(Nbk.getBook('web前端开发','司徒静美','123456'));
+console.log(Nbk.getBook('web程序',"汤姆大叔",'123456'));
+
+//管理书籍的借阅
+
+//书名  作者  书号   借书人 流水号(2016919193421123) 借阅时间  还书时间
+function BookMange(){
+		var records={}  //记录借阅信息
+		this.lend=function(name,author,isbn,pid,lid,lenddate){
+				var  b=Nbk.getBook(name,author,isbn);
+				records[lid]={
+					     person:pid,
+					     lid:lid,
+					     date:lenddate,
+					     book:b
+
+				}
+				return  records;
+		}
+}
+
+var m=new BookMange();
+var record= m.lend('web前端开发','汤姆大叔','123456','张三','2016919193421123','2016-9-19')
+console.log(record)
+
+
+
+
+/*records={
+	 lid:{
+	 	 person:'',
+	 	 lid:'',
+	 	 date:
+	 	 book:{
+	 	 		name:
+	 	 		author:
+	 	 		isbn:
+	 	 }
+
+	 }
+}
+
+records.lid.person
+records.lid.book.name*/
+
+
+/*book={
+	isbn:{
+		name:'zz',
+		author:'aa',
+		isbn:'dd'
+	}
+}
+   */
+
+
+	</script>
+</body>
+</html>

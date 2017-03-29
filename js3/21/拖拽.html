@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    #bigbox{position: relative;width:600px; height:400px; background: #ccc; margin:20px auto;}
+		#box{width:100px; height:100px; background: red;position:absolute;left:10px; top:10px; cursor: move;}
+	</style>
+</head>
+<body>
+<div id='bigbox'>
+		<div id='box'></div>
+</div>
+
+
+	
+	<script>
+		/*var box=document.getElementById('box');
+		var bigbox=document.getElementById('bigbox');
+		var l,t;
+		box.onmousedown=function(event){
+			var ev=event || window.event;
+			   l=ev.clientX-box.offsetLeft;
+			   t=ev.clientY-box.offsetTop;
+
+			document.onmousemove=function(e){
+				var eve=e || window.event;
+				box.stylesheets.left=e.clientX-l+'px';
+				box.stylesheets.top=e.clientY-t+'px';*/
+				/*var maxW=bigbox.offsetWidth-box.offsetWidth;
+				var maxH=bigbox.offsetHeight-box.offsetHeight;
+				if(box.offsetLeft<0) box.stylesheets.left=0;
+				if(box.offsetLeft>maxW)box.stylesheets.left=maxW+'px';
+				if(box.offsetTop<0)box.stylesheets.top=0;
+				if(box.offsetTop>maxH) box.stylesheets.top=maxH+'px';*/
+		/*	}
+
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			}
+
+		}	*/
+
+
+
+function   Drag(id){
+       this.box=document.getElementById(id);
+       this.l=0;
+       this.t=0;
+       this.startDrag();
+}
+
+Drag.prototype.startDrag=function(){
+var that=this;
+		this.box.onmousedown=function(e){
+			var  e=e || window.event;
+			that.l=e.clientX-that.box.offsetLeft;
+			that.t=e.clientY-that.box.offsetTop;
+			that.fnMove();
+		}
+		document.onmouseup=function(){
+			 document.onmousemove=null;
+		}
+
+
+}
+//移动的时候
+Drag.prototype.fnMove=function(){
+var that=this;
+	document.onmousemove=function(e){
+         		var eve=e || window.event;
+         		  that.box.style.left=eve.clientX-that.l+'px';
+         		  that.box.style.top=eve.clientY-that.t+'px';
+
+			}
+}
+
+
+	function  AdvDrag(id,bigId){
+		Drag.call(this,id);  //属性的继承
+		this.bigbox=document.getElementById(bigId);
+	}
+	//方法的继承
+	//AdvDrag.prototype=new  Drag();
+	if(Object.create){
+		AdvDrag.prototype=Object.create(Drag.prototype);
+	}else{
+
+		 	function  F(){};
+		 	F.prototype=Drag.prototype;
+		 	AdvDrag.prototype=new  F();
+	}
+    AdvDrag.prototype.constructor=AdvDrag; 
+
+AdvDrag.prototype.fnMove=function(){
+var that=this;
+	document.onmousemove=function(e){
+         		var eve=e || window.event;
+         		  that.box.style.left=eve.clientX-that.l+'px';
+         		  that.box.style.top=eve.clientY-that.t+'px';
+
+				var maxW=that.bigbox.offsetWidth-that.box.offsetWidth;
+				var maxH=that.bigbox.offsetHeight-that.box.offsetHeight;
+				if(that.box.offsetLeft<0) that.box.style.left=0;
+				if(that.box.offsetLeft>maxW)that.box.style.left=maxW+'px';
+				if(that.box.offsetTop<0)that.box.style.top=0;
+				if(that.box.offsetTop>maxH) that.box.style.top=maxH+'px';
+			}
+
+}
+
+
+
+ //var tt=  new  Drag('box')
+var  tt=new  AdvDrag('box','bigbox')
+
+ //new Drag('box');
+	</script>
+</body>
+</html>

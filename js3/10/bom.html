@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{line-height: 30px}
+	</style>
+</head>
+<body>
+<h1 name='top'></h1>
+<a href="#bottom">去尾页</a>
+<a href="http://www.baidu.com">百度</a>
+<button id='btn'>单击</button>
+<a href="#here">上一次的位置</a>
+<ul>
+	<li>第1章 初入师门</li>
+	<li>第2章 初入师门</li>
+	<li>第3章 初入师门</li>
+	<li>第4章 初入师门</li>
+	<li>第5章 初入师门</li>
+	<li>第6章 初入师门</li>
+	<li>第7章 初入师门</li>
+	<li>第8章 初入师门</li>
+	<li>第9章 初入师门</li>
+	<li>第10章 初入师门</li>
+	<li>第11章 初入师门</li>
+	<li>第12章 初入师门</li>
+	<li>第13章 初入师门</li>
+	<li>第14章 初入师门<span name='here' id='here'></span></li>
+	<li>第15章 初入师门</li>
+	<li>第16章 初入师门</li>
+	<li>第17章 初入师门</li>
+	<li>第18章 初入师门</li>
+	<li>第19章 初入师门</li>
+	<li>第20章 初入师门</li>
+	<li>第21章 初入师门</li>
+	<li>第22章 初入师门</li>
+	<li>第23章 初入师门</li>
+	<li>第24章 初入师门</li>
+	<li>第25章 初入师门</li>
+	<li>第26章 初入师门</li>
+	<li>第27章 初入师门</li>
+	<li>第28章 初入师门</li>
+	<li>第29章 初入师门</li>
+	<li>第30章 初入师门</li>
+	<li>第31章 初入师门</li>
+	<li>第32章 初入师门</li>
+	<li>第33章 初入师门</li>
+	<li>第34章 初入师门</li>
+	<li>第35章 初入师门</li>
+	<li>第36章 初入师门</li>
+	<li>第37章 初入师门</li>
+	<li>第38章 初入师门</li>
+	<li>第39章 初入师门</li>
+	<li>第40章 初入师门</li>
+	<li>第41章 初入师门</li>
+	<li>第42章 初入师门</li>
+	<li>第43章 初入师门</li>
+	<li>第44章 初入师门</li>
+	<li>第45章 初入师门</li>
+	<li>第46章 初入师门</li>
+	<li>第47章 初入师门</li>
+	<li>第48章 初入师门</li>
+	<li>第49章 初入师门</li>
+	<li>第50章 初入师门</li>
+</ul>
+<a name='bottom' id='bottom'></a>
+<a href='#top'>返回顶部</a>
+
+	<script>
+	var btn=document.getElementById('btn');
+	//BOM对象： 三个属性
+	//1)  location.href  获取完整的地址路径  设置
+   //2)   location.hash  #top  锚点链接   获取锚点链接
+   //3)  location.search  获取?之后的网址信息 ,包括?
+		console.log(location.href)
+		var  num=3
+		btn.onclick=function(){
+			//location.href='http://www.baidu.com'
+		//console.log(location.hash)
+
+		console.log(getURL('id'))
+		}
+//id=3&name=zs&sex=男
+/*
+?id=3
+&name=zs
+&sex=男
+(?|&)name=[\w\u4e00-\u9fa5]+*/
+
+
+		function getURL(name){
+			var reg=new  RegExp("(\\?|&)"+name+"=[^&]+",'g')
+			arr=location.search.match(reg)
+			
+            return arr[0].substring(arr[0].indexOf('=')+1)
+				
+
+		}
+
+		
+	</script>
+</body>
+</html>

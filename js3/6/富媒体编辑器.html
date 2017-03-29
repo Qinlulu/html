@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	  #editor{width:300px; height: 200px;border:1px solid red;}
+	  #faces{display: none;}
+	</style>
+</head>
+<body>
+	<div>
+		<button id='redBtn'>红色</button>
+		<button>加粗</button>
+		<button id='italic'>倾斜</button>
+		<button id='underline'>下划线</button>
+		<button id='leftBtn'>左对齐</button>
+		<button id='centerBtn'>居中对齐</button>
+		<button id='rightBtn'>右对齐</button>
+		<img src="img/unbold.gif" alt="" id='boldBtn'>
+		<button id='face'>表情包</button>
+		<div id='faces'><img src="img/haha.png" alt=""><img src="img/cool.png" alt=""></div>
+	</div>
+	<div id='editor' contenteditable='true'>编辑文字</div>
+	<textarea  id="text" cols="30" rows="10"></textarea>
+	<script>
+		var  editor=document.getElementById('editor');
+		var  redBtn=document.getElementById('redBtn');
+		var  boldBtn=document.getElementById('boldBtn');
+		var  faces=document.getElementById('faces');
+		var  imgs=faces.getElementsByTagName('img');
+		var  face=document.getElementById('face');
+		var  text=document.getElementById('text');
+
+   
+        editor.onblur=function(){
+        	text.value=editor.innerHTML;
+        }
+       text.onblur=function(){
+       	editor.innerHTML=text.value;
+       }
+
+		face.onclick=function(){
+			 faces.style.display='inline-block';
+
+		}
+for(var i=0;i<imgs.length;i++){
+	imgs[i].onclick=function(){
+			editor.focus();
+			document.execCommand('insertImage',false,this.src);
+            faces.style.display='none'
+		}
+}
+		redBtn.onclick=function(){
+			//单击按钮的时候，让文字变成红色
+			//document.execCommand()
+			//执行命令(属性，布尔值（true,false)，值)
+			//颜色  加粗  倾斜  下划线  左对齐  居中对齐  右对齐
+             //选中的文字
+             //标准浏览器 IE9 及以上
+             //getSelection().toString()
+             //console.log(getSelection().toString())
+             //console.log(getSelection())
+             //非标准浏览器下 IE6 7 8
+            //onsole.log(document.selection.createRange().text)
+             console.log(document.selection.createRange().text)
+			document.execCommand('ForeColor',false,'#f00');
+ 			//document.execCommand('bold',false,null)
+ 			//document.execCommand('italic',false,null)
+ 			//document.execCommand('underline',false,null)
+ 		//document.execCommand('justifyRight',false,null);
+		}
+
+		boldBtn.onclick=function(){
+
+            //查询选中文字的当前状态
+            console.log(document.queryCommandState("bold"))
+         if(document.queryCommandState('bold')){
+         	this.src='img/unbold.gif';
+         }else{
+         	this.src='img/bold.gif';
+         }
+		document.execCommand('bold',false,null)
+		}
+	</script>
+</body>
+</html>

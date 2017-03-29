@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function  MyEvent(type){
+			this.type=type;
+			this[this.type]=[];  //数组
+		}
+		MyEvent.prototype={
+			constructor:MyEvent,
+			addHander:function(func){
+				     this[this.type].push(func);
+				    
+
+			},
+			addHander1:function(func){
+					this[this.type].push(func);
+			},
+	        fire:function(str){    //type
+	        		this[str][0]();
+	        }
+		}
+
+	var  m=new  MyEvent('abc');
+		m.addHander(function(){
+			alert('你好');
+		});
+		m.addHander1(function(){
+			alert('你不好');
+		})
+
+		m.fire('abc')
+
+		//m.fire('abc');
+
+	</script>	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	
+	var  book={
+		// month:10,
+		 num:1
+	}
+
+Object.defineProperty(book,'mh',{
+	  get:function(){
+	  	 return this.month;
+	  },
+	  set:function(val){
+	  	this.month=val
+          if(val>6){
+          	this.num="下半年";
+          }else{
+          	this.num="上半年";
+          }
+	  }
+
+})
+   
+book.mh=3
+console.log(book.num)
+console.log(book.month)
+
+
+	</script>
+</body>
+</html>

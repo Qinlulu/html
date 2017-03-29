@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var  obj={
+
+	}
+	var obj=new Object();
+	//工厂模式
+	function createO(name,age){
+		var obj={}
+		 obj.name=name;
+		 obj.age=age;
+   return  obj
+	}
+  
+  var p1=createO('zs',22)
+  var p2=createO('ls',13)
+ console.log(p1.constructor)
+ console.log(p2.constructor)
+  //构造函数模式
+
+  function Cat(name,color){
+  		this.name=name;
+  		this.color=color;
+  		
+  }
+//原型对象：属性和方法
+  Cat.prototype.eat=function(){
+  	alert(this.name+'会捉老鼠')
+  }
+
+  var  p1=new  Cat('小黑','黑色');
+  var  p2=new  cat('小白','白色');
+  console.log(p1.constructor==p2.constructor)
+  console.log(p1.show==p2.show)
+ 
+//原型模式
+
+
+	</script>
+</body>
+</html>

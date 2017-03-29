@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1111<a href="#">删除</a></li>
+		<li>2222<a href="#">删除</a></li>
+		<li>33333<a href="#">删除</a></li>
+		<li>4444<a href="#">删除</a></li>
+	</ul>
+	<button id="bu">添加</button>
+	<input type="text" id="in">
+	<script>
+		var uls=document.getElementsByTagName("ul")
+		var lis=document.getElementsByTagName("li")
+		var bu=document.getElementById("bu")
+		var info=document.getElementById("in")
+		var a=document.getElementsByTagName("a")
+
+//一开始就使用函数
+		remove()
+
+		//封装函数
+function remove(){
+
+		for(var i=0;i<a.length;i++){
+		a[i].onclick=function(){
+		uls[0].removeChild(this.parentNode)
+			}
+		}
+}
+		bu.onclick=function(){
+
+				//创建新的li与值
+				var newLi=document.createElement("li")
+				var newLii=document.createTextNode(info.value)
+				//创建新的a
+				var newA=document.createElement("a")
+				newA.href="#"
+				newA.innerHTML="删除"
+
+				//li插入LI值与A
+			newLi.appendChild(newLii)
+			newLi.appendChild(newA)
+
+				//uls插入LI
+			uls[0].appendChild(newLi)
+
+			//调用函数
+			remove()
+		
+		}
+
+	</script>
+</body>
+</html>

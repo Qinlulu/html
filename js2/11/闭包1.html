@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul>
+	<li>11111111</li>
+	<li>222222222</li>
+	<li>33333333333</li>
+	<li>444444444</li>
+</ul>
+	<script>
+	var lis=document.getElementsByTagName("li")
+	for(var i=0;i<lis.length;i++){
+
+			(function(num){
+				lis[num].onclick=function(){
+				alert("点击了第"+(num+1)+"个")
+			}
+			})(i)
+			
+	}
+	/*var lis=document.getElementsByTagName('li');
+	  for(var i=0;i<lis.length;i++){      
+         (function(num){ 
+	  		  lis[num].onclick=function(){
+	  		  	alert('单击了第'+(num+1)+"个")
+	  		  }
+         })(i)
+
+	  }*/
+
+
+/*		
+	function  fn(){
+		  var  num1=4;
+		return  function(){
+		  	num1--;
+		  	return num1
+		  }
+		  
+	}
+var  result=fn();
+
+console.log(result())
+console.log(result())*/
+
+
+	</script>
+</body>
+</html>

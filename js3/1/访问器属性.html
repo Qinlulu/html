@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var  o={};
+		o.name='张三';
+		Object.defineProperty(o,'age',{
+			value:18,
+			enumerable:true,
+			writable:true,
+			configurable:true
+		})
+
+		for(var i in o){
+			console.log(i+':'+o[i])
+		}
+     o.age=30
+     delete o.age
+		console.log(o)
+
+
+
+
+	</script>
+</body>
+</html>

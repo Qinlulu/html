@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	img{width:365px;height:225px;}
+	#box{width:1095px; margin:20px auto; height: 240px; position: relative;
+	 border:1px solid red;}
+	#pic{width:2190px; position: absolute;left:0;}
+	#pic img{float: left;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<div id='pic'>
+				<img src="img/1.jpg" alt="">
+				<img src="img/2.jpg" alt="">
+				<img src="img/3.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/2.jpg" alt="">
+				<img src="img/3.jpg" alt="">
+
+		</div>
+	</div>
+
+	<script>
+		function ScrollImg(picId,list){
+			 this.pic=document.getElementById(picId);
+			 this.imgs=document.getElementsByTagName(list);
+			 this.timer=null;
+			 this.cloneNode();
+			 this.autoScroll();
+		}
+ 
+       //原型上写个方法
+       ScrollImg.prototype.cloneNode=function(){
+       	var  len=this.imgs.length;
+       	  for(var i=0;i<len;i++){
+              this.pic.appendChild(this.imgs[i].cloneNode(true));
+       	  }
+       }
+      //原型上在扩展一个方法 自动
+
+      ScrollImg.prototype.autoScroll=function(){
+      	//自动播放
+      	//每隔30毫秒 向左移动1px
+      	var  that=this;
+      	this.timer=setInterval(function(){
+              if(that.pic.offsetLeft>-that.pic.offsetWidth/2){
+                that.pic.style.left=that.pic.offsetLeft-1+'px';
+            }else{
+            	that.pic.style.left='0px'
+            }
+      	},30)
+
+      }
+
+
+    function  AdvScrollImg(picId,list){
+          //借用构造函数
+          ScrollImg.call(this,picId,list);
+          this.mouseEvent();
+             
+    }
+    //原型链
+    AdvScrollImg.prototype=new ScrollImg();
+    AdvScrollImg.prototype.mouseEvent=function(){
+    	var that=this;
+    	this.pic.onmouseover=function(){
+    		clearInterval(that.timer);
+    	}
+    	this.pic.onmouseout=function(){
+    		that.autoScroll();
+    	}
+
+    }
+
+  
+
+
+var  p1=new ScrollImg('pic','img');
+//var  p2=new   AdvScrollImg('pic','img');
+
+//tab扩展：
+
+//滑过哪个播放哪个。
+//子类上：
+//自动播放 
+//mouseEvent 滑过停止  离开继续
+
+
+
+
+    
+
+    
+
+
+	</script>
+</body>
+</html>

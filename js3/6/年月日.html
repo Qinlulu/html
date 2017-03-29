@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   <select></select>年
+   <select></select>月
+   <select></select>日
+	<script>
+	var sl=document.getElementsByTagName('select');
+	var arr=[31,28,31,30,31,30,31,31,30,31,30,31]
+		//1950  2100 
+		for(var i=0;i<=150;i++){
+		var  newO=new Option(1950+i);
+		     sl[0].add(newO)
+       }
+       //月 1 12
+       for(var i=1;i<=12;i++){
+       	var  newOption=new Option(i);
+       		 sl[1].add(newOption);
+       }
+       // 1 30
+         for(var i=1;i<=30;i++){
+       	var  newOption=new Option(i);
+       		 sl[2].add(newOption);
+       }
+
+  
+     sl[1].onchange=function(){
+     	  sl[2].innerHTML=''
+          // console.log(sl[1].selectedIndex)
+          var index=sl[1].selectedIndex;
+           for(var i=1;i<=arr[index];i++){
+       	var  newOption=new Option(i);
+       		 sl[2].add(newOption);
+       }
+     }
+   
+
+
+
+  var now=new Date();
+          sl[0].value=now.getFullYear();
+          sl[1].value=now.getMonth()+1;
+          sl[2].value=now.getDate();
+
+	</script>
+</body>
+</html>

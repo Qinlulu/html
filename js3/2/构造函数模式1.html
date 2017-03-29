@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function  Person(name,age){
+			  this.name=name;
+			  this.age=age;
+			  this.show=function(){
+			  	alert(this.name)
+			  }
+		}
+  
+
+   Person('王五',34);  //this指向window
+   console.log(window.name)
+  
+
+   var  o=new Object()
+  // Person.call(o,'李四',20);
+   Person.apply(o,['1501D',19])
+   console.log(o.name);
+
+
+
+	var  p1=new  Person('zs',24); //类的实例化 
+	var  p2=new Person('ls',19);
+         console.log(p1.name);
+         console.log(p2.name);
+         console.log(p1.show==p2.show);
+         console.log(p1.constructor)
+         console.log(p2.constructor)
+         console.log(p1.constructor==p2.constructor)
+
+//构造函数解决了对象识别的问题
+//问题:就是每个方法都要在每个实例上重新创建一遍。
+	</script>
+</body>
+</html>

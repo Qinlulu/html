@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   *{margin:0;padding:0;}
+	   h1{color:red;}
+	   p{ color:blue;}
+	   .bg{background: #ccc;
+	   }
+	</style>
+	<style>
+		.b{border:1px solid red;}
+	</style>
+</head>
+<body>
+	<h1 class='cr'>这是标题文字</h1>
+	<p class='bd'>这是段落文字</p>
+	<script>
+	//样式表的个数  link 和style document.styleSheets 类数组 length
+		console.log(document.styleSheets.length)
+		var one=document.styleSheets[0];
+		  //DOM标准浏览器下：
+     // cssRules代表在一个样式表里有几条规则.
+     //IE 浏览器下
+     //rules代表在一个样式表里有几条规则.
+     // selectorText 标签名
+     //cssText  标签名加样式
+     //stylesheets.cssText 样式
+   
+		/* console.log(one.cssRules.length)
+		 console.log(one.cssRules[1])
+		 console.log(one.cssRules[3].selectorText)
+		 console.log(one.cssRules[3].cssText)
+		 console.log(one.cssRules[3].stylesheets.cssText)*/
+  /* //IE
+       console.log(one.rules.length)*/
+     //兼容的获取规则 
+       var rules=one.cssRules?one.cssRules:one.rules;
+        for(var i=0;i<rules.length;i++){
+        	console.log(rules[i].selectorText+"样式为"+rules[i].style.cssText);
+        }
+
+    //插入样式   
+    //DOM标准浏览器下：insertRule("标签名{样式}",位置)
+    //IE浏览器下： addRule('标签名/样式名','样式',位置)
+     one.insertRule(".bd{border:2px solid blue}",rules.length);
+     one.addRule('.cr','color:yellow;font-size:28px;',rules.length)
+     console.log(rules.length)
+   //删除样式
+   //DOM标准浏览器下: deleteRule(index);
+   //IE浏览器下：removeRule(index);
+
+   /*one.deleteRule(rules.length-1)
+   one.deleteRule(0)*/
+  /* one.removeRule(rules.length-1)
+   one.removeRule(0)*/
+
+  //创建style样式表
+  var  head=document.getElementsByTagName('head');
+  var   newStyle=document.createElement('style');
+         head[0].appendChild(newStyle);
+        newStyle.innerHTML="body{background:#ccc}"
+     
+
+
+	</script>
+</body>
+</html>

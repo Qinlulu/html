@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//借用构造函数  伪造对象  经典继承
+		function Parent(name,age){
+			this.name=name;
+			this.age=age;
+		}
+        Parent.prototype.say=function(){
+        	alert(this.name);
+        }
+		function  Child(name,age){
+            Parent.call(this,name,age);
+		}
+        
+       Child.prototype=new Parent();
+
+  var p1=new Child('杜磊',20);
+   console.log(p1.name)
+   console.log(p1.hasOwnProperty('name'))
+   p1.say();
+
+
+	</script>
+</body>
+</html>

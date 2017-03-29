@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//replace()
+		//split()
+		//str.match(字符串/正则)
+/*		var  str='ab63ff31dd1'
+		var  reg=/\d{1,2}/g
+		console.log(str.match(reg));
+
+var  url='http://www.baidu.com?user=admin&sex=男&id=12'
+var  reg=/(\?|&)\w+=[\w\u4e00-\u9fa5]+/g;
+var  arr=url.match(reg);
+var json={}
+for(var i=0;i<arr.length;i++){
+	 arr[i]=arr[i].substring(1)
+}
+
+ for(var  i=0;i<arr.length;i++){
+ 	//var temp=arr[i].split('=')
+ 	   var index=    arr[i].indexOf('=')
+ 	json[arr[i].substring(0,index)]=arr[i].substring(index+1)
+ }
+	console.log(json)*/
+/*["user=admin",'sex=男','id=12']
+
+var json={
+		user:"admin",
+		sex:'男',
+		id:12
+}
+            
+*/
+
+
+var  str='http://www.baidu.com?user=admin&sex=男&id=12';
+/*var  reg=/id=[\w\u4e00-\u9fa5]+/g;
+var  arr=url.match(reg);
+var  temp=arr[0].split('=');
+     console.log(temp[1]);*/
+
+function  getURL(name,url){
+	 var reg=new  RegExp(name+"=[\\w\\u4e00-\\u9fa5]+",'g');
+	 var arr=url.match(reg);
+	 var temp=arr[0].split('=');
+	 return   temp[1]
+}		
+
+console.log(getURL('id',str));
+
+	</script>
+</body>
+</html>

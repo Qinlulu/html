@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//函数定义
+		//函数声明
+	/*	function fn(){
+			alert('你好')
+		}*/
+		//函数表达式
+		/*var  fn=function(){
+			alert('aaaa')
+		};*/
+        //调用 fn();
+        //匿名函数自执行 
+        //(匿名函数)(执行)  一次  
+       /* (function(name){
+        	alert(name+'你好');
+        })('张三')*/
+
+//闭包
+var  num=4   //全局变量
+  function  fn(){  //全局的函数
+  	var  num1=6;  //局部变量
+  	 return  function(){  //局部函数
+             num1++;
+             return  num1;
+  	   }
+    //   return  test;
+  }
+/*
+console.log(fn()())
+console.log(fn()())
+*/
+var result=fn();// result=test;
+console.log(result());
+console.log(result());
+console.log(result());
+console.log(result());
+	</script>
+</body>
+</html>

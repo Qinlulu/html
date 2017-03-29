@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='box'>这是文字</div>
+	<div class='text'>这是文本</div>
+	<div class='text bg'>这是信息</div>
+    <p>这是段落</p>
+    <p >这也是段落</p>
+    <script src='myJquery.js'></script>
+    <script>
+
+    $('p').attr('title','hello  1501F')
+   // $('p').elements[1].
+   // console.log($("p").eq(1))
+    $('p').eq(1).css('background','red')
+   /* $('#box').toggle(function(){
+    $("p").hide()
+    },function(){
+      $('p').show()
+    }
+    )*/
+   //string  function  object
+   /* $('#box')
+    $('.text')
+    $('p')*/
+   
+   /* $(function(){
+    	alert('aaaa')
+    })*/
+  /*  console.log($('#box'))
+    console.log($('p'))
+
+   console.log($("p").html());*/
+
+   $('p').click(function(){
+   	   alert($(this).html())
+   })
+
+  /* $('p').css('background','red')
+   console.log($('p').css('background'));*/
+
+ /*  $('p').hover(
+   	function(){$(this).css('background','red')},
+   	function(){$(this).css('background','#fff')})*/
+    </script>
+   
+
+</body>
+</html>

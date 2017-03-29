@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+1、兼容DOM2和DOM0的事件处理程序的函数
+2、访问事件对象，兼容的 
+3、获取鼠标距离浏览器左边的距离
+4、阻止默认行为的方法，封装函数
+5、阻止冒泡的方法，封装成函数
+
+
+function  preventDefault(e){
+	  if(e.preventDefault){
+	  	 e.preventDefault();
+	  }else{
+	  	 e.returnValue=fasle;
+	  }
+}
+
+function stopPropagation(e){
+	 if(e.stopPropagation){
+	 	  e.stopPropagation();
+	 }else{
+	 	 e.cancelBubble=true;
+	 }
+
+}
+
+ function  addHandler(obj,event,fn){
+ 	  if(obj.addEventListener){
+ 	  	 obj.addEventListener(event,fn,false);
+ 	+  }else{
+ 		obj["on"+event]=fn;
+ 	}
+ }
+
+
+ function  fn(e){
+var  event= e || window.event;
+        event.clientX
+ }
+
+	</script>
+</body>
+</html>

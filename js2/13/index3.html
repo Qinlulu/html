@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*3*4-2+5
+		4+3-2*6
+		4916的平方根
+		34789奇数的和  */
+
+		/*add(jianfa(chengfa(3,4),2),5)
+		jianfa(add(4,3),chengfa(2,6))*/
+
+
+		var str=[4,9,16]
+		/*for(var i=0;i<str.length;i++){
+			str[i]=Math.sqrt(str[i])
+		}
+		console.log(str)*/
+//做出效果需要的函数
+function sqr(n){
+	return Math.sqrt(n)
+}
+function each(fn,arry){
+	for(var i=0;i<arry.length;i++){
+		fn(arry[i])
+	}
+}
+
+function map(fn,arry){
+var strr=[]
+each(function(n){strr.push(fn(n))},arry)
+return strr
+}
+
+console.log(map(sqr,str))
+
+//奇数的和
+var arr=[3,4,7,8,9]
+
+//先获取奇数
+/*var sum=0;
+for(var i=0;i<arr.length;i++){
+	if(arr[i]%2!=0){
+		sum=sum+arr[i]
+	}
+}
+console.log(sum)*/
+
+function ji(sum,value){
+	if(value%2!=0){
+		sum=sum+value	
+	}
+	return sum
+}
+function each(fn,arry){
+for(var i=0;i<arry.length;i++){
+	fn(arry[i])
+	}
+}
+
+function reduce(fn,sum,arry){
+	each(function(n){sum=fn(sum,n)},arry)
+	return sum
+}
+console.log(reduce(ji,0,arr))
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>111111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+	</ul>
+	<script>
+
+	//事件委托：利用冒泡的原理，通过事件委托添加事件可以管理某一类型的事件。
+			var uls=document.getElementsByTagName('ul'),
+			    lis=document.getElementsByTagName('li');
+
+			uls[0].onclick=function(e){
+				var  event=e || window.event;
+				var target=event.target || event.srcElement;
+				if(target.style.background==''){
+					target.style.background='red';
+				}else{
+					target.style.background='';
+				}
+				
+			}
+  //target目标不一定是绑定事件的对象
+  //而是实际操作的目标对象
+
+  //多次的for循环遍历， 耗费内存空间。
+
+ /*for(var i=0;i<lis.length;i++){
+ 		 lis[i].onclick=function(){
+ 		 	if(this.stylesheets.background==''){
+ 		 	 this.stylesheets.background='red'
+ 		 	}else{
+ 		 		this.stylesheets.background=''
+ 		 	}
+ 		 }
+ }*/
+	</script>
+</body>
+</html>

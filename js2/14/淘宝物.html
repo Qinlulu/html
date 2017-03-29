@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+		#head{
+			width:600px;
+			height:340px;
+			margin:0 auto;
+			clear:both;
+			border:1px solid #ccc;
+		}
+		#a{
+			height:30px;
+			line-height:30px;
+		}
+		li{
+			list-style: none;
+			float:left;
+			padding: 18px;
+			font-size:12px;
+			background:url(images/a.gif) no-repeat left center;
+		}
+		#jia{
+			clear: both;
+			margin:10px;
+			width:600px;
+		}
+		.ty{
+			background:url(images/b.gif) no-repeat left center;;
+		}
+	</style>
+</head>
+<body>
+<div id="head">
+	<div id="a">
+		<span>所有品牌</span>
+		<a href="#">A</a>
+		<a href="#">B</a>
+		<a href="#">C</a>
+		<a href="#">B</a>
+		<a href="#">E</a>
+		<a href="#">F</a>
+		<a href="#">G</a>
+		<a href="#">H</a>
+		<a href="#">I</a>
+		<a href="#">J</a>
+		<a href="#">K</a>
+		<a href="#">L</a>
+		<a href="#">M</a>
+		<a href="#">N</a>
+		<a href="#">O</a>
+		<a href="#">P</a>
+		<a href="#">Q</a>
+		<a href="#">Y</a>
+		<a href="#">R</a>
+		<a href="#">S</a>
+		<a href="#">T</a>
+		<a href="#">U</a>
+		<a href="#">W</a>
+		<a href="#">X</a>
+		<a href="#">Y</a>
+		<a href="#">Z</a>
+		<a href="#">其他</a>
+	</div>
+	<ul id="ul">
+		<li> 时尚手级</li>
+		<li> 魅力手表</li>
+		<li> 精品商城</li>
+		<li> 非主流是</li>
+		<li> 电脑笔记</li>
+		<li> 魅力手表</li>
+		<li> 汽车用具</li>
+		<li> 梦话收到</li>
+		<li> 时尚手级</li>
+		<li> 天猫上皮</li>
+		<li> 时尚手级</li>
+		<li> 时尚手级</li>
+		<li> 非主流是</li>
+		<li> 电脑笔记</li>
+		<li> 魅力手表</li>
+		<li> 汽车用具</li>
+		<li> 梦话收到</li>
+		<li> 时尚手级</li>
+		<li> 天猫上皮</li>
+		<li> 时尚手级</li>
+		<li> 汽车路日</li>
+		<li> 魅力手表</li>
+		<li> 魅力时尚</li>
+		<li> 时尚手级</li>
+		<li> 天都放假</li>
+		<li> 非主流是</li>
+		<li> 电脑笔记</li>
+		<li> 魅力手表</li>
+		<li> 汽车用具</li>
+		<li> 梦话收到</li>
+		<li> 时尚手级</li>
+		<li>天猫上皮</li>
+		<li>时尚手级</li>
+		<li>时尚手级</li>
+		<li>魅力手表</li>
+	</ul>
+	<div id="jia">
+		<span>已选条件</span>
+	</div>
+
+
+</div>
+
+<script>
+
+	var ul=document.getElementById("ul")
+	var lis=ul.getElementsByTagName('li')
+	var jia=document.getElementById("jia")
+	var liis=jia.getElementsByTagName("li")
+
+	for(var i=0;i<lis.length;i++){
+		lis[i].onclick=function(){
+			if(this.className=="ty"){
+				this.className=""
+				for(var i=0;i<liis.length;i++){
+						if(liis[i].innerHTML==this.innerHTML){
+						jia.removeChild(liis[i])
+
+
+				}
+				}
+				
+			}
+			else{
+				this.className="ty"
+				var Newli=this.cloneNode(true)
+				jia.appendChild(Newli)
+				
+				Newli.onclick=function(){
+
+					jia.removeChild(this)
+					for(var i=0;i<lis.length;i++){
+						if(lis[i].innerHTML==this.innerHTML){
+							lis[i].className=""
+						}
+					}
+
+
+
+				}
+				
+			}
+		}
+
+	}
+	
+</script>
+	
+</body>
+</html>

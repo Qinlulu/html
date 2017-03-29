@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	 	.border{border:1px solid red;}
+	</style>
+
+</head>
+<body>
+<h1 class='border'>这是标题</h1>
+<p class='bg text nav'>这是段落</p>
+	<script>
+	var  p=document.getElementsByTagName('p')
+
+	 /*  console.log(p[0].className)
+	   console.log(p[0].classList.length)
+	  console.log(p[0].classList.contains("text2"))*/
+  /* //h5新增的属性classList 她的返回值是一个类数组。 长度length
+   //add(value)：将给定的字符串值添加到列表中。如果值已经存在，就不添加了。
+// contains(value)表示列表中是否存在给定的值，如果存在则返回true，否则返回false。
+ //remove(value)：从列表中删除给定的字符串。
+toggle(value) 切换样式的功能。如果列表中已经存在给定的值，删除它；如果列表中没有给定的值，添加它。
+    */
+
+ /*   p[0].classList.add('hv');
+    p[0].classList.remove('text')
+    p[0].classList.toggle('bg')
+
+    var  h1s=document.getElementsByTagName('h1');
+     h1s[0].onclick=function(){
+     		this.classList.toggle('border');
+     }*/
+
+function  classlist(ele){
+		if(ele.classList){
+				return  ele.classList;
+		}else{
+			    return  new  ClassList(ele);
+		}
+}
+
+function  ClassList(ele){
+		this.ele=ele;
+}
+//判断有没有
+ClassList.prototype.contains=function(cls){
+	//排除cls没有输入值 或者  带空格  ' abc '
+     if(cls.length==0 ||  cls.indexOf(' ')!=-1){
+            return  '语法错误'
+     }
+     var classN=this.ele.className;
+   //  if(classN==cls) return  true;
+     var reg=new RegExp("\\b"+cls+"\\b")
+     if(reg.test(classN)){
+     	 return true;
+     }else{
+     	 return  false;
+     }
+
+
+}
+
+//添加
+
+
+
+//删除
+	</script>
+</body>
+</html>

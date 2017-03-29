@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//in的语法结构
+		//属性名或者方法名是否属于对象 
+		//或者 索引是否属于数组
+		/*var  json={
+				num:2,
+				dbl:function(){
+					alert(this.num);
+				}
+		}
+
+		 console.log("num" in json);
+
+		 var  arr=['张三','李四','王五']
+
+		  console.log(3 in arr)*/
+
+     var  obj={
+     	"+":function(x,y){return  x+y},
+     	"-":function(x,y){return  x-y},
+     	'*':function(x,y){return  x*y},
+     	'/':function(x,y){return x/y}
+     }
+        
+     //console.log(obj["/"](2,4))
+
+     var  arr=[3,1]
+
+     function  yf(fh){
+       if( fh in  obj){
+	      if(fh=='+' ||  fh=='-'){
+	      	return	 reduce(obj[fh],0,arr)
+	      }else{
+	      	return  reduce(obj[fh],1,arr)
+	      }
+      }else{
+      		 return  '符号错误'
+      }
+
+     }
+
+   console.log( yf('/'))
+
+
+ 
+function  each(fn,arry){
+   	     for(var i=0;i<arry.length;i++){
+   	     	fn(arry[i]);
+   	     }
+   }
+
+   function reduce(fn,base,arry){
+   	     each(function(n){
+   	     	base=fn(base,n);
+   	     },arry)
+
+   	     return base;
+   }
+   
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function MyEvent(type){
+			this.iname=type
+			this[this.iname]=[]
+		}
+		MyEvent.prototype={
+			fun:function(func){
+				this[this.iname].push(func)
+			},
+			fire:function(str){
+				this[str][0]()
+			}
+		}
+
+		var p=new MyEvent("exe")
+			p.fun(function(){alert("程序")})
+			p.fire("exe")
+
+		var v= new MyEvent("book")
+		v.fun(function(){alert("电子书")})
+		v.fire("book")
+
+		var v= new MyEvent("music")
+		v.fun(function(){alert("音乐")})
+		v.fire("music")
+
+
+	</script>
+</body>
+</html>

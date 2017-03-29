@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//原型模式
+	//每个函数都有一个prototype属性，是一个指针，指向一个原型对象
+	    function  Person(name,age){
+	    	 this.name=name;
+	    	 this.age=age;
+	    }
+//构造函数名.原型对象.方法名 =function(){} //属性名=属性值
+	    Person.prototype.show=function(){
+	    		alert(this.name);
+	    }
+	    Person.prototype.city='北京'; //基本类型
+	    Person.prototype.friend=['杜磊','马子豪','赵航'] //引用类型
+	    var p1=new Person('张三',18)
+	    var p2=new Person('李四',20)
+            p1.city='上海';
+         
+	    /*console.log(p1.friend)
+	    p1.friend.push('吴朝阳');
+	    console.log(p1.friend)
+         console.log(p2.friend)*/
+
+//原型里属性的问题：	  
+//1）搜索：属性  先找 实例---原型    实例的值不能改变原型里的值。
+//2）原型里属性和方法的位置，不影响实例的调用。
+//3) 原型里的属性如果是引用类型，则会被外部赋值所改变.
+
+//4)构造函数的原型对象的constructor指向谁？？？？ 指向构造函数自身
+
+//console.log(Person.prototype.constructor)
+
+console.log(p1)
+console.log(p2)
+//原型的优点：所有实例共享的属性和方法都放原型里。
+//组合模式： 构造函数模式和原型模式结合起来使用
+//组合模式：构造函数模式用于定义实例属性，而原型模式用于定义方法和共享的属性。
+	</script>
+</body>
+</html>

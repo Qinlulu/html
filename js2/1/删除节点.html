@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul>
+	<li>111111</li>
+	<li>2222222</li>
+	<li>3333333</li>
+	<li>4444444</li>
+</ul>
+	<script>
+		//创建一个节点
+		//文本节点 元素节点
+		//插入节点  
+		//追加  父节点.appendChild(子节点)
+		//插入  父节点.insertBefore(子节点，哪个节点之前)
+		//删除节点  父节点.removeChild(子节点)
+		var  uls=document.getElementsByTagName('ul');
+		var  newLi=document.createElement('li');
+		var  lis=document.getElementsByTagName('li');
+
+
+ for(var i=lis.length-1;i>=0;i--){
+ 	 uls[0].removeChild(lis[i])
+ }
+
+
+
+          
+
+	</script>
+</body>
+</html>

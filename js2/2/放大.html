@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	ul,li{list-style-type: none;}
+	#box{width:600px; height:400px; margin:20px auto;position: relative;}
+	#box ul li{width:200px; height:200px; float: left;}
+	#box ul li img{width:100%; height:100%;}
+	.mark{position:absolute; left:0;top:0; width:600px; height:400px; background: #000;opacity: 0.6; }
+     #pic{width:300px; height:300px; position: absolute;left:150px;top:50px;}
+     span{position: absolute;left:450px; top:50px; background: #fff; padding:10px;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<ul>
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/4.jpg" alt=""></li>
+			<li><img src="img/5.jpg" alt=""></li>
+			<li><img src="img/6.jpg" alt=""></li>
+		</ul>
+		<!-- <div class='mark'></div>
+		<img src="img/1.jpg" alt="" id='pic'>
+		<span>X</span> -->
+	</div>
+	<script>
+		//遍历所有的li ,单击li的时候，创建div  img span 
+
+		var lis=document.getElementsByTagName('li'),
+			box=document.getElementById('box');
+		for(var i=0;i<lis.length;i++){
+			  lis[i].onclick=function(){
+			  	//创建div
+			  	var newDiv=document.createElement('div');
+			  	    newDiv.className='mark';
+			  	    box.appendChild(newDiv);
+			  	//创建img
+			  	var newImg=document.createElement('img');
+			  	    newImg.id='pic';
+			  	//    newImg.src=this.firstChild.src;
+			  	//  newImg.src=this.getElementsByTagName('img')[0].src
+			  	      newImg.src=this.firstChild.getAttribute('src')
+			  	    box.appendChild(newImg)
+			  	//创建span
+			  	var  newSpan=document.createElement('span');
+			  	     newSpan.innerHTML='X';
+			  	     box.appendChild(newSpan);
+			  	 //对span元素添加单击事件
+			  	 newSpan.onclick=function(){
+			  	 	 box.removeChild(newDiv);
+			  	 	 box.removeChild(newSpan);
+			  	 	 box.removeChild(newImg)
+
+			  	 }
+
+
+
+
+
+			  }
+		}	
+
+
+
+	</script>
+</body>
+</html>

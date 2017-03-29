@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select > 
+	</select>
+	<select >
+	</select>
+<script src='data.js'></script>
+	<script>
+		var  sl=document.getElementsByTagName('select');
+			
+console.log(datasrc.localArea[0].option[2].name)
+
+for(var i=0;i<datasrc.localArea.length;i++){
+  var newOption=document.createElement('option');
+      newOption.text=datasrc.localArea[i].name;
+      sl[0].appendChild(newOption)
+
+}
+
+sl[0].onchange=function(){
+    //sl[1].innerHTML='';
+    sl[1].options.length=0;
+    var index=sl[0].selectedIndex;
+    console.log(index)
+    console.log(datasrc.localArea[index].option[0].name)
+
+for(var i=0;i<datasrc.localArea[index].option.length;i++){
+   var newO=new Option(); //创建option
+       newO.text=datasrc.localArea[index].option[i].name;
+       sl[1].appendChild(newO);
+}
+
+
+}
+
+
+for(var i=0;i<datasrc.localArea[0].option.length;i++){
+   var newO=new Option(); //创建option
+       newO.text=datasrc.localArea[0].option[i].name;
+       sl[1].appendChild(newO);
+}
+	</script>
+</body>
+</html>

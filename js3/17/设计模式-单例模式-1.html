@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+
+//闭包的单例模式
+var  myperson=(function(){
+	      var user;
+	      function  init(){
+	      		 return {
+	      		 	 m:'admin',
+	      		 	 fun:function(){
+	      		 	 	alert(this.m);//
+	      		 	 }
+	      		 }
+	      }
+
+	      return{
+	      		getVal:function(){
+	      			 if(!user){
+	      			 	user=init();
+	      			 }
+	      			 return user;
+	      		}
+	      }
+
+})()
+
+//myperson.getVal().fun()
+console.log(myperson.getVal().m)
+console.log(myperson.getVal()==myperson.getVal())
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.bg{background: red;}
+	</style>
+</head>
+<body>
+<h1>单击</h1>
+	<p class='bg text nav  '>这是段落</p>
+	<script>
+	    var  h1s=document.getElementsByTagName('h1');
+		var  p=document.getElementsByTagName('p');
+
+		/*p[0].classList.add('te')
+		p[0].classList.remove('text')
+		p[0].classList.contains('bg')
+		p[0].classList.toggle('a')
+*/
+		function classlist(ele){
+			/*if(ele.classList){
+				return  ele.classList;
+			}else{*/
+				return  new  ClassList(ele);
+			//}
+		}
+
+function  ClassList(ele){
+		this.ele=ele;
+}
+//判断是否存在cls
+ClassList.prototype.contains=function(cls){
+    //不能为空  或者  带有空格
+    if(cls.length==0  || cls.indexOf(' ')!=-1){
+    	 return '格式错误'
+    }
+
+    var reg=new  RegExp("\\b"+cls+"\\b");
+    return  reg.test(this.ele.className)
+
+
+}
+//添加样式cls
+ClassList.prototype.add=function(cls){
+if(cls.length==0  || cls.indexOf(' ')!=-1){
+    	 return '格式错误'
+    }
+    //如果没有，则添加样式
+if(!this.contains(cls)){
+	this.ele.className=this.ele.className+" "+cls;
+}
+
+}
+//删除样式cls
+ClassList.prototype.remove=function(cls){
+	if(cls.length==0  || cls.indexOf(' ')!=-1){
+    	 return '格式错误'
+    }
+   if(this.contains(cls)){
+   	var reg=new  RegExp("\\b"+cls+"\\b")
+   	this.ele.className=this.ele.className.replace(reg,' ')
+   }
+}
+ClassList.prototype.toggle=function(cls){
+     if(cls.length==0  || cls.indexOf(' ')!=-1){
+    	 return '格式错误'
+    }
+    //如果有cls样式 则删除 否则添加
+    if(this.contains(cls)){
+    		this.remove(cls);
+    }else{
+    	  this.add(cls);
+    }
+}
+
+ClassList.prototype.toArray=function(){
+	 return this.ele.className.split(/\s+/)
+}
+
+console.log(classlist(p[0]).contains('rr'))
+classlist(p[0]).add('cc')
+classlist(p[0]).remove('text')
+console.log(classlist(p[0]).toArray())
+h1s[0].onclick=function(){
+
+	 classlist(p[0]).toggle('bg');
+}
+
+
+	</script>
+</body>
+</html>

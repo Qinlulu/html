@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+var str=[1,2,3,4]
+		function  each(fn,arry){
+   	     for(var i=0;i<arry.length;i++){
+   	     	fn(arry[i]);
+   	     }
+   		}
+
+   function reduce(fn,base,arry){
+   	     each(function(n){
+   	     	base=fn(base,n);
+   	     },arry)
+
+   	     return base;
+   }
+
+ 
+var obj={
+	"+":function(x,y){return x+y},
+	"*":function(x,y){return x*y},
+}
+
+
+function fn(fh){
+	if(fh in obj){
+	if(fh=="*"){
+		return reduce(obj[fh],1,str)
+	}else{
+		return reduce(obj[fh],0,str)
+	}
+}else{
+	return "符号错误"
+}
+}
+	
+
+console.log(fn("+"))
+
+
+
+	</script>
+</body>
+</html>

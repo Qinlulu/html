@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+	var c=(function(a,b){console.log(this);return a+b;}).apply(0,[4,3]);
+       console.log(c);
+   function Animate(){}
+       var cat=new Animate();
+       console.log(cat instanceof Animate)
+       console.log(cat instanceof Object)
+       console.log(cat.constructor)
+
+
+   function  A(){}
+   
+   function B(){
+
+   }
+   B.prototype=new A();
+   B.prototype.constructor=B;
+   var  p1=new B();
+   console.log(p1)
+   console.log(p1.constructor)
+  /* var str=';dfdf'
+   var str1=new String('abcdd')
+   console.log(typeof str1)
+   //js的内置对象
+   //Array  String date  Math  RegExp
+   var arr=[23,4]
+   console.log(typeof arr)
+   console.log(arr instanceof Array)
+   console.log(arr  instanceof Object)
+   console.log(arr.constructor)*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>`</title>
+</head>
+<body>
+	<script>
+	//js对象=JSON.parse(字符串，函数（可选）)		
+    
+
+     
+     var arr=[
+             '{"name":"zs","sex":"男","birth":"1999-1-1"}',
+    		 '{"name":"ls","sex":"女","birth":"2000-1-1"}',
+    		 '{"name":"wf","sex":"男","birth":"1998-1-1"}'
+           ]
+
+var    temp=[]
+
+for(var  i=0;i<arr.length;i++){
+
+     temp[i]=JSON.parse(arr[i],function(key,value){
+       			if(key=='birth'){
+       				return  new Date().getFullYear()-new Date(value).getFullYear();
+       			}else{
+       				return  value;
+       			}
+       })
+}
+
+       console.log(temp)
+
+
+
+
+  for(var m=0;m<temp.length;m++){
+        for( i  in  temp[m]){
+        	console.log(i+":"+temp[m][i])
+        }
+
+  }
+
+
+   
+	</script>
+</body>
+</html>

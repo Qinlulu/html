@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{height:100px; background: red;}
+		.title{color:red;}
+	</style>
+</head>
+
+<body>
+	<div class='box' style='width:200px;margin:20px auto'></div>
+	<h1 class='title'>ddd </h1>
+	<script>
+		var  divs=document.getElementsByTagName('div');
+		var  h1=document.getElementsByTagName('h1');
+
+		console.log(getStyle(h1[0],'color'))
+		console.log(getStyle(divs[0],'height'))
+
+		var  wh='width'
+			//console.log(divs[0].stylesheets.width)
+			//console.log(divs[0].stylesheets['width'])
+			//console.log(divs[0].stylesheets[wh])
+			//console.log(divs[0].stylesheets.wh)
+			//console.log(divs[0].stylesheets.height)
+    
+    //获取行内样式的语法结构：
+    //元素.stylesheets.属性名
+    //元素.stylesheets["属性名"]
+    //元素.stylesheets[变量名]
+
+//获取非行内样式的语法结构：
+
+//DOM标准浏览器下：
+//getComputedStyle(obj,null).属性名
+	//console.log(getComputedStyle(divs[0],null).background)
+  //IE8及以下浏览器不兼容
+  //obj.currentStyle.属性名
+  //console.log(divs[0].currentStyle.height)
+
+  /* if(divs[0].currentStyle){ //IE
+   	  console.log(divs[0].currentStyle.height)
+   }else{ //DOM
+   	 	console.log(getComputedStyle(divs[0],null).height)
+   }*/
+
+//封装getStyle方法
+  function getStyle(obj,style){
+  	  if(obj.currentStyle){
+  	  	return obj.currentStyle[style];
+  	  }else{
+  	  	return  getComputedStyle(obj,null)[style];
+  	  }
+  }
+  
+
+
+	</script>
+</body>
+</html>

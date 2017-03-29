@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+热门：
+<ul></ul>
+按字母：
+<ul>
+	
+</ul>
+<hr>
+<p></p>
+<ul>
+	
+</ul>
+<script src='citydata.js'></script>
+	<script>
+	var uls=document.getElementsByTagName('ul');
+	var p=document.getElementsByTagName('p');
+	var  arr=["A","B","C","D","E","F"]
+
+		for(var i=0;i<obj.hotList.length;i++){
+			var newLi=document.createElement('li');
+				newLi.innerHTML=obj.hotList[i][0];
+				uls[0].appendChild(newLi);
+		}
+		
+  	   for(var i=0;i<arr.length;i++){
+  	   		 var newLi=document.createElement('li');
+				newLi.innerHTML=arr[i];
+				uls[1].appendChild(newLi);
+                newLi.onclick=function(){
+                	p[0].innerHTML=this.innerHTML;
+                	uls[2].innerHTML=''
+                	var  val=this.innerHTML
+                	for(var m=0;m<obj.cityList.length;m++){
+                		if(val==obj.cityList[m][1].substring(0,1).toUpperCase()){
+                			var newLi_1=document.createElement('li');
+                			    newLi_1.innerHTML=obj.cityList[m][0];
+                			    uls[2].appendChild(newLi_1);
+                		}
+                	}
+
+
+                }
+
+  	   }
+console.log(obj.cityList[0][1].substring(0,1).toUpperCase())
+console.log(obj.cityList[1][1].substring(0,1).toUpperCase())
+console.log(obj.cityList[2][1].substring(0,1).toUpperCase())
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var  arr=[4,5,3,1,6]
+		var  sum=0
+
+		var   arr=["男",'女','男','男','女','女']
+		//统计一下几个男生
+		//男生前面加班级1501D 
+		/*for(var i=0;i<arr.length;i++){
+				if(arr[i]%2==1){
+					 sum=sum+arr[i];
+				}
+		}
+      console.log(sum)*/
+   
+       function  sumValue(num,value){
+       	     if(value%2==1){
+               num=num+value;
+       	     }
+
+       	     return num
+       }
+       
+      /* var  a=0;
+       for(var i=0;i<arr.length;i++){
+       	  a=sumValue(a,arr[i]);
+       }
+
+     console.log(a)
+    */
+      
+      function  each(fn,arry){
+   	    for(var i=0;i<arry.length;i++){
+   	    	fn(arry[i])
+   	    }
+     }
+      function reduce(fn,base,arry){
+      	  /*for(var i=0;i<arry.length;i++){
+      	  	     base=fn(base,arry[i])
+      	  }*/
+
+      	  each(function(n){
+      	  	base=fn(base,n)
+      	  },arry)
+    return  base;
+      }
+
+    console.log(reduce(sumValue,0,arr))
+
+	</script>
+</body>
+</html>

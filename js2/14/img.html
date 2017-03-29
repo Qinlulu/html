@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+		}
+		img{
+			width:100px;
+			height:100px;
+		}
+	</style>
+</head>
+<body>
+	<div ><img src="111.jpg" alt="" id="yu"></div>
+	<div ><img src="" alt="" id="yy"></div>
+
+	<script>
+		var yu=document.getElementById('yu');
+		var yy=document.getElementById('yy');
+
+		yy.src=yu.getAttribute('src');
+	</script>
+</body>
+</html>

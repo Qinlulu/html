@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		 function  Person(name,age){
+	    	 this.name=name;
+	    	 this.age=age;
+	    }
+
+	   Person.prototype={
+	   	//原型对象的constructor指向Person构造函数
+	   	  constructor:Person,
+	   	  city:'北京',
+	   	  show:function(){
+	   	  	alert(this.name);
+	   	  }
+	   }
+
+       //Person.prototype.city='北京';
+	   var  p1=new Person('张三',23)
+	   console.log(Person.prototype.constructor)
+
+//实例名 instanceof   构造函数名  判断构造函数和实例的关系
+//实例名.hasOwnProperty('属性名')  //判断这个属性属于原型还是实例	//实例为true  属于原型为false
+//构造函数名.prototype.isPrototypeOf(实例名)  判断原型和实例的关系
+
+var arr=[3,45]
+//console.log(p1.hasOwnProperty("city"))
+console.log(Array.prototype.isPrototypeOf(arr));
+/*console.log(p1 instanceof Person)
+console.log(p1 instanceof Object)*/
+
+	</script>
+</body>
+</html>

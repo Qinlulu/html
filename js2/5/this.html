@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//this 指向当前作用域  当前对象
+	//全局的变量和函数自动成为window对象的属性和方法
+/*		console.log(this)
+	var  a=10;
+	console.log(window.a)
+    
+	function  fn(){
+		  a=6
+		console.log(this.a)
+	}
+    fn();
+ 	*/
+ 
+/*  var  num=1
+   var json={
+   			num:2,
+   			dbl:function(){
+   				 return this.num=this.num*2;
+   			}
+   }
+
+   json.dbl();//  json.num=4
+   
+ var  fn=json.dbl; 
+fn();  //num=2
+
+console.log(json.num+num)*/
+
+var num=1;
+var  json={
+	   num:52,
+	   dbl:function(){
+	   	 return  num=num*2;
+	   }
+}
+
+json.dbl();
+console.log(json.num)
+console.log(num)
+
+
+	</script>
+</body>
+</html>

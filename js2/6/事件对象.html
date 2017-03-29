@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button id='btn'>单击</button>
+	<script>
+	//访问事件对象
+	//标准浏览器下：函数的第一个参数存在
+	//IE浏览器下（ie9及以下）:window.event 
+	//e || window.event;
+		var btn=document.getElementById('btn');
+
+		   btn.onclick=function(e){
+		   	 // console.log(e);
+		   //	  console.log(window.event)
+       var   event= e || window.event;
+          console.log(event);
+
+       //3个属性 2个方法
+       //事件的类型 type 
+       console.log(event.type);
+       //事件目标 
+       //标准浏览器下 event.target
+       //IE浏览器下 event.srcElement
+     var  target= event.target ||  event.srcElement;
+     console.log(target);
+		   }
+
+
+	</script>
+</body>
+</html>

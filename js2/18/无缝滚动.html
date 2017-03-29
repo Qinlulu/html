@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0}
+		li{list-style: none;float: left;}
+		#box{width: 490px;height: 170px;margin:0 auto;}
+		
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="images/img1.gif"></li>
+			<li><img src="images/img2.jpg"></li>
+			<li><img src="images/img3.jpg"></li>
+			<li><img src="images/img4.jpg"></li>
+			<li><img src="images/img5.png"></li>
+		</ul>
+	</div>
+	<script src="js/move.js"></script>
+	<script>
+		var box=document.getElementById('box')
+			uls=document.getElementsByTagName('ul')
+			lis=document.getElementsByTagName('li')
+        var liW=lis[0].offsetWidth;
+			uls[0].style.width=liW*lis.length+'px';
+//startMove(对象,目标,属性，回调函数)
+		function auto(){
+				//把ul的marginLeft变成-liW
+				startMove(uls[0],-liW,'marginLeft',function(){
+				//把第一个li追加到ul的最后 
+				uls[0].appendChild(lis[0]);
+                uls[0].style.marginLeft=0
+
+				});
+
+				
+
+
+			}
+		setInterval(auto,2000)
+
+
+	</script>
+</body>
+</html>

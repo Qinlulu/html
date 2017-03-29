@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//构造函数模式   
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.show=function(){
+				alert(this.name);
+			}
+		}
+		
+		function  Cat(color,name){
+			 this.color=color;
+			 this.name=name;
+			 this.eat=function(){
+			 	alert('捉老鼠');
+			 }
+		}
+
+
+   var p1=new  Person('zs',18)   // 类的实例化  p1是对象用Person构造函数创建的、
+   var p2=new  Person('李四',30)
+   var c1=new  Cat('白色','喵喵');//类的实例化
+   var c2=new Cat('黄色','大黄')
+   console.log(p1.constructor)
+   console.log(p2.constructor)
+   console.log(c1.constructor)
+   console.log(c2.constructor)
+   /*p1.show()
+   p2.show()*/
+   console.log(p1.show==p2.show)
+	</script>
+</body>
+</html>

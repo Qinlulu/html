@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+		#wrap{
+			width:630px;
+			height:400px;
+			margin:0 auto;
+
+			border: 1px solid orange;
+		}
+		#dv1{
+			width:630px;
+			height:35px;
+			border-bottom: 1px solid orange;
+			line-height:35px;
+		}
+		#dv3{
+			display:none;
+		}
+		span{
+			width:250px;
+			text-align: center;
+			float:left;
+		}
+		#huo,#yan{
+			width:80px;
+		}
+		#btn{
+			height:35px;
+			background:orange;
+		}
+		#btn1{
+			width:150px;
+			height:35px;
+			background:orange;
+		}
+		#check{
+				width:15px;
+			}
+		#ti{
+				width:90px;
+			}
+		#checkk{
+			width:20px;
+			height:20px;
+		}
+		table{
+				width:630px;
+				margin-top: 25px;
+				border-collapse: collapse;
+			}
+		tr{
+			display:flex;
+			height:50px;
+		}
+		table td{
+			
+			flex:1;
+			
+			
+		}
+		input{
+			width:130px;
+			height:25px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+<div id="wrap">
+	<div id="dv1">
+		<span id="span1" style="coloe=oragne">手机登录</span>
+		<span id="span2">邮箱登录</span>
+	</div>	
+	<div id="dv2">
+<table>
+	<tr>
+		<td>手机号码</td>
+		<td><input type="text"></td>
+		<td><span id="span3">注册后可使用手机号码登录</span></td>
+	</tr>
+	<tr>
+		<td>设置密码</td>
+		<td><input type="password"></td>
+		<td><span id="span4">6到16位英文(区分大小写)数字符号</span></td>
+	</tr>
+	<tr>
+		<td>验证码</td>
+		<td><input type="text"></td>
+		<td><input type="button" value="点击获取" id="huo"></td>
+		<td><span id="span5">点击免费获取验证码</span></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="checkbox" id="check">已阅读同意注册信息</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" value="立即注册" id="btn"></td>
+		<td></td>
+	</tr>
+	
+</table>
+	
+</div>
+<div id="dv3">
+<table>
+	<tr>
+		<td>邮箱帐号</td>
+		<td><input type="text" id="you"><input type="button" value="@souhu.com" id="ti"></td>
+		<td><span>注册搜狐可以直接使用旗下产品</span></td>
+	</tr>
+	<tr>
+		<td>设置密码</td>
+		<td><input type="password" id="pas"></td>
+		<td><span>6到16位英文(区分大小写)数字符号</span></td>
+	</tr>
+	<tr>
+		<td>手机号码</td>
+		<td><input type="text" id="tex"></td>
+		<td>绑定手机号码可以提高安全性</td>
+	</tr>
+	<tr>
+		<td>验证码</td>
+		<td><input type="text" id="yana"></td>
+		<td><input type="button" value="点击获取" id="yan"></td>
+		<td><span>点击免费获取验证码</span></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="checkbox" id="checkk">已阅读同意注册信息</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" value="立即注册" id="btn1"></td>
+		<td></td>
+	</tr>
+	
+</table>
+	
+</div>
+</div>
+
+
+	<script>
+	window.onload=function(){
+		spans[0].style.color="orange"
+	}
+	var dv2=document.getElementById("dv2")
+		//获取所有的input 内容
+		var inps=dv2.getElementsByTagName("input")
+		//获取验证码
+		var huo=document.getElementById("huo")
+		//获取注册按钮
+		var btn=document.getElementById("btn")
+		var check=document.getElementById("check")
+		//获取span按钮
+		var spans=document.getElementsByTagName("span")
+		
+	var dv3=document.getElementById("dv3")
+
+
+		spans[0].onclick=function(){
+			dv2.style.display="block"
+			spans[0].style.color="orange"
+			spans[1].style.color="#000"
+			dv3.style.display="none"
+
+		}
+		inps[0].onblur=function(){
+			reg=/^1[358]\d{9}$/
+			if(!reg.test(inps[0].value)){
+				alert("账户信息错误")
+			}else{
+				inps[1].onblur=function(){
+			reg1=/^\w{6,16}$/
+			reg2=/[^\d]/
+			reg3=/[^a-zA-Z]/
+			if(!reg1.test(inps[1].value)){
+				alert("密码设置有误")
+			}else if(!reg2.test(inps[1].value)){
+				alert("不能是纯数字")
+			}else if(!reg3.test(inps[1].value)){
+				alert("不能是纯字母")
+			}else{
+		huo.onclick=function(){
+			time=setInterval(fun,1000)
+			i=5;
+		function fun(){
+			huo.value=i+"秒后重新获取"
+			huo.disabled=true
+			inps[2].value=" "
+			
+			if(i>=0){
+				i--
+			}
+			if(i<0){
+				inps[2].value="663322"
+				clearInterval(time)
+				huo.value="重新获取"
+				huo.disabled=false
+			}
+		}
+		
+		}
+
+		btn.onclick=function(){
+			if(inps[2].value!=""){
+			if(inps[2].value!="663322"){
+			alert("验证码错误")
+		}else if(check.checked){
+			alert("正在登录")
+		}else{
+			alert("信息不完整")
+		}
+		}
+		}
+		
+		
+
+			}
+		}
+			}
+		}
+		
+
+		
+
+		
+
+
+	var tex1=document.getElementById("tex")
+	var pas=document.getElementById("pas")
+	var yana=document.getElementById("yana")
+	var you=document.getElementById("you")
+	var checkk=document.getElementById("checkk")
+	var btn1=document.getElementById("btn1")
+	var yan=document.getElementById("yan")
+
+		
+		spans[1].onclick=function(){
+			dv3.style.display="block"
+			spans[0].style.color="orange"
+			spans[1].style.color="#000"
+			dv2.style.display="none"
+		}
+
+//邮箱
+you.onblur=function(){
+
+var reg=/^\w+@\w+\.(com|net|com\.cn)$/
+if(!reg.test(you.value)){
+	alert("邮箱名称不正确")
+
+}else{
+	//密码
+pas.onblur=function(){
+			reg1=/^\w{6,16}$/
+			reg2=/[^\d]/
+			reg3=/[^a-zA-Z]/
+			if(!reg1.test(pas.value)){
+				alert("密码设置有误")
+			}else if(!reg2.test(pas.value)){
+				alert("不能是纯数字")
+			}else if(!reg3.test(pas.value)){
+				alert("不能是纯字母")
+			}else{
+				//手机号码
+tex1.onblur=function(){
+			reg=/^1[358]\d{9}$/
+			if(!reg.test(tex.value)){
+				alert("账户信息错误")
+			}else{
+				//验证码
+		yan.onclick=function(){
+			time=setInterval(funn,1000)
+			i=5;
+		function funn(){
+			yan.value=i+"秒后重新获取"
+			yan.disabled=true
+			yana.value=" "
+			
+			if(i>=0){
+				i--
+			}
+			if(i<0){
+				yana.value="555555"
+				clearInterval(time)
+				yan.value="重新获取"
+				yan.disabled=false
+			}
+		}
+
+		}
+		btn1.onclick=function(){
+			if(yana.value!=""){
+			if(yana.value!="555555"){
+			alert("验证码错误")
+		}else if(checkk.checked){
+			alert("正在登录")
+		}else{
+			alert("信息不完整")
+		}
+		}
+		}
+				
+			}
+		}
+			}
+		}
+}
+
+
+}
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

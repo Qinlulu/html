@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var p={
+			 name:'张三',
+			 age:18,
+			 sex:'男'
+		}
+
+		function  show(obj){
+			for(var i  in  obj){
+				 console.log(i+":"+obj[i]);
+			}
+		}
+     
+    /* Object.defineProperty(对象名,属性名,{
+     数据特性
+              enumerable:false   是否可枚举   for- in 
+              configurable:false  是否可配置  delete删除属性 、
+              writable: 是否可以修改属性的值 
+              defineProperty()
+
+
+
+     })
+*/
+		Object.defineProperty(p,'name',{
+			 
+			  writable:false,  //是否可以改    true 可以
+			  value:'1501D',
+              enumerable:true,
+              configurable:false
+              
+          
+
+
+		})
+
+        p.name='李四'       
+         show(p);
+
+
+
+	</script>
+</body>
+</html>

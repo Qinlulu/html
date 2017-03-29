@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0}
+		li{list-style: none;float: left;width:200px;height: 150px}
+		#box{width:200px;height: 150px;margin:20px auto;position: relative;}
+		li img{width:100%;height:100%;}
+		#left,#right{position: absolute;top:70px;width:30px;height:30px; background: red; color:#fff;}
+		#left{left:10px;}
+		#right{right:10px}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="img/1.jpg"></li>
+			<li><img src="img/2.jpg"></li>
+			<li><img src="img/3.jpg"></li>
+			<li><img src="img/4.jpg"></li>
+			
+		</ul>
+		<div id="left">左</div>
+		<div id='right'>右</div>
+	</div>
+	<script src="js/move.js"></script>
+	<script>
+		var box=document.getElementById('box')
+			uls=document.getElementsByTagName('ul')
+			lis=document.getElementsByTagName('li')
+        var liW=lis[0].offsetWidth;
+			uls[0].style.width=liW*lis.length+'px';
+//startMove(对象,目标,属性，回调函数)
+	    
+	    var  right=document.getElementById('right');
+	    var  left=document.getElementById('left');
+
+	    right.onclick=function(){
+
+	    		startMove(uls[0],-liW,'marginLeft',function(){
+	    			uls[0].appendChild(lis[0]);
+	    			uls[0].style.marginLeft=0;
+	    		})
+	    }
+
+
+	
+
+	</script>
+</body>
+</html>

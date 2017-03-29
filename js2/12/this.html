@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<button id='btn'>单击</button>
+	<script>
+	   var  num=3;
+	   function  fn(){
+	   	alert(this)
+	   }
+   
+    /*console.log(window.num);
+    window.fn()*/
+/*
+   console.log(this)
+   console.log(this.num)*/
+   // fn();
+  //全局函数里，this指向window
+  //DOM0下,函数里的this指向的是绑定事件的对象
+  //dom2下函数里的this指向的是绑定事件的对象
+  //IE下的this指向window
+  //在类型为对象的情况下，指的是当前对象.this
+var   btn=document.getElementById('btn');
+  /* btn.onclick=function(){
+   console.log(this);
+   }
+*/
+ 
+//btn.addEventListener('click',function(){console.log(this)},false)
+ //btn.attachEvent('onclick',function(){console.log(this)});
+
+
+var  num=2;
+ var  json={
+ 	    num:5,
+ 	    dbl:function(){
+ 	     return 	num=num*2
+ 	    }   
+ }
+
+var  fn=json.dbl;
+fn();  //num=4
+json.dbl();  //num=8
+
+console.log(json.num+num)
+	</script>
+</body>
+</html>

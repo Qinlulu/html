@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   <h1 id='tt' title='标题'><span>更多</span>标题文字<a href="#">百度</a></h1>
+   <p>段落文字</p>
+   <ul>
+   	<li>11111</li>
+   	<li>2222</li>
+   	<li>3333333</li>
+   	<li>44444444</li>
+   </ul>
+	<script>
+	var   tt=document.getElementById('tt');
+	  /*  console.log(tt.childNodes.length)
+	  
+	    console.log(tt.firstChild)
+	    console.log(tt.childNodes[0])
+	    console.log(tt.childNodes[0].firstChild)
+	    console.log(tt.lastChild.lastChild)
+
+	    console.log(tt.firstChild.nextSibling.nextSibling)
+	    console.log(tt.lastChild.previousSibling)*/
+
+       	tt.parentNode.style.background='#ccc'
+
+        
+
+
+		//dom树
+		//节点关系：
+		//父子关系   childNodes.length  childNodes[0] childNodes[1]  childNodes[childNodes.length-1]
+		//  firtChild  lastChild    parentNode
+		//兄弟关系   下一个兄弟节点 nextSibling
+		//上一个兄弟节点 previousSibling 
+
+		//节点 类型：12种
+
+		//元素节点  1   属性节点 2  文本节点 3  
+		//文档节点   9  注释节点 8
+
+   	//节点属性：
+   	//节点类型nodeTye      节点名字nodeName  节点值 nodeValue
+//元素节点     	
+    
+
+	</script>
+</body>
+</html>

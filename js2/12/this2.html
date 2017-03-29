@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	   var  num=3;
+	    function fn(a,b){
+	    	 return  this+a;
+	    }
+      var json={
+      		 num:1
+      }
+      var json1={num:2}
+
+console.log(fn(4,2))
+
+console.log(fn.call(json,1,2))
+console.log(fn.apply(json,[1,2]))
+console.log(fn.call('hello',1))
+
+
+
+
+/*  fn(); //num=6
+ fn.call(json); //json.num=2
+ fn.apply(json1); //json1.num=4
+ console.log(num+json.num+json1.num);*/
+	</script>
+</body>
+</html>

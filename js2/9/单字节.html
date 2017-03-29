@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//	[\x00-\xff]   单字节
+	//	[^\x00-\xff]  双字节
+	var str='abc123我们'  //我 **
+	var reg=/[^\x00-\xff]/g
+	//替换  str.replace(要替换的，替换为的)
+	console.log(str.replace(reg,'**').length)
+	</script>
+</body>
+</html>

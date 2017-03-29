@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="http://www.baidu.com">百度</a>
+	<script>
+	//阻止默认行为
+	//DOM浏览器下 event.preventDefault();
+	var  a=document.getElementsByTagName('a');
+
+		a[0].onclick=function(e){
+			var event=e || window.event;
+			alert('你好');
+			preventDefault(event);
+
+		}
+		function preventDefault(ev){
+			if(ev.preventDefault){
+				ev.preventDefault();
+			}
+			else{
+				ev.returnValue=false;
+			}
+		}
+	</script>
+</body>
+</html>

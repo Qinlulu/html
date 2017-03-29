@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    #main{width:500px;height:300px;position: relative;margin:20px auto;border:1px solid blue;}
+		#box{position:absolute;width:200px; height:100px; border:1px solid red;
+			padding:10px; left:100px;top:50px;}
+		
+	</style>
+</head>
+<body>
+<div id='main'>
+<div id='box'>dfdsfdsf</div>
+
+</div>
+	<script>
+	//偏移量大小：
+	//宽度和高度  元素.offsetWidth=width+border+padding
+	//位置 offsetleft offsetTop
+	//在没有定位的情况下，相对于浏览器窗口左侧的距离和上侧的距离
+	//在父元素有定位的情况下，相对于有定位的父级元素的距离。
+	var  box=document.getElementById('box');
+/*    console.log( box.offsetWidth)
+    console.log(box.offsetHeight)
+    console.log(box.offsetLeft)
+    console.log(box.offsetTop)*/
+   
+  //客户区大小
+   //clientWidth  width+padding
+   //可视区大小
+   //console.log(box.clientWidth)
+
+   //标准模式下可视区大小  火狐
+   //console.log(document.documentElement.clientWidth)
+   //console.log(document.documentElement.clientHeight)
+   //混杂模式下可可视区大小  谷歌  360 
+  // console.log(document.body.clientWidth)
+ //  console.log(document.body.clientHeight)
+
+
+
+
+
+	</script>
+</body>
+</html>

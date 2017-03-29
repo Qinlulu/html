@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#news  div{display: none;}
+		span{color:red;}
+	</style>
+</head>
+<body>
+	<input type="text" id='text'><button id='search'>搜索</button>
+	<div id='searchtitle'>
+		
+	</div>
+	<div id='news'>
+		 <div>
+		 	<h1>八维日考新制度</h1>
+			<p>不许作弊，不许说话，不许交头接耳</p>
+		 </div>
+		 <div>
+		 	<h1>八维水费</h1>
+			<p>水费9元一桶</p>
+		 </div>
+		 <div>
+		 	<h1>八维传媒上课时间变为9点</h1>
+		 	<p>上操时间还是7点到9点</p>
+		 </div>
+		 <div>
+		 	<h1>G20峰会在杭州召开</h1>
+		 	<p>奥巴马、普京等多个国家领导人参会，其中普京给一箱冰激凌</p>
+		 </div>
+		 <div>
+		 	<h1>里约奥运会中国金牌30枚</h1>
+		 	<p>中国女排夺冠</p>
+		 </div>
+	</div>
+	<script>
+			var objText=document.getElementById('text');
+			var searchBtn=document.getElementById('search');
+			var searchtitle=document.getElementById('searchtitle');
+			var  news=document.getElementById('news');
+			var divs=news.getElementsByTagName('div');
+			var h1s=news.getElementsByTagName('h1');
+			var ps=news.getElementsByTagName('p');
+
+			var arr=[];
+
+			for(var i=0;i<divs.length;i++){
+				var o={};
+                  o.title=h1s[i].innerHTML;
+                  o.content=ps[i].innerHTML;
+                arr.push(o);
+
+			}
+     console.log(arr)
+
+
+     searchBtn.onclick=function(){
+     	  searchtitle.innerHTML='';
+     	  if(text.value==''){
+     	  	alert('请输入信息')
+     	  }else{
+     	  		 for(var j=0;j<divs.length;j++){
+     	  	     divs[j].style.display='none';
+     	  	     var reg=/(<span>|<\/span>)/    
+     	  	     divs[j].innerHTML=divs[j].innerHTML.replace(reg,'')
+     	         }
+
+           var val_1=objText.value;
+           console.log(val_1)
+           for(var i=0;i<arr.length;i++){
+           		if(arr[i].title.indexOf(val_1)!=-1  || arr[i].content.indexOf(val_1)!=-1){
+           			  divs[i].style.display='block';
+           			  divs[i].innerHTML=divs[i].innerHTML.replace(val_1,"<span>"+val_1+"</span>")
+
+           		}
+           }
+       }
+     	  
+     	 
+     	 
+
+
+
+
+     }
+
+
+
+
+
+
+
+        objText.onkeyup=function(){
+        	searchtitle.innerHTML=''
+        var      val=  this.value;
+         if(val!=""){
+         	  for(var i=0;i<arr.length;i++){
+         	  		 if(arr[i].title.indexOf(val)!=-1){
+         	  		 	  var newDiv=document.createElement('div');
+         	  		 	      newDiv.innerHTML=arr[i].title;
+         	  		 	      newDiv.style.width='300px';
+         	  		 	      searchtitle.appendChild(newDiv);
+
+         	  		 	      newDiv.onmouseover=function(){
+         	  		 	      	  this.style.background='red';
+         	  		 	      }
+         	  		 	      newDiv.onmouseout=function(){
+         	  		 	      	this.style.background=''
+         	  		 	      }
+         	  		 	      newDiv.onclick=function(){
+         	  		 	      	objText.value=this.innerHTML;
+         	  		 	      	searchtitle.innerHTML=''
+         	  		 	      }
+
+         	  		 }
+         	  }
+         }
+
+
+        }	
+
+
+	</script>
+</body>
+</html>

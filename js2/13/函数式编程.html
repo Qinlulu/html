@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//函数式编程
+   //(3+4-2)*2
+    // cf(jiafa(add(3,4),2),2)
+    //add(3,4).jia(2).cf(2)
+    //4*2-7/3
+     //jiafa(cf(4,2),chuf(7,3))
+    // cf(4,2).jia(chuf(7,3))
+    
+   //高阶函数：能够修改其他函数的函数。
+  // 规约函数： each函数 遍历数组，对数组每一项执行同一种操作。
+
+  var   arr=[4,8,10]
+
+ function  addOne(n){
+ 	console.log(n+1)
+ }
+
+function  addTwo(n){
+	return (n+2)
+}
+
+function  each(fn,arry){
+	  for(var i=0;i<arry.length;i++){
+	  	     fn(arry[i]);
+	  }
+	 
+}
+
+//each(函数名,数组名)
+//each(匿名函数，数组名)
+console.log(each(addTwo,arr))
+//each(function(n){alert(n*2)},arr)
+//console.log(arr)
+
+
+	</script>
+</body>
+</html>

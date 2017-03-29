@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function object(o){
+	
+		 function F(){};
+		 
+		 F.prototype=o;
+		 
+		 return new F();
+		 
+	}
+
+	var obj={
+		name:'zs',
+		colors:['red','blue']
+	}
+
+     var p1=object(obj);
+	 
+       console.log(p1.name)
+       console.log(p1.colors)
+	   
+       p1.colors.push('green');
+	   
+        console.log(p1.colors)
+		
+     var p2=object(obj);
+	 
+     console.log(p2.colors)
+
+	</script>
+</body>
+</html>

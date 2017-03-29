@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="gb2312">
+	<title>Document</title>
+	<style>
+	img{width:365px;height:225px;}
+	#box{width:1095px; margin:20px auto; height: 240px; position: relative;
+	 border:1px solid red;}
+	#pic{width:2190px; position: absolute;left:0;}
+	#pic img{float: left;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<div id='pic'>
+				<img src="img/1.jpg" alt="">
+				<img src="img/2.jpg" alt="">
+				<img src="img/3.jpg" alt="">
+		</div>
+	</div>
+	<script>
+	/*	var pic=document.getElementById('pic');
+		var imgs=document.getElementsByTagName('img');
+		//clone  imgs[0]  imgs[1]  imgs[2]
+		for(var i=0,len=imgs.length;i<len;i++){
+			pic.appendChild(imgs[i].cloneNode(true));
+		}	
+ 		setInterval(function(){
+            if(pic.offsetLeft>-pic.offsetWidth/2){
+ 			pic.stylesheets.left=pic.offsetLeft-1+'px';
+             }else{
+            pic.stylesheets.left='0px';
+             }
+ 		},10)
+     */
+
+ 		function  ScrollImg(picId,list){
+ 			this.pic=document.getElementById(picId);
+ 			this.imgs=document.getElementsByTagName(list);
+ 			this.timer=null;
+ 			
+ 		}
+         
+
+ 		ScrollImg.prototype.bind=function(){
+ 			this.cloneImg();
+ 			this.autoScroll();
+ 			this.mouseEvent();
+
+ 		}
+
+ 		ScrollImg.prototype.cloneImg=function(){
+ 			 for(var i=0,len=this.imgs.length;i<len;i++){
+ 			 	this.pic.appendChild(this.imgs[i].cloneNode(true));
+ 			 }
+ 		}
+
+ 		ScrollImg.prototype.autoScroll=function(){
+           var that=this;
+ 			this.timer=setInterval(function(){
+              if(that.pic.offsetLeft>-that.pic.offsetWidth/2){
+ 				that.pic.style.left=that.pic.offsetLeft-1+'px';
+		}else{
+			  that.pic.style.left='0px';
+		}
+
+ 			},10)
+
+       
+
+ 		}
+
+ 		ScrollImg.prototype.mouseEvent=function(){
+ 			//é¼ و ‡و»‘è؟‡و¸…é™¤ه®ڑو—¶ه™¨
+ 		var that=this;
+ 		    this.pic.onmouseover=function(){
+ 		    	clearInterval(that.timer);
+ 		    }
+
+ 		  //é¼ و ‡ç¦»ه¼€ç»§ç»­
+ 		  this.pic.onmouseout=function(){
+ 		  	  that.autoScroll();
+ 		  }
+
+ 		}
+
+
+var  pic=new ScrollImg("pic",'img');
+	 pic.bind()
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//xml json  存储数据的格式  不是一门语言 
+		//javascript对象的表示的方法
+		//简单值 5  
+		console.log(5)
+		console.log("hello")
+
+		//对象 数组
+
+		/*var  obj={
+			  name:'zs',
+			  age:18
+		};*/
+		//console.log(obj.name)
+
+//JSON对象  JSON数组 属性名(键)  属性值（值）   （键/值）
+//与js对象的区别：
+//1) 不用声明变量
+//2)没有;结束
+//3)属性名必须用""
+		console.log({
+			"name":'zs',
+			 "age":18,
+			 "book":{
+			 		"name":'js高级程序设计',
+			 		 "price":18.7
+			 }
+		})
+
+/*var arr=[3,5,5]
+
+[5,8,0]*/
+//JSON数组
+[{"name":"海淀",
+   "option":[{"name":"上地"},{"name":"西二旗"},{"name":"西北旺"}]
+   },
+ { "name":"朝阳",
+   "option":[{"name":"CBD"},{"name":"望京"},{"name":"西北旺"}]
+ },
+   {
+   	"name":"昌平",
+   "option":[{"name":"回龙观"},{"name":"望京"},{"name":"西北旺"}]
+   }]
+
+
+	</script>
+</body>
+</html>

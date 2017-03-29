@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	 .bg{background: red;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><span>设为默认</span></li>
+		<li><span>设为默认</span></li>
+		<li><span>设为默认</span></li>
+		<li><span class='bg'>默认地址</span></li>
+	</ul>
+	<script>
+		var span=document.getElementsByTagName('span');
+
+			for(var i=0;i<span.length;i++){
+				 span[i].onclick=function(){
+				 	for(var j=0;j<span.length;j++){
+				 		 span[j].innerHTML='设为默认';
+				 		 span[j].className='';
+				 	}
+
+				 		this.innerHTML='默认地址';
+				 		this.className='bg'
+				 }
+			}
+
+
+	</script>
+</body>
+</html>

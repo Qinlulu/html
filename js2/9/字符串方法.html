@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+/*		var str='wm法轮功adfd法轮功';
+		var reg=/法轮功/g;
+		var str1=   str.replace(reg,'**');
+		console.log(str1)*/
+     /*  var str='ab23ef5ttt14';
+       var reg=/\d/g;
+       var str1=str.replace(reg,function(val){
+            return   val*2
+       })
+     console.log(str1)*/
+     var str='border-left-color';  //borderLeftColor  -l   -c
+     //split('-')  charAt(0).toUpperCase()   arr.join('')
+     //方法2：
+     var reg=/-\w/g;
+      var str1=  str.replace(reg,function(val){
+               return  val.charAt(1).toUpperCase()
+        })
+      console.log(str1)
+
+//split()
+var str='"aaa   , bbb  ,ccc,  eeee';
+var reg=/\s*,\s*/
+ var arr =  str.split(reg)
+ console.log(arr)
+
+
+	var  str='welcome   to    beijing'; // WelcomeToBeijing
+
+		var reg=/\b\w+\b/g
+	    var str1=str.replace(reg,function(val){
+	    	 return  val.substring(0,1).toUpperCase()+val.substring(1)
+	    });
+	    console.log(str1.replace(/\s+/g,''))
+
+
+
+
+
+	</script>
+</body>
+</html>

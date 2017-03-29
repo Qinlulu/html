@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//阶乘 5*4*3*2*1
+		//递归函数：函数调用自身的过程
+		//5*4的阶乘
+		//5*4*3阶乘
+		//5*4*3*2的阶乘
+		//5*4*3*2*1的阶乘 
+		// 5*4*3*2*1
+         //arguments.callee指针，指向当前正在执行的函数
+         //在页面的严格模式下，不支持arguments.callee
+
+/*		function   fn(n){
+			if(n==1){
+				return 1;
+			}else{
+				return  n*arguments.callee(n-1)
+			}
+		}*/
+
+var fn=function  f1(n){
+	 if(n==1){
+	 	return  1;
+	 }else{
+	 	return  n*f1(n-1);
+	 }
+}
+
+
+var result=fn;
+   fn=null;
+	console.log(result(5));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='myJquery.js'></script>
+	<script src='move.js'></script>
+	<style>
+		*{margin:0;padding: 0}
+		ul,li{list-style: none}
+		#pic{width:200px; height:200px; margin-left:200px; margin-top:50px;border:1px solid red;}
+		#pic ul{width:800px; height:100px; }
+		#pic ul li{width:200px;float: left; height:100px;}
+		#header{height:40px;margin-bottom: 1px;}
+		#header ol li{float: left;width:49px; background: #ccc;margin-right: 1px; text-align: center;line-height: 40px;}
+
+	</style>
+</head>
+<body>
+
+	<div id='pic'>
+	<div id='header'>
+		<ol>
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ol>
+</div>
+		<ul>
+			<li style='background: red;'>1111</li>
+			<li style='background: blue;'>2222</li>
+			<li style='background: green;'>3333</li>
+			<li style='background: yellow;'>4444</li>
+		</ul>
+	</div>
+	<script>
+	console.log($('ul').eq(0).elements[0])
+	console.log($('ul').find('li').eq(0).elements[0])
+			//每隔2秒图片播放下一张
+	/*setInterval(function(){
+		$('ul').animate(-200,'marginLeft',function(){
+		  moveLeft();
+		})
+	},2000)
+*/
+   var  flag=true;
+   var index=0;
+   var len=$('ul').find('li').elements.length
+	function auto(){
+
+		if(!flag) return;
+		$("ul").animate(-200,'marginLeft',function(){
+			    index++;
+			    if(index>len-1) index=0;
+			  //  console.log(index)
+				moveLeft();
+			  setTimeout(auto,2000);
+		})
+		console.log(index)
+	}
+
+auto();
+
+//向左移动
+	function moveLeft(){
+	 //把第一个元素放到最后
+		$('ul').eq(0).elements[0].appendChild($('ul').find('li').eq(0).elements[0]);
+		//把ul的marginleft 0  css
+		$('ul').css('marginLeft',"0");
+	}
+
+//单击播放对应的图片
+
+ $('ol').find('li').click(function(){
+ 	   flag=false;
+     var  from=index; //开始值  3
+     var  to=$(this).index()    //结束值 1
+     
+       while(from!=to){
+       		from++;
+       		if(from>len-1)from=0;
+       		moveLeft();
+       }
+
+       index=to;
+ })
+	</script>
+</body>
+</html>

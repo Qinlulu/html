@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+			console.log(isNaN("123"))  //Number()
+//修改函数
+  function reverse(fn){
+           
+         return  function(value){
+           	  return  !fn(value);
+           }
+
+          
+  }
+
+
+  console.log(reverse(isNaN)("1223"))
+
+
+
+	</script>
+</body>
+</html>

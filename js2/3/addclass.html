@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.bg{background: #ccc;}
+	.hv{color:red;}
+	</style>
+</head>
+<body>
+<h1 class='box   test bg'>ererer</h1>
+	<script>
+		var  h1=document.getElementsByTagName('h1');
+   
+ /*  if(!hasClass(h1[0],'bg')){ 
+		h1[0].className=h1[0].className+" "+'bg'
+
+}
+*/
+	 function  addClass(obj,clsName){
+	 	 if(!hasClass(obj,clsName)){
+	 	 	 obj.className=obj.className+" "+clsName
+	 	 }
+	 }
+
+addClass(h1[0],'hv')
+
+
+        function  hasClass(obj,clsName){
+		  	if(obj.className.indexOf(clsName)>=0){
+		  		return true
+		  	}else{
+		  		return false
+		  	}
+
+		  }
+	</script>
+</body>
+</html>

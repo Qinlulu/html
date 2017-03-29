@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id='btn'>单击</button>
+	<ul>
+		<li>111111</li>
+		<li>222222222</li>
+		<li>3333333</li>
+		<li>444444</li>
+	</ul>
+	<h1 id='title'  onclick='alert("标题")'>标题文字</h1>
+	<input type="text" id='text' onkeydown='alert("aaaaa")'>
+	<div id='my'>这是文字</div>
+	<script>
+		var btn=document.getElementById('btn');
+		var title=document.getElementById('title');
+		var text=document.getElementById('text');
+
+		my.addEventListener('myevent',function(){
+			alert('单击了my')
+		})
+
+
+
+		btn.onclick=function(){
+
+		/*//创建一个自定义事件对象
+		var ev=document.createEvent("CustomEvent");
+		//初始化事件对象
+           ev.initCustomEvent('myevent',true,true,window);
+           //执行事件对象
+       my.dispatchEvent(ev);*/
+
+
+
+
+
+
+			//模拟鼠标事件  MouseEvents
+			//模式键盘事件  KeyboardEvents
+			//模拟自定义事件 CustomEvent
+
+
+			//创建事件对象
+          var  ev=document.createEvent('MouseEvents');
+          //初始化事件对象
+          //target event  type事件类型  Bubble是否冒泡 cancelable是否默认行为  clientX  clientY
+    //事件类型  冒泡  默认行为  视图区域
+          ev.initMouseEvent('click',true,true,window);
+          //执行事件对象
+	       title.dispatchEvent(ev);  
+
+  //模拟键盘事件
+  //创建事件对象
+  //var  ev=document.createEvent('KeyboardEvent');
+   //初始化事件对象
+   //事件类型  是否冒泡Bubble   是否阻止默认行为cancelabe
+   //视窗大小   按键键码   键盘区域  功能键   按键重复次数
+     // ev.initKeyboardEvent('keydown',true,true,window,'a',0,'shift',0)
+    //执行事件对象
+
+   // text.dispatchEvent(ev);
+
+
+
+
+
+
+
+
+
+
+
+		}
+
+	</script>
+</body>
+</html>

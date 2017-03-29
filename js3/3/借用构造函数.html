@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//原型链
+		function Parent(name,age){
+		             this.name=name;
+		             this.age=age;
+			 this.colors=['red','blue']
+		}
+	
+		function  Child(){
+			 this.name='zs'
+		}
+        Child.prototype=new Parent();
+        Child.prototype.constructor=Child;
+      var p1=new Child();
+         console.log(p1.colors)
+         //console.log(p1.hasOwnProperty('colors'))
+
+         p1.colors.push('green')
+         console.log(p1.colors)
+      var p2=new Child();
+       console.log(p2.colors)
+
+//原型链的问题：
+//1）包含引用类型值的原型属性会被所有实例共享
+//2)
+
+
+  /*    var p1=new Child();
+  console.log(p1.constructor)
+          console.log(p1)
+
+       var p2=new Parent();
+        console.log(p2)
+                      */
+
+           
+                  
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		ul,li{list-style-type: none;}
+		#box{width:400px; height:300px; border:1px solid red; margin:20px auto;}
+		#box ul{height:30px;}
+		#box ul  li{float: left;width:100px; text-align: center; line-height: 30px}
+		#info{height: 270px; }
+		#info div{height: 270px;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		 <ul>
+		 	<li>1</li>
+		 	<li>2</li>
+		 	<li>3</li>
+		 	<li>4</li>
+		 </ul>
+		 <div id='info'>
+		 	<div>001</div>
+		 	<div>002</div>
+		 	<div>003</div>
+		 	<div>004</div>
+		 </div>
+	</div>
+	<script src='myJquery.js'></script>
+	<script>
+	   /* $('#info').find('div').css('display','none');
+		$("#info").find('div').eq().css('display','block');	
+*/
+
+	$('ul').find('li').click(function(){
+		    $('ul').find('li').css('background','#fff');
+			$(this).css('background','red');
+
+			$('#info').find('div').css('display','none');
+			$('#info').find('div').eq($(this).index()).css('display','block');
+
+
+
+	})
+
+	</script>
+</body>
+</html>

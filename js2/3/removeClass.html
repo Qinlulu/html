@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1 class='box   test  bg'>ererer</h1>
+	<script>
+		//h1里是否有test ，有，则删除
+		//className='box test bg'
+		//className='box bg'
+		/*var str='abc223'	
+        var str1=str.replace('b',"B")*/
+
+       var  h1=document.getElementsByTagName('h1');
+          console.log(h1[0].className)
+    //方法1： 
+       /*   if(hasClass(h1[0],'test')){
+           h1[0].className=	h1[0].className.replace('test','')
+          }*/
+    //方法2：
+     /* if(hasClass(h1[0],'test')){
+      	//先把样式转化为数组
+      var arr=	 h1[0].className.split(/\s+/)	
+        //arr.splice(下标，长度)
+        //删除数组中指定项
+         arr.splice(arr.indexOf('test'),1)
+         //转化为字符串，赋给className
+         h1[0].className=  arr.join(' ')
+      }*/
+            
+  
+  function removeClass(obj,clsName){
+  	  if(hasClass(obj,clsName)){
+  	  	  obj.className=obj.className.replace(clsName,'')
+  	  }
+   
+  }
+
+  removeClass(h1[0],"bg")
+
+
+
+ /* function  removeClass(obj,clsName){
+  	if(hasClass(obj,clsName)){
+  		var arr=obj.className.split(/\s+/)
+  		arr.splice(arr.indexOf(clsName),1)
+  		obj.className=  arr.join(' ')
+
+  	}
+
+
+  }*/
+
+
+
+
+
+
+
+
+        function  hasClass(obj,clsName){
+		  	if(obj.className.indexOf(clsName)>=0){
+		  		return true
+		  	}else{
+		  		return false
+		  	}
+
+		  }
+
+
+	</script>
+</body>
+</html>

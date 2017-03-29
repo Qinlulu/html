@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//将数组里的每一项乘2  然后重新写入新的数组
+		var arr=[4,5,6,7]
+		/*for(var i=0;i<arr.length;i++){
+			arr[i]=arr[i]*2
+		}
+		console.log(arr)*/
+
+//想要得到结果所需要执行的函数
+		function  addOne(n){
+ 			return n*2
+		 }
+		 //获取n的值
+		 //用到了each函数  进行遍历
+      function  each(fn,arry){
+	  for(var i=0;i<arry.length;i++){
+	  	     fn(arry[i])
+	  }
+	
+	}
+	
+
+	//接下来是将值 写入到我们的新的数组里
+		function  map(fn,arry){
+			 var temp=[];
+
+			each(function(n){temp.push(fn(n))},arry)
+			
+            return  temp;
+		}
+
+console.log(map(addOne,arr))
+	</script>
+</body>
+</html>

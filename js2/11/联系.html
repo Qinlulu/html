@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	//递归
+	function fn(n){
+		if(n==1){
+			return 1
+		}else{
+			return n*fn(n-1)
+		}
+
+	}
+	alert(fn(5))
+
+
+	var fun=function fi(n){
+		if(n==1){
+			return 1
+		}else{
+			return n*fi(n-1)
+		}
+	}
+	alert(fun(6))
+
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		//字母数字下划线  5 12
+		//var reg=/^\w{5,12}$/;
+      //身份证号
+      //18位的数字 17位数字+X
+      //var reg=/[1-9]\d{16}[0-9X]/
+      //  var reg=/\d{17}(\d|X)
+      //邮箱
+      //admin@ qq   .com
+      //a_d  @ 163  .net
+      //test @ sina .com.cn
+      //字母数字下划线1到多位 @ 字母数字下划线1到多位 . com net com.cn 
+    //var reg=/^\w+@\w+\.(com|net|com\.cn)$/
+      //电话号码
+      //82157034  5056886
+      //010-82157034  0311-5056886
+      //(+86)010-82157034   (+86) 0311-5056886
+    //  var reg=/^((\(\+86\))?\d{3,4}-)?\d{7,8}$/
+    //URL地址：
+    //baidu    .com
+    //www.baidu.com
+    //http://www.baidu.com
+    //https://www.baidu.com
+  var reg=/^((http(s)?:\/\/)?www\.)?\w+\.(com|net|cn|com\.cn)$/
+  var str='https://www.sina.com.cn'
+  //yyyy-mm-dd   yyyy/mm/dd  2014-2-4   2014/5/7
+		console.log(reg.test(str))
+		
+
+	</script>
+</body>
+</html>

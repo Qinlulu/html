@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='data.js'></script>
+</head>
+
+<body>
+<ul>
+	<li> <img src="" alt=""></li>
+</ul>
+<script>
+var uls=document.getElementsByTagName('ul')
+var  str=''
+    for(i=0;i<json.op.length;i++){
+    	 // str+='<li><img src="'+json.op[i].img+'">'+'</li>'
+    	 var newLi=document.createElement('li');
+    	     newLi.innerHTML='<img src="'+json.op[i].img+'">'
+    	     uls[0].appendChild(newLi)
+    }
+  //  console.log(str)
+	
+	//uls[0].innerHTML=str;
+</script>
+	
+</body>
+</html>

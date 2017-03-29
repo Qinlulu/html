@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{width:600px;border-collapse: collapse;}
+		tr td,tr  th{border:1px solid red;width:120px;}
+	</style>
+</head>
+<body>
+	<table id='tab'>
+		<thead>
+			<tr>
+				<th colspan="4">学生信息</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>学号</td>
+				<td>学费</td>
+				<td>年龄</td>
+				<td>体重</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>20000</td>
+				<td>18</td>
+				<td>60</td>
+				
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>18000</td>
+				<td>20</td>
+				<td>50</td>
+				
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>23000</td>
+				<td>25</td>
+				<td>55</td>
+				
+			</tr>
+		
+		</tbody>
+		
+	</table>
+
+	<script>
+		
+	var  table=document.getElementById('tab');
+	var  tbody=table.tBodies[0]; //tbody
+	var  trs=tbody.rows;  //所有行
+	var  onetd=trs[0].cells  //第一行的所有列
+
+	for(var i=0;i<onetd.length;i++){
+		    onetd[i].index=i;
+			onetd[i].onclick=function(){
+				//alert(this.index)
+				var arr=[];
+				for(var j=1;j<trs.length;j++){
+					 arr.push({
+					 	value:trs[j].cells[this.index].innerHTML,
+					 	row:trs[j]
+					 	});
+				}
+
+			   for(var m=0;m<arr.length;m++){
+			   		for(var n=0;n<arr.length;n++){
+			   	     if(parseInt(arr[m].value)<parseInt(arr[n].value)){
+			   	     		  var temp=arr[m];
+			   	     		     arr[m]=arr[n];
+			   	     		     arr[n]=temp;
+						}
+			   		}
+			   }
+
+				//console.log(arr)
+
+			for(var p=0;p<arr.length;p++){
+				tbody.appendChild(arr[p].row)
+			}
+
+			}
+	}
+	
+//排序
+/*var  arr=[{value:"3",name:'zs'},
+		 {value:"5",name:'lis'},
+         {value:"10",name:'zw'}]
+for(var i=0;i<arr.length;i++){
+	 for(var j=0;j<arr.length;j++){
+	 		 if(parseInt(arr[i].value)<parseInt(arr[j].value)){
+	 		 	 var  temp=arr[i];
+	 		 	     arr[i]=arr[j];
+	 		 	     arr[j]=temp;
+	 		 }
+	 }
+}
+
+console.log(arr)*/
+	</script>
+</body>
+</html>

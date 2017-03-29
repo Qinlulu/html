@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var p1={
+             name:'李四',
+             sex:'女'
+		}
+
+		var p2={
+			 name:'张三',
+			 age :18,
+			 sex:'男'
+		}
+
+		function  copyO(obj1,obj2){
+			  for(var i  in  obj2){
+			  	/*if(!obj1.hasOwnProperty(i)){
+			  	  obj1[i]=obj2[i];
+			  	}*/
+			  	if(obj1.hasOwnProperty(i)){
+			  		continue;
+			  	}
+			  	obj1[i]=obj2[i];
+			  	
+
+
+			  }
+		}
+  copyO(p1,p2);
+  console.log(p1)
+
+	/*for(var  i  in  p2){
+		//如果i的属性名在p1里有
+		if(p1.hasOwnProperty(i)){
+                   continue;
+		}
+                p1[i]=p2[i]
+	}
+	console.log(p1)*/
+
+	</script>
+</body>
+</html>

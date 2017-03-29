@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{display: none; line-height: 30px; border-bottom: 1px solid red; width:300px;}
+	</style>
+</head>
+<body>
+<button>上一页</button>
+<button>下一页</button>
+<div id='box'>
+	
+</div>
+	<ul>
+	<li>第 1 章 石猴出世</li>
+	<li>第 2 章 石猴出世</li>
+	<li>第 3 章 石猴出世</li>
+	<li>第 4 章 石猴出世</li>
+	<li>第 5 章 石猴出世</li>
+	<li>第 6 章 石猴出世</li>
+	<li>第 7 章 石猴出世</li>
+	<li>第 8 章 石猴出世</li>
+	<li>第 9 章 石猴出世</li>
+	<li>第 10 章 石猴出世</li>
+	<li>第 11 章 石猴出世</li>
+	<li>第 12 章 石猴出世</li>
+	<li>第 13 章 石猴出世</li>
+	<li>第 14 章 石猴出世</li>
+	<li>第 15 章 石猴出世</li>
+	<li>第 16 章 石猴出世</li>
+	<li>第 17 章 石猴出世</li>
+	<li>第 18 章 石猴出世</li>
+	<li>第 19 章 石猴出世</li>
+	<li>第 20 章 石猴出世</li>
+	<li>第 21 章 石猴出世</li>
+	<li>第 22 章 石猴出世</li>
+	<li>第 23 章 石猴出世</li>
+	<li>第 24 章 石猴出世</li>
+	</ul>
+	<script>
+		var lis=document.getElementsByTagName('li');
+		var btn=document.getElementsByTagName('button');
+		var pageSize=5;
+		var cur=1;
+		var pageCount=Math.ceil(lis.length/pageSize);
+			
+function  showPage(start,end){
+	for(var i=start;i<end;i++){
+		 lis[i].style.display='block'
+	}
+
+}
+
+function getURL(name){
+			var reg=new  RegExp("(\\?|&)"+name+"=[^&]+",'g')
+			arr=location.search.match(reg)
+			
+            return arr[0].substring(arr[0].indexOf('=')+1)
+				
+
+		}
+
+if(location.search==''){
+	var cur=1;
+	showPage(0,pageSize);
+}else{
+	var cur=getURL('p');
+	var start=(cur-1)*pageSize;
+	if(cur!=pageCount){
+	  showPage(start,start+pageSize);
+	}else{
+		showPage(start,lis.length)
+	}
+	
+}
+ btn[1].onclick=function(){
+ 	if(cur!=pageCount){
+     cur++;
+ 	}
+ 	location.search='?p='+cur;
+ }
+
+btn[0].onclick=function(){
+	if(cur!=1){
+		  cur--;
+	}
+	
+	  location.search='?p='+cur;
+}
+
+/*function hideAll(){
+	for(var i=0;i<lis.length;i++){
+		 lis[i].style.display='none'
+	}
+}
+btn[1].onclick=function(){
+    if(cur<pageCount){
+     cur++;
+     }
+     hideAll();
+     var s=(cur-1)*pageSize;
+     if(cur!=pageCount){
+     showPage(s,s+pageSize)
+       }else{
+       	showPage(s,lis.length)
+       }
+  
+}
+
+
+btn[0].onclick=function(){
+	  hideAll();
+	  if(cur>1){
+	  	  cur--;
+	  }
+	  var  start=(cur-1)*pageSize;
+	  showPage(start,start+pageSize);
+	
+
+}
+
+*/
+
+
+	</script>
+	
+</body>
+</html>

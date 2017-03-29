@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//
+		/*if(cur.hasAttribute){
+			cur.hasAttribute('value')?cur.value:cur.text
+		}
+        
+       if(getComputedStyle){
+       	getComputedStyle(obj,null)
+       }
+
+       if(event.addEventListener){
+
+        }*/
+
+/*function  ie8Low(){
+
+
+   var  o={toString:function(){}}
+
+   for( i  in  o){
+   	  if(i=='toString'){
+   	  	 alert(false);
+   	  }else{
+   	  	alert(true);
+   	  }
+   }
+
+   }
+
+  ie8Low()
+  */
+  //webkit  Chrome apple
+ // Gecko  Firefox
+ //用户代理检测
+ alert(navigator.userAgent)
+var ua=navigator.userAgent;
+if(/Firefox/.test(ua)){
+	alert('是火狐浏览器');
+}else if(/Chrome/.test(ua)){
+	alert('好像是谷歌');
+}else if(/MSIE (\d+\.\d+)/.test(ua)){
+      //alert("是IE"+RegExp.$1)
+        alert("是IE"+RegExp["$1"])
+}else if(/Trident/.test(ua)){
+	 alert('是IE11')
+}else{
+	 alert('不知道是啥')
+}
+
+//移动端 PC端  "iPhone"、"iPod"或"iPad"
+
+if(/(iPhone | iPod | iPad)/.test(ua)){
+	alert('是移动端');
+}else{
+	alert("是PC的")
+}
+
+  	</script>
+</body>
+</html>

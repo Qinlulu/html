@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#smallbox{width:100px; height:100px;background: red;}
+		#bigbox{width:300px; height:300px;border:1px solid red;}
+
+	</style>
+</head>
+<body>
+     
+     <div id='bigbox'>
+     	<div id='smallbox'>
+     	</div>
+
+     </div>
+	<script>
+	 //事件流：页面接收事件的顺序
+		//IE 事件冒泡： 具体的事件  到 不具体的事件
+		//NT事件捕获：  不具体的事件 到 具体的事件
+
+var  smallbox=document.getElementById('smallbox');
+var  bigbox=document.getElementById('bigbox');
+	 
+	 smallbox.onclick=function(){
+	 	alert('单击了小盒子')
+	 }
+		
+	bigbox.onclick=function(){
+		alert('单击了大盒子')
+	}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<h2>您就诊过的医院</h2>
+		<input type="text">
+		<ul id="list">
+			
+				
+			
+		</ul>
+		<button id='add'>添加医院</button>
+	</div>
+	<script>
+		var  add=document.getElementById('add')
+		var  list=document.getElementById('list')
+    var  lis=document.getElementsByTagName('li')
+      
+        add.onclick=function(){
+
+      
+        
+             var  newLi=document.createElement('li'),
+              input=document.createElement('input'),
+              button=document.createElement('button')
+              input.placeholder='请输入医院'
+              input.type='text'
+              button.innerHTML='X'
+              newLi.appendChild(input);
+              newLi.appendChild(button);
+              list.appendChild(newLi);
+
+              button.onclick=function(){
+                   list.removeChild(button.parentNode)
+                   add.style.display="block"
+                  
+
+              }
+                 
+        
+        if(lis.length>4){
+       add.style.display='none'
+}
+
+        }  
+
+
+	</script>
+</body>
+</html>

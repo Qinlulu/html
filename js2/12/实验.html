@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+var  baz=3;
+var foo = {
+		    bar: function () {
+		        return this.baz
+		    },
+		    baz: 1
+		};
+     console.log( foo.bar())
+
+		var a = (function () {
+		    //return typeof arguments[0]();
+		    return  typeof  arguments[0]()
+		})(foo.bar);
+		console.log(a);  
+
+
+
+function addMore(){
+
+var  num=0
+   for(var i=0;i<arguments.length;i++){
+   	   num=num+arguments[i]
+   }
+   console.log(num)
+}
+
+addMore(2,3)  //5
+addMore(5,3,1)// 9
+addMore(1,5,8,2) //16	        
+	</script>
+</body>
+</html>

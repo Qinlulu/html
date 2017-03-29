@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var p1={
+             name:'李四',
+             sex:'女'
+		}
+
+		var p2={
+			 name:'张三',
+			 age :18,
+			 sex:'男'
+		}
+
+	function deleteP(obj1,obj2){
+		  for(var i in obj2){
+		  	  if(!obj1.hasOwnProperty(i)){
+		  	  	delete  obj2[i]
+		  	  }
+		  }
+	}
+	//hasOwnProperty
+
+
+	deleteP(p1,p2);
+	console.log(p2)
+
+		/*for(var i  in p2){
+			if(!p1.hasOwnProperty(i)){
+			 delete p2[i]
+			}
+		}
+
+		console.log(p2)*/
+
+	</script>
+</body>
+</html>

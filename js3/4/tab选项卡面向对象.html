@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   *{margin:0;padding: 0}
+       #box{width: 300px;height: 300px;border: 1px solid red; margin: 20px auto;}
+       #box ul li{float: left;width: 73px;text-align: center;line-height: 20px;border: 1px solid blue;}
+       ul,li{list-style: none;}
+       .bg{background: red}
+       #count div{display: none;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<ul id='list'>
+			<li class='bg'>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id='count'>
+			<div style='display: block'>11111111111111111111</div>
+			<div>2222222222222222222</div>
+			<div>3333333333333</div>
+			<div>4444444444444444</div>
+		</div>
+	</div>
+	<script>
+	//把面向过程改成面向对象
+	//把变量改成属性
+	//把函数变成原型上的方法
+	//改变this指向
+
+	function Tab(){
+       this.lis=document.getElementById('list').getElementsByTagName('li');
+       this.odivs=document.getElementById('count').getElementsByTagName('div');
+       this.menu=document.getElementById('list');
+       this.num=0;
+       this.timer=null;
+       //this.bindClick();
+
+	}
+
+	Tab.prototype.bindClick=function(){
+    var that=this;
+    //滑过播放
+		for(var i=0;i<this.lis.length;i++){ 
+	 	   	    this.lis[i].index=i;
+		 	   	this.lis[i].onmouseover=function(){
+                       that.changeBj(this.index)
+                          that.num=this.index;
+		 	   	}
+	 	   }	
+	
+	//自动播放
+	  this.autoPlay();
+	
+
+	 //鼠标滑过清除定时器
+      this.menu.onmouseover=function(){
+      	clearInterval(that.timer);
+      }
+
+	 //鼠标离开继续播放 
+
+	 this.menu.onmouseout=function(){
+	 	that.autoPlay();
+	 }
+
+
+
+
+	}
+
+	Tab.prototype.changeBj=function(id){
+			for (var j = 0;j<this.lis.length; j++) {
+                      	   this.lis[j].className='';
+                      	   this.odivs[j].style.display='none';
+                      } 
+                      this.lis[id].className='bg';
+                      this.odivs[id].style.display='block';
+	}	
+
+   //自动播放
+   Tab.prototype.autoPlay=function(){
+   	 var that=this;
+   		this.timer=setInterval(function(){
+   			that.num++;
+   			if(that.num>that.lis.length-1)that.num=0;
+   			 that.changeBj(that.num);
+
+   		},2000)
+
+   }
+
+
+
+ 	var p1=new Tab();
+ 	p1.bindClick();
+ 
+
+
+	  	  /* var  box=document.getElementById('box');
+	 	   var  uls=box.getElementsByTagName('ul')[0];
+	 	   var  lis=uls.getElementsByTagName('li');
+	 	   var  count=document.getElementById('count');
+	 	   var  odiv=count.getElementsByTagName('div');*/
+	 	  /* for(var i=0;i<lis.length;i++){ 
+	 	   	    lis[i].index=i;
+		 	   	lis[i].onclick=function(){
+                     for (var j = 0;j<lis.length; j++) {
+                      	   lis[j].className='';
+                      	   odiv[j].stylesheets.display='none';
+                      } 
+
+                      lis[this.index].className='bg';
+                      odiv[this.index].stylesheets.display='block';
+		 	   	}
+	 	   }	*/	
+
+
+	</script>
+</body>
+</html>

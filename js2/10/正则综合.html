@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <input type="text" id="in1"><input type="button" id="btn" value="查询">
+	<script>
+		var in1=document.getElementById("in1")
+		var btn=document.getElementById("btn")
+
+function fn(regg){
+	console.log(regg.test(in1.value))
+}
+		btn.onclick=function(){
+			var reg=/^[\w\u4e00-\u9fa5]{5,15}$///判断用户名
+			fn(reg)
+			var reg1=/^1[3456790]\d{9}$///判断手机号码
+			fn(reg1)
+			//(+86)0351-6525452
+			var reg2=/^((\(\+86\))?\d{3,4}-)?\d{7,8}$///判断电话号码
+			fn(reg2)
+			//判断网址
+			var reg3=/^((http(s)?:\/\/)?www\.)?\w+\.(com|net|cn|com\.cn)$/
+			fn(reg3)
+
+
+		}
+		//正则：
+    //验证 用户名   网址 email 电话号码
+    //border-left-color
+    //清除空格
+    //url 网址传参    json={}
+    //addClass removeClass  hasClass  getByClass
+    //replace  split  match  substring  substr slice
+	</script>
+</body>
+</html>

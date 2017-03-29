@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="a.html" name='myform'>
+		用户名：<input type="text" name='user'><br>
+		密码：<input type="password" name='pwd'><br>
+		<input type="radio" name='sex' value='男'>男
+		<input type="radio" name='sex' value='女'>女
+		<input type="checkbox" name='ah' value='旅游'>旅游
+		<input type="checkbox" name='ah' value='体育'>体育
+		<input type="checkbox" name='ah' value='美术'>美术
+		<select name="city" multiple size='8'>
+			<option value="010">北京</option>
+			<option>天津</option>
+			<option value="022" selected>上海</option>
+			<option value="023">重庆</option>
+		</select>
+		<input type="submit" value='登录'>
+		<input type="reset" value='取消'>
+		<input type="button" value='注册'>
+		<strong id='login'>登录</strong>
+
+	</form>
+	<input type="text" name='user-1' id='mz'>
+	<script>
+	var  mz=document.getElementById('mz');
+	//document.forms
+	//document.forms[0].elements[0]
+	//document.表单名.元素名
+   //console.log(document.myform.user)
+  // document.myform.user.style.background='red'
+var  forms=document.forms[0];
+	console.log(forms.city.options[2].selected)
+	//兼容标准浏览器
+	//hasAttribute('属性名') 判断是否具有属性 返回值为true false
+	//console.log(forms.city.options[1].hasAttribute('value'))
+  //IE 6  7  IE8
+  //attributes['属性名'].specified 判断属性没有没有 ，有true  false   
+  console.log(mz.attributes['type'].specified)
+ function  serialForm(form){
+ 	var arr=[]
+ 	     for(var i=0;i<form.elements.length;i++){
+ 	     		var  elemes=form.elements[i];
+ 	     		switch(elemes.type){
+ 	     	          case  "submit":
+ 	     	          case  "reset":
+ 	     	          case  "button":
+ 	     	          break;
+ 	     	          case  "select-one":
+ 	     	          case  "select-multiple":
+ 	     	           for(var j=0;j<form.city.options.length;j++){
+ 	     	           	     var cur=form.city.options[j];
+ 	     	           	    if(cur.selected){
+ 	     	           	    	if(cur.hasAttribute){
+ 	     	           	         var optValue=cur.hasAttribute('value')?cur.value:cur.text;
+ 	     	           	     	}else{
+                                 var optValue= cur.attributes['value'].specified?cur.value:cur.text; 
+ 	     	           	     	}
+                                  arr.push(elemes.name+'='+optValue)     
+ 	     	           	     }
+
+ 	     	           }
+ 	     	            	
+ 	     	          case "radio":
+ 	     	          case 'checkbox':
+ 	     	           if(!elemes.checked)break;
+ 	     	          default:
+ 	     	          if(elemes.name.length){
+ 	     	          	 arr.push(elemes.name +"="+ elemes.value)
+ 	     	          }
+
+ 	     		}
+ 	     }
+ 	  return   arr.join('&')
+ }
+
+forms.onsubmit=function(){
+		console.log(serialForm(forms));
+		return false;
+}
+
+
+	</script>
+</body>
+</html>

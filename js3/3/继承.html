@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//父类  超类
+		function Parent(){
+			this.car='法拉利';
+			this.house='别墅';
+		}
+         Parent.prototype.work=function(){
+         	alert("CEO");
+         }
+       //子类  基类
+       function  Child(){
+         this.name='张三';
+       }
+       //继承：让子类的原型指向父类的实例
+       Child.prototype=new  Parent();
+       //让child原型的constructor指向child自身，否则指向Parent;
+       Child.prototype.constructor=Child;
+       Child.prototype.ah=function(){
+       	alert('爱好体育');
+       }
+       Child.prototype.work=function(){
+       	alert('web前端开发');
+       }
+     var  p1=new Child();
+      /* console.log(p1.name);
+       console.log(p1.car);
+       console.log(p1.house)
+       p1.work();
+      p1.ah()
+*/
+   // constructor
+
+     console.log(p1.constructor);
+
+	</script>
+</body>
+</html>

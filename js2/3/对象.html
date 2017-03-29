@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//对象：
+		//全局对象
+		//window  alert()  confirm()  prompt()  setInterval()
+		//window.alert()
+	/*	var  a=3
+		console.log(window.a)
+		function  say(){
+			alert('你好')
+		}
+		window.say()*/
+		//js内置对象
+		//array   string  math  Date
+		//array: push()  shift() pop() sort( ) reverse()  indexOf()
+		//string   substring()  substr() slice()  trim() 
+		//toUpperCase()  toLowerCase()  indexOf()
+    //自定义对象：  属性和方法的集合
+
+   var  arr=[]  //字面量法
+   var  arr=new Array()  //构造函数法
+//字面量法
+//属性名:属性值 多个属性之间用,隔开
+//方法名:function(){}
+//面向对象里，this指向当前对象
+var  name='历史'
+   var  person={
+   	       name:'张三',
+   	       sex:'男',
+   	       age:18,
+   	       say:function(){
+   	       	alert(this.name+'你好');
+   	       },
+   	       work:function(){
+   	       	alert('web前端开发工程师')
+   	       }
+
+   }
+
+ console.log(person.name)
+ console.log(person.sex)
+ person.say()
+/* person.work();
+*/
+
+
+
+
+	</script>
+</body>
+</html>

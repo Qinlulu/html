@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function  createP(name,age){
+		var  p={};
+		    p.name=name;
+		    p.age=age;
+		    p.show=function(){
+		    	return "您的姓名是"+this.name+"您的年龄是"+this.age;
+		    }
+           
+          return p
+
+	}
+
+ 
+  var  p1=createP('王亚宁',18)
+  var  p2=createP('李四',23)
+  console.log(p1.name)
+  console.log(p2.name)
+
+
+
+	</script>
+</body>
+</html>

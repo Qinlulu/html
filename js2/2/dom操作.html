@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1111111</li>
+		<li>22222222</li>
+		<li>333333333</li>
+		<li>44444444</li>
+
+	</ul>
+	<script>
+		//DOM插入节点 appendChild  insertBefore
+		//删除节点  removeChild  
+		//替换节点   replaceChild
+		// 克隆节点   cloneNode
+		//创建节点  createElement   createTextNode
+
+		var uls=document.getElementsByTagName('ul');
+		var lis=document.getElementsByTagName('li');
+
+     for(var i=lis.length-1;i>=0;i--){
+     	 var  newLi=lis[i].cloneNode(true);
+              uls[0].appendChild(newLi)
+     }
+       
+
+	</script>
+</body>
+</html>

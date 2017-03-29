@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div class='tt test a'></div>
+<ul>
+	<li>11111111111</li>
+	<li class='text'>2222222222</li>
+	<li>333333333</li>
+	<li class='text bg'>444444444</li>
+	<li class='aa text'>5555555</li>
+	<li>666666666</li>
+	<li class='cc text ee'>7777777777</li>
+</ul>
+	<script>
+	var  divs=document.getElementsByTagName('div');
+
+
+    function  hasclass(obj,style){
+ 	var reg=new RegExp("\\b"+style+"\\b",'g');
+    //return	obj.className.match(reg)
+    if(reg.test(obj.className)){
+    	 return true
+    }else{
+    	 return false
+    }
+    }
+   console.log(hasclass(divs[0],'testddd'));
+  
+  /* function  addClass(obj,stylesheets){
+   	    if(!hasclass(obj,stylesheets)){
+   	    	obj.className=obj.className+' '+stylesheets
+   	    }
+   }
+  addClass(divs[0],"bg")*/
+
+   function  removeClass(obj,style){
+   	 if(hasclass(obj,style)){
+   	 	var reg=new RegExp("\\b"+style+"\\b")
+          obj.className=obj.className.replace(reg,' ')
+          
+   	 }
+
+   }
+
+
+removeClass(divs[0],'test')
+
+
+  function   getByClass(parent,style){
+  	    var  elemes=parent.getElementsByTagName('*');
+  	    var  reg=new RegExp("\\b"+style+"\\b")
+  	    var temp=[]
+  	     for(var i=0;i<elemes.length;i++){
+  	     		if(reg.test(elemes[i].className)){
+                     temp.push(elemes[i]);
+  	     		}
+  	     }
+
+  	    return  temp
+  }
+
+ console.log(getByClass(document,'text'))
+
+
+	</script>
+</body>
+</html>

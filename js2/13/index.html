@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<textarea id="inp">
+
+		</textarea>
+		<span id="span"></span>
+		<span id="span1"></span>
+	</form>
+	<script>
+		var inp=document.getElementById("inp")
+		var span=document.getElementById("span")
+		var span1=document.getElementById("span1")
+		//数字有多少个
+		//英文字母有多少个
+		//其他字符有多少个
+		inp.onkeyup=function(){
+			reg=/\d/g
+			reg1=/[A-Za-z]/g
+			var arr=inp.value.match(reg);
+			var sum=arr.length;
+			var arr1=inp.value.match(reg1);
+			var sum1=arr1.length;
+			var sum2=inp.value.length;
+			var sum3=sum2-sum-sum1;
+
+			span.innerHTML="出现数字的次数"+sum+"出现字母的次数"+sum1+"其他字符的长度"+sum3;
+
+
+
+		}
+
+
+
+	</script>
+</body>
+</html>

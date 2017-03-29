@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button id='btn'>隐藏</button>
+<button id='btn1'>显示</button>
+<div id='box'>这是盒子</div>
+<div class='text'>这是文字</div>
+<div class='text bg'>这也是文字</div>
+<p>这是段落</p>
+<p>这也是一段落</p>
+<script src='myjq.js'></script>
+	<script>
+
+     $('p').click(function(){
+     	//alert('aa');
+     	alert($(this).html());
+     })
+
+    $('#btn').click(function(){
+    	$('div').hide();
+    })
+
+ 	$('#btn1').click(function(){
+ 		$("div").show();
+ 	}) 
+
+ 	$('#box').css('background','red')
+ 	$('p').css('background','blue')
+ 	console.log($('p').css('background'))
+
+//
+    /* $('p')
+     $('div')
+     $('.text')
+     $('#box')*/
+
+
+	//字符串基本选择器  p   .text  #box	
+	//函数
+	//对象  ps[0] 
+
+  /*$('p').css('background','red')
+  $(".text").click(function(){
+  		alert($(this).html())
+  })
+
+  $('#box').attr('title','标题')
+  $(function(){
+  	alert('aaaa')
+  })*/
+
+	</script>
+
+
+</body>
+</html>

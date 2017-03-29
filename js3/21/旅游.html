@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='lvdat1.js'></script>
+	<style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:1000px;
+            height:210px;
+            margin:50px auto;
+            background:#F4FFF8;
+        }
+        ul{
+            border-bottom:1px solid #ccc;
+            height:30px;
+        }
+        li{
+            list-style:none;
+            float:left;
+            margin:5px;
+        }
+        #info{
+            width:1000px;
+            height:210px;
+            margin:30px auto;
+        }
+        #info li{
+            float:left;
+            width:160px;
+        }
+        .bg{background: red;}
+	</style>
+</head>
+<body>
+<div id="box">
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+</div>
+<div id='info'>
+	<ol></ol>
+	<ol></ol>
+	<ol></ol>
+	<ol></ol>
+	<ol></ol>
+	<ol></ol>
+
+</div>
+	<script>
+		var uls=document.getElementsByTagName('ul')
+		var info=document.getElementById('info')
+		var ols=info.getElementsByTagName('ol');
+
+ 
+//
+for(var i=0;i<2;i++){
+	   for(var j=0;j<json.data[i].lv.length;j++){
+			newLi=document.createElement('li');
+			newLi.innerHTML=json.data[i].lv[j].s;
+			uls[i].appendChild(newLi)
+			 }
+}
+for(var i=2;i<json.data.length;i++){
+ for(var j=0;j<json.data[i].lv.length;j++){
+			newLi=document.createElement('li');
+			newLi.innerHTML="<input type='checkbox'><span>"+json.data[i].lv[j].s+"</span>";
+			uls[i].appendChild(newLi)
+			 }
+			}
+
+
+
+function   changeBj(){
+	 for(var i=0;i<uls[0].getElementsByTagName('li').length;i++){
+	 	  uls[0].getElementsByTagName('li')[i].className=''
+	 }
+}
+
+for(var  i=0;i<uls[0].getElementsByTagName('li').length;i++){
+	
+		uls[0].getElementsByTagName("li")[i].onclick=function(){
+			 ols[0].innerHTML=''
+				if(this.className==''){
+					 changeBj();
+						   this.className='bg';
+						var newLi= this.cloneNode(true)
+						ols[0].appendChild(newLi);
+
+				}else{
+					    this.className='';
+					    for(var m=0;m<ols[0].getElementsByTagName('li').length;m++){
+					    	if(ols[0].getElementsByTagName("li")[m].innerHTML=this.innerHTML){
+
+					    		ols[0].removeChild(ols[0].getElementsByTagName('li')[m]);
+
+					    	}
+					    }
+
+				}
+          
+			}
+
+}
+
+
+var lis4=uls[4].getElementsByTagName('li');
+for(var i=0;i<lis4.length;i++){
+		 lis4[i].onclick=function(){
+
+		 		if(this.getElementsByTagName('input')[0].checked){
+		 			this.className='bg';
+		 			var newLi=this.cloneNode(true);
+		 				ols[1].appendChild(newLi);
+		 		}else{
+		 			this.className=''
+		 			 for(var j=0;j<ols[1].getElementsByTagName('li').length;j++){
+		 			 	 if(ols[1].getElementsByTagName('li')[j].innerHTML==this.innerHTML){
+		 			 	 		ols[1].removeChild(ols[1].getElementsByTagName('li')[j])
+		 			 	 }
+		 			 }
+		 		
+		 		}
+
+		 }
+}
+
+	</script>
+</body>
+</html>

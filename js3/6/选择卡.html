@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       *{margin:0; padding:0;} 
+       ul,li{list-style: none}
+       #box{width:550px;border:1px solid red; margin:20px auto;}
+       ul{background:#ccc; height:30px;}
+      li{float: left;width:120px; height:30px; line-height: 30px;
+      	text-align: center;}
+
+	</style>
+</head>
+<body>
+<div id='box'>
+	<ul id='list'>
+		<li>1111</li>
+		<li>222</li>
+		<li>33</li>
+		<li>4444</li>
+	</ul>
+	<div id='pic'>
+	      <img src="pic/a1.jpg" alt="">
+	</div>
+	</div>
+	<script>
+
+	function  Tab(liId,picId,arry){
+		   this.lis=document.getElementsByTagName(liId);
+		   this.pic=document.getElementById(picId);
+		   this.arr=arry;
+	}
+
+var price=['23元打折吗','40元打8折','100元打2折','300元打1折']
+	var tab=new Tab('li','pic',price);
+		/*	var lis=document.getElementsByTagName('li');
+			var pic=document.getElementById('pic');
+			var arr=['23元打折吗','40元打8折','100元打2折','300元打1折']*/
+
+			for(var i=0;i<lis.length;i++){
+				lis[i].index=i;
+				lis[i].onclick=function(){
+					pic.innerHTML=''
+					//img 
+					//p  9.6
+					var newImg=document.createElement('img');
+					    newImg.src='pic/a'+(this.index+1)+'.jpg';
+					    pic.appendChild(newImg);
+					var  newP=document.createElement('p');
+					     newP.innerHTML=arr[this.index]
+					     pic.appendChild(newP);
+				}
+			}
+
+
+	</script>
+</body>
+</html>

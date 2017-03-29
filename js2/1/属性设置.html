@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   <h1 id='tt' title='标题'  data-pic='2016.4.5' class='bg'><span>更多</span>标题文字<a href="#">百度</a></h1>
+  
+   <input type="checkbox">
+	<script>
+	var   tt=document.getElementById('tt');
+	var  input=document.getElementsByTagName('input')
+ //标准属性
+//获取标准属性
+  //元素.属性名  className    checked  true  false 
+//设置标准属性
+   //元素.属性名=属性值 
+//删除属性
+//元素.属性名=''
+ 
+
+ //自定义属性
+ 	//获取自定义属性
+ //元素.getAttribute('属性名')
+ //设置自定义属性
+ //元素.setAttribute('属性名','属性值')
+ //删除属性
+ //元素.removeAttribute('属性名')
+
+  tt.title='1501D'
+  input[0].checked=true;
+  //tt.data-pic='2016.8.2'
+  tt.setAttribute('data-pic','2016.8.2')
+  tt.setAttribute('title','1501DDDDDDDDDDDD')
+  tt.removeAttribute('class')
+ //tt.title=''
+/* console.log(tt.title)
+ console.log(tt.className)
+ console.log(input[0].checked)
+ console.log(tt.getAttribute('data-pic'))
+ console.log(tt.getAttribute('title'))
+*/
+
+    
+
+
+    
+
+	</script>
+</body>
+</html>

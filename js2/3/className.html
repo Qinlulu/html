@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1 class='box test'></h1>
+	<p class='box'></p>
+	<ul>
+		<li class='a'>1111</li>
+		<li class='box a'>222</li>
+		<li class='b box bg'>333</li>
+		<li class='bg'>444</li>
+		<li class='b'>555</li>
+	</ul>
+	<script>
+	//IE8 及IE8以下不兼容
+	/*var box=document.getElementsByClassName('box')
+	console.log(box)
+*/
+    var  uls=document.getElementsByTagName('ul');
+ /*   var  elems=uls[0].getElementsByTagName('*')
+    console.log(elems);
+    var arr=[]
+       for(var i=0;i<elems.length;i++){
+       		//如果elems[i].className 里有'box'的 则push 数组arr里
+       		if(elems[i].className.indexOf('box')!=-1){
+       			arr.push(elems[i])
+       		}
+       }
+     console.log(arr)
+*/
+
+     function  getClassName(parent,clsName){
+     	//找到所有的标签
+     	var  elems=parent.getElementsByTagName('*');
+     	//创建空数组
+     	var arr=[];
+     	//遍历所有的标签
+     	 for(var i=0;i<elems.length;i++){
+     	 	//如果classname里有clsName 
+     	 		if(elems[i].className.indexOf(clsName)!=-1){
+     	 			//则把标签追加到数组里
+     	 			arr.push(elems[i]);
+     	 		}
+     	 }
+     	 return  arr
+
+     }
+
+    console.log( getClassName(document,'bg'))
+	</script>
+
+</body>
+</html>

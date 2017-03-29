@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+   <select></select>年
+   <select></select>月
+   <select></select>日
+	<script>
+	var sl=document.getElementsByTagName('select');
+	var arr=[31,28,31,30,31,30,31,31,30,31,30,31]
+		//1950  2100 
+		for(var i=0;i<=150;i++){
+		var  newO=new Option(1950+i);
+		     sl[0].add(newO)
+       }
+       //月 1 12
+    /*   for(var i=1;i<=12;i++){
+       	var  newOption=new Option(i);
+       		 sl[1].add(newOption);
+       }*/
+       // 1 30
+        /* for(var i=1;i<=30;i++){
+       	var  newOption=new Option(i);
+       		 sl[2].add(newOption);
+       }*/
+
+    function auto(m,s){
+    	 for(var i=1;i<=m;i++){
+       		var  newOption=new Option(i);
+       		 sl[s].add(newOption);
+       }
+    }
+
+    auto(12,1);
+    auto(31,2);
+
+    sl[1].onchange=function(){
+    	sl[2].innerHTML=''
+    	 var index=sl[1].selectedIndex;
+    	 switch(index){
+    	 	// 13578 10 12
+    	 	case  0:
+    	 	case  2:
+    	 	case  4:
+    	 	case  6:
+    	 	case  7:
+    	 	case  9:
+    	 	case  11:
+    	 	auto(31,2);
+    	 	break;
+    	 	//4 69 11
+    	 	case  3:
+    	 	case  5:
+    	 	case  8:
+    	 	case  10:
+    	 	auto(30,2);
+    	 	break;
+    	 	case 1:
+    	 	if(sl[0].value%4==0){
+    	 		auto(29,2);
+    	 	}else{
+    	 		auto(28,2);
+    	 	}
+    	 }
+    	
+    }
+
+
+
+  var now=new Date();
+          sl[0].value=now.getFullYear();
+          sl[1].value=now.getMonth()+1;
+          sl[2].value=now.getDate();
+
+	</script>
+</body>
+</html>

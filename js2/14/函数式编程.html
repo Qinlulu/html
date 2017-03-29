@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var arr=['男','女','男','男','女','女']
+	//var arr=['1501D男','女','1501D男','1501D男','女','女']
+	//计算女生的个数
+	function  sexClass(sex){
+			if(sex=="男"){
+				return "1501D"+sex
+			}
+			else{
+				return ""	
+			}
+		}
+
+    console.log(map(sexClass,arr))
+   function  map(fn,arry){
+   	  var temp=[]
+   	  each(function(n){
+   	  	 temp.push(fn(n));
+   	  },arry)
+
+   	  return temp
+   }
+
+
+   function  each(fn,arry){
+   	     for(var i=0;i<arry.length;i++){
+   	     	fn(arry[i]);
+   	     }
+   }
+
+   function reduce(fn,base,arry){
+   	     each(function(n){
+   	     	base=fn(base,n);
+   	     },arry)
+
+   	     return base;
+   }
+
+ console.log(reduce(womenCount,0,arr))
+
+  function  womenCount(num,val){
+  		 if(val=='女'){
+  		 	num++;
+  		 }
+
+  		 return  num
+  }
+
+
+  function  minValue(num,val){
+  	   if(num>val){
+  	   	num=val;
+  	   }
+
+  	   return  num;
+  }
+var arr1=[3,6,1,-2]
+ console.log( reduce(minValue,arr1[0],arr1))
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+//单体模式
+//单例模式  
+//设计模式
+//工厂模式
+//原型模式
+//观察者模式
+//享元模式
+//代理模式
+//策略模式
+//建造者模式
+//外观模式
+//模板模式
+//装饰者模式
+
+/*var obj={
+	  name:'zs',
+	  sex:"男"
+}
+
+obj.name='li'*/
+
+//闭包的单例模式
+var myperson=(function(){
+	//私有变量  局部
+	             var user='zs';
+	             function  test(){
+	             	alert(user);
+	             }
+  
+	             //公有变量  全局的
+	             return {
+	             		getVal:function(){
+	             			test()
+	             		},
+	             		publicvar:'1501F'
+	             }
+})()
+myperson.getVal()
+console.log(myperson.publicvar)
+
+
+
+	</script>
+</body>
+</html>

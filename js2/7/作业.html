@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	ul,li{list-style: none;margin:0;padding:0;}
+    #box{width:300px;height:30px;margin:50px auto; background: #ccc;position: relative;}
+    #box ul{position: absolute; top:-30px;}
+    #box ul li{height:30px; line-height: 30px}
+
+		
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<ul>
+			<li>111111111</li>
+			<li>222222222</li>
+			<li>3333333333</li>
+			<li>44444444</li>
+		</ul>
+	</div>
+
+	<script>
+		var box=document.getElementById('box'),
+			uls=document.getElementsByTagName('ul'),
+			lis=document.getElementsByTagName('li'),
+			timer=null,
+			timer1=null;
+
+          console.log(uls[0].offsetTop)
+function  speed() {
+			var i=0;
+		     function  auto(){
+                
+
+
+		     i--;
+		     	if(i<-30){
+		     	clearInterval(timer);
+		     	uls[0].appendChild(lis[0]);
+		         uls[0].style.top=0;
+		     	 i=0;
+		     	}
+				uls[0].style.top=i+'px';
+		     }
+          timer= setInterval(auto,30);
+}
+
+timer= setInterval(auto,30);
+
+box.onmouseover=function(){
+	clearInterval(timer1)
+}
+
+box.onmouseout=function(){
+	timer1=setInterval(speed,50)
+}
+		
+
+
+
+	</script>
+</body>
+</html>

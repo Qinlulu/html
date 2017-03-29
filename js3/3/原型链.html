@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function  Parent(){
+		  this.car='宝马';
+	}
+
+	Parent.prototype.work=function(){
+		alert("CEO");
+	}
+
+	function Child(){
+		this.house='城堡'
+	}
+    Child.prototype=new Parent();
+	Child.prototype.job=function(){
+		alert('web前端');
+	}
+
+  function  Person(name){
+  	 this.name=name
+  }	
+
+  Person.prototype=new Child();
+  Person.prototype.work=function(){
+  	alert('自由职业者')
+  }
+  var p1=new Person('张三');
+
+ /* console.log(p1.house)
+  p1.work()*/
+
+console.log(p1 instanceof Person)
+console.log(p1 instanceof  Child)
+console.log(p1 instanceof Parent)
+console.log(p1  instanceof  Object)
+console.log(Object.prototype.isPrototypeOf(p1))
+	</script>
+</body>
+</html>

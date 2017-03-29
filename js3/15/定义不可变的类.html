@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function Range(name,age){
+			this.name=name;
+			this.age=age;
+			freeze(this);
+	}
+
+   Range.prototpye=
+
+   
+   //冻结的方法   不可配置  不可修改  不可枚举
+	function  freeze(o){
+		//获取所有属性名构成的数组
+       var props= Object.getOwnPropertyNames(o);
+         for(var i=0;i<props.length;i++){
+         	Object.defineProperty(o,props[i],{
+         		enumerable:false, //不可枚举
+         		writable:false,// 不可修改
+         		configurable:false //不可配置 不可删除
+         	})
+         }
+
+         return  o;
+
+	}
+     
+	
+  
+
+var  p=new Range('zs',20)
+    p.name='li'
+    delete p.name
+ console.log(p)
+
+</script>
+	
+</body>
+</html>

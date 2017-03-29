@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1111111</li>
+		<li>2222222222</li>
+		<li>33333333</li>
+		<li>4444444444</li>
+	</ul>
+	<script>
+			var  uls=document.getElementsByTagName('ul');
+			console.log(uls[0].childNodes)
+//遍历所有的子节点，删除空白的文本节点
+  for(var i=0;i<uls[0].childNodes.length;i++){
+  	//nodeType==3 v nodeName=#text
+         if(uls[0].childNodes[i].nodeType==3){
+         	//删除
+         	uls[0].removeChild(uls[0].childNodes[i])
+         }
+
+  }
+  console.log(uls[0].childNodes)
+
+  function  removeTextNode(parent){
+  	   for(var i=0;i<parent.childNodes.length;i++){
+  	   	  if(parent.childNodes[i].nodeName=='#text'){
+  	   	  		parent.removeChild(parent.childNodes[i]);
+  	   	  }
+  	   }
+  	   return  parent.childNodes;
+  }
+
+ console.log( removeTextNode(uls[0]))
+	</script>
+</body>
+</html>

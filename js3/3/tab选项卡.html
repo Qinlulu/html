@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   *{margin:0;padding: 0}
+       #box{width: 300px;height: 300px;border: 1px solid red; margin: 20px auto;}
+       #box ul li{float: left;width: 73px;text-align: center;line-height: 20px;border: 1px solid blue;}
+       ul,li{list-style: none;}
+       .bg{background: red}
+       #count div{display: none;}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<ul id='list'>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id='count'>
+			<div>11111111111111111111</div>
+			<div>2222222222222222222</div>
+			<div>3333333333333</div>
+			<div>4444444444444444</div>
+		</div>
+	</div>
+	<script>
+	//把面向过程改成面向对象
+	//把变量改成属性
+	//把函数变成原型上的方法
+
+	function Tab(){
+       this.lis=document.getElementById('list').getElementsByTagName('li');
+       this.odivs=document.getElementById('count').getElementsByTagName('div');
+
+	}
+Tab.prototype.bindClick=function(){
+    var that=this;
+	 for(var i=0;i<this.lis.length;i++){ 
+	 	   	    this.lis[i].index=i;
+		 	   	this.lis[i].onclick=function(){
+		 	   	//console.log(this)
+                     for (var j = 0;j<that.lis.length; j++) {
+                      	   that.lis[j].className='';
+                      	   that.odivs[j].style.display='none';
+                      } 
+
+                      that.lis[this.index].className='bg';
+                      that.odivs[this.index].style.display='block';
+		 	   	}
+	 	   }		
+}
+
+
+
+var p1=new Tab();
+  p1.bindClick();
+
+
+
+	  	  /* var  box=document.getElementById('box');
+	 	   var  uls=box.getElementsByTagName('ul')[0];
+	 	   var  lis=uls.getElementsByTagName('li');
+	 	   var  count=document.getElementById('count');
+	 	   var  odiv=count.getElementsByTagName('div');*/
+	 	  /* for(var i=0;i<lis.length;i++){ 
+	 	   	    lis[i].index=i;
+		 	   	lis[i].onclick=function(){
+                     for (var j = 0;j<lis.length; j++) {
+                      	   lis[j].className='';
+                      	   odiv[j].stylesheets.display='none';
+                      } 
+
+                      lis[this.index].className='bg';
+                      odiv[this.index].stylesheets.display='block';
+		 	   	}
+	 	   }	*/	
+
+
+	</script>
+</body>
+</html>

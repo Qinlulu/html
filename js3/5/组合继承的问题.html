@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			Person.prototype.show=function(){
+				alert(this.name);
+			}
+
+         function  Child(name,age){
+         		Person.call(this,name,age); //第二次继承
+         }
+
+        
+      
+      
+
+var p1=new Child('zs',15)
+console.log(p1.name)
+p1.show();
+
+	</script>
+</body>
+</html>
