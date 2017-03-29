@@ -1,0 +1,23 @@
+<div class='main' ng-controller="mainController">
+    <header class='header'>
+        <h1>课程</h1>
+        <a href="javascript:;" class='gouser' ui-sref="user" ui-sref-opts="{reload: true}"></a>
+    </header>
+
+    <ul class='mTabul'>
+        <li ng-repeat='(index,item) in title'
+            ui-sref-active="underline"
+            ui-sref="main.videoList({courseType:index})"
+            ng-click="tabTitle(title[index])">
+            {{Txt[index]}}<i></i>
+        </li>
+    </ul>
+    <!--图片轮播抽取成单独的模块-->
+    <idenger-banner img-url="imgUrl"></idenger-banner>
+
+    <div ui-view class='video'>
+
+    </div>
+    <div ng-show="playing" class="tableTop videoTop"></div>
+    <div class="toTop" ng-click="toTop()"></div>
+</div>

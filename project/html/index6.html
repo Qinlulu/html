@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商城</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<style>
+	html{font-size: 20px;}
+	body{background: #eee; position: relative;}
+	a{-webkit-tap-highlight-color: #fff; -webkit-tap-highlight-color:transparent;}
+	/*底部*/
+	#footer{height: 3rem; width: 100%; background-color: #1a1a1a; position: fixed;bottom: 0; left: 0; overflow: hidden;}
+	#footer figure{float: left; height: 1.5rem; width: 2rem;border: 0.2rem solid #fff; margin-left: 1.5rem; margin-top: 0.3rem;}
+	#footer figcaption{margin-top: 1.2rem;text-align: center;}
+	.banner{height: 5rem; width: 100%;background-color: #666;}
+	/*按钮导航*/
+	nav ul{overflow: hidden;}
+	nav li{float: left;width: 25%; text-align: center;}
+	nav li a{display: block;background:url(../images/nav.png) no-repeat top;font-size: 0.5rem;padding-top: 2.45rem; margin-bottom: 1rem;margin-top: 1rem;width: 100%;height: 100%;background-size: 2rem 2rem;}
+	/*商品模块*/
+	.shopping{overflow: hidden; margin-bottom: 3rem;position: relative;}
+	.shop_world{height: 7rem;width: 100%;}
+	.shop_title{overflow: hidden; border-bottom: 1px solid #666;padding-bottom: .2rem;}
+	.shop_title h1{float: left; font-size: 1.5rem; font-weight: 700;}
+	.shop_title p{float: right; font-size: .5rem; padding-top: 1rem;}
+	.shop_main{overflow: hidden;}
+	.shop_main div{width: 50%; height: 5rem; background-color: #666;float: left;}
+	</style>
+	<script>
+	//rem
+		;(function (win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		
+		win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+</head>
+<body>
+<!--banner-->
+	<header class="banner"></header>
+<!--按钮导航-->
+	<nav>
+		<ul>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+			<li><a href="javascript:;">母婴用品</a></li>
+		</ul>
+	</nav>
+<!--商品内容模块-->	
+	<section class="shopping">
+		<section class="shop_world">
+			<div class="shop_title">
+				<h1>全球购</h1>
+				<p>更多商品</p>
+			</div>
+			<div class="shop_main">
+				<div></div>
+				<div></div>
+			</div>
+		</section>
+		<section class="shop_world">
+			<div class="shop_title">
+				<h1>全球购</h1>
+				<p>更多商品</p>
+			</div>
+			<div class="shop_main">
+				<div></div>
+				<div></div>
+			</div>
+		</section>
+		<section class="shop_world">
+			<div class="shop_title">
+				<h1>全球购</h1>
+				<p>更多商品</p>
+			</div>
+			<div class="shop_main">
+				<div></div>
+				<div></div>
+			</div>
+		</section>
+	</section>
+<!--底部链接-->
+	<footer id="footer">
+		<a href="">
+			<figure>
+				<img src="" alt="">
+				<figcaption>服务</figcaption>
+			</figure>
+		</a>	
+		<a href="">
+			<figure>
+				<img src="" alt="">
+				<figcaption>直播</figcaption>
+			</figure>
+		</a>
+		<a href="">
+			<figure>
+				<img src="" alt="">
+				<figcaption>商城</figcaption>
+			</figure>
+		</a>
+		<a href="">
+			<figure>
+				<img src="" alt="">
+				<figcaption>我的</figcaption>
+			</figure>
+		</a>
+	</footer>
+</body>
+</html>

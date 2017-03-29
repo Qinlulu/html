@@ -1,0 +1,43 @@
+<div ng-controller="lessonTypeController">
+	<header class='header'>
+		<h1>课程详情</h1>
+		<a href="javascript:history.go(-1);" class='lesson_back' id='uback'></a>
+	</header>
+	<div class="classInfo">
+		<h4>星火英语四级班</h4>
+		<span><b>2017</b>年<b>11</b>月<b>25</b>日到期</span>
+		<div>2017.03.10-2017.06.10<i><i>108</i>课时</i></div>
+		<p>班级QQ群：<i>893958290</i></p>
+	</div>
+	<ul class="lessonInfo vTab">
+		<li class="underline">课程目录</li>
+		<li>学生评论(1199)</li>
+	</ul>
+	<div>
+		<ul class="videoList details" infinite-scroll='pager.loadMore()' infinite-scroll-disabled="pager.isEnd">
+			<li ng-repeat='i in item'>
+				<div class="lesson_con">
+					<div class="imgpic"><img src="static/images/de.png" alt="" /></div>
+					<div class="descip">
+						<h3>1.星火四级规划课程</h3>
+						<p>02.02 星期一<i>19:30-21:00</i>课时</p>
+						<p><span>付建利</span><span>邵雯</span></p>
+					</div>
+					<div class="play_button">看回放</div>
+				</div>
+			</li>
+		</ul>
+		<ul class="videoList details" infinite-scroll='pager.loadMore()' infinite-scroll-disabled="pager.isEnd">
+			<li ng-repeat='i in item'>
+				<div class="lesson_con">
+					<div class="imgpic"><img src="static/images/de.png" alt="" /></div>
+					<div class="descip">
+						<h3>2.星火四级规划课程</h3>
+						<p>02.02 星期一<i>19:30-21:00</i>课时</p>
+						<p><span>付建利</span><span>邵雯</span></p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

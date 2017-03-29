@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<style>
+	html{font-size: 20px;}
+	body{background: #eee; position: relative;}
+	a{-webkit-tap-highlight-color: #fff; -webkit-tap-highlight-color:transparent;}
+	/*头像部分*/
+	header{height: 8rem;background-color: #0097ff; padding-top: .5rem; text-align: center; position: relative; border-bottom: 1px solid #000;}
+	.picture{height: 3rem; width: 3rem; background-color: #fff; margin: 0 auto;}
+	.name{font-size: .5rem; color: #000;}
+	.setUp{position: absolute;height: .5rem; width: .5rem; right: .3rem; top: .3rem; background-color: #fff;}
+	/*按钮导航*/
+	nav ul{overflow: hidden;}
+	nav li{float: left;width: 25%; text-align: center;}
+	nav li a{display: block;background:url(../images/nav.png) no-repeat top;font-size: 0.5rem;padding-top: 2.45rem; margin-bottom: 1rem;margin-top: 1rem;width: 100%;height: 100%;background-size: 2rem 2rem;}
+	/*收货地址模块*/
+	.address{height: 2rem; width: 100%;border-top: 1px solid #000;border-bottom: 1px solid #000; margin-top: .5rem; overflow: hidden;}
+	.address p{line-height:2rem; font-size: .5rem; color: #000; padding-left: 1rem; }
+	</style>
+	<script>
+	//rem
+		;(function (win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		
+		win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+</head>
+<body>
+	<header>
+		<a href="">
+			<div class="picture"><img src="" alt=""></div>
+			<p class="name">name</p>
+		</a>
+		<a href="">
+			<div class="setUp"></div>
+		</a>
+		<nav>
+			<ul>
+				<li><a href="javascript:;">母婴用品</a></li>
+				<li><a href="javascript:;">母婴用品</a></li>
+				<li><a href="javascript:;">母婴用品</a></li>
+				<li><a href="javascript:;">母婴用品</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!--收货地址模块-->
+	<a href="http://www.baidu.com">
+		<section class="address">
+			<p>收货地址</p>	
+		</section>
+	</a>
+</body>
+</html>

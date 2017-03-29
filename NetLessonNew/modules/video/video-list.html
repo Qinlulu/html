@@ -1,0 +1,43 @@
+<div ng-controller='videoListController'>
+	<ol class='vTab'>
+		<li ng-class="{'underline':!vTabActive}" ng-click="vTabFn(0)">系统课<i></i></li>
+		<li ng-class="{'underline':vTabActive}" ng-click="vTabFn(1)">公开课</li>
+	</ol>
+	<div id="ncTypeList">
+		<ul class="videoList" infinite-scroll="pager.loadMore()" infinite-scroll-disabled="pager.isEnd">
+			<a href="javascript:;" ng-repeat="dataLists in list" data-id="{{dataLists.id}}">
+				<li data-ty="{{dataLists.ncType}}">
+					<img class="lesson_state" ng-show="{{dataLists.ncType}}=='0'" src="static/images/luboke@2x.png"/>
+					<img class="lesson_state" ng-show="{{dataLists.ncType}}=='1'" src="static/images/zhiboke@2x.png"/>
+					<div class="lesson_con">
+						<div class="imgpic">
+							<img ng-src="{{dataLists.ncImg}} " alt=""/>
+							<img ng-src="static/images/bofang@2x.png" ng-click="playVideo(dataLists.ncPreviewLink)" ng-show="or(dataLists.ncPreviewLink)" />
+						</div>
+						<div class="descip">
+							<h3>{{dataLists.ncName}}</h3>
+							<p>2017.03.21-06.10<i>{{dataLists.catalogNumber}}</i>课时</p>
+							<p>{{dataLists.ncTeacher}}</p>
+						</div>
+					</div>
+					<span class="order" ng-show="{{dataLists.isFree}}=='0'">正在预约</span>
+					<div class="lesson_info">
+						<span ng-show="{{dataLists.isFree}}=='1'" class="per">限领取{{dataLists.limitNumber}}人</span>
+			            <span ng-show="{{dataLists.isFree}}=='1'">已有{{dataLists.reserveNumber}}人领取</span>
+			            <span ng-show="{{dataLists.isFree}}=='0'||{{dataLists.ncType}}=='1'" class="per">限售{{dataLists.limitNumber}}人</span>
+			            <span ng-show="{{dataLists.isFree}}=='0'">已有{{dataLists.reserveNumber}}人购买</span>
+						<span class="mey">￥{{dataLists.originalPrice}}</span>
+						<span class="price">￥{{dataLists.currentPrice}}</span>
+					</div>
+				</li>
+			</a>
+		</ul>
+		<ul class="videoList listt" infinite-scroll="pager.loadMore()" infinite-scroll-disabled="pager.isEnd">
+		
+		<!--切换公开课-->
+		<div ui-view></div>
+		
+		</ul>
+	</div>
+	<!--<div ui-view></div>-->
+</div>

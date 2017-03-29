@@ -1,0 +1,51 @@
+html{font-size: 20px;}
+	body{background: #fff; position: relative;overflow-x: hidden;}
+	a{-webkit-tap-highlight-color: #fff; -webkit-tap-highlight-color:transparent;}
+		#allmap{width:100%;height:100%;}
+	/*内容选项卡*/
+	.wrap{margin:0 auto;}
+	.tabs{height:1.75rem;background: #fff;width: 100%;text-align: center; border-bottom: 1px solid #ededed; position: relative;}
+	.tabs .part{display:block;float:left;width:3.85rem;text-align:center;height: 1.15rem; border:0.05rem solid #ff5459; line-height: 1.15rem; }
+	#raiders{border-right:none ; border-radius: .2rem 0 0 .2rem; margin-top: .25rem; margin-left: 4.1rem;}
+	#cost{border-left: none;border-radius:0 .2rem .2rem 0; margin-top: .25rem; margin-left: -.1rem;}
+	.tabs a{width:100%;display:block;color:#fe575c;text-align:center;margin:0 auto;font-size:0.6rem;text-decoration:none; height: 1.75rem}
+	.tabs span.active a{color:#fff; background:#ff5a5f; height: 1.16rem; border-radius: .1rem}
+	.swiper-container{width:100%;border-top:0;margin-top:10px!important}
+	.swiper-slide{width:100%;background:#fff;}
+	#comeBack{position: absolute; height: .75rem; width: .4rem; top: .5rem; left: .7rem;display: block;background: url(../img/comeback.png) no-repeat; background-size: 100%;}
+	/*内容*/
+	.condition{width: 100%;}
+	.condition h1{overflow: hidden; height: 2.8rem; margin-top: -.1rem;}
+	.condition h1 strong{display: block; float: left; height: 1.3rem; width: 1.3rem; border:2px solid #ff9688; border-radius: .2rem; line-height: 1.3rem; text-align: center; margin-top: 1.2rem; margin-left: 1.2rem; font-size: .5rem; color: #ff9688;}
+	.condition h1 span{font-size: .6rem; color: #43484a; font-weight: 400; display: block; float: left; margin-top: 1.8rem; padding-left: 1rem}
+	.condition ul{padding-left: .75rem; padding-right: .75rem; border-bottom: 2px solid #f7f7f7;}
+	.condition ul li h3{font-size: .6rem; color: #34393c; font-weight: 500;padding-left: .2rem;}
+	.condition ul li p{font-size: .55rem;color: #8e969a;line-height: 1rem;}
+	.swiper-container{width: 100%; height: 38rem;}
+	.places{width: 100%;}
+	.places h1{overflow: hidden; height: 2.8rem; margin-top: -.1rem;}
+	.places h1 strong{display: block; float: left; height: 1.3rem; width: 1.3rem; border:2px solid #ff9688; border-radius: .2rem; line-height: 1.3rem; text-align: center; margin-top: 1.2rem; margin-left: 1.2rem; font-size: .5rem; color: #ff9688;}
+	.places h1 span{font-size: .6rem; color: #43484a; font-weight: 400; display: block; float: left; margin-top: 1.8rem; padding-left: 1rem}
+	.places p{font-size: .55rem; color: #565a5c; padding-left: .7rem; padding-bottom: 1.5rem; border-bottom: .4rem solid #f7f7f7; padding-top: 1.05rem;}
+	.footer{font-size: .5rem; color: #989fa3; padding-left: .75rem;}
+
+	.antenatal{width: 100%;border-bottom: 1px solid #f4f4f4;}
+	.antenatal h1{overflow: hidden; height: 2.8rem; margin-top: -.1rem;}
+	.antenatal h1 strong{display: block; float: left; height: 1.3rem; width: 1.3rem; border:2px solid #ff9688; border-radius: .2rem; line-height: 1.3rem; text-align: center; margin-top: 1.2rem; margin-left: 1.2rem; font-size: .5rem; color: #ff9688;}
+	.antenatal h1 span{font-size: .6rem; color: #43484a; font-weight: 400; display: block; float: left; margin-top: 1.8rem; padding-left: 1rem}
+	.antenatal p{font-size: .55rem; color: #565a5c; line-height: 1.05rem; padding-left: .75rem; padding-right: .75rem;}
+
+	.childbirth{width: 100%;border-bottom: 1px solid #f4f4f4;}
+	.childbirth h1{overflow: hidden; height: 2.8rem; margin-top: -.85rem;}
+	.childbirth h1 strong{display: block; float: left; height: 1.3rem; width: 1.3rem; border:2px solid #ff9688; border-radius: .2rem; line-height: 1.3rem; text-align: center; margin-top: 1.2rem; margin-left: 1.2rem; font-size: .5rem; color: #ff9688;}
+	.childbirth h1 span{font-size: .6rem; color: #43484a; font-weight: 400; display: block; float: left; margin-top: 1.8rem; padding-left: 1rem}
+	.childbirth p{font-size: .55rem; color: #565a5c; line-height: 1.05rem; padding-left: .75rem; padding-right: .75rem;}
+
+	.example{width: 100%;border-bottom: .425rem solid #f7f7f7;}
+	.example h1{overflow: hidden; height: 2.8rem; margin-top: -.85rem;}
+	.example h1 strong{display: block; float: left; height: 1.3rem; width: 1.3rem; border:2px solid #ff9688; border-radius: .2rem; line-height: 1.3rem; text-align: center; margin-top: 1.2rem; margin-left: 1.2rem; font-size: .5rem; color: #ff9688;}
+	.example h1 span{font-size: .6rem; color: #43484a; font-weight: 400; display: block; float: left; margin-top: 1.8rem; padding-left: 1rem}
+	.example p{font-size: .55rem; color: #565a5c; line-height: 1.05rem; padding-left: .75rem; padding-right: .75rem;}
+	.example h2{font-size: .55rem; color: #4e5254; font-weight: 600; padding-top: .5rem; padding-left: .75rem;}
+	.view{height: 4.1rem; width: 100%;}
+	.view a{height: 1.725rem; width: 8.2rem; background: #ff5a5f; color: #ffebec; font-size: .65rem; text-align: center; line-height: 1.725rem; margin: auto; display: block; margin-top: 1.075rem; border-radius: 1rem;}

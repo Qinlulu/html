@@ -1,0 +1,21 @@
+<div class="user" ng-contorller="userController">
+	<header class='header'>
+		<h1>我的</h1>
+		<a href="javascript:history.go(-1);" class='back' id='uback'></a>
+	</header>
+	<div class="my_set">
+		<ul class='uList'>
+			<li ui-sref="account" ui-sref-opts="{reload: true}">
+				<div class="header_img"><img src="static/images/touxiang@2x.png" alt="" /></div>星火同学：
+				<br /><span>手机号：<i>13063673527</i></span>
+			</li>
+			<li ui-sref="myorder" ui-sref-opts="{reload: true}">我的订单</li>
+			<li ui-sref="mylesson" ui-sref-opts="{reload: true}">我的课程</li>
+			<li ui-sref="myaddress" ui-sref-opts="{reload: true}">我的地址</li>
+			<li>兑换中心</li>
+		</ul>
+		<span class="login_out">
+			退出登录
+		</span>
+	</div>
+</div>

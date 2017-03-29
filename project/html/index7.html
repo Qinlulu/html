@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<style>
+	html{font-size: 20px;}
+	body{background: #eee; position: relative;}
+	a{-webkit-tap-highlight-color: #fff; -webkit-tap-highlight-color:transparent;}
+	/*头部搜索模块*/
+	.header{padding: .2rem .2rem;background-color: #0096ff; height: 2rem; overflow: hidden;}
+	form{display: block;margin-top: 0rem;}
+	.back{height: 2rem; width: 2rem; background-color: #fff; border-radius: 50%;float: left;}
+	.search{float: left; display: block; margin: 0.2rem 0.2rem; width: 10rem;height: 1rem; text-align: center; border-radius: 0.96rem; box-shadow: 0 0.026667rem 0.066667rem 0 rgba(0, 0, 0, .2); color: #333; font-size: 0.34rem; outline: none;font-family:inherit;}
+	/*筛选排序模块*/
+	.filter{position: relative; border-top: 1px solid #000;border-bottom: 1px solid #000; height: 2rem;line-height: 2rem;z-index: 100; width: 100%;}
+	.filter-header{position: absolute;top: 0;bottom: 0;width: 100%;display: flex; z-index: 3; background-color: #fff;}
+	.filter-nav{-webkit-box-flex:1; display: block;width: 50%; text-align: center;color: #666; position: relative; font-size: 0.5rem;}
+	.filter-extend{left: 0;right: 0;top: 100%;border-top: 1px solid #ddd;position: absolute;max-height: 0;background-color: #fff; visibility: hidden; overflow: auto; opacity: 0; z-index: 3;}
+	.filter-sort{padding-bottom: 0;}
+	/*商品模块*/
+	.goods{}
+	</style>
+	<script>
+	//rem
+		;(function (win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		
+		win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+</head>
+<body>
+<!--头部搜索模块-->
+	<header class="header">
+		<a href=""><div class="back"></div></a>
+		<form action="">
+			<input type="text" placeholder="寻找宝贝" class="search">
+		</form>
+	</header>
+<!--筛选排序模块-->
+	<section>
+		<aside class="filter">
+			<div class="filter-header">
+				<a href="javascript:" class="filter-nav">
+					<span>精品推荐</span>
+					<img src="" alt="">
+				</a>
+				<a href="javascript:" class="filter-nav">
+					<span>综合排序</span>
+					<img src="" alt="">
+				</a>
+			</div>
+			<section class="filter-extend filter-sort"></section>
+			<section class="filter-extend filter-sort"></section>
+		</aside>
+	</section>
+<!--商品模块-->
+	<section class="goods">
+		
+	</section>
+</body>
+</html>

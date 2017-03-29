@@ -1,0 +1,65 @@
+<div ng-controller="mylessonController">
+	<header class='header'>
+		<h1>我的课程</h1>
+		<a href="javascript:history.go(-1);" class='lesson_back' id='uback'></a>
+	</header>
+	<ol class='vTab lessonTy'>
+		<li class="underline">系统课<i></i></li>
+		<li>公开课<i></i></li>
+		<li>预约课程</li>
+	</ol>
+	<div>
+		<ul class='videoList lists' infinite-scroll='pager.loadMore()' infinite-scroll-disabled="pager.isEnd">
+			<li ng-repeat='i in item' ui-sref="lessonType">
+				<div class="lay"><span>此课程<br />你已退款</span></div>
+				<span class="lesson_state">直播课或者录播课</span>
+				<div class="lesson_con">
+					<div class="imgpic"><img src="static/images/de.png" alt="" /></div>
+					<div class="descip">
+						<h3>星火英语四级系统课星火英语</h3>
+						<p class="fsize"><span>小明</span><span>小明</span></p>
+						<p>最近开课时间：3月25日 星期六 10:00</p>
+						<p><span>未开课：1节</span><span>可回放：14节</span></p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul class='videoList lists' infinite-scroll='pager.loadMore()' infinite-scroll-disabled="pager.isEnd">
+			<li ng-repeat='i in item'>
+				<div class="lay" ng-show="hide"><span>此课程<br />你已退款</span></div>
+				<span class="lesson_state"><!--直播课或者录播课--></span>
+				<div class="lesson_con">
+					<div class="imgpic"><img src="static/images/de.png" alt="" /></div>
+					<div class="descip">
+						<h3>星火英语四级系统课星火英语</h3>
+						<p class="fsize"><span>小明</span><span>小明</span></p>
+						<p>最近开课时间：3月25日 星期六 10:00</p>
+						<p><span>未开课：1节</span><span>可回放：14节</span></p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul class='videoList lists' infinite-scroll='pager.loadMore()' infinite-scroll-disabled="pager.isEnd">
+			<li ng-repeat='i in item'>
+				<div class="lay" ng-show="hide"><span>此课程<br />你已退款</span></div>
+				<span class="lesson_state"><!--直播课或者录播课--></span>
+				<div class="lesson_con">
+				<div class="imgpic"><img src="static/images/de.png" alt="" /></div>
+					<div class="descip">
+						<h3>星火英kgnrugutrh语英语</h3>
+						<p>2017.03.21-06.10<i>108</i>课时</p>
+						<p><span>小明</span><span>小明</span></p>
+					</div>
+				</div>
+				<span class="order">
+					已预约
+				</span>
+				<div class="lesson_info">
+					<span>已有200人预约</span>
+					<span class="price changeColor">免费/已售罄</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div ui-view></div>
+</div>

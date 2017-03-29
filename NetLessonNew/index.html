@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta http-equiv="refresh" content="10">-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<title ng-bind='title'></title>
+		<meta name="description" content="{{desc}}">
+		<meta name="keywords" content="{{keywords}}">
+		<link rel="stylesheet" type="text/css" href="static/css/reset.css" />
+		<link rel="stylesheet" href="static/css/normalize.css" />
+	</head>
+
+	<body>
+		<!-- 这里是页面内容区 -->
+		<div ui-view>
+
+		</div>
+		<!--个人中心-->
+
+		<script src="static/js/require.js" data-main="main.js"></script>
+	</body>
+
+</html>
