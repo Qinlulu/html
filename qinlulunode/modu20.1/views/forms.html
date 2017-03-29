@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+        table{
+            width:300px;
+            height:auto;
+        }
+        tr{
+            height:20px;
+        }
+        td{
+            border:1px solid #ccc;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>班级</td>
+        <td>工作</td>
+    </tr>
+    
+        <%for(var j in data){%>
+        <tr>
+            <td><%=data[j].user%></td>
+            <td><%=data[j].age%></td>
+            <td><%=data[j].Trad%></td>
+            <td><%=data[j].job%></td>
+            <td>
+                <button type="submit" class="revise">修改</button>
+            </td>
+            <td>
+                <button type="submit" class="quit">退出</button>
+            </td>
+             </tr>
+        
+        <%}%>
+</table>
+<script type="" src="javascripts/jquery-2.1.1.min.js"></script>
+<script>
+    $(".revise").on("click", function () {
+        var tds=$(this).parent().parent().find("td")
+       $.ajax({
+           url:"http://localhost:8080/revise",
+            data:{
+                user:tds.eq(0).text(),
+                age:tds.eq(1).text()
+            }
+        })
+    })
+    $(".quit").on("click", function () {
+        alert("123")
+    })
+</script>
+
+</body>
+</html>

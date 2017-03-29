@@ -1,0 +1,11 @@
+$("#btn").on("click",function(){
+    alert("123")
+    $.ajax({
+        url:"http://127.0.0.1:8081",
+        dataType:"jsonp",
+        success:function(data){
+            //console.log(data)
+            alert(data)
+        }
+    })
+})
