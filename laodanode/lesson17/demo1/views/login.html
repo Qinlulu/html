@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+<form action="/loginInterface" method="post">
+    <!--<div>-->
+    <!--<label for="username">username</label>-->
+    <!--<input type="text" name="username" id="username" placeholder="username"/>-->
+    <!--</div>-->
+
+    <label for="username">
+        username
+        <input type="text" name="username" id="username" placeholder="username"/>
+    </label>
+
+    <div>
+        <label for="password">password</label>
+        <input type="text" name="password" id="password" placeholder="password"/>
+    </div>
+    <div style="padding-top: 10px;color:red"><%=error%></div>
+    <div>
+        <button type="submit">提交</button>
+    </div>
+</form>
+</body>
+</html>

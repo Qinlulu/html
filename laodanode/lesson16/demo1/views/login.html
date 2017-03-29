@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../public/stylesheets/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../public/stylesheets/reset.css"/>
+</head>
+<body>
+
+<div>
+    <div>
+        username：<input type="text" id="username" placeholder="please input your username"/>
+    </div>
+    <div>
+        password：<input type="text" id="password" placeholder="please input your password"/>
+    </div>
+    <div>
+        <button type="submit" id="btnSubmit">submit</button>
+    </div>
+</div>
+<script type="text/javascript" src="../public/javascripts/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#btnSubmit').on('click', function () {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var data = {
+            username: username,
+            password: password
+        };
+        $.ajax({
+            url: 'http://127.0.0.1:8080/userlogin',
+            dataType: 'jsonp',
+            data: data,
+            success: function (data) {
+
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
