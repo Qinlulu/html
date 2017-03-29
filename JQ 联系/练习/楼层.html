@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		div{
+			width:1350px;
+			height:600px;
+			text-align: center;
+			line-height:600px;
+			font-size:500px;
+			color:#fff;
+		}
+		ul{
+			width:200px;
+			height:260px;
+			position:fixed;
+			top:35%;
+			right:-80px;
+			display: none;
+		}
+		li{
+			list-style:none;
+			height:50px;
+			line-height:50px;
+			font-size:45px;
+			background:pink;
+			margin:2px;
+		}
+	</style>
+</head>
+<body>
+	<div style="background:red" id="p">1F</div>
+	<div style="background:green">2F</div>
+	<div style="background:blue">3F</div>
+	<div style="background:yellow">4F</div>
+	<div style="background:#000">5F</div>
+	<ul>
+		<li>1F</li>
+		<li>2F</li>
+		<li>3F</li>
+		<li>4F</li>
+		<li>5F</li>
+	</ul>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$(window).scroll(function(){
+			if($(this).scrollTop()>$("div").eq(0).height()){
+				$("ul").show()
+				var num=Math.floor($(this).scrollTop()/$("div").eq(0).height())
+				$("ul li").eq(num).stop().animate({'margin-left':-100},1000).siblings().stop().animate({'margin-left':0},1000)
+				console.log(num)
+			}else{
+				$("ul").hide()
+			}
+
+			$("ul li").on("click",function(){
+					$(this).stop().animate({"marginLeft":-80},500)
+			$("#p").animate({marginTop:-($(this).index()-1)*($("div").eq(0).height())},1000)
+
+
+		})
+
+		})
+
+
+	</script>
+</body>
+</html>

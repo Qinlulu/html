@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		div{
+			width:900px;
+			margin:100px auto;
+		}
+		img{
+			width:200px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="img/1.jpg" alt="">
+		<img src="img/2.jpg" alt="">
+		<img src="img/3.jpg" alt="">
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+	$("img").hover(function(e){
+		var imgs=$("<img src="+this.src+" class='img'>");
+		$("body").append(imgs)
+		$(".img").css({"position":"absolute","width":"400px","left":e.pageX,"top":e.pageY})
+
+	},function(){
+		$(".img").remove()
+	})
+		/*$("img").hover(function(e){
+			$(this).css({"width":"300px","position":"absolute","left":e.pageX,"top":e.pageY})
+		},function(){
+			$(this).css({"width":"200px"})
+		})*/
+	</script>
+</body>
+</html>

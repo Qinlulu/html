@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#div{
+			width:300px;
+			margin: 50px auto;
+			position:relative;
+		}
+		dl{
+			width:310px;
+			height:120px;
+			border:1px solid #ccc;
+			margin:10px;
+		}
+		dl dt{
+			float:left;
+			padding:5px;
+			width:100px;
+			height:100px;
+		}
+		dl dd{
+			width:100px;
+			height:120px;
+			float:left;
+			text-align:center;
+		}
+		input{
+			width:20px;
+		}
+		img{
+			width:100%;
+			height:100%;
+		}
+		.p{
+			position:absolute;
+			bottom:-25px;
+			width:310px;
+			height:25px;
+			line-height:25px;
+			text-align: right;
+
+		}
+		span{
+			float:right;
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<div id="div">
+	<dl>
+		<dt>
+			<img src="img/1.jpg" alt="">
+		</dt>
+		<dd>
+			<p>魅力演说</p></br>
+			<p>￥120</p></br>
+			<p>金庸制作</p></br>
+		</dd>
+		<dd>
+			<p>单价￥100</p></br>
+			<form action="">
+			<input type="button" value="-" class="jian">
+			<input type="text" class="text" value="1">
+			<input type="button" value="+" class="jia"></br></br>
+			<input type="button" value="删除" style="width:50px" class="btn">
+			</form>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<img src="img/1.jpg" alt="">
+		</dt>
+		<dd>
+			<p>魅力演说</p></br>
+			<p>￥120</p></br>
+			<p>金庸制作</p></br>
+		</dd>
+		<dd>
+			<p>单价￥100</p></br>
+			<form action="">
+			<input type="button" value="-" class="jian">
+			<input type="text" class="text" value="1">
+			<input type="button" value="+" class="jia"></br></br>
+			<input type="button" value="删除" style="width:50px" class="btn">
+			</form>
+		</dd>
+	</dl>
+
+	<p class="p">
+			结算：￥<span></span>
+	</p>
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+
+		var num=$(".text").val()
+		$(".jia").on("click",function(){
+			num++
+			$(".text").val(num)
+			$("span").text(num*100)
+		})
+		$(".jian").on("click",function(){
+			if(num>1){
+				num--
+			}else{
+			if(confirm("确认删除"))$(this).parents().remove()
+			}
+			$(".text").val(num)
+			$("span").text(num*100)
+		})
+		$(".btn").on("click",function(){
+			if(confirm("确认删除"))$(this).parents().remove()
+		})
+	</script>
+</body>
+</html>

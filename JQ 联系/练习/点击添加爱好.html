@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		li{
+			float:left;
+		}
+		#div{
+			width:380px;
+			height:150px;
+			margin:50px auto;
+		}
+		ul{
+			width:380px;
+			height:80px;
+		}
+		ul li{
+			float:left;
+
+		}
+		.bg{
+			padding:5px;
+			margin:5px;
+			list-style:none;
+			border:2px solid green;
+			border-radius:15px;
+		}
+	</style>
+	<script src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="div">
+	<ul id="list">
+		<li>唱歌</li>
+		<li>跳舞</li>
+		<li>运动</li>
+		<li>音乐</li>
+		<li>跑步</li>
+	</ul>
+	<input type="text" id="text"><input type="button" value="添加" id="btn">
+	<span id="span">最多只能有三项</span>
+	<div id="box"></div>
+</div>
+<script>
+	$("li").addClass("bg")
+	$("#list li").on("click",function(){
+		var newL=$(this).clone()
+		$("#box").append(newL)
+	})
+
+</script>
+</body>
+</html>

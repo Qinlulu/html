@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:#000;
+		}
+		#div{
+			width:800px;
+			height:370px;
+			border:1px #fff solid;
+			margin:100px auto;
+			position:relative;
+		}
+		#box{
+			width:600px;
+			margin:12px auto;
+			height:330px;
+			position:relative;
+		}
+		span{
+			width:80px;
+			height:80px;
+			background:#fff;
+			position:absolute;
+			text-align:center;
+			line-height:80px;
+			font-size:50px;
+			color:red;
+		}
+		#left{
+			left:0;
+		}
+		#right{
+			right:0;
+		}
+		#left1{
+			left:0;
+			bottom:0;
+		}
+		#right1{
+			right:0;
+			bottom:0;
+		}
+		img{
+			width:200px;
+			position:absolute;
+		}
+		img:nth-child(1){
+			z-index: 0;
+			left:0;
+			top:51px;
+			height:250px;
+		}
+		img:nth-child(2){
+			z-index: 10;
+			left:100px;
+			top:35px;
+			height:280px;
+		}
+		img:nth-child(3){
+			z-index: 20;
+			left:200px;
+			top:20px;
+		}
+		img:nth-child(4){
+			z-index: 10;
+			left:300px;
+			top:35px;
+			height:280px;
+		}
+		img:nth-child(5){
+			z-index: 0;
+			left:400px;
+			top:51px;
+			height:250px;
+		}
+
+	</style>
+
+</head>
+<body>
+<div id="div">
+<span id="left">恭</span>
+<span id="right">嘻</span>
+<span id="left1">發</span>
+<span id="right1">財</span>
+<div id="box">
+	<img src="im/001.jpg">
+	<img src="im/002.jpg">
+	<img src="im/003.jpg">
+	<img src="im/004.jpg">
+	<img src="im/005.jpg">
+	<!-- <img src="im/1.png">
+	<img src="im/2.png">
+	<img src="im/3.png">
+	<img src="im/4.png">
+	<img src="im/5.png"> -->
+</div>
+</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+var img=document.getElementsByTagName('img')
+var k=1
+/*$("#div").on("click",function(){
+	for(var i=0;i<img.length;i++){
+			$("img").eq(i).attr("src",'im/00'+(k+1)+'.jpg')
+			k++
+			if(k+2>5)k=0
+	}
+})*/
+setInterval(function(){
+	for(var i=0;i<img.length;i++){
+			$("img").eq(i).attr("src",'im/00'+(k+1)+'.jpg')
+			//$("img").eq(i).attr("src",'im/'+(k+1)+'.png')
+			k++
+			if(k+2>5)k=0
+	}
+}
+
+,1000)
+</script>
+</body>
+</html>

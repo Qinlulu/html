@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    *{margin:0;padding:0;}
+	  #wrap{width:810px;height:150px;border:1px solid #000;padding:10px;margin:50px auto;}
+	  .box{width:150px;height:150px;border: 1px solid #ccc;margin-right:10px;float:left}
+	  .newbox{width:150px;height:150px;border:1px dashed red;float:left;background:#ccc;opacity:0.5;position:absolute;}
+	  .addbox{width:150px;height:150px;border:1px dashed red;float:left;margin-right:10px}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		  <div class="box">1</div>
+		  <div class="box">2</div>
+		  <div class="box">3</div>
+		  <div class="box">4</div>
+		  <div class="box">5</div>
+	</div>
+	<script src="jquery1.7.js"></script>
+	<script>
+		  $(function(){
+		  	  var ismove=false
+		  	  $(".box").each(function(){
+
+                   $(this).on("mousedown",function(e){
+                   	   ismove=true
+                   	   thisbox=$(this)
+                       var inpor={
+                       	  x:0,
+                       	  y:0
+                       }
+                       mousep={
+                       	  x:0,
+                       	  y:0
+                       }
+                       inpor.x=thisbox.offset().left;//鼠标按下盒子距离左边的距离
+                       inpor.y=thisbox.offset().top;//鼠标按下盒子距离上边的距离
+
+                       mousep.x=e.pageX-inpor.x; //获取鼠标在盒子的横坐标
+                       mousep.y=e.pageY-inpor.y;//获取鼠标在盒子的纵坐标
+
+
+                       thisbox.attr("class","newbox") //给盒子设置新的class
+                       thisbox.css({"left":inpor.x,"top":inpor.y})//定位
+                       $("<div class='addbox'></div>").insertBefore(thisbox)
+                       //创建盒子追加在最上面
+                   })
+
+		  	  $(document).on("mousemove",function(e){
+		  	  	 if(!ismove) return false
+		  	  	  var move={
+		  	  	  	  x:0,
+		  	  	  	  y:0
+		  	  	  }
+		  	  	  move.x=e.pageX-mousep.x;//获取鼠标移动时距离浏览器左边的距离
+		  	  	  move.y=e.pageY-mousep.y;//获取鼠标移动时距离浏览器上边的距离
+		  	  	  thisbox.css({"left":move.x,"top":move.y})
+
+
+
+		  	  	  var allbox=$(".box")
+		  	  	allbox.each(function(){
+                   var that=$(this),
+		  	  	   thatL=that.offset().left, thatW=that.outerWidth()/2;
+		  	  	   thatcen=thatL+thatW;
+		  	  	   console.log(that)
+		  	  	  var newRight=thisbox.offset().left+thisbox.outerWidth()
+		  	  	  var first=allbox.first()
+		  	  	  var firstcen=first.offset().left+first.outerWidth()/2
+		  	  	  if(thisbox.offset().left<=firstcen){
+		  	  	  	  $(".addbox").insertBefore(first)
+		  	  	  }
+                    if(newRight>=thatcen){
+                    	 $(".addbox").insertAfter(that)
+                    }
+                })
+		  	  })
+		  	  })
+		  }).on("mouseup",function(){
+		  	  	  thisbox.insertAfter($(".addbox"))
+		  	  	  thisbox.attr("class","box")
+		  	  	  $(".addbox").remove()
+		  	  	  ismove=false
+		  	  })
+
+	</script>
+</body>
+</html>

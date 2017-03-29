@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	#box{
+		height:2000px;
+		width:1350px;
+		margin:0 auto;
+		background:red;
+	}
+	b{
+		width:55px;
+		height:200px;
+		text-align: center;
+		line-height:80px;
+		position: fixed;
+		right:10px;
+		bottom:30px;
+		font-size:50px;
+		color:green;
+		display:none;
+	}
+	</style>
+</head>
+<body>
+<div id="box">
+	<b><img src="1.png" alt=""></b>
+	<img src="2.png" alt="">
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+	$(window).scroll(function(){
+		var scrollH=$(window).scrollTop()
+		var clientH=$(window).outerHeight();
+
+		if(scrollH>clientH){
+			$("b").show()
+		}else{
+			$("b").hide()
+		}
+	})
+	$("b").on("click",function(e){
+			//e.preventDefault()
+			$(document.body).animate({scrollTop:0},1000)
+			//$(document.documentElement).animate({scrollTop:0},1000)
+		})
+</script>
+</body>
+</html>

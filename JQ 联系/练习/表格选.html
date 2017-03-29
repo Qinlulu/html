@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:300px;
+			height:300px;
+			margin:100px auto;
+		}
+		table{
+			border-collapse: collapse;
+		}
+		td{
+			border:1px solid #000;
+			width:100px;
+			height:25px;
+			line-height:25px;
+		}
+		#text{
+			height:25px;
+			line-height:25px;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+<table>
+	<tr>
+		<td>张三</td>
+		<td>男</td>
+		<td>1234567</td>
+	</tr>
+	<tr>
+		<td>赵航</td>
+		<td>男</td>
+		<td>1234567</td>
+	</tr>
+	<tr>
+		<td>李四</td>
+		<td>女</td>
+		<td>234567</td>
+	</tr>
+	<tr>
+		<td>王景昊</td>
+		<td>男</td>
+		<td>234567</td>
+	</tr>
+	<tr>
+		<td>王五</td>
+		<td>男</td>
+		<td>456789</td>
+	</tr>
+	<tr>
+		<td>尹晓娜</td>
+		<td>女</td>
+		<td>456789</td>
+	</tr>
+	<tr>
+		<td>王景昊</td>
+		<td>男</td>
+		<td>11111111</td>
+	</tr>
+	<tr>
+		<td>尹晓娜</td>
+		<td>女</td>
+		<td>4ffff789</td>
+	</tr>
+</table>
+<input type="text" id="text">
+<input type="button" id="btn1" value="搜索">
+<input type="button" id="btn2" value="返回">
+<div id="div">
+
+</div>
+</div>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+
+		 $(function(){
+		  	  $("#btn1").click(function(){
+		  	  	var vl=$("#text").val()
+		  	  	if(vl==""){
+		  	  		$("table tr").show().css({"background":"#fff"})
+		  	  	}
+		  	  	else{
+		$("table tr").hide().filter(":contains('"+vl+"')").show().css("background","red");
+}	  })
+
+		  	   $("#btn2").click(function(){
+		  	   		$("table tr").show().css({"background":"#fff"})
+		  	   })
+
+		  	})
+	</script>
+
+</body>
+</html>

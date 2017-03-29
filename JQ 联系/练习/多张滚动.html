@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#div{
+			width:1470px;
+			height:200px;
+			margin:200px auto;
+			position:relative;
+			overflow: hidden;
+		}
+		#box{
+			width:3000px;
+			height:200px;
+			position:absolute;
+		}
+		span{
+			position:absolute;
+			width:80px;
+			height:80px;
+			font-size:50px;
+			background:red;
+			top:45px;
+			text-align: center;
+			line-height: 80px
+		}
+		span:nth-child(1){
+			left:0;
+		}
+		span:last-child{
+			right:0;
+		}
+		img{
+			width:490px;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+<div id="div">
+	<div id="box">
+		<img src="images/img1.gif" alt=""><img src="images/img2.jpg" alt=""><img src="images/img3.jpg" alt=""><img src="images/img1.gif" alt=""><img src="images/img2.jpg" alt=""><img src="images/img3.jpg" alt="">
+	</div>
+	<span id="span1"><<</span>
+	<span id="span2">>></span>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+
+	$.fn.dzgd=function(ppp){
+		var obj={
+			"type":"click",
+			"prev":"",
+			"next":"",
+			"box":"",
+			"tim":"3000"
+
+		}
+
+		var obj1=$.extend({},obj,ppp)
+
+		var left=$(obj1.prev)
+		var right=$(obj1.next)
+		var img=$(obj1.img)
+		var box=$(obj1.box)
+
+		left.on(obj1.type,function(){
+			var leftt=img.eq(0).innerWidth()*3
+		box.animate({left:-leftt},1000,function(){
+			box.find(img).slice(0,3).appendTo(box)
+			box.css("left",0)
+			console.log(obj1.tim)
+		})
+		})
+		right.on(obj1.type,function(){
+			var leftt=img.eq(0).innerWidth()*3
+		box.find(img).slice(-3).appendTo(box)
+		box.css("left",-leftt)
+		box.animate({left:0},2000)
+		})
+	}
+
+$("body").dzgd({"prev":"#span1","box":$("#box"),"img":$("img"),"tim":"2000"})
+$("body").dzgd({"next":"#span2","box":$("#box"),"img":$("img"),"tim":"3000"})
+
+
+	/*$("span").eq(0).on("click",function(){
+		var left=$("img").eq(0).innerWidth()*3
+		$("#box").animate({left:-left},1000,function(){
+			$("#box").find("img").slice(0,3).appendTo("#box")
+			$("#box").css("left",0)
+		})
+	})
+	$("span").eq(1).on("click",function(){
+		var left=$("img").eq(0).innerWidth()*3
+		$("#box").find("img").slice(-3).appendTo("#box")
+		$("#box").css("left",-left)
+		$("#box").animate({left:0},1000)
+	})*/
+</script>
+</body>
+</html>

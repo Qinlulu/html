@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:300px;
+			height:150px;
+			margin:50px auto;
+			position:relative;
+			overflow: hidden;
+		}
+		ul{
+			width:900px;
+			height:150px;
+			position:absolute;
+		}
+		ul li{
+			float:left;
+			list-style:none;
+		}
+		img{
+			width:300px;
+			height:150px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+	<ul>
+		<li><img src="img/1.jpg" alt=""></li>
+		<li><img src="img/2.jpg" alt=""></li>
+		<li><img src="img/3.jpg" alt=""></li>
+	</ul>
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="jss.js"></script>
+	<script>
+		$("#box").sidel({time:"2000",click:true})
+	</script>
+
+</body>
+</html>

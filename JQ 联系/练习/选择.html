@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="checkbox">苹果<br/>
+	<input type="checkbox">苹果<br/>
+	<input type="checkbox">苹果<br/>
+	<input type="checkbox">苹果<br/>
+	<input type="checkbox">苹果<br/>
+
+	<input type="button"  value="全选" id="all">
+	<input type="button" value="不选" id="noll">
+	<input type="button" value="反选" id="fxbtn">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$("#all").on("click",function(){
+			$(":checkbox").prop("checked",true)
+		})
+		$("#noll").on("click",function(){
+			$(":checkbox").prop("checked",false)
+		})
+
+		$("#fxbtn").on("click",function(){
+	$(":checkbox").prop("checked",!$(":checkbox").prop("checked")
+		)})
+	</script>
+</body>
+</html>

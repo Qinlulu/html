@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:300px;
+
+		}
+		dl{
+			width:300px;
+		}
+		dl dt{
+			height:30px;
+			background:#ccc;
+		}
+		dl dd{
+			display:none;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<dl>
+			<dt>标题一</dt>
+			<dd>聚合级非计划规定发给的风格和地方韩国都刚刚个过分过分</dd>
+		</dl>
+		<dl>
+			<dt>标题一</dt>
+			<dd>聚合级非计划规定发给的风格和地方韩国都刚刚个过分过分</dd>
+		</dl>
+		<dl>
+			<dt>标题一</dt>
+			<dd>聚合级非计划规定发给的风格和地方韩国都刚刚个过分过分</dd>
+		</dl>
+	</div>
+	<script>
+		$("dt").on("click",function(){
+			$(this).next().slideDown(1000)
+			$(this).parent().siblings().find("dd").slideUp(1000)
+		})
+	</script>
+</body>
+</html>

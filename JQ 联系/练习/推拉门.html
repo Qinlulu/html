@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <style>
+        div{
+            width:1200px;
+            height:150px;
+            position:relative;
+            background:#000;
+            margin:120px auto;
+            overflow: hidden;
+        }
+        img{
+            width:490px;
+            height:150px;
+            position:absolute;
+
+        }
+    </style>
+
+</head>
+<body>
+<div id="ivv">
+    <img src="images/img1.gif" alt="">
+    <img src="images/img2.jpg" alt="">
+    <img src="images/img3.jpg" alt="">
+    <img src="images/img4.jpg" alt="">
+    <img src="images/img1.gif" alt="">
+    <img src="images/img2.jpg" alt="">
+    <img src="images/img1.gif" alt="">
+    <img src="images/img2.jpg" alt="">
+    <img src="images/img3.jpg" alt="">
+    <img src="images/img4.jpg" alt="">
+    <img src="images/img1.gif" alt="">
+    <img src="images/img2.jpg" alt="">
+</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+    	$("img").each(function(i){
+    		if(i==0){
+    			$(this).css("marginLeft",0)
+    		}else{
+    			$(this).css("marginLeft",490+30*(i-1))
+    		}
+
+    	})
+
+    	$("img").on("mouseover",function(){
+    		var elem=$('img').not(':last')
+    		var ele=elem.slice(1,$(this).index()+1)
+    		ele.stop().animate({left:-490+30},1000)
+    		elem.not(ele).stop().animate({'left':0})
+
+
+    	})
+
+    	/*$("img").on("mouseout",function(){
+
+    	})*/
+
+
+	</script>
+</body>
+</html>

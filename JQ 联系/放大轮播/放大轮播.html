@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		#box{
+			width:700px;
+			height:550px;
+			position:relative;
+			margin:100px auto;
+		}
+		#left{
+			width:329px;
+			height:440px;
+			overflow: hidden;
+			position:relative;
+		}
+
+		#right{
+			height:200px;
+			width:200px;
+			position:absolute;
+			top:0;
+			right:0;
+			overflow: hidden;
+			display: none;
+
+		 }
+
+		#right ul,#left ul{
+			width: 1316px;
+			height:440px;
+			position:absolute;
+		}
+		#right ul li,#left ul li{
+			float:left;
+			width:329px;
+			height:440px;
+		}
+
+		#right ul li img,#left ul li img{
+			height: 440px;
+			width: 329px;
+		}
+
+		#min{
+			height:110px;
+			position:absolute;
+			bottom:-3px;
+		}
+		#min ul{
+			height:100px;
+			width: 339px;
+		 }
+		 #min ul li{
+		 	float: left;
+		 	height: 100px;
+		 	width:74px;
+		 	margin:2.6px;
+		 	border: 2px solid green;
+		 }
+		 #min ul li img{
+		 	height: 100px;
+		 	width: 74px;
+		 }
+
+		 b{
+		 	width:150px;
+		 	height:150px;
+		 	background:blue;
+		 	position:absolute;
+		 	left:0;
+		 	top:0;
+		 	display:none;
+		 	opacity: 0.5;
+		 }
+	</style>
+</head>
+<body>
+<div id="box">
+
+	<div id="left">
+		<ul>
+			<li><img src="imgs/1.jpg" alt=""></li>
+			<li><img src="imgs/2.jpg" alt=""></li>
+			<li><img src="imgs/3.jpg" alt=""></li>
+			<li><img src="imgs/4.jpg" alt=""></li>
+		</ul>
+		<b></b>
+	</div>
+	<div id="min">
+		<ul>
+			<li><img src="imgs/big1.jpg" alt=""></li>
+			<li><img src="imgs/big2.jpg" alt=""></li>
+			<li><img src="imgs/big3.jpg" alt=""></li>
+			<li><img src="imgs/big4.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="right">
+
+	</div>
+
+
+</div>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+$("#left ul li").eq(0).clone(true).appendTo("#right")
+
+	$("#min ul li").on("click",function(){
+		var index=$(this).index()
+		$("#left ul").animate({left:-index*329},1000)
+		//$("#right ul").animate({left:-index*329},1000)
+		$("#left ul li").eq(index).clone(true).appendTo("#right")
+	})
+
+	$("#left").on("mousemove",function(e){
+		var l=e.pageX
+		var t=e.pageY
+		var left=Math.floor(e.pageX-$("#box").offset().left-$("b").width()/2)
+		var top=Math.floor(e.pageY-$("#box").offset().top-$("b").height()/2)
+
+		if(left<0)left=0
+			if(top<0)top=0
+			if(left>$("#left").width()-$("b").width()){
+					left=$("#left").width()-$("b").width()
+			}
+			if(top>$("#left").height()-$("b").height()){
+					top=$("#left").height()-$("b").height()
+			}
+
+		$("b").show().css({
+			"left":left,
+			"top":top})
+
+		$("#right").show()
+
+		$("#right img").css({"position":"absolute",
+			"width":$(this).width()*$("#right").width()/$("b").width(),
+		"height":$(this).height()*$("#right").height()/$("b").height(),
+		"left":-left*$("#right img").width()/$(this).width(),
+		"top":-top*$("#right img").height()/$(this).height()
+	})
+
+	})
+	$("#left").on("mouseout",function(){
+		$("b").hide()
+		$("#right").hide()
+
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		div{
+			width:300px;
+			margin:50px auto;
+		}
+		dl{
+			width:300px;
+			text-align:center;
+		}
+		dt{
+			height:30px;
+			line-height:30px;
+			background:#ccc;
+		}
+		dd{
+			display:none;
+		}
+		img{
+			width:300px;
+		}
+
+	</style>
+	<script src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div>
+	<dl>
+		<dt>图片一</dt>
+		<dd><img src="img/1.jpg" alt=""></dd>
+	</dl>
+	<dl>
+		<dt>图片二</dt>
+		<dd><img src="img/2.jpg" alt=""></dd>
+	</dl>
+	<dl>
+		<dt>图片三</dt>
+		<dd><img src="img/3.jpg" alt=""></dd>
+	</dl>
+	<dl>
+		<dt>图片四</dt>
+		<dd><img src="img/1.jpg" alt=""></dd>
+	</dl>
+</div>
+<script>
+/*	$("dt").on("click",function(){
+	$(this).next().toggle(1000)
+	})*/
+
+/*$("dt").on("click",function(){
+	$(this).next().slideDown(1000)
+	$(this).parent().siblings().find("dd").slideUp(1000)
+})*/
+$("dt").on("click",function(){
+	$(this).next().show(1000)
+	$(this).parent().siblings().find("dd").hide(1000)
+})
+</script>
+</body>
+</html>

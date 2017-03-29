@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+	</style>
+	<script src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li>首页</li>
+		<li>背景商城</li>
+		<li>退出</li>
+	</ul>
+
+	<ol>
+		<li>首页</li>
+		<li>背景商城</li>
+		<li>退出</li>
+	</ol>
+	<script>
+		$.fn.extend({
+			nav:function(){
+			$(this).css({
+				"width":"300px",
+				"height":"35px",
+				"margin":"50px auto"
+			})
+			$(this).find("li").css({
+				"width":"100px",
+				"height":"35px",
+				"line-height":"35px",
+				"text-align":"center",
+				"float":"left",
+				"list-style":"none",
+				"background":"pink"
+			}).hover(
+				function(){
+					$(this).css({"background":"#ccc"})
+				},
+				function(){
+					$(this).css({"background":"pink"})
+				})
+			}
+		})
+
+		$("ul").nav()
+		$("ol").nav()
+
+
+
+
+	</script>
+</body>
+</html>

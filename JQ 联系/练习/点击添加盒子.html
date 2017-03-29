@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点击" id="btn1">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="插件封装.js"></script>
+	<script>
+	$("#btn1").on("click",function(){
+		ui.isdragg({"background":"blue"})
+	})
+
+
+
+
+
+
+
+
+	/*$.fn.btn=function(ppp){
+		var obj={
+			type:"click",
+			width:"300",
+			height:"300",
+			background:"red"
+		}
+		var tez=$.extend({},obj,ppp)
+
+		$(this).on(tez.type,function(){
+			$("<div class='div'></div>").appendTo("body")
+			$(".div").css({"width":tez.width,"height":tez.height,"background":tez.background})
+
+			$(".div").on("mousedown",function(e){
+				var that=$(this)
+					var l=e.pageX-that.offset().left
+					var t=e.pageY-that.offset().top
+				$(document).on("mousemove",function(e){
+					that.css({
+						"position":"absolute",
+						"left":e.pageX-l,
+						"top":e.pageY-t
+					})
+				})
+			}).on("mouseup",function(){
+					$(document).off("mousemove")
+				})
+
+		})
+
+	}
+	$("#btn1").btn({})*/
+	</script>
+</body>
+</html>

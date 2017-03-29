@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin-left: 0;padding: 0}
+	#box{position: relative;margin: 0 auto}
+	#box>img{position:absolute;}
+	</style>
+	<!--<script src='jquery1.7.js'></script>!-->
+</head>
+<body>
+	<div id="box">
+		<img src="images/2.jpg" alt="">
+		<img src="images/3.jpg" alt="">
+		<img src="images/4.jpg" alt="">
+		<img src="images/5.jpg" alt="">
+		<img src="images/6.jpg" alt="">
+		<img src="images/7.jpg" alt="">
+		<img src="images/8.jpg" alt="">
+		<img src="images/9.jpg" alt="">
+		<img src="images/10.jpg" alt="">
+		<img src="images/11.jpg" alt="">
+		<img src="images/12.jpg" alt="">
+		<img src="images/13.jpg" alt="">
+	</div>
+	<script src='jquery1.7.js'></script>
+	<script>
+			//图片的总宽度
+		var w=$('#box img').width()+20
+		//浏览器的总宽度
+		var coun=$(window).width()
+		//每一行最多能放图片的张数
+		var n=Math.floor(coun/w)
+		//盒子的总宽度
+		$('#box').width(w*n)
+
+/*		var arr=[]
+		var len=$('#box img').length
+		var p=0
+
+		for(var i=0;i<len;i++){
+			if(i<n){
+				arr.push(0)
+			}
+				//求数组里最小值
+				var minh=Math.min.apply(Math,arr)
+				//每张图片的高度
+				var gao=$('#box img').eq(i).height()+20
+				//获取最小值的下标
+				var mind=$.inArray(minh,arr)
+				console.log(gao)
+				//图片的位置高度
+				arr[mind]+=gao
+				$('#box img').eq(i).stop().animate({'left':mind*w,'top':minh},500)
+				p++
+		}*/
+var arr=[]
+		var p=0
+		function int(str,len){
+			for(var i=str;i<len;i++){
+					if(i<n){
+						arr.push(0)
+						console.log(arr)
+					}
+				//求数组里最小值
+				var minh=Math.min.apply(Math,arr)
+				//每张图片的高度
+				var gao=$('#box img').eq(i).height()+20
+				//获取最小值的下标
+				var mind=$.inArray(minh,arr)
+				console.log(gao)
+				//图片的位置高度
+				arr[mind]+=gao
+				$('#box img').eq(i).stop().animate({'left':mind*w,'top':minh},500)
+				p++;
+				}
+		}
+		int(0,$('#box img').length)
+
+		function rand(){
+			var date={"my":[
+							{'src':"images/1.jpg"},
+							{'src':"images/2.jpg"},
+							{'src':"images/3.jpg"},
+							{'src':"images/4.jpg"},
+							{'src':"images/13.jpg"},
+							{'src':"images/10.jpg"},
+							{'src':"images/11.jpg"},
+							{'src':"images/4.jpg"},
+							{'src':"images/1.jpg"},
+							{'src':"images/10.jpg"},
+							{'src':"images/11.jpg"},
+							{'src':"images/12.jpg"},
+							{'src':"images/13.jpg"},
+							{'src':"images/1.jpg"}
+							]
+						}
+				int(p,$('#box img').length)
+				//追加图片的最大值
+				var maxH=Math.max.apply(Math,arr)
+				var maxd=$.inArray(maxH,arr)
+				$.each(date.my,function(i,val){
+					$('<img>').attr('src',val.src).css({'left':w*maxd,"top":maxH}).appendTo('#box');
+
+				})
+
+		}
+
+
+
+			$(window).on('scroll',function(){
+			var dh=$(document).height()-$(this).height()
+			if($(this).scrollTop()>=dh){
+				rand()
+			}
+		})
+
+
+	</script>
+</body>
+</html>

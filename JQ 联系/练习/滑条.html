@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#div{
+			width:410px;
+			height:30px;
+			margin:120px auto;
+			position:relative;
+
+		}
+		p{
+			width:440px;
+			height:20px;
+			background:#ccc;
+			position:absolute;
+		}
+		span{
+			width:40px;
+			height:40px;
+			border-radius:50px;
+			background:red;
+			position:absolute;
+			top:-10px;
+		}
+		.b{
+			position:absolute;
+			bottom:-20px;
+			background:#fff;
+		}
+		.d{
+			position:absolute;
+			left:0;
+			height:20px;
+			z-index:100;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="div">
+		<p></p>
+		<div id="d"></div>
+		<span></span>
+
+	</div>
+	<form action="瀑布流2.html"></form>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+
+		$("span").on("mousedown",function(){
+			$(this).on("mousemove",function(e){
+				var left=e.pageX-$("#div").offset().left-$("span").width()/2
+				if(left<0)left=0
+					if(left>400)left=400
+			$("span").css("left",left)
+			var str="";
+			console.log(left)
+			str+="<b>"+Math.floor(left*0.25)+"/100"+"</b>"
+			console.log(str)
+			$("b").text(" ")
+			$("#div").append(str)
+			$("b").addClass("b")
+			$("#d").css({"background":"red","width":(left+10)}).addClass("d")
+
+		})
+
+		})
+		var timer=null
+		var i=0
+		timer=setInterval(function(){
+			i++
+			if(i>400){
+				i=0
+				$("#div").hide()
+				$("form").submit()
+
+			}
+
+			$("span").css("left",i)
+			var str="";
+
+			str+="<b>"+Math.floor(i*0.25)+"/100"+"</b>"
+
+			$("b").text(" ")
+			$("#div").append(str)
+			$("b").addClass("b")
+			$("#d").css({"background":"red","width":(i+10)}).addClass("d")
+
+		},10)
+	</script>
+</body>
+</html>

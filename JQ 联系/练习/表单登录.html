@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="星星.html">
+		用户名<input type="text"><span></span><br/>
+		密码<input type="text"><span></span><br/>
+		确认密码<input type="text"><span></span><br/>
+		<input type="button" value="登录" id="btn">
+
+	</form>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+
+
+	$("input").eq(0).on("blur",function(){
+		if($(this).val().length<6){
+			$(this).next().text("用户名不能少于6位数")
+		}else{
+			$(this).next().text(" ")
+		}
+	})
+	$("input").eq(1).on("blur",function(){
+		if($(this).val().length<6){
+			$(this).next().text("密码不能少于6位数")
+		}else{
+			$(this).next().text(" ")
+		}
+	})
+	$("input").eq(2).on("blur",function(){
+		if($(this).val()!=$("input").eq(1).val()){
+			$(this).next().text("两次密码输入不一致")
+		}else{
+			$(this).next().text(" ")
+		}
+	})
+
+
+
+	$("#btn").on("click",function(){
+		if($("input").eq(0).val().length<6){
+			$("span").eq(0).text("用户名不能少于6位数")
+		}else if($("input").eq(1).val().length<6){
+			$("span").eq(1).text("密码不能少于6位数")
+		}else if($("input").eq(2).val()!=$("input").eq(1).val()){
+			$("span").eq(2).text("两次密码输入不一致")
+		}else{
+			$("form").submit()
+		}
+	})
+
+
+
+	</script>
+</body>
+</html>

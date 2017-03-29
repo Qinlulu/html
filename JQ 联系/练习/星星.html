@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		body{
+			background:#000;
+			height:500px;
+		}
+	</style>
+</head>
+<body>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+
+
+for(var i=0;i<30;i++){
+		var X=Math.random()*$("body").width()
+		var Y=Math.random()*$("body").height()
+		$("<span><img src='3.png'/><span>").appendTo("body").css({"position":"absolute","left":X,"top":Y})
+		one()
+		}
+
+
+	function one(){
+		//显示
+		$("span").animate({"opacity":0},200,function(){
+			two()
+		})
+	}
+	function two(){
+		//隐藏
+		$("span").animate({"opacity":1},100,function(){
+			one()
+		})
+	}
+
+	function colorr(){
+		var i="0123456789abcdf"
+		var c="#"
+	}
+
+
+
+
+
+
+
+/*
+	var timer=null;
+	timer=setInterval(function(){
+			$("body").html(" ")
+	var str1=[]
+	var str2=[]
+	var num=50;
+	for(var i=0;i<num;i++){
+		var num1=Math.floor(Math.random()*$("body").width())
+		var num2=Math.floor(Math.random()*$("body").height())
+		str1.push(num1)
+		str2.push(num2)
+	}
+		for(var i=0;i<str1.length-1;i++){
+			$("<span><img src='1.png'/><span>").appendTo("body").css({"position":"absolute","left":str1[i],"top":str2[i]})
+		}
+	},1000)*/
+
+
+</script>
+</body>
+</html>

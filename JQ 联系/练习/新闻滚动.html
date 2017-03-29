@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#div{
+			width:410px;
+			height:30px;
+			margin:100px auto;
+			background:#ccc;
+			overflow: hidden;
+
+		}
+		ul{
+				width:810px;
+			height:30px;
+			line-height:30px;
+		}
+		ul li{
+			list-style: none;
+			float:left;
+			padding: 0 10px;
+		}
+	</style>
+</head>
+<body>
+<div id="div">
+	<ul>
+		<li>事假</li>
+		<li>新闻列表</li>
+		<li>重大新闻的发生</li>
+		<li>还好吧</li>
+		<li>还行</li>
+		<li>事假</li>
+		<li>新闻列表</li>
+		<li>重大新闻的发生</li>
+		<li>还好吧</li>
+		<li>还行</li>
+	</ul>
+</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+var i=0
+		setInterval(function(){
+				i--
+			if(i<-385)i=0
+			$("ul").css("marginLeft",i)-+62
+
+		},20)
+</script>
+</body>
+</html>

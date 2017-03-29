@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			margin:50px auto;
+		}
+		div{
+			width:300px;
+		}
+		ul{
+			height:30px;
+			width:300px;
+
+		}
+		ul li{
+			list-style:none;
+			float:left;
+			width:100px;
+			line-height:30px;
+			text-align:center;
+		}
+		#box{
+			height:350px;
+		}
+		#pic div{
+			height:180px;
+		}
+		img{
+			width:300px;
+		}
+		.bg{
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<div id="pic">
+			<div><img src="img/1.jpg" alt=""></div>
+			<div><img src="img/2.jpg" alt=""></div>
+			<div><img src="img/3.jpg" alt=""></div>
+		</div>
+
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$("ul").find("li").hover(function(){
+			$(this).addClass("bg").siblings().removeClass("bg")
+
+			$("#pic").find("div").hide().eq($(this).index()).show()
+
+
+		})
+	</script>
+</body>
+</html>

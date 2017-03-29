@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+			*{margin:0;padding: 0}
+			#box{width:1000px;height: 600px;border:1px solid #ccc; margin:20px auto;}
+
+			#min{width:400px;height: 400px;position: relative;float: left}
+			#b{width:100px;height:100px;background:blue;opacity: 0.5;position: absolute;top:0px;left:0px;display: none;}
+
+			#max{width:400px;height: 400px;overflow: hidden;float: right;display: none;position: relative;border-radius:200px;}
+			#imgs{position: absolute;left:0px;top:0px;}
+			#yuan{
+				position:absolute;
+			}
+	</style>
+</head>
+
+<body>
+		<div id="box">
+			<div id="min">
+				<img src="02.jpg">
+				<b id="b"></b>
+			</div>
+			<div id="yuan">
+			<div id='max'>
+				<img src="01.jpg" id='imgs'>
+			</div>
+			</div>
+		</div>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script>
+			$("#min").on("mousemove",function(e){
+				var left=e.pageX-$("#min").offset().left-$("#b").width()/2
+				var top=e.pageY-$("#min").offset().top-$("#b").height()/2
+				if(left<0)left=0
+				if(top<0)top=0
+				if(left>$("#min").width()-$("#b").width()){
+					left=$("#min").width()-$("#b").width()
+				}
+				if(top>$("#min").height()-$("#b").height()){
+					top=$("#min").height()-$("#b").height()
+				}
+				$("#max").show()
+
+				$("#yuan").css({
+					left:e.pageX+15,top:e.pageY+15
+				})
+				$("#imgs").css({
+					"width":$(this).width()*$("#max").width()/$("#b").width(),
+					"height":$(this).height()*$("#max").height()/$("#b").height(),
+					"left":-left*$("#imgs").width()/$(this).width(),
+					"top":-top*$("#imgs").height()/$(this).height()
+				})
+			})
+			$("#min").on("mouseout",function(){
+				$("#max").hide()
+			})
+		</script>
+
+</body>
+</html>

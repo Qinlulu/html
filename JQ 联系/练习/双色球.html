@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		h1{
+			width:100%;
+			height:50px;
+			line-height:50px;
+			text-align: center;
+			background:red;
+		}
+		a{
+			font-size:40px;
+		}
+		#box{
+			width:100%;
+			height:450px;
+		}
+		p{
+			float:left;
+			width:10%;
+			height:250px;
+			font-size:40px;
+		}
+		#top,#bottom{
+			float:right;
+			width:90%;
+		}
+		#top{
+			height:300px;
+		}
+		#bottom{
+			height:200px;
+		}
+		span{
+			margin:0px 50px;
+			float:left;
+			width:50px;
+			height:50px;
+			line-height:50px;
+			text-align: center;
+		}
+		span a{
+			font-size:30px;
+		}
+		#btn{
+			width:100%;
+		}
+		#btn input{
+			margin: 0 10%;
+			width:30px;
+		}
+		.bg{
+			background:red;
+			width:50px;
+			height:50px;
+			border-radius: 50px;
+		}
+		.bgb{
+			background:blue;
+			width:50px;
+			height:50px;
+			border-radius: 50px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1><a href="#">双色球</a></h1>
+	<div id="box">
+	<p>红球</p>
+	<div id="top"></div>
+	<p>蓝球</p>
+	<div id="bottom"></div>
+	</div>
+	<div id="btn">
+		<input type="button" value="清空">
+		<input type="button" value="机选">
+		<input type="button" value="停止">
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+	var str1=[]
+	var str2=[]
+	for(var i=1;i<41;i++){
+		str1.push(i)
+	}
+	var str3=" "
+	for(var i=0;i<str1.length-1;i++){
+		if(str1[i]<10){
+				rm="0"+str1[i]
+		}else{
+			rm=str1[i]
+		}
+		str3+="<span>"+rm+"</span>"
+	}
+	for(var i=1;i<17;i++){
+		str2.push(i)
+	}
+	var str4=" "
+	for(var i=0;i<str2.length-1;i++){
+		var rom=null;
+		if(str2[i]<10){
+				rom="0"+str2[i]
+		}else{
+			rom=str2[i]
+		}
+		str4+="<span>"+rom+"</span>"
+	}
+	$("#bottom").append(str4)
+	$("#top").append(str3)
+
+	var timer=null;
+
+
+	$("#btn").find("input").eq(1).on("click",function(){
+		timer=setInterval(function(){
+			$("span").removeClass("bg bgb")
+			$("#btn").find("input").eq(1).prop("disabled",true)
+		var randm1=[]
+		for(var i=0;randm1.length<5;i++){
+			randm=Math.floor(Math.random()*33+1)
+			if(randm1.indexOf(randm)==-1){
+				randm1.push(randm)
+				$("#top span").eq(randm-1).addClass("bg")
+			}
+
+
+			}
+			console.log(randm1)
+			randm2=Math.floor(Math.random()*15+1)
+			$("#bottom span").eq(randm2-1).addClass("bgb")
+
+		},200)
+	})
+
+	$("#btn").find("input").eq(2).on("click",function(){
+		clearInterval(timer)
+		$(this).prev().prop("disabled",false)
+	})
+
+$("#btn").find("input").eq(0).on("click",function(){
+	$("span").removeClass("bg bgb")
+})
+
+
+	</script>
+</body>
+</html>

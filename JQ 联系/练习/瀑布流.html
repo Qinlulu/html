@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#main{
+			margin:0 auto;
+			position: relative;
+		}
+		.box{
+			width:245px;
+			padding:10px 0 0 10px;
+			float:left;
+		}
+
+		.pic{
+			padding:5px;
+			border: 2px solid #ccc;
+			border-radius:5px;
+
+		}
+		img{
+			width:230px;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="box">
+			<div class="pic">
+				<img src="pic/8.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/9.png" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/10.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/11.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/12.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/13.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/14.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/15.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/16.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/17.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/18.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/19.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/20.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/8.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/9.png" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/10.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/11.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/12.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/13.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/14.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/15.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/16.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/17.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/18.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/19.jpg" alt="">
+			</div>
+		</div>
+		<div class="box">
+			<div class="pic">
+				<img src="pic/20.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script>
+
+		//图片地址
+	var datasrc={datare:[{'pic':'6.jpg'},{'pic':'7.jpg'},{'pic':'8.jpg'},{'pic':'9.png'},{'pic':'10.jpg'},{'pic':'11.jpg'},{'pic':'12.jpg'},{'pic':'13.jpg'},{'pic':'14.jpg'},{'pic':'15.jpg'},{'pic':'16.jpg'},{'pic':'17.jpg'},{'pic':'18.jpg'},{'pic':'19.jpg'},{'pic':'20.jpg'},{'pic':'21.jpg'},{'pic':'22.jpg'}]}
+	function buju(){
+		//页面可视区域的宽度
+		var clientW=$(window).outerWidth()
+		//每一个图片的宽度
+		var  offsetW=$(".box").eq(0).outerWidth()
+		//列数
+		var lie=Math.floor(clientW/offsetW)
+		//居中显示
+		$("#main").outerWidth(lie*offsetW)
+		//所有div的个数
+		num=$(".box").length-1
+
+		var arr=[]
+		for(var i=0;i<num;i++){
+			if(i<lie){
+				arr.push($(".box").eq(i).outerHeight())
+				$(".box").eq(i).css("position","")
+			}else{
+				//定位  求出最小的高度
+				var min=Math.min.apply(Math,arr)
+				//最小值的下标
+				var index=arr.indexOf(min)
+
+				$(".box").eq(i).css({"position":"absolute","left":index*offsetW,"top":min})
+				arr[index]+=$(".box").eq(i).outerHeight()
+			}
+
+		}
+	}
+	buju()
+
+		$(window).scroll(function(){
+			//求出最后一张图片距离顶部的距离
+			lastH=$(document).height()/**/;
+			//滚动的距离
+			scrollT=$(this).scrollTop()
+			windH=$(window).height()+($(".box").eq(num).outerHeight())
+			if(lastH-scrollT<windH){
+				$.each(datasrc.datare,function(i,val){
+					$('<div class="box"><div class="pic"><img src="pic/'+val.pic+'"/></div></div>').appendTo("#main")
+				})
+				buju()
+			}
+
+		})
+	</script>
+</body>
+</html>

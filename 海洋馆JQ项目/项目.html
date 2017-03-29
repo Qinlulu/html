@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul,ol{
+			list-style:none;
+		}
+		#box{
+			width:1350px;
+			height:6590px;
+			margin:0 auto;
+			border:1px solid #ccc;
+		}
+		.mg{margin: 0 auto;}
+		.w12{width: 1210px;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.htopbox{height: 30px;background: #f2f2f2;}
+		.htop{height: 30px;line-height: 30px;}
+		.htop_left{width:350px;}
+		.htop_left .home{padding: 0 16px;background: url(img/public/home1.png) no-repeat left top;}
+		.htop_left .phone{margin-left: 14px;}
+
+		.htop_right{width: 600px;height: 30px;}
+		.htop_right li{float: left;height:30px;padding: 0 10px;}
+		.htop_right li:nth-child(5){background: url(img/public/little_logo2.png) -266px -440px;position: relative;padding-right: 20px;}
+		.my5lux{position: absolute;left: 0px;top: 0px; height: 150px;width: 102px;border: 1px solid #666;text-align: center;padding-top: 30px;}
+		.my5lux li{height: 30px;background: #fff;}
+		.my5lux li a:hover{color: #cf0101;}
+		.htop_right>li:nth-child(9){background: url(img/public/little_logo2.png) -200px -370px;position:relative ;padding-right: 60px;}
+		.appload{position: absolute;height: 150px;width: 130px;left: 0;top: 0;border: 1px solid #666;padding-top: 30px;display: none;z-index: 20;}
+		.appload p{background: #fff;padding: 5px 0 0 5px;text-align: center;}
+		.logobox,.logo{height: 110px;}
+		.logo_left{width: 386px;height: 110px;float: left;}
+		.logo_left a{display: block;float: left;}
+		.logo_left a:nth-child(2){margin-top: 20px;}
+		.logo_cen{height: 34px;width: 456px;border: 2px solid #c69c6d;float: left;margin: 36px 0 0 30px;}
+		.logo_cen input{display: block;float:left;height: 34px;border: none;}
+		.logo_cen .search{width: 363px;text-indent: 12px;color: #666;}
+		.logo_cen .button{width: 93px;background:  #c69c6d;color: #fff;font-weight: 700;}
+		.logo_right{height: 34px; width: 140px;border-radius: 0 0 3px #ccc;margin: 40px 80px  0 0;line-height: 32px;position: relative;}
+		.logo_right>p{height: 32px;width: 110px;position: absolute;left: 0;top: 0;border: 1px solid #ccc;background: url(img/public/v30cart.png) no-repeat;padding-left: 28px;z-index: 15;}
+		.logo_rhover{position: absolute;height:100px;width: 276px;border: 1px solid #ccc;right: 0px;top: 33px;line-height: 32px;background: #fff;display: none;z-index: 3;}
+		.navbox{height: 38px;background: url(img/public/nav_bg.jpg);border-bottom: 2px solid #d0cfcf;}
+		.nav{height: 38px;width: 1210px;line-height: 38px;position: relative;}
+		.list1{width: 130px;height: 38px; background: #cf0101;color: #fff;font-weight: 700;float: left;text-align: center;}
+		.navmain{height: 38px;width: 850px;float: left;-background: yellow;}
+		.navmain li{float: left;margin: 0 32px;}
+		.navmain li a{color: #c8a985;}
+		.navmain li a:hover{color: #fff;}
+		.navbao{height: 38px;width: 200px;float:right;}
+		.navbao li{height: 38px;width: 26px;overflow: hidden;float: left;color: #fff;}
+		.navbao li i{display: block;height: 38px;width: 26px;background-image: url(img/public/share02.png);float: left;}
+		.navbao li b{display: block;height: 38px;float: left;width: 94px;}
+
+		.list2{width: 130px;position: absolute;left: 0;top: 38px;background: rgba(247,238,214,0.8);display: none;z-index: 40;}
+		.list2 li{height: 36px;line-height: 36px;text-align: center;background: url(img/public/nav1.png) no-repeat;}
+		.list3{width: 700px;height: 300px;position: absolute;left: 130px;top: 38px;background: white;display: none;z-index: 30;}
+		.list3 div{width: 700px;height: 300px;display: none;}
+		.list3 div span{display: block;height: 45px;line-height: 60px;border-bottom: 1px dashed #666;margin: 0 40px;}
+		.list3 div span .list3_tit{color: #731d1c;font-weight: 700;margin-right: 60px;}
+		.list3 div span a{margin-right: 20px;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="htopbox">
+			<div class="htop mg w12">
+				<div class="htop_left  fl">
+					 <a href="index1.html" class="home">第五大道首页</a>
+					 <span>|</span>
+					 <span class="phone"><span></span>贵宾专线：400-660-5610</span>
+				</div>
+				<ul class="htop_right fr">
+					<li><a>登录</a></li>
+					<li>|</li>
+					<li><a>注册</a></li>
+					<li>|</li>
+					<li><a class="lii">我的第五大道</a>
+						<ul class="my5lux">
+							<li><a href="userCenter.html">我的订单</a></li>
+							<li><a href="userCenter.html">我的收藏</a></li>
+							<li><a href="userCenter.html">已购商品</a></li>
+							<li><a href="userCenter.html">我的礼券</a></li>
+							<li><a href="userCenter.html">我的积分</a></li>
+						</ul>
+					</li>
+					<li>|</li>
+					<li><a href="###">帮助中心</a></li>
+					<li>|</li>
+					<li><a href="###">手机版下载
+						<div class="appload"><p><img src="img/public/appload.jpg">扫描二维码</p></div>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="logobox" style="background: #fff;">
+			<div class="logo mg w12">
+				<div class="logo_left fl">
+					<a href="index1.html"><img src="img/public/logo1.jpg"/></a>
+					<a href="index1.html"><img src="img/public/logo2.gif"/></a>
+				</div>
+				<div class="logo_cen fl">
+					<input type="text" class="search" placeholder="爱马仕皮包"/>
+					<input type="button" class="button" value="搜索"/>
+				</div>
+				<div class="logo_right fr">
+					<p>购物袋（<b>0</b>）<p>
+					<div class="logo_rhover"><div>购物车没有商品 请去选择自己心爱的商品吧</div></div>
+				</div>
+			</div>
+		</div>
+		<div class="navbox">
+			<div class="nav mg">
+				<h3 class="list1">商品分类</h3>
+				<ul class="navmain">
+					<li><a href="brand.html">品牌</a></li>
+					<li><a href="brand.html">女士</a></li>
+					<li><a href="brand.html">男士</a></li>
+					<li><a href="overSeas.html">生活馆</a></li>
+					<li><a href="overSeas.html">海外馆</a></li>
+					<li><a href="overSeas.html">时尚</a></li>
+					<li><a href="###">闪购</a></li>
+					<li><a href="###">到店</a></li>
+				</ul>
+				<ul class="navbao" style="line-height: 38px;">
+					<li><i style="background-position: -239px -68px;"></i><b>品牌授权，官方验真</b></li>
+					<li><i style="background-position: -299px -68px;"></i><b>尊享品牌会员服务</b></li>
+					<li><i style="background-position: -356px -68px;"></i><b>商务部诚信示范企业</b></li>
+				</ul>
+				<ul class="list2">
+					<li><a href="watchAll.html">箱包</a></li>
+					<li><a href="watchAll.html">美妆</a></li>
+					<li><a href="watchAll.html">服装</a></li>
+					<li><a href="watchAll.html">腕表</a></li>
+					<li><a href="watchAll.html">配饰</a></li>
+					<li><a href="watchAll.html">鞋靴</a></li>
+					<li><a href="watchAll.html">母婴</a></li>
+				</ul>
+				<div class="list3">
+					<!--1箱包-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">箱包</a>
+							<a href="###">单肩包</a><a href="###">钱包</a><a href="###">手提包</a><a href="###">双肩包</a><a href="###">手拿包</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门品牌</a>
+							<a href="###">单肩包</a><a href="###">古琦</a><a href="###">巴宝莉</a><a href="###">路易。威登</a><a href="###">普拉达</a><a href="###">迪奥</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门词</a>
+							<a href="###">铂金包</a><a href="###">2.55</a><a href="###">杀手包</a><a href="###">经典logo</a>
+						</span>
+					</div>
+					<!--2美妆-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">护肤</a>
+							<a href="###">眼部护理</a><a href="###">面部护理</a><a href="###">手提包</a><a href="###">唇部护理</a><a href="###">护肤工具</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">彩妆</a>
+							<a href="###">眼部彩妆</a><a href="###">面部彩妆</a><a href="###">美甲</a><a href="###">唇部彩妆</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">香水</a>
+							<a href="###">浓香水</a><a href="###">淡香水</a><a href="###">香精</a><a href="###">香膏</a><a href="###">古龙水</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">套装精品</a>
+							<a href="###">面部套装护肤</a><a href="###">面膜套装</a><a href="###">眼部护理套装</a><a href="###">手足护理套装</a><a href="###">彩妆套装</a>
+						</span>
+					</div>
+					<!--3服装-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">上衣</a>
+							<a href="###">单肩包</a><a href="###">卫衣</a><a href="###">衬衣</a><a href="###">t恤</a><a href="###">针织衫</a><a href="###">西装</a><a href="###">羊毛/羊绒衫</a><a href="###">马甲</a><a href="###">雪纺衫</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">裤装</a>
+							<a href="###">牛仔裤</a><a href="###">西裤</a><a href="###">休闲裤</a><a href="###">打底裤</a><a href="###">连体裤</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">裙装</a>
+							<a href="###">连衣裙</a><a href="###">及膝裙</a><a href="###">婚纱</a><a href="###">礼服</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">推荐品牌</a>
+							<a href="###">Arman</a><a href="###">Versace</a><a href="###">NKNY</a><a href="###">Sophie&Stephie</a>
+						</span>
+					</div>
+					<!--4腕表-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">箱包</a>
+							<a href="###">单肩包</a><a href="###">钱包</a><a href="###">手提包</a><a href="###">双肩包</a><a href="###">手拿包</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门品牌</a>
+							<a href="###">单肩包</a><a href="###">古琦</a><a href="###">巴宝莉</a><a href="###">路易。威登</a><a href="###">普拉达</a><a href="###">迪奥</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门词</a>
+							<a href="###">铂金包</a><a href="###">2.55</a><a href="###">杀手包</a><a href="###">经典logo</a>
+						</span>
+					</div>
+					<!--5配饰-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">箱包</a>
+							<a href="###">单肩包</a><a href="###">钱包</a><a href="###">手提包</a><a href="###">双肩包</a><a href="###">手拿包</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门品牌</a>
+							<a href="###">单肩包</a><a href="###">古琦</a><a href="###">巴宝莉</a><a href="###">路易。威登</a><a href="###">普拉达</a><a href="###">迪奥</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门词</a>
+							<a href="###">铂金包</a><a href="###">2.55</a><a href="###">杀手包</a><a href="###">经典logo</a>
+						</span>
+					</div>
+					<!--6鞋靴-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">箱包</a>
+							<a href="###">单肩包</a><a href="###">钱包</a><a href="###">手提包</a><a href="###">双肩包</a><a href="###">手拿包</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门品牌</a>
+							<a href="###">单肩包</a><a href="###">古琦</a><a href="###">巴宝莉</a><a href="###">路易。威登</a><a href="###">普拉达</a><a href="###">迪奥</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门词</a>
+							<a href="###">铂金包</a><a href="###">2.55</a><a href="###">杀手包</a><a href="###">经典logo</a>
+						</span>
+					</div>
+					<!--7母婴-->
+					<div>
+						<span>
+							<a href="###" class="list3_tit">箱包</a>
+							<a href="###">单肩包</a><a href="###">钱包</a><a href="###">手提包</a><a href="###">双肩包</a><a href="###">手拿包</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门品牌</a>
+							<a href="###">单肩包</a><a href="###">古琦</a><a href="###">巴宝莉</a><a href="###">路易。威登</a><a href="###">普拉达</a><a href="###">迪奥</a>
+						</span>
+						<span>
+							<a href="###" class="list3_tit">热门词</a>
+							<a href="###">铂金包</a><a href="###">2.55</a><a href="###">杀手包</a><a href="###">经典logo</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div>
+</body>
+</html>

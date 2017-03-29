@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul{
+			display:none;
+			margin-left:100px;
+		}
+		li{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	请输入邮箱<input type="text" id="inp">
+	<ul>
+		<li><span></span>@qq.com</li>
+		<li><span></span>@ww.com</li>
+		<li><span></span>@ee.com</li>
+		<li><span></span>@rr.com</li>
+		<li><span></span>@tt.com</li>
+	</ul>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$("#inp").keyup(function(){
+			if($(this).val()==""){
+				$("ul").hide()
+			}else{
+				$("ul").show()
+				$("span").text($(this).val())
+			}
+		})
+
+		$("ul li").hover(function(){$(this).css("background","#ccc")},function(){$(this).css("background","")})
+
+		$("ul li").on("click",function(){
+			$("#inp").val($(this).text())
+			$("ul").hide()
+		})
+	</script>
+</body>
+</html>

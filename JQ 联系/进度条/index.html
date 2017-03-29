@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0}
+		#dv{height:100px;width: 500px;margin:0 auto;border:0px solid #fff;position:relative;}
+		#box{height:10px;width:500px;background:#ccc;margin:50px auto;border-radius:0px}
+		.p1{height:10px;background:red;width:0px;border-radius:0px}
+		.p2{height:30px;width:30px;background:red;border-radius:30px;position:absolute;top:-10px;left:-15px}
+	</style>
+</head>
+<body>
+<div id="dv">
+	<div id="box">
+		<p class="p1"></p>
+		<p class="p2"></p>
+		<p class='p3'><span></span></p>
+	</div>
+</div>
+	<script src="js/jquery1.7.js"></script>
+	<script>
+	$(function(){
+
+			$("#box").on("mousedown",function(e){
+				$(document).mousemove(function(e){
+					e.preventDefault();
+					var l=e.pageX-$("#box").offset().left-$('.p2').width()/2;
+					var w=$("#box").width()-$(".p2").width()/2;
+
+					if(l<0){l=0}else if(l>w){l=w}
+						$(".p2").css({"left":l})
+						$(".p1").css({"width":l})
+						js=Math.floor(l/485*100)
+						$('.p3>span').text((js/100)*100+'%');
+					})
+				$(document).mouseup(function(){
+					$(this).off("mousemove");
+				})
+			})
+	})
+	</script>
+
+
+</body>
+</html>

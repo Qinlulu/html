@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			margin:50px auto;
+			width:300px;
+			height:150px;
+		}
+		#bottom{
+			margin:20px 0;
+		}
+		.a{
+			background:url("images/starky.png");
+			height:21px;
+			width:110px;
+			position:relative;
+		}
+		a{
+			height:21px;
+			display:inline-block;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<!-- <div id="top">
+			<p>半颗星</p>
+			<div class="a">
+
+			</div>
+			<div>评分：<span></span>分</div>
+			<div class="content"></div>
+		</div> -->
+		<div id="bottom">
+			<p>半颗星</p>
+			<div class="a">
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+			</div>
+			<div>评分：<span></span>分</div>
+			<div class="content"></div>
+		</div>
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script>
+		$("a").css("background",'url("images/starsy.png")')
+
+	</script>
+</body>
+</html>

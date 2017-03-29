@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:250px;
+			margin:50px auto;
+		}
+				dl{
+			width:250px;
+			height:50px;
+			border:1px solid #ccc;
+		}
+		dt{
+			float:left;
+			width:50px;
+			height:50px;
+			border-right:1px solid #ccc;
+		}
+		dd{
+			float:right
+			width:200px;
+		}
+	</style>
+	<script src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="box">
+	<dl>
+		<dt><input type="radio"></dt>
+		<dd>跳舞</dd>
+	</dl>
+	<dl>
+		<dt><input type="radio"></dt>
+		<dd>运行</dd>
+	</dl>
+	<dl>
+		<dt><input type="radio"></dt>
+		<dd>停止</dd>
+	</dl>
+</div>
+<script>
+$("dl").on("click",function(){
+	$("dl").css("background","").find("input").prop("checked",false)
+	$(this).css("background","#eee").find("input").prop("checked",true);
+})
+</script>
+</body>
+</html>

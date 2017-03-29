@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:300px;
+			margin:100px auto;
+		}
+		ul{
+			height:35px;
+			text-align:center;
+		}
+		ul li{
+			list-style: none;
+			height:35px;
+			line-height:35px;
+			width:150px;
+			float:left;
+			background:#eee;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li class="da">放大</li>
+			<li class="xiao">缩小</li>
+		</ul>
+		<div>
+			回家的辐射圣诞节收到收到甲方的都是粉碎范德萨发生的发生发生大幅好我黑哦范围分为符合IE问问覅微博发UI而服务
+		</div>
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$("ul li").on("click",function(){
+			var  size=parseInt($("#box div").css("fontSize"))
+			var cls=$(this).attr("class")
+			if(cls=="da"){
+				size++
+			}else if(cls=="xiao"){
+				size--
+			}
+
+			$("#box div").css("fontSize",size)
+		})
+	</script>
+</body>
+</html>
