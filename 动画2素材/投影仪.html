@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			width:100%;
+			height:100%;
+			background:#EEFDF5;
+		}
+		.music{
+			width:30px;
+			height:30px;
+			background:url(卫星/m4.png);
+			background-size:100%;
+			position:absolute;
+			right:3%;
+			top:3%;
+		}
+		.music .m1{
+			position:absolute;
+			    top: 33%;
+			    left: -49%;
+			    width: 41%;
+		}
+		.music .m2{
+			position:absolute;
+			top:0px;
+			left:12px;
+			width:29%;
+		}
+		.music .m3{
+			position:absolute;
+			width:70%;
+			top:15%;
+			left:15%;
+		}
+		.main{
+			width:100%:
+			height:auto;
+			display:flex;
+			margin:100px auto;
+		}
+		.left{
+			width:50%;
+			height:auto;
+			flex:1;
+			position:relative;
+		}
+		.left .t1{
+			width:80%;
+			position:absolute;
+			left:5%;
+			top:10%;
+		}
+		.left .y1{
+			width: 36%;
+		    position: absolute;
+		    left: 36%;
+		    top: 6%;
+		    animation: xuan 2s linear;
+		}
+		.left .y2{
+			width: 23%;
+		    position: absolute;
+		    left: 1%;
+		    top: 19%;
+		    animation: xuan 2s linear;
+		}
+		.left .y3{
+			width: 50%;
+		    position: absolute;
+		    left: 85%;
+		    top: -10%;
+		   
+		}
+		.left .y4{
+			width: 8%;
+		    position: absolute;
+		    left: 30%;
+		    top: 37%;
+		     animation: xuan 2s linear;
+		}
+		@-webkit-keyframes xuan{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+
+		.right{
+			width:50%;
+			height:auto;
+		}
+		.right img{
+			display:block;
+			width:100%;
+			margin:10px auto;
+		}
+	</style>
+</head>
+<body>
+<div class="music">
+	<img src="卫星/m3.png" alt="" class="m3">
+	<img src="卫星/m2.png" alt="" class="m2">
+	<img src="卫星/m1.png" alt="" class="m1">
+</div>
+<div class="main">
+<div class="left">
+	<img src="投影仪/p1.png" alt="" class="t1">
+	<img src="投影仪/yuan1.png" alt="" class="y1">
+	<img src="投影仪/yuan1.png" alt="" class="y2">
+	<img src="投影仪/yuan2.png" alt="" class="y4">
+	<img src="投影仪/light.png" alt="" class="y3">
+</div>
+<div class="right">
+	<img src="投影仪/txt2.png" alt="">
+	<img src="投影仪/txt3.png" alt="">
+	<img src="投影仪/txt4.png" alt="">
+	<img src="投影仪/txt5.png" alt="">
+</div>
+<audio src="bgm.mp3" loop autoplay></audio>
+</div>
+</body>
+</html>

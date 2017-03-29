@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">	
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			width:100%;
+			height:100%;
+			background:#FFF9E6;
+			position:relative;
+		}
+		.music{
+			width:30px;
+			height:30px;
+			background:url(卫星/m4.png);
+			background-size:100%;
+			border:1px solid #FFF9E6;
+			position:absolute;
+			right:3%;
+			top:10px;
+		}
+		.music .m1{
+			position:absolute;
+			    top: 33%;
+			    left: -49%;
+			    width: 41%;
+		}
+		.music .m2{
+			position:absolute;
+			top:0px;
+			left:12px;
+			width:29%;
+		}
+		.music .m3{
+			position:absolute;
+			width:70%;
+			top:15%;
+			left:15%;
+		}
+		.header{
+			width:100%;
+			height:auto;
+			padding:20px;
+			box-sizing:border-box;
+		}
+		.header img{
+			width:80%;
+			display:block;
+			margin:0 auto;
+		}
+		.main{
+			width:100%;
+			height:auto;
+			padding:100px 0;
+		}
+		.main .qiu{
+			display:block;
+			margin:0 auto;
+			width:57%;
+		}
+		.main .border{
+			width:60%;
+			height:15%;
+			background:rgba(225,225,225,0.3);
+			position:absolute;
+			left:14%;
+			top:51%;
+			border:20px solid rgb(37,54,78);
+			border-radius: 10px 10px 5px 12px;
+		}
+		.main .border .span{
+			position:absolute;
+			width:0px;
+			height:0px;
+			border:30px solid rgb(37,54,78);
+			border-radius: 10px 50px 50px 10px;
+			left:39%;
+			top:17%;
+		}
+		.main .x{
+			display:block;
+			width:12%;
+			height:5%;
+			position:absolute;
+			left:56%;
+			top:34%;
+		}
+		.main .wei{
+			position:absolute;
+			left:64%;
+			top:83%;
+			animation: fangda 2s linear  infinite -1s;
+		}
+		.main .hx{
+			display:block;
+			position:absolute;
+			left:36%;
+			top:69%;
+			width:3%;
+		}
+		.main .hhx{
+			display:block;
+			width:3%;
+			position:absolute;
+			left:70%;
+			top:40%;
+			animation: fangda 1s linear  infinite -0.5s;
+		}
+		.main .hhxs{
+			display:block;
+			width:6%;
+			position:absolute;
+			left:23%;
+			top:81%;
+			animation: fangda 2s linear  infinite;
+		}
+		@-webkit-keyframes fangda{
+			0%{
+				transform: scale(1);
+			}
+			100%{
+				transform: scale(0);
+			}
+		}
+		.main .w{
+			width:14%;
+			position:absolute;
+			left: 17%;
+    		top: 43%;
+    		transform: rotate(-29deg);
+    		animation: xuanzhuan 10s linear infinite;
+			
+		}
+		@-webkit-keyframes xuanzhuan{
+			0%{
+				transform: rotate(0deg);
+				transform-origin: 250% 550%;
+			}
+			100%{
+				transform: rotate(360deg);
+				transform-origin: 250% 550%;
+			}
+		}
+		.main .y1{
+			width:13%;
+			position:absolute;
+			left:70%;
+			top:43%;
+			animation: yidong1 2s linear alternate infinite;
+		}
+		.main .y2{
+			width:26%;
+			position:absolute;
+			left:72%;
+			top:57%;
+			z-index: 10;
+			animation: yidong2 2s linear alternate infinite;
+		}
+		.main .y3{
+			width:20%;
+			position:absolute;
+			left:15%;
+			top:62%;
+			z-index: 10;
+			animation: yidong3 2s linear alternate infinite;
+			
+		}
+		@-webkit-keyframes yidong1{
+			0%{
+				position:absolute;
+				left:60%;
+				top:43%;
+			}
+			50%{
+				position:absolute;
+				left:66%;
+				top:43%;
+			}
+			100%{
+				position:absolute;
+				left:70%;
+				top:43%;
+			}
+		}
+		@-webkit-keyframes yidong2{
+			0%{
+				position:absolute;
+				left:66%;
+				top:57%;
+			}
+			50%{
+				position:absolute;
+				left:68%;
+				top:57%;
+			}
+			100%{
+				position:absolute;
+				left:72%;
+				top:57%;
+			}
+		}
+		@-webkit-keyframes yidong3{
+			0%{
+				position:absolute;
+				left:10%;
+				top:62%;
+			}
+			50%{
+				position:absolute;
+				left:13%;
+				top:62%;
+			}
+			100%{
+				position:absolute;
+				left:15%;
+				top:62%;
+			}
+		}
+	</style>
+</head> 
+<body>
+<div class="header">
+	<img src="卫星/txt1.png" alt="">
+</div>
+<div class="main">
+	<img src="卫星/earth.png" alt="" class="qiu">
+	<img src="卫星/star6.png" alt="" class="wei">
+	<img src="卫星/star3.png" alt="" class="hx">
+	<img src="卫星/star4.png" alt="" class="hhx">
+	<img src="卫星/star4.png" alt="" class="hhxs">
+	<img src="卫星/star2.png" alt="" class="x">
+	<img src="卫星/star1.png" alt="" class="w">
+	<img src="卫星/cloud2.png" alt="" class="y1">
+	<img src="卫星/cloud1.png" alt="" class="y2">
+	<img src="卫星/cloud2.png" alt="" class="y3">
+	<div class="border">
+		<span class="span"></span>
+	</div>
+</div>
+<div class="music">
+	<img src="卫星/m3.png" alt="" class="m3">
+	<img src="卫星/m2.png" alt="" class="m2">
+	<img src="卫星/m1.png" alt="" class="m1">
+</div>
+<audio src="bgm.mp3" loop autoplay></audio>
+</body>
+</html>

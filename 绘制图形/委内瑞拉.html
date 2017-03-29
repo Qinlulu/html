@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+	</style>
+</head>
+<body>
+<canvas id ="myCanvas" width = "800" height ="500"></canvas>	
+<script src="java.js"></script>
+	<script>
+	var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		
+		rect(10,20,300,150,"#000")
+
+		rect(10,20,300,50,"yellow")
+		rect(10,20,300,50,"yellow")
+
+		rect(10,70,300,50,"blue")
+		rect(10,70,300,50,"blue")
+
+		rect(10,120,300,50,"red")
+		rect(10,120,300,50,"red")
+
+
+
+		ctx.__proto__.strokeStat = function( px,py,pr ){
+			var deg = 270;
+			this.beginPath();
+			for( var i=0; i<11; i++ ){
+
+				if( i%2 == 0 ){
+					var x = px+Math.cos( 2*Math.PI / 360*deg )*pr;
+					var y = py+Math.sin( 2*Math.PI / 360*deg )*pr;
+				}else{
+					var x = px+Math.cos( 2*Math.PI / 360*deg )*(pr*0.4);
+					var y = py+Math.sin( 2*Math.PI / 360*deg )*(pr*0.4);
+				}
+				
+				this.lineTo( x,y )
+				deg+=36;
+				
+			}
+			ctx.fillStyle = "#fff";
+			ctx.fill()
+			this.closePath();
+		} 
+		ctx.strokeStat( 100,110,10 )
+		ctx.strokeStat( 110,95,10 )
+		ctx.strokeStat( 125,83,10 )
+		ctx.strokeStat( 145,78,10 )
+		ctx.strokeStat( 165,78,10 )
+		ctx.strokeStat( 185,83,10 )
+		ctx.strokeStat( 200,95,10 )
+		ctx.strokeStat( 210,110,10 )
+
+</script>
+</body>
+</html>

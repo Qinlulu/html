@@ -1,0 +1,14 @@
+.footers {
+  width: 100%;
+  display: flex;
+}
+.footers li {
+  flex: 1;
+  text-align: center;
+}
+.footers li a,
+.footers li span {
+  font-size: 12px;
+  display: block;
+  margin: 5px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	</style>
+</head>
+<body>
+	<canvas id ="myCanvas" width = "800" height ="500"></canvas>	
+<script src="java.js"></script>
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+
+	rect(10,10,400,198,"#000")
+
+	rect(10,76,400,66,"#fff")
+	rect(10,76,400,66,"#fff")
+
+	rect(10,142,400,66,"green")
+	rect(10,142,400,66,"green")
+
+
+	can(180,110,30,"red")
+	can(192,110,30,"#fff")
+
+
+	ctx.__proto__.strokeStat = function( px,py,pr ){
+			var deg = 270;
+			this.beginPath();
+			for( var i=0; i<11; i++ ){
+
+				if( i%2 == 0 ){
+					var x = px+Math.cos( 2*Math.PI / 360*deg )*pr;
+					var y = py+Math.sin( 2*Math.PI / 360*deg )*pr;
+				}else{
+					var x = px+Math.cos( 2*Math.PI / 360*deg )*(pr*0.4);
+					var y = py+Math.sin( 2*Math.PI / 360*deg )*(pr*0.4);
+				}
+				
+				this.lineTo( x,y )
+				deg+=36;
+				
+			}
+
+			ctx.fillStyle = "red";
+			ctx.fill()
+			this.closePath();
+		} 
+		
+		ctx.strokeStat( 190,110,20 )
+
+
+		ctx.beginPath();
+		 ctx.moveTo(10,10)
+		 ctx.lineTo(100,110)
+		  ctx.moveTo(100,110)
+		  ctx.lineTo(10,198)
+		  ctx.fillStyle="red"
+		  ctx.fill()
+		   ctx.stroke();
+
+
+</script>
+</body>
+</html>

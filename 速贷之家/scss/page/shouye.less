@@ -1,0 +1,154 @@
+@import "../base/header.less";
+@import "../base/footer.less";
+@import "../base/cont.less";
+
+.banner{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	.swiper-wrapper{
+		width:100%;
+		display:-webkit-box;
+		.swiper-slide{
+			width:100%;
+			img{
+				display:block;
+				width:100%;
+			}
+		}
+	}
+	.swiper-pagination{
+		position:absolute;
+		bottom:-25%;
+	}
+}
+.main{
+	width:100%;
+	height:100%;
+	background:#fafafa;
+	.main_head{
+		width:100%;
+		display:flex;
+		line-height:30px;
+		background:#fff;
+		box-sizing:border-box;
+		a{
+			color:#999;
+			font-size:12px;
+			padding:0 10px;
+			text-align:center;
+			&:nth-child(1){
+				color:#166eb3;
+				font-size:15px;
+			}
+			&:nth-child(2){
+				flex:3;
+			}
+		}
+
+	}
+
+	.main_o{
+		width:100%;
+		height:auto;
+		display:flex;
+		background:#fff;
+		a{
+			width:30%;
+			height:100%;
+			flex:1;
+			text-align:center;
+			img{
+				width:45%;
+				display:block;
+				margin:5px auto;
+			}
+			span{
+				display:block;
+				padding:5px 0;
+				color:#4c4c4c;
+				font-size:12px;
+			}
+		}
+
+	}
+
+	.main_t{
+		width:100%;
+		height:auto;
+		background:#fff;
+		margin:5px auto;
+
+		.swiper-container{
+			width:100%;
+			margin-top:10px;
+			padding-bottom:10px;
+			display: -webkit-flex;
+			overflow:hidden;
+			.swiper-wrapper{
+				width:100%;
+				.swiper-slide{
+					width:30%;
+					img{	
+						width:100%;
+						display:block;
+					}
+				}
+			}
+		}
+	}
+
+	.main_f{
+		width:100%;
+		font-size:0.12rem;
+		margin-top:5px;
+	}
+
+	.main_ff{
+		width:100%;
+		padding:0 10px 10px 10px;
+		box-sizing:border-box;
+		background:#fff;
+		margin-top:1px;
+		dl{
+			width:100%;
+			height:65px;
+			display:flex;
+			dt{
+				width:65px;
+				height:65px;
+				margin-right:15px;
+
+				img{
+					width:100%;
+					display:block;
+					margin:10px;
+				}
+			}
+			dd{
+				h4{
+					line-height:20px;
+				}
+			}
+		}
+		p{
+			display:flex;
+			width:100%;
+			height:20px;
+			span{
+				display:flex;
+				margin:0 10px;
+				&:nth-child(3){
+					flex:5;
+				}
+				img{
+					display:block;
+					padding:0 5px;
+					width:15px;
+					height:15px;
+				}
+			}
+		}
+	}
+
+}

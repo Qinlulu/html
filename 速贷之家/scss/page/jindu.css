@@ -1,0 +1,149 @@
+.header {
+  width: 100%;
+  height: 0.44rem;
+  background: #1e2e45;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.header a {
+  color: #fff;
+  flex: 1;
+  font-size: 0.14rem;
+  text-align: center;
+}
+.header a:nth-child(2) {
+  flex: 7;
+}
+.header a img {
+  width: 0.27rem;
+  height: 0.27rem;
+  display: block;
+  padding: 0 10px;
+}
+.header .nav {
+  width: 65%;
+  height: 70%;
+  background: rgba(225, 225, 225, 0.3);
+  border-radius: 40px;
+  overflow: hidden;
+  margin: 15% auto;
+  display: flex;
+  align-items: center;
+}
+.header .nav span {
+  text-align: center;
+  flex: 1;
+  color: #93A7C1;
+  font-size: 0.14rem;
+  height: 100%;
+  line-height: 30px;
+}
+.header .nav span:hover {
+  background: #01C97E;
+  color: #fff;
+}
+.header .nav .on {
+  background: #01C97E;
+  color: #fff;
+}
+.header mark {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+}
+.header mark img {
+  width: 100%;
+  display: block;
+}
+html,
+body,
+.wrap {
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  background: #fafafa;
+}
+a {
+  font-size: 0.12rem;
+}
+.iscroll {
+  width: 100%;
+  position: absolute;
+  top: 44px;
+  bottom: 50px;
+}
+.main {
+  width: 100%;
+  font-size: 0.12rem;
+}
+.main .hover {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  height: 45px;
+  line-height: 45px;
+}
+.main .hover li {
+  flex: 1;
+  text-align: center;
+}
+.main .hover li:last-child {
+  flex: 2;
+}
+.main .hover .on {
+  border-bottom: 2px solid  #00CC7D;
+}
+.main .ol {
+  width: 100%;
+  overflow: hidden;
+}
+.main .ol ol {
+  width: 600%;
+  display: flex;
+}
+.main .ol ol li {
+  width: 100%;
+}
+.main .ol ol li dl {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  margin-top: 10px;
+}
+.main .ol ol li dl dt {
+  width: 50px;
+  height: 50px;
+  padding-right: 10px;
+}
+.main .ol ol li dl dt img {
+  width: 100%;
+  margin: 7px;
+}
+.main .ol ol li dl dd {
+  flex: 1;
+}
+.main .ol ol li dl dd h4 {
+  font-size: 0.12rem;
+  margin: 5px 0;
+}
+.main .ol ol li dl dd span {
+  display: block;
+  margin: 3px 0;
+}
+.main .ol ol li dl dd i {
+  display: block;
+  padding: 5px 0;
+  text-align: center;
+}
+.main .ol ol li dl dd p {
+  text-align: center;
+  line-height: 40px;
+  font-size: 0.16rem;
+}

@@ -1,0 +1,60 @@
+.footer{
+	width:100%;
+	height:35px;
+	padding:5px;
+	margin-top:15px;
+	background:#fff;
+	border-top:1px solid #e5e5e5;
+	display:flex;
+	a{
+		width:25px;
+		height:35px;
+		flex:1;
+		text-align:center;
+		i{
+			width:25px;
+			height:20px;
+			display:block;
+			margin-bottom:3px;
+			background:url(../images/footer.png);
+			background-size:25px;
+			margin:0 auto;
+			
+		}
+		.guahao{
+			background-position:0 0 ;
+		}
+		.xunyi{
+			background-position:0 -37px ;
+			height:24px;
+		}
+		.jiankang{
+			background-position:0 -84px ;
+			height:22px;
+		}
+		.zoom{
+			background-position:0 -129px ;
+			height:22px;
+		}
+		span{
+			color:#6f6f6f;
+		}
+	}
+	.on{
+		span{
+			color:#638fbe;
+		}
+		.guahao{
+			background-position:0 -18px ;
+		}
+		.xunyi{
+			background-position:0 -59px ;
+		}
+		.jiankang{
+			background-position:0 -105px ;
+		}
+		.zoom{
+			background-position:0 -152px ;
+		}
+	}
+}

@@ -1,0 +1,175 @@
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8; }
+
+li {
+  list-style: none; }
+
+.header {
+  width: 100%;
+  height: 35px;
+  background: #fff;
+  display: flex; }
+  .header a {
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+    line-height: 35px;
+    color: #000; }
+    .header a:nth-child(2) {
+      flex: 8; }
+
+.footer {
+  width: 100%;
+  height: 35px;
+  padding: 5px;
+  margin-top: 15px;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  display: flex; }
+  .footer a {
+    width: 25px;
+    height: 35px;
+    flex: 1;
+    text-align: center; }
+    .footer a i {
+      width: 25px;
+      height: 20px;
+      display: block;
+      margin-bottom: 3px;
+      background: url(../images/footer.png);
+      background-size: 25px;
+      margin: 0 auto; }
+    .footer a .guahao {
+      background-position: 0 0; }
+    .footer a .xunyi {
+      background-position: 0 -37px;
+      height: 24px; }
+    .footer a .jiankang {
+      background-position: 0 -84px;
+      height: 22px; }
+    .footer a .zoom {
+      background-position: 0 -129px;
+      height: 22px; }
+    .footer a span {
+      color: #6f6f6f; }
+  .footer .on span {
+    color: #638fbe; }
+  .footer .on .guahao {
+    background-position: 0 -18px; }
+  .footer .on .xunyi {
+    background-position: 0 -59px; }
+  .footer .on .jiankang {
+    background-position: 0 -105px; }
+  .footer .on .zoom {
+    background-position: 0 -152px; }
+
+body {
+  background: #fff;
+  width: 100%;
+  height: auto; }
+
+.banner {
+  width: 100%;
+  height: 180px;
+  background: #2361d2;
+  border: 1px solid transparent;
+  position: relative; }
+  .banner dl {
+    width: 55px;
+    height: 105px;
+    margin: 15px auto;
+    text-align: center; }
+    .banner dl dt {
+      width: 55px;
+      height: 55px; }
+      .banner dl dt img {
+        width: 100%; }
+    .banner dl dd {
+      font-size: 10px; }
+      .banner dl dd img {
+        width: 15px; }
+      .banner dl dd:nth-child(2) {
+        width: 45px;
+        height: 20px;
+        line-height: 20px;
+        margin-left: 5px;
+        margin-top: 3px;
+        border: 1px solid #aab9d5;
+        border-radius: 7px;
+        color: #fff; }
+      .banner dl dd:nth-child(3) {
+        width: 100px;
+        height: 20px;
+        margin-top: 10px;
+        padding: 0 10px;
+        border-radius: 10px;
+        margin-left: -30px;
+        background-color: rgba(0, 0, 0, 0.2); }
+        .banner dl dd:nth-child(3) span {
+          margin-left: 10px; }
+  .banner .jian {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 47px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box; }
+    .banner .jian section {
+      color: #fff; }
+      .banner .jian section p {
+        margin: 3px 10px; }
+      .banner .jian section span {
+        padding: 0 10px; }
+      .banner .jian section a {
+        color: #fff;
+        line-height: 47px;
+        padding: 2px; }
+
+.dl {
+  width: 100%;
+  height: 64px;
+  display: flex; }
+  .dl a {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    color: #9b9b9b; }
+    .dl a i img {
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin: 6px auto; }
+
+.ul {
+  width: 100%;
+  height: auto; }
+  .ul li {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    background: #fff;
+    border-top: 1px solid #eee;
+    color: #303030;
+    line-height: 42px;
+    display: flex;
+    justify-content: space-between; }
+    .ul li h4 {
+      display: flex;
+      color: #4b4b4b; }
+      .ul li h4 img {
+        width: 25px;
+        height: 25px;
+        display: block;
+        padding: 10px 5px; }
+    .ul li span {
+      line-height: 42px;
+      padding-right: 10px; }
+  .ul .list {
+    margin-top: 10px; }
+
+/*# sourceMappingURL=yiyuan.css.map */

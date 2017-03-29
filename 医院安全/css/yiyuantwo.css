@@ -1,0 +1,199 @@
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8; }
+
+li {
+  list-style: none; }
+
+.header {
+  width: 100%;
+  height: 35px;
+  background: #fff;
+  display: flex; }
+  .header a {
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+    line-height: 35px;
+    color: #000; }
+    .header a:nth-child(2) {
+      flex: 8; }
+
+.footer {
+  width: 100%;
+  height: 35px;
+  padding: 5px;
+  margin-top: 15px;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  display: flex; }
+  .footer a {
+    width: 25px;
+    height: 35px;
+    flex: 1;
+    text-align: center; }
+    .footer a i {
+      width: 25px;
+      height: 20px;
+      display: block;
+      margin-bottom: 3px;
+      background: url(../images/footer.png);
+      background-size: 25px;
+      margin: 0 auto; }
+    .footer a .guahao {
+      background-position: 0 0; }
+    .footer a .xunyi {
+      background-position: 0 -37px;
+      height: 24px; }
+    .footer a .jiankang {
+      background-position: 0 -84px;
+      height: 22px; }
+    .footer a .zoom {
+      background-position: 0 -129px;
+      height: 22px; }
+    .footer a span {
+      color: #6f6f6f; }
+  .footer .on span {
+    color: #638fbe; }
+  .footer .on .guahao {
+    background-position: 0 -18px; }
+  .footer .on .xunyi {
+    background-position: 0 -59px; }
+  .footer .on .jiankang {
+    background-position: 0 -105px; }
+  .footer .on .zoom {
+    background-position: 0 -152px; }
+
+.banner {
+  width: 100%;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden; }
+  .banner .bannerside {
+    width: 100%;
+    display: -webkit-box; }
+    .banner .bannerside li {
+      width: 100%; }
+      .banner .bannerside li img {
+        width: 100%; }
+  .banner .ol {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    display: flex; }
+    .banner .ol li {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.2);
+      margin: 0 10px; }
+    .banner .ol .color {
+      background: #007aff; }
+  .banner .form {
+    width: 90%;
+    display: flex;
+    position: absolute;
+    height: 25px;
+    background: rgba(225, 225, 225, 0.3);
+    border-radius: 10px;
+    left: 5%;
+    top: 5%; }
+    .banner .form i {
+      display: block;
+      padding: 6px 7px;
+      color: #fff; }
+    .banner .form input {
+      height: 100%;
+      width: 100%;
+      border: none;
+      background: transparent; }
+      .banner .form input placeholder {
+        color: #fff; }
+
+.main {
+  width: 100%;
+  height: auto;
+  margin-bottom: 45px; }
+  .main .dl {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex; }
+    .main .dl a {
+      flex: 1;
+      text-align: center;
+      width: 33.3%;
+      border-right: 1px solid #ccc;
+      color: #9b9b9b; }
+      .main .dl a i img {
+        width: 40px;
+        height: 40px;
+        margin: 15px auto;
+        display: block; }
+
+.dl-o {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  font-size: 10px;
+  background: #fff; }
+  .dl-o dt {
+    width: 30%;
+    height: 100%;
+    margin-right: 10px; }
+    .dl-o dt img {
+      width: 100px;
+      height: 35px;
+      display: block; }
+  .dl-o dd {
+    width: 70%;
+    height: 100%;
+    border-left: 1px solid #ccc;
+    padding-left: 15px; }
+
+.images {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box; }
+  .images img {
+    width: 24%;
+    height: 95px;
+    margin: 1px; }
+  .images .img {
+    width: 49%; }
+
+.hh {
+  width: 100%;
+  height: 35px;
+  margin: 5px 0;
+  display: flex;
+  line-height: 35px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0 10px; }
+
+.imgs {
+  width: 100%;
+  display: flex; }
+  .imgs .left {
+    width: 42%;
+    margin: 1px; }
+    .imgs .left img {
+      width: 100%; }
+  .imgs .right {
+    width: 57%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; }
+    .imgs .right img {
+      width: 100%;
+      margin: 1px; }
+
+/*# sourceMappingURL=yiyuantwo.css.map */
