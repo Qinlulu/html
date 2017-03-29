@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jsTree test</title>
+  <!-- 2 load the theme CSS file -->
+  <link rel="stylesheet" href="tree/dist/themes/default/style.min.css" />
+	<style>
+		ul li span{
+			display:inline-block;
+			width:50px;
+			height:20px;
+			line-height:20px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+  <!-- 3 setup a container element -->
+  <div id="jstree">
+    <!-- in this example the tree is populated from inline HTML -->
+    <ul>
+    	<li>公司名称
+	    	<ul>
+		      <li>一级部门名称1 <span class="rem">改</span><span class="remove">删</span><span></span>
+		        <ul> 
+		          <li>二级部门名称 1<span class="rem">改</span><span class="remove">删</span><span></span>
+		          </li>
+		          <li>二级部门名称 2<span class="rem">改</span><span class="remove">删</span><span></span></li>
+		        </ul>
+		      </li>
+	      	  <li>一级部门名称 2<span class="rem">改</span><span class="remove">删</span><span></span></li>
+	   		 </ul>
+	    </li>
+    </ul>
+  </div>
+
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="tree/dist/jstree.min.js"></script>
+  <script>
+  $(
+		function () {
+			$('#jstree').jstree();
+	  }
+
+  );
+  </script>
+</body>
+</html>

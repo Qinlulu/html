@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <p @click="q">{{name}}</p>
+    <h1>Hello, Vue.js!</h1>
+    <h1 v-if="yes" @click="add">Yes!</h1>
+    <h1 v-if="no">No!</h1>
+    <h1 v-if="age >= 25">Age: {{ age }}</h1>
+    <h1 v-if="names.indexOf('jack') >= 0">Name: {{ names }}</h1>
+    <input type="text" v-model="name">
+</div>
+<script type="text/javascript" src="js/vue.min.js">
+	
+</script>
+<script>
+    let data = {
+        name: "qin",
+        yes: true,
+        no: false,
+        age: 28,
+        names: 'kejool'
+       
+    }
+    new Vue({
+        el: "#app",
+        data: data,
+         methods:{
+         	add:function(){
+         		alert("123")
+         	},
+         	q:function(){
+         		alert("123")
+         	}
+         	
+         }
+        
+    })
+
+</script>
+</body>
+</html>

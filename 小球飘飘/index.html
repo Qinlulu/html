@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>小球飘飘</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+
+		}
+		.call{
+			border-radius: 100%;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<script>
+
+		class Ball{
+            constructor(x,y,r,bg,seeps,seepy){
+                this.x=x;
+                this.y=y;
+                this.r=r;
+                this.bg=bg;
+                this.seeps=seeps;
+                this.seepy=seepy;
+                this.w=document.documentElement.clientWidth;
+                this.h=document.documentElement.clientHeight;
+                this.add()
+			};
+            creat (){
+            var ele=document.createElement("div")
+            ele.className="call"
+            this.ele=ele;
+        };
+            move(){
+            setInterval(function(){
+                if(this.x-this.r<=0 || this.r+this.x>=this.w){
+                    this.seeps*=-1
+                }
+                if(this.y-this.r<=0 || this.r+this.y>=this.h){
+                    this.seepy*=-1
+                }
+                this.x+=this.seeps;
+                this.y+=this.seepy;
+                this.setstyle()
+            }.bind(this),1000/500)
+        };
+            setstyle(){
+            this.ele.style.cssText="width:"+this.r*2+"px;height:"+this.r*2+"px;top:"+(this.y-this.r)+"px;left:"+(this.x-this.r)+"px;background:"+this.bg+";"
+        };
+
+            add(){
+            this.creat();
+            document.body.appendChild(this.ele)
+            this.move()
+        };
+
+
+		}
+		/*function Ball(x,y,r,bg,seeps,seepy){
+			this.x=x;
+			this.y=y;
+			this.r=r;
+			this.bg=bg;
+			this.seeps=seeps;
+			this.seepy=seepy;
+            this.w=document.documentElement.clientWidth;
+            this.h=document.documentElement.clientHeight;
+			this.add()
+		}
+		Ball.prototype={
+			creat:function(){
+				var ele=document.createElement("div")
+				ele.className="call"
+				this.ele=ele;
+			},
+            move:function(){
+                setInterval(function(){
+                    if(this.x-this.r<=0 || this.r+this.x>=this.w){
+                        this.seeps*=-1
+					}
+					if(this.y-this.r<=0 || this.r+this.y>=this.h){
+                        this.seepy*=-1
+					}
+                    this.x+=this.seeps;
+                    this.y+=this.seepy;
+                    this.setstyle()
+                }.bind(this),1000/500)
+            },
+			setstyle:function(){
+                this.ele.style.cssText="width:"+this.r*2+"px;height:"+this.r*2+"px;top:"+(this.y-this.r)+"px;left:"+(this.x-this.r)+"px;background:"+this.bg+";"
+            },
+
+            add:function(){
+            	this.creat();
+				document.body.appendChild(this.ele)
+                this.move()
+            }
+		}*/
+		function bgColor(){
+			var arr=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+			var str="#"
+			for(var i=6;i;i--){
+				str+=arr[Math.floor(Math.random()*arr.length)]
+			}
+			return str
+		}
+
+		function mat(min,max){
+			return Math.floor(Math.random()*(max-min)+min)
+		}
+        function num(num){
+            for(var i=0;i<num;i++){
+                new Ball( 800,500,mat(20,50), bgColor(),mat(-5,5),mat(-8,4))
+            }
+		}
+		
+		num(10)
+	
+        
+
+	</script>
+</body>
+</html>

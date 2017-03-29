@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<meta charset="UTF-8">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.warp{
+			width: 500px;
+			height: 300px;
+			border: 1px solid #ccc;
+			margin: 50px auto;
+		}
+		.bian{
+			width: 100%;
+			line-height: 30px;
+			border-bottom: 1px solid  #ccc;			
+			color: #0097cf;
+			cursor: pointer;
+		}
+		.tag{			
+			padding: 5px 10px;
+			border: 1px solid #ccc;
+			border-radius: 3px;			
+			text-align: center;
+			font-size: 14px;
+			position: relative;
+			margin: 10px;
+			float: left;
+		}
+		.del{
+			position: absolute;
+			top:-7px;
+			right: -7px;
+			border-radius: 100%;
+			width: 15px;
+			height: 15px;
+			background: #f4c600;
+			color: #fff;
+			text-align: center;
+			line-height: 15px;
+			cursor: pointer;
+			display:block;
+		}
+		em{
+			font-style: normal;
+		}
+		.hide{
+			display:none;
+		}
+		.txt,.btn{
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="warp">
+		<p class="bian">编辑</p>			
+		<input type="text" class="txt hide">
+		<button class="btn hide">添加</button>
+	</div>
+	<script>
+		let warp = document.querySelector(".warp");
+		let bian = document.querySelector(".bian");
+		let txt = document.querySelector(".txt");
+		let btn = document.querySelector(".btn");
+		var obj=JSON.parse(localStorage.arr)
+			for(let i=0;i<obj.length;i++){
+				let div = document.createElement("div");
+				let em = document.createElement("em");
+				em.className = "hide";
+				em.innerHTML="X";
+				div.className="tag";
+				div.innerHTML=obj[i].cont
+				div.appendChild(em); 
+				warp.insertBefore(div,txt);
+				
+				}
+		bian.onclick = function(){
+			if(this.innerHTML=="编辑"){
+				this.innerHTML="完成";
+				txt.classList.remove("hide");
+				btn.classList.remove("hide");
+
+				let dels = document.querySelectorAll("em");
+	
+				for(let y=0;y<dels.length;y++){
+					dels[y].className="del";
+					dels[y].onclick = function(){
+					this.parentNode.remove(this);
+				}
+				}
+
+
+							
+			}else{
+				this.innerHTML="编辑";
+				txt.classList.add("hide");
+				btn.classList.add("hide");
+			
+				let ems = document.querySelectorAll("em");
+				let tag = document.querySelectorAll(".tag");
+				var arr=[]
+
+				for(let i=0;i<ems.length;i++){
+					ems[i].className="hide";
+					arr.push({
+						num:i,
+						cont:tag[i].innerText
+					})
+				}
+			arrs=JSON.stringify(arr)
+			localStorage.arr=arrs
+				
+			
+
+				
+
+			}			
+		}
+		btn.onclick = function(){
+			txt.value=txt.value.trim();			
+			if(txt.value=="") return;
+			let div = document.createElement("div");
+			div.className="tag";
+			div.innerHTML=txt.value;
+			txt.value="";
+			warp.insertBefore(div,txt);
+			let em = document.createElement("em");
+			em.className = "del";
+			em.innerHTML="X";
+			div.appendChild(em); 
+
+			em.onclick = function(){
+				this.parentNode.remove(this);
+			}
+				
+		}
+	</script>
+</body>
+</html>
