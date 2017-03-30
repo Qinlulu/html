@@ -1,0 +1,57 @@
+.footer {
+  width: 100%;
+  height: 49px;
+  background: #F7F7F7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.footer .ons {
+  border-top: 1px solid #ED5858;
+  color: #ED5858;
+}
+.footer .ons i {
+  background: url("../img/foot_1.jpg");
+  background-size: cover;
+}
+.footer .ons:nth-child(2) i {
+  background: url("../img/foot_5.jpg");
+  background-size: cover;
+}
+.footer .ons:nth-child(3) i {
+  background: url("../img/foot_6.jpg");
+  background-size: cover;
+}
+.footer .ons:nth-child(4) i {
+  background: url("../img/foot_7.jpg");
+  background-size: cover;
+}
+.footer div {
+  flex: 1;
+  text-align: center;
+}
+.footer div i {
+  display: block;
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+  background: #F7F7F7;
+  background-size: cover;
+}
+.footer div:nth-child(2) i {
+  background: url("../img/foot_2.jpg");
+  background-size: cover;
+}
+.footer div:nth-child(3) i {
+  background: url("../img/foot_3.jpg");
+  background-size: cover;
+}
+.footer div:nth-child(4) i {
+  background: url("../img/foot_4.jpg");
+  background-size: cover;
+}
+.footer div span {
+  margin-top: 5px;
+  display: block;
+}

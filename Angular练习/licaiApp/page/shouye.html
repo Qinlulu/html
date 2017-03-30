@@ -1,0 +1,67 @@
+<div class="shouyes">
+    <header class="header">
+        <a href=""></a>
+        <a href="">
+            <img src="img/head1.gif" alt="">
+            <span>开财宝</span>
+        </a>
+        <a href="">
+            <img src="img/head2.gif" alt="">
+        </a>
+    </header>
+    <main class="main">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/banner.gif"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner.gif"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner.gif"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner.gif"/>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <section class="mains">
+            <ul class="list">
+                <li class="lis">
+                    <p>累计成交金额</p>
+                    <span><i>29,089,80</i>万元</span>
+                </li>
+                <li>
+                    <p>为投资人赚取的利益</p>
+                    <span><i>594,89</i>万元</span>
+                </li>
+            </ul>
+            <div class="dls">
+                <div class="dlss" ng-repeat="x in datas">
+                    <div class="head">
+                        <span>押车宝</span>
+                        <i>{{x.nxd_name}}</i>
+                    </div>
+                    <div class="dlsss">
+                        <dl>
+                            <dt>年化收益</dt>
+                            <dd><span>{{x.pid}}</span><i>.0%</i></dd>
+                        </dl>
+                        <dl>
+                            <dt>期限</dt>
+                            <dd><i>{{x.duration}}</i>个月</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <canvass amount="x.amount" usable-amount="x.usable_amount"></canvass>
+                            </dt>
+                            <dd><span>{{x.total_user_count}}</span>人购买</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

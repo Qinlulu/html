@@ -1,0 +1,99 @@
+.room {
+  width: 100%;
+  height: 100%;
+}
+.room .headers {
+  width: 100%;
+  height: 190px;
+  background: #ED5858;
+  border: 1px solid #ED5858;
+}
+.room .headers .img {
+  width: 91.5px;
+  height: 88.5px;
+  margin: 20px auto;
+}
+.room .headers .img img {
+  width: 91.5px;
+  height: 88.5px;
+}
+.room .headers .list {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 25px;
+  color: #fff;
+}
+.room .headers .list li {
+  flex: 1;
+}
+.room .headers .list span {
+  display: block;
+  margin: 0 auto;
+  width: 130px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.room .headers .list .span {
+  background: #FFBB00;
+  border: 0;
+}
+.room .nain {
+  width: 100%;
+  height: 100%;
+}
+.room .nain .main_o {
+  width: 100%;
+  height: 64.5px;
+  display: flex;
+  margin: 20px auto;
+}
+.room .nain .main_o a {
+  flex: 1;
+  text-align: center;
+}
+.room .nain .main_o a img {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+}
+.room .nain .main_o a span {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+}
+.room .ols {
+  width: 100%;
+}
+.room .ols li {
+  height: 44px;
+  border-top: 1px solid #ccc;
+  line-height: 42px;
+  color: #000;
+  font-size: 14px;
+  display: flex;
+  text-indent: 10px;
+}
+.room .ols li img {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+  padding-top: 5px;
+}
+.room .ols li span {
+  flex: 1;
+}
+.room .ols li span:nth-child(2) {
+  text-align: right;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #ccc;
+}
+.room .ols li span i {
+  font-size: 14px;
+  margin-right: 10px ;
+}

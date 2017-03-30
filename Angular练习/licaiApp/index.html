@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/fonts/ionicons.eot">
+    <link rel="stylesheet" href="js/lib/css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<section class="wrap">
+    <div ui-view>
+    </div>
+    <footer class="footer">
+        <div ui-sref="index" ui-sref-active="ons">
+           <i></i>
+            <span>首页</span>
+        </div>
+        <div ui-sref="licai" ui-sref-active="ons">
+            <i></i>
+            <span>理财产品</span>
+        </div>
+        <div ui-sref="room" ui-sref-active="ons">
+            <i></i>
+            <span>我的账户</span>
+        </div>
+        <div ui-sref="filr" ui-sref-active="ons">
+            <i></i>
+            <span>更多</span>
+        </div>
+    </footer>
+</section>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/lib/js/swiper.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/uirouter.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directive.js"></script>
+
+</body>
+</html>

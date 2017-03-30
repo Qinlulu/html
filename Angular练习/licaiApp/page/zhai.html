@@ -1,0 +1,33 @@
+<div class="dls">
+    <div class="left" ng-show="age" >
+        <ol>
+            <li class="diu"><span></span><strong>根据年收益选择</strong><i></i></li>
+            <li><span></span><strong>17</strong><i></i></li>
+            <li><span></span><strong>12</strong><i></i></li>
+            <li><span></span><strong>16</strong><i></i></li>
+        </ol>
+        <div class="olsss" ng-click="left()"></div>
+    </div>
+    <div class="dlss" ng-repeat="x in datas | fit:k">
+        <div class="head">
+            <span>押车宝</span>
+            <i>{{x.nxd_name}}</i>
+        </div>
+        <div class="dlsss">
+            <dl>
+                <dt>年化收益</dt>
+                <dd><span>{{x.pid}}</span><i>.0%</i></dd>
+            </dl>
+            <dl>
+                <dt>期限</dt>
+                <dd><i>{{x.duration}}</i>个月</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <canvass amount="x.amount" usable-amount="x.usable_amount"></canvass>
+                </dt>
+                <dd>已有<strong>{{x.total_user_count}}</strong>人购买</dd>
+            </dl>
+        </div>
+    </div>
+</div>

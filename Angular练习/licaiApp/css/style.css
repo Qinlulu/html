@@ -1,0 +1,531 @@
+html,
+body,
+.wrap {
+  width: 100%;
+  background: #fff;
+  height: 100%;
+  overflow-X: hidden;
+}
+.header {
+  width: 100%;
+  height: 45px;
+  padding: 3px 0;
+  background: #ED5858;
+  display: flex;
+  text-align: center;
+  line-height: 49px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.header img {
+  display: block;
+  height: 40px;
+}
+.header a {
+  flex: 1;
+  color: #fff;
+}
+.header a:nth-child(2) {
+  display: flex;
+  flex: 4;
+  text-align: center;
+  line-height: 49px;
+  margin-left: 25%;
+}
+.header a:nth-child(2) span {
+  font-size: 20px;
+  margin-left: 3px;
+}
+.main {
+  margin: 45px auto;
+  overflow: hidden;
+}
+.swiper-container {
+  width: 100%;
+}
+.swiper-container img {
+  width: 100%;
+}
+.mains {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.mains .list {
+  width: 85%;
+  display: flex;
+  height: 40px;
+  margin: 15px auto;
+}
+.mains .list li {
+  width: 45%;
+}
+.mains .list li p {
+  height: 20px;
+}
+.mains .list li span {
+  color: #F28282;
+  font-size: 13px;
+}
+.mains .list li span i {
+  font-size: 16px;
+}
+.mains .list li:last-child {
+  padding-left: 20px;
+}
+.mains .list .lis {
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+.dls {
+  width: 90%;
+  margin: 0 auto;
+}
+.dls .dlss {
+  width: 100%;
+  height: 115px;
+  background: url("../img/banner2.gif") no-repeat;
+  background-size: cover;
+}
+.dls .dlss .head {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  display: flex;
+  font-size: 14px;
+}
+.dls .dlss .head span {
+  display: inline-block;
+  width: 75px;
+  height: 25px;
+  color: #fff;
+  text-align: center;
+  background: url("../img/bg1.gif") no-repeat;
+}
+.dls .dlss .head i {
+  flex: 1;
+  text-align: center;
+  text-indent: 24%;
+}
+.dls .dlss:nth-child(2n) {
+  background: url("../img/bg2.gif") no-repeat;
+  margin: 8px auto;
+  background-size: cover;
+}
+.dls .dlss:nth-child(2n) span {
+  background: url("../img/bg11.gif") no-repeat;
+}
+.dls .dlss:nth-child(2n) dl span {
+  background: 0;
+}
+.dls .dlss .dlsss {
+  display: flex;
+  margin-top: 10px;
+}
+.dls .dlss .dlsss dl {
+  margin-top: 10px;
+}
+.dls .dlss .dlsss dl:nth-child(3) {
+  margin-top: -5px;
+}
+.dls .dlss .dlsss dl {
+  flex: 1;
+  text-align: center;
+}
+.dls .dlss .dlsss dl dd {
+  margin-top: 10px;
+}
+.dls .dlss .dlsss dl dd i {
+  font-size: 20px;
+  color: #000;
+}
+.dls .dlss .dlsss dl:nth-child(1) {
+  position: relative;
+  left: 15px;
+}
+.dls .dlss .dlsss dl:nth-child(1) dt {
+  text-indent: 40px;
+}
+.dls .dlss .dlsss dl:nth-child(1) dd {
+  color: #FF8800;
+  position: absolute;
+  top: -18px;
+  left: -5px;
+}
+.dls .dlss .dlsss dl:nth-child(1) dd span {
+  font-size: 40px;
+  display: block;
+  width: 49px;
+  height: 46px;
+  overflow: hidden;
+  position: absolute;
+  left: -1px;
+  top: 4px;
+}
+.dls .dlss .dlsss dl:nth-child(1) dd i {
+  font-size: 10px;
+  position: absolute;
+  left: 48px;
+  top: 27px;
+}
+.licai {
+  width: 100%;
+  height: 100%;
+}
+.licai .mains {
+  width: 100%;
+  height: 100%;
+  margin: 60px auto;
+}
+.licai .header a {
+  font-size: 20px;
+  text-align: center;
+}
+.licai .header a img {
+  display: block;
+  height: 25px;
+  margin-top: 10px;
+}
+.licai .list {
+  text-align: center;
+  height: 25px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+.licai .list li {
+  padding: 0;
+  width: 55%;
+}
+.licai .list li i {
+  border-right: 1px solid #ccc;
+  width: 100%;
+  height: 15px;
+  display: block;
+}
+.licai .list .active {
+  color: #ED5858;
+  border-bottom: 1px solid #ED5858;
+}
+.licai .dls {
+  width: 100%;
+}
+.licai .dls .dlss {
+  height: 100px;
+  background: 0;
+  border-bottom: 1px solid #ccc;
+}
+.licai .dls .dlss h3 {
+  font-size: 14px;
+  color: #000;
+  text-indent: 20px;
+  height: 15px;
+  font-weight: bold;
+}
+.licai .dls .dlss .head span {
+  background: 0;
+  color: #000;
+}
+.licai .dls .dlss .head i {
+  border-left: 1px solid #ccc;
+  height: 15px;
+  line-height: 15px;
+  margin-top: 7px;
+  text-align: left;
+  text-indent: 8px;
+}
+.licai .dls .dlss .dlsss {
+  margin-top: 10px;
+}
+.licai .dls .dlss .dlsss dl {
+  margin-top: 10px;
+}
+.licai .dls .dlss .dlsss dl:nth-child(1) dd {
+  color: #FF8800;
+  position: absolute;
+  top: -15px;
+  left: -2px;
+}
+.licai .dls .dlss .dlsss dl:nth-child(1) dd span {
+  font-size: 40px;
+  display: block;
+  width: 49px;
+  height: 46px;
+  overflow: hidden;
+  position: absolute;
+  left: -3px;
+  top: 4px;
+}
+.licai .dls .dlss .dlsss dl:nth-child(1) dd i {
+  font-size: 10px;
+  position: absolute;
+  left: 44px;
+  top: 30px;
+}
+.licai .dls .dlss .dlsss dl:nth-child(3) {
+  margin-top: -10px;
+}
+.licai .dls .dlss dd strong {
+  color: #FF6161;
+}
+.licai .left {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+.licai .left ol {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  text-align: left;
+  text-indent: 20px;
+  margin-top: 45px;
+}
+.licai .left ol .diu span {
+  background: green;
+}
+.licai .left ol .diu span:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 10px;
+  border: 1px solid transparent;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  transform: rotate(45deg);
+  margin-left: -13px;
+  margin-bottom: 11px;
+}
+.licai .left ol li {
+  width: 90%;
+  margin: 0 auto;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+.licai .left ol li span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  margin: 10px;
+}
+.licai .left ol li i {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  margin-left: -20px;
+}
+.licai .left .olsss {
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+}
+.room {
+  width: 100%;
+  height: 100%;
+}
+.room .headers {
+  width: 100%;
+  height: 190px;
+  background: #ED5858;
+  border: 1px solid #ED5858;
+}
+.room .headers .img {
+  width: 91.5px;
+  height: 88.5px;
+  margin: 20px auto;
+}
+.room .headers .img img {
+  width: 91.5px;
+  height: 88.5px;
+}
+.room .headers .list {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 25px;
+  color: #fff;
+}
+.room .headers .list li {
+  flex: 1;
+}
+.room .headers .list span {
+  display: block;
+  margin: 0 auto;
+  width: 130px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.room .headers .list .span {
+  background: #FFBB00;
+  border: 0;
+}
+.room .nain {
+  width: 100%;
+  height: 100%;
+}
+.room .nain .main_o {
+  width: 100%;
+  height: 64.5px;
+  display: flex;
+  margin: 20px auto;
+}
+.room .nain .main_o a {
+  flex: 1;
+  text-align: center;
+}
+.room .nain .main_o a img {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+}
+.room .nain .main_o a span {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+}
+.room .ols {
+  width: 100%;
+}
+.room .ols li {
+  height: 44px;
+  border-top: 1px solid #ccc;
+  line-height: 42px;
+  color: #000;
+  font-size: 14px;
+  display: flex;
+  text-indent: 10px;
+}
+.room .ols li img {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+  padding-top: 5px;
+}
+.room .ols li span {
+  flex: 1;
+}
+.room .ols li span:nth-child(2) {
+  text-align: right;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #ccc;
+}
+.room .ols li span i {
+  font-size: 14px;
+  margin-right: 10px ;
+}
+.filr {
+  height: 100%;
+  background: #EEEEEE;
+}
+.filr .headerss {
+  display: flex;
+  width: 100%;
+  background: #ED5858;
+  line-height: 49px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.filr .headerss a {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+  color: #fff;
+}
+.filr .nain {
+  margin-top: 50px;
+  height: 100%;
+}
+.filr .nain .ols {
+  min-height: 510px;
+}
+.filr .nain .ols li {
+  height: 44px;
+  line-height: 42px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  margin-top: 10px;
+  display: flex;
+}
+.filr .nain .ols li img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+.filr .nain .ols .lis {
+  margin-top: 0;
+  border-top: 1px solid #ccc;
+}
+.footer {
+  width: 100%;
+  height: 49px;
+  background: #F7F7F7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.footer .ons {
+  border-top: 1px solid #ED5858;
+  color: #ED5858;
+}
+.footer .ons i {
+  background: url("../img/foot_1.jpg");
+  background-size: cover;
+}
+.footer .ons:nth-child(2) i {
+  background: url("../img/foot_5.jpg");
+  background-size: cover;
+}
+.footer .ons:nth-child(3) i {
+  background: url("../img/foot_6.jpg");
+  background-size: cover;
+}
+.footer .ons:nth-child(4) i {
+  background: url("../img/foot_7.jpg");
+  background-size: cover;
+}
+.footer div {
+  flex: 1;
+  text-align: center;
+}
+.footer div i {
+  display: block;
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+  background: #F7F7F7;
+  background-size: cover;
+}
+.footer div:nth-child(2) i {
+  background: url("../img/foot_2.jpg");
+  background-size: cover;
+}
+.footer div:nth-child(3) i {
+  background: url("../img/foot_3.jpg");
+  background-size: cover;
+}
+.footer div:nth-child(4) i {
+  background: url("../img/foot_4.jpg");
+  background-size: cover;
+}
+.footer div span {
+  margin-top: 5px;
+  display: block;
+}
