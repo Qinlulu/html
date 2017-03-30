@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<div>{{data.name}}</div>
+<tab data="data"></tab>
+<script src="../angular.min.js"></script>
+<script>
+var app=angular.module("myapp",[])
+    app.controller("mystr",function($scope){
+     $scope.data={
+         name:"fuqindffffffdgfgde"
+     }
+    })
+    app.directive("tab",function(){
+        return{
+            restrict:"AEC",
+            template:"<h1>{{data.name}}</h1>",
+            controller:function($scope){
+            },
+            scope:true
+        }
+    })
+</script>
+</body>
+</html>

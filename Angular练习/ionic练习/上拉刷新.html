@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>菜鸟教程(runoob.com)</title>
+    <link rel="stylesheet" href="fonts/ionicons.svg">
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="https://www.runoob.com/static/ionic/js/ionic.bundle.min.js"></script>
+</head>
+<body ng-app="starter" ng-controller="actionsheetCtl" >
+<ion-pane>
+    <ion-content >
+        <h2 ng-click="show()">点我出现</h2>
+    </ion-content>
+</ion-pane>
+<script src="js/angular.min.js"></script>
+<script src="js/ionic.min.js"></script>
+    <script type="text/javascript">
+        angular.module('starter', ['ionic'])
+            .controller( 'actionsheetCtl',['$scope','$ionicActionSheet','$timeout' ,function($scope,$ionicActionSheet,$timeout){
+                $scope.show = function() {
+
+                    var hideSheet = $ionicActionSheet.show({
+                        buttons: [
+                            { text: '<b>Share</b> This' },
+                            { text: '哈哈' }
+                        ],
+                        destructiveText: '删除',
+                        titleText: 'Modify your album',
+                        cancelText: '返回',
+                        cancel: function() {
+
+                        },
+                        buttonClicked: function(index) {
+                            return true;
+                        }
+                    });
+
+                    $timeout(function() {
+                        hideSheet();
+                    }, 2000);
+
+                };
+            }])
+    </script>
+
+</body>
+</html>

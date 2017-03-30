@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 95%;
+            height:auto;
+            text-align: center;
+            border:3px solid #693bcc;
+            font-size: 25px;
+            margin:10px auto;
+
+        }
+        .bos{
+            width: 95%;
+            height: 250px;
+            text-align: center;
+            border:3px solid #693bcc;
+            font-size: 25px;
+            margin:40px auto;
+        }
+        .w span{
+            display:block;
+            width:50%;
+            float: left;
+            background:#eee;
+        }
+        ul li{
+            cursor: pointer;
+            list-style: none;
+        }
+        .active{
+            background: #9accc3;
+            color:#fff;
+            text-align:center;
+
+        }
+    </style>
+</head>
+<body ng-app="myapp">
+<ul>
+    <li ui-sref="home" ui-sref-active="active">首页</li>
+    <li ui-sref="list" ui-sref-active="active">列表页</li>
+    <li ui-sref="new" ui-sref-active="active">新闻页</li>
+    <li ui-sref="cont" ui-sref-active="active">联系我们</li>
+</ul>
+<div ui-view class="box">erterteter</div>
+
+<script src="angular.min.js"></script>
+<script src="angular-ui-router.js"></script>
+<script>
+    var app = angular.module("myapp", ["ui.router"])
+    //var app = angular.module("myapp", ["ngRoute"])
+
+
+    app.config(function($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise("/")
+
+        $stateProvider
+
+        //名字
+        .state("home",{
+            url:"/home",
+            templateUrl:"page/home.html"
+        })
+
+
+        .state("list",{
+            url:"/list",
+            templateUrl:"page/list.html",
+            controller:function($scope,$state){
+                $scope.fn=function(){
+                    alert("212")
+                }
+                $state.go("list.newz")
+            }
+        })
+            .state("list.newz",{
+            url:"/newz",
+            template:"这是左边的盒子"
+        })
+            .state("list.newy",{
+                url:"/newy",
+                template:"这是右边的盒子"
+            })
+        .state("new",{
+            url:"/new",
+            templateUrl:"page/new.html"
+        })
+        .state("cont",{
+            url:"/cont",
+            templateUrl:"page/cont.html"
+        })
+    })
+</script>
+</body>
+</html>

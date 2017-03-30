@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="main">
+    <div class="footer">
+        <div class="left">
+        </div>
+        <div class="form">
+            <p>请输入手机号码免费领取红包</p>
+            <input type="text" placeholder="手机号" class="shouji"><br>
+            <p><input type="text" placeholder="验证码" class="yanzheng"><span class="yan">QINLULU</span><br>
+            </p>
+            <button class="btn">立即领取</button>
+        </div>
+        <div class="img">
+        </div>
+        <span class="remove"></span>
+        <span class="off"></span>
+    </div>
+    <div class="jian">
+        <div class="im"></div>
+        <span class="removes"></span>
+        <span class="offs"></span>
+    </div>
+</div>
+<script>
+    function Dao() {
+        this.footer = document.querySelector(".footer");
+        this.remove = document.querySelector(".remove");
+        this.removes = document.querySelector(".removes");
+        this.off = document.querySelector(".off");
+        this.offs = document.querySelector(".offs");
+        this.shouji = document.querySelector(".shouji");
+        this.yanzheng = document.querySelector(".yanzheng");
+        this.btn = document.querySelector(".btn");
+        this.jian = document.querySelector(".jian");
+    }
+    Dao.prototype.add=function(){
+        var that = this;
+        this.remove.onclick = function () {
+            that.footer.style.display = "none"
+        }
+        this.off.onclick = function () {
+            that.footer.style.left = "-100%"
+            that.jian.style.display = "block"
+        }
+        this.offs.onclick = function () {
+            that.footer.style.left = "0"
+            that.jian.style.display = "none"
+        }
+        this.removes.onclick = function () {
+            that.footer.style.display = "none"
+            that.jian.style.display = "none"
+        }
+        this.btn.onclick=function(){
+            var text1=that.shouji.value
+            var text2=that.yanzheng.value
+            reg = /^1\d{10}$/
+            if(!reg.test(text1)){
+                alert("请输入正确的手机号码")
+            }else if (text2!="QINLULU"){
+                alert("验证码不正确")
+            }else{
+                alert("恭喜你  没抢到")
+            }
+
+        }
+
+    }
+
+    app=new Dao()
+app.add()
+</script>
+</body>
+</html>

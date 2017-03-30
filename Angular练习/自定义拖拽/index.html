@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background:green;
+            text-align:center;
+            line-height:200px;
+            font-size:100px;
+            color:#fff;
+        }
+    </style>
+</head>
+<body ng-app="myapp">
+<tab></tab>
+<script src="angular.min.js"></script>
+<script>
+var app=angular.module("myapp",[])
+    app.directive("tab",function(){
+        return {
+            restrict:"AEC",
+            template:"<div class='box'>恭</div>",
+            replace:true,
+            link:function(cope,ele,attr){
+                var startx,starty;
+                ele[0].style.left=0;
+                ele[0].style.top=0;
+                    i=0
+					k=500
+					c=0
+					d=0
+                ele[0].onmousedown=function(e){
+                    startx=e.pageX-parseInt(ele[0].style.left)
+                    starty=e.pageY-parseInt(ele[0].style.top)
+                    document.onmousemove=function(e){
+					var arr=["恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭","恭",
+					"喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜","喜",
+					"发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发","发",
+					"财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财","财"]
+                        movex=e.pageX-startx
+                        movey=e.pageY-starty
+                        ele[0].style.position="absolute"
+                        ele[0].style.left=movex+"px"
+                        ele[0].style.top=movey+"px"
+						ele[0].innerHTML=arr[c]
+                        i+=5
+                        k+=3
+						d+=3
+						
+						c++
+                        if(i>1000)i=0
+                        if(k>1000)k=0
+						 if(d>200)d=0
+						
+						if(c>arr.length-1)c=0
+						
+                        ele[0].style.backgroundColor="#"+i
+                        ele[0].style.color="#"+k
+						ele[0].style.borderRadius=d+"px"
+							
+						
+                    }
+                }
+                ele[0].onmouseup=function(){
+
+                    document.onmousemove=function(){
+
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

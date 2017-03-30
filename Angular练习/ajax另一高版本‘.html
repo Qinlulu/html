@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button>获取json</button>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+    $.ajax("data.json")
+    .done(function(){
+        alert("成功了")
+    })
+    .fail(function(){
+        alert("失败了")
+    })
+
+
+function run () {
+    var dfd=$.Deferred()
+    console.log("ABS")
+    dfd.resolve()//承若已经兑现
+    return dfd.promise()// 返回一个承若 等待承若兑现（也就是说 要执行后面的程序）
+}
+    run().then(function(){
+        console.log("已经成功了")
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

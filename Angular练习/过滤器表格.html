@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table td {
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .up:after {
+            border: 7px solid transparent;
+            border-top-color: #333;
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 15px;
+            right: 0;
+        }
+
+        .down:after {
+            border: 7px solid transparent;
+            border-bottom-color: #333;
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 5px;
+            right: 0;
+        }
+    </style>
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<input type="text" ng-model="name">
+<table cellpadding="5" cellspacing="5">
+    <tr>
+        <td ng-click="fn('fistname')" ng-class='fistname'>fistname</td>
+        <td ng-click="fn('lastname')" ng-class='lastname'>lastname</td>
+        <td ng-click="fn('salary')" ng-class='salary'>salary</td>
+        <td ng-click="fn('birthday')" ng-class='birthday'>birthday</td>
+    </tr>
+    <tr ng-repeat="x in arr | filter:serve | orderBy:size">
+        <td>{{x.fistname}}</td>
+        <td>{{x.lastname}}</td>
+        <td>{{x.salary | currency:'￥'}}</td>
+        <td>{{x.birthday | date:"yyyy-MM-dd"}}</td>
+    </tr>
+</table>
+<script src="angular.min.js"></script>
+<script>
+    var arr = [
+        {
+            fistname: "aguai",
+            lastname: "Great",
+            salary: 123335,
+            birthday: new Date("2001-01-01")
+
+        },
+        {
+            fistname: "zhazha",
+            lastname: "Tan",
+            salary: 2323342,
+            birthday: new Date("2017.10.20")
+
+        },
+        {
+            fistname: "bmao",
+            lastname: "Gao",
+            salary: 668805,
+            birthday: new Date("1994/08/20")
+        },
+        {
+            fistname: "huashuaS",
+            lastname: "Yan",
+            salary: 680000,
+            birthday: new Date("1993-03-11")
+
+        }
+
+    ]
+    var app = angular.module("myapp", [])
+    app.controller("mystr", function ($scope) {
+        $scope.arr = arr;
+        $scope.name = ""
+        $scope.serve = function (data) {
+            if (data.fistname.indexOf($scope.name) > -1 || data.lastname.indexOf($scope.name) > -1) {
+                return data
+            }
+        }
+
+        $scope.fn = function (data) {
+            //console.log(data)
+            //console.log($scope.size)
+            if (!$scope.size) {
+                $scope.size = data
+               $scope[data]={up: 1, down: 0}
+            } else if ($scope.size.charAt(0) == "-") {
+                $scope.size = data
+                $scope[data]={up: 1, down: 0}
+            } else {
+                $scope.size = "-" + data
+                $scope[data]={up: 0, down: 1}
+            }
+        }
+        $scope.fistname={up: 0, down: 0}
+        $scope.lastname={up: 0, down: 0}
+        $scope.salary={up: 0, down: 0}
+        $scope.birthday={up: 0, down: 0}
+    })
+</script>
+</body>
+</html>

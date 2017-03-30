@@ -1,0 +1,279 @@
+git pull  从远端更新代码
+相当于 git fetch 下载
+      git merge 合并
+
+git branch -a
+查询分支
+
+checkout 
+切换分支
+
+gulp.src（）.pipe().pipe()....dest()
+dest 
+输出到指定的目录
+
+task （任务 【依赖】，function（）{
+}）
+
+watch  监视文件  （路径 配置 tasks）
+
+npm init
+npm install gulp -g
+npm install gulp-sass 
+
+AngularJS 扩展了 HTML
+AngularJS 通过 ng-directives 扩展了 HTML。
+ng-app 指令定义一个 AngularJS 应用程序。
+ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
+ng-bind 指令把应用程序数据绑定到 HTML 视图。
+
+
+script	angular。nin.js  src 
+
+
+body ng-app
+定义根元素
+自定义属性
+
+
+ng-bind 绑定相应的变量
+用于处理非表单元素
+
+
+
+双向绑定
+div ng-model 绑定值到程序 
+用于处理表单元素
+{{}} 表达式 
+div{{值}}
+
+{求和 }
+
+src  设置图像的路径
+
+
+ng-controller 定义控制器
+click  定义指定的函数
+
+class 使用class名字
+hide   隐藏元素
+show  显示元素
+
+if 显示隐藏  
+区别 生成或者销毁元素
+
+include    后面跟字符串
+init 初始值
+
+repeat  循环便利数据
+
+
+控制器  
+
+module（name   依赖  config function）
+
+一个参数  获取程序
+两个参数 创建一个程序 
+ name 由app指定 var
+
+
+module返回的对象 提供的方法
+
+controller 定义一个控制器  
+name   回调函数
+
+回调 声明依赖以及函数
+
+name是由 ng-controller 定义的
+
+￥scope 内置服务  不能变  包含所有的信息
+
+￥scope 。text
+定义初始值
+
+style  设置样式
+
+对象  class  对象
+
+
+
+
+过滤器 
+
+currency 
+{{ number | currency }} 转化为货币
+filter（:） 从数组中选择子集
+
+app.run(function(){})
+
+$rootScope  根作用域
+
+￥rootscope 。arr=【{}{}{}{}】
+
+uppercase  大写
+lowercase  小写
+
+orderBy 排序
+
+limiTo  指定渲染多少数据  
+
+
+自定义过滤器 
+filter(“过滤器的名字”function(){})
+
+
+对于过滤器来说  自定义过滤器后面跟的变量 就是我们自己所需要定义的一个人函数
+直接获取到的 是一整组的数据 
+
+
+deferred  方法
+
+done（回调） 程序完成时 
+then（ ）  执行完上一步 继续执行下一步
+fail()   程序失败时
+always 都会执行 不管成功 失败
+g改版的ajax
+var query=$.ajax("data.json)
+
+when([]) 当某个程序执行结束后 执行下一个
+
+￥.Deferred()
+
+
+
+
+resolve （） 承若已经兑现  可以进行下一步操作 
+data参数 回传给回调的的的
+这个可以进行传参数  我们获取值
+
+
+promise ()一般用于返回一个承诺 这个是写在后面的
+是return出去的东西 
+返回一个承若 等待承若兑现（也就是说 要执行后面的程序）
+
+
+
+aangular服务 可以在模块中使用 
+
+内置服务 30多个
+
+自定义  
+interval
+$log  相当于console.log()
+
+
+
+constant定义静态数据  json  格式
+value  存储动态数据   json 格式
+service 定义一个队对象 可进行复杂处理
+factory 定义多个对象  
+provider 其他服务的底层服务
+
+
+app.service（“”，function（）{
+this.name=“””}）
+
+factory() 定义
+（var name=80;
+var age=:ss
+）
+
+
+
+provider (return {
+$get:function(){
+
+唯一能在config阶段 使用的服务
+
+})
+
+
+
+app.config(function(名字 Provider){})
+
+//配置·程序的业务逻辑 可以对一些数据预配置
+
+
+a链接 设置路径
+有一个div   ng-view属性
+
+
+引用angular-route
+
+nodule.config （$routeProvider）
+$routeProvider
+.when (路径 不带#好的 ，，后面跟需要展示的内容)
+配置对象{
+	template 或者 template url
+controller：function（）{}}
+}
+
+
+
+ui-router
+
+html  
+拥有ui-sref属性 相当于a 的href a ui-self= 
+
+拥有ui-view属性 div ui-vew
+
+引用第三方的库 angular-ui-router;
+ui.router;
+
+
+app.config(function(){
+$stateProvider   $urlRouter
+
+
+.state("",{
+url:"ssad}
+template
+controller  | As 设置别名的 
+data{} 自定义属性
+param【】
+resolve{}
+)
+})
+
+
+
+
+app.derective()方法 
+第一个 名字 
+第二个 函数 return{
+restrict aec
+A 属性
+E 元素
+C class
+
+
+template
+controller 写交互控制数据的
+
+replace布尔值
+；link{   控制属性 做DOM操作的
+}
+link的参数 a b c 
+第一个指向scope
+第二个 element
+第三个 属性 attr 
+
+
+
+compile function(){} 做DOM操作的 
+
+
+先是con 再是 compile  再是link
+
+scope  设置作用域 互不影响  设置为对象是是自己的 不共享作用域 父亲的
+默认是false 改变父元素里面的内容
+配置的话 是对象
+{ 
+=属性  双向绑定  变量 
+@属性  单项绑定 以字符串来进行传参数  花括号
+&function（）属性
+}
+
+
+$digest   扫描
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+商品一 ： <button ng-click="off()">+</button><input type="text" ng-model="tex1"><button ng-click="on()">-</button>
+商品二 ：  <button ng-click="off1()"+</button><input type="text" ng-model="tex2"> <button ng-click="on1()">-</button>
+商品三 ：  <button ng-click="off2()">+</button><input type="text" ng-model="tex3"> <button ng-click="on2()">-</button>
+合计：  <input type="text" ng-model="add()">
+
+<script src="angular.min.js"></script>
+<script>
+var app=angular.module("myapp",[])
+    app.controller("mystr",function($scope){
+        $scope.tex1=5
+        $scope.tex2=5
+        $scope.tex3=5
+        $scope.add=function(){
+            return $scope.tex1*1+$scope.tex2*1+$scope.tex3*1
+        }
+        $scope.off=function(){
+            $scope.tex1++
+        }
+        $scope.on=function(){
+            $scope.tex1--
+        }
+    })
+</script>
+</body>
+</html>

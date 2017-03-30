@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/css/swiper.min.css">
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<i-swiper data="data"></i-swiper>
+<script src="lib/js/swiper.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script>
+    var app=angular.module("myapp",[])
+    app.directive("iSwiper",function(){
+        return {
+            restrict:"AEC",
+            template:"<div class='swiper-container'><div class='swiper-wrapper'><div class='swiper-slide' ng-repeat='x in data' ><img src='{{x.url}}' alt=''></div></div></div>",
+            scope:{
+                data:"="
+            },
+            replace: true,
+            link:function(scope,ele,attr){
+                new Swiper('.swiper-container', {
+                    paginationClickable: true,
+                    autoplay:2000
+                });
+            }
+        }
+    })
+    app.controller("mystr",function($scope){
+        $scope.data=[{
+            url:"img/a.jpg"
+        },{
+            url:"img/b.jpg"
+        }, {
+            url:"img/c.jpg"
+        },{
+            url:"img/d.jpg"
+        }]
+    })
+</script>
+</body>
+</html>

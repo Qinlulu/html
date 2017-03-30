@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /* {
+     {
+     name | gen
+     :
+     m
+     }
+     }
+
+     app.filter("gen", function () {
+     //data就是你的数据 （name）
+     //m 就是你要判断的
+     return function （data, m）{
+     if (m？？？？)
+     {
+     return 0000
+     // 000 表示你输出的东西 （就是你实际要的东西）
+     }
+     }
+     })
+     */
+        var str = "afjghhraaanas"
+     var str1 = str.split("")
+     var obj = {}
+     str1.forEach(function (value, index) {
+    // console.log(typeof  value)
+     !obj[value] ? obj[value]=1 : obj[value] +=1
+     })
+     //console.log(obj)
+    var arr=[];
+     for(x in obj){
+         arr.push(obj[x])
+     }
+    var tem=arr[0]
+    for(var i=0;i<arr.length;i++){
+        if(tem<arr[i]){
+            tem=arr[i]
+        }
+    }
+    for(x in obj){
+        if(obj[x]==tem){
+            console.log(x)
+        }
+    }
+    /*console.log(tem)
+    console.log(arr)*/
+
+    /* var test = '1111111';
+
+     var aa=function (){
+     alert(this.test);
+     }
+
+     function bb() {
+     var test = '22222222';
+     aa();
+     }
+
+     bb();*/
+
+    /* var a = "123";
+     function get(){
+     var a;
+     alert(a)
+     a= "456";
+     alert(a)
+     }
+     get()*/
+
+    /*var arr=[4,2,3,4,2,11,1,1];
+     function rev(arr){
+
+     var temp,brr=[];
+     for(var i=0;i<arr.length;i++){
+     var count=0;
+     temp=arr[i];
+     for(var j=0;j<arr.length;j++){
+     if(temp==arr[j]){
+     count++;
+     }
+     }
+     console.log(count)
+     if(count%2==1){
+     if(brr.indexOf(temp)==-1){
+     brr.push(temp)
+     }
+
+     }
+     }
+     console.log(brr);
+     }
+     rev(arr)*/
+
+    /* var arr=[1,2,4,4,4,5,7,7,7,4]
+     var arr1=[]
+     var arr2=[]
+     var arr3=[]*/
+
+
+    //遍历数组   判断出现的次数
+    /*
+     for(var i=0;i<arr.length;i++){
+     if(arr1.indexOf(arr[i])<-1){
+     arr1.push(arr[i])
+     }else{
+     console.log(arr[i])
+     }
+
+     }*/
+
+
+
+    /*
+     for(var i=0;i<arr.length;i++){
+     arr1.push(arr.indexOf(arr[i]))
+     }
+
+     console.log(arr1)
+     function run(a,ar,aa){
+     for(var i=0;i<a.length;i++){
+     if(ar.indexOf(a[i])<0){
+     ar.push(a[i])
+     }else{
+     aa.push(a[i])
+     }
+     }
+     console.log(aa)
+     }
+
+     console.log( run(arr1,arr2,arr3))
+
+
+     */
+
+    /* for(var i=0;i<arr.length;i++){
+     if(arr1.indexOf(arr[i])<0){
+     arr1.push(arr[i])
+     }
+     }
+     console.log(arr1)
+     var num=0
+     for(var i=0;i<arr1.length;i++){
+     arr2.push(  arr.indexOf(arr1[i]))
+     //0 1 2 5 6
+     }
+     console.log(arr2)
+     for(var i=0;i<arr3.length;i++){
+     if(arr[i+1]-arr[i])
+     }
+     */
+</script>
+</body>
+</html>

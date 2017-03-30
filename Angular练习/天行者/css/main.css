@@ -1,0 +1,54 @@
+.mains {
+  wisth: 100%;
+  height: 100%;
+  border-top: 2px solid #ccc;
+  overflow: hidden;
+}
+.mains .dls {
+  width: 300%;
+  height: 100%;
+  display: flex;
+}
+.mains .dls section {
+  width: 100%;
+  flex: 1;
+}
+.mains .dls .dlso dl {
+  height: 98px;
+  margin-left: 15px;
+  border-bottom: 1px solid #E4E3E6;
+  display: flex;
+}
+.mains .dls .dlso dl dt {
+  width: 100px;
+  height: 98px;
+}
+.mains .dls .dlso dl dt img {
+  width: 100px;
+  margin: 10px 0;
+}
+.mains .dls .dlso dl dd {
+  margin-left: 10px;
+}
+.mains .dls .dlso dl dd h5 {
+  height: 25px;
+  width: 190px;
+  font-weight: 600;
+  color: #000;
+  line-height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+.mains .dls .dlso dl dd p {
+  width: 190px;
+  line-height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+.mains .dls .dlso dl dd div {
+  position: relative;
+}

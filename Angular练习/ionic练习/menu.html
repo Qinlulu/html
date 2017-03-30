@@ -1,0 +1,83 @@
+<ion-side-menus>
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+            <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-stable">
+            <h1 class="title">单选按钮列表</h1>
+        </header>
+        <div class="content has-header">
+            <div class="list">
+                <li class="item item-toggle">
+                    切换按钮
+                    <label class="toggle toggle-positive">
+                        <input type="checkbox" checked="">
+                        <div class="track">
+                            <div class="handle">
+                            </div>
+                        </div>
+                    </label>
+                </li>
+                <li class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked="">
+                    </label>
+                    多选按钮
+                </li>
+
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="go" checked="checked">
+                    <div class="item-content">
+                        Go
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="python">
+                    <div class="item-content">
+                        Python
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="ruby">
+                    <div class="item-content">
+                        Ruby
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio" name="group" value=".net">
+                    <div class="item-content">
+                        .Net
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="java">
+                    <div class="item-content">
+                        Java
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="php">
+                    <div class="item-content">
+                        PHP
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+            </div>
+        </div>
+    </ion-side-menu>
+</ion-side-menus>

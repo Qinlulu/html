@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<script src="angular.min.js"></script>
+<script>
+    var app=angular.module("myapp",[])
+    app.config(function(getProvider){
+        getProvider.name="1"
+    })
+    app.controller("mystr",function(){
+
+    })
+
+    app.provider("get",function(){
+        this.name="ss"
+        this.$get=function(){
+            var that=this
+            return {
+                fn:function(){
+                    alert(that.name)
+                }
+            }
+        }
+
+    })
+    app.controller("mystr", ["get", function (app) {
+        app.fn()
+    }])
+    /*app.service("get",function(){
+
+     function Date(){
+     this.name="qin"
+     this.get=function(){
+     alert("44")
+     }
+     }
+     return new Date()
+
+     })
+
+
+     app.controller("mystr", ["get", function (app) {
+     app.get()
+     }])*/
+    /*	app.factory("serve",function(){
+     var name="ass"
+     var age="55"
+     var get=function(){
+     alert("123")
+     }
+
+     return {
+     aa:name,
+     bb:age,
+     cc:get
+     }
+     })
+
+     app.controller("mystr",["serve",function(serv){
+     serv.cc()
+     }])*/
+
+
+
+</script>
+</body>
+</html>

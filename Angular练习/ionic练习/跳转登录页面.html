@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>登陆跳转</title>
+    <link rel="stylesheet" href="fonts/ionicons.svg">
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./libs/js/ionic.bundle.min.js"></script>
+    <style>
+        .box {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body ng-app="starter" ng-controller="mystr">
+<div ui-view>
+    <button ui-sref="btn">登陆跳转</button>
+</div>
+
+<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script type="text/javascript">
+    angular.module('starter', ['ionic'])
+        .config(function ($stateProvider, $urlRouterProvider) {
+            $stateProvider
+                .state('btn', {
+                    url: "/btn",
+                    templateUrl: "cebian.html",
+                    controller: function ($scope, $state) {
+                        $state.go("app.playlists")
+                    }
+                })
+                .state('app', {
+                    url: "/app",
+                    abstract: true,
+                    templateUrl: "menu.html"
+                })
+                .state('app.playlists', {
+                    url: "/playlists",
+                    views: {
+                        'menuContent': {
+                            templateUrl: "playlists.html"
+                        }
+                    }
+                })
+        })
+
+        .controller('mystr', ['$scope', '$ionicActionSheet', '$timeout', function ($scope, $ionicActionSheet, $timeout) {
+            $scope.show = function () {
+
+                var hideSheet = $ionicActionSheet.show({
+                    buttons: [
+                        {text: '<b>联系</b> 我'},
+                        {text: '1446630818'}
+                    ],
+                    destructiveText: '删除',
+                    titleText: 'this is my admin',
+                    cancelText: '返回',
+                    cancel: function () {
+
+                    },
+                    buttonClicked: function (index) {
+                        return true;
+                    }
+                });
+
+                $timeout(function () {
+                    hideSheet();
+                }, 2000);
+
+            };
+        }])
+
+</script>
+</body>
+</html>

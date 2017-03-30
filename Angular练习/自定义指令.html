@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<body ng-app="myapp" ng-controller="mystr">
+<div>父级的数据{{info.name}}</div>
+<div mydirective info="info" infos="{{infos}}"></div>
+<script src="angular.min.js"></script>
+<script>
+    var app = angular.module("myapp", [])
+    app.controller("mystr", function ($scope) {
+        $scope.info = {
+            name: "htm热热热lsss"
+        }
+    })
+    app.directive("mydirective", function () {
+        return {
+            restrict: "AEC",
+            template: "<h1 ng-click='add()'>子级的信息{{info.name}}</h1>",
+            replace: false,
+            link: function (scope, element, attr) {
+                scope.add = function () {
+                    alert("555")
+                }
+            }
+        }
+    })
+    /* var num = 1;
+     function changeNum(){
+     var str = "zhang";
+     num = 2;
+     }
+     console.log(num);
+     console.log(typeof str);
+
+     changeNum();
+     console.log(num);
+     console.log(typeof str);*/
+</script>
+</body>
+</html>

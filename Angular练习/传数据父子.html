@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="box"  ng-controller="parent">
+    <label for="">父级数据</label><input type="text" ng-model="ptext"><br>
+    <button ng-click="addc()">传到子集</button><br>
+    <div class="box1" ng-controller="child1">
+    <label for="">子级数据1</label><input type="text" ng-model="ctext" ><br>
+    </div>
+
+    <div ng-controller="child2">
+        <label for="">子级数据2</label><input type="text" ng-model="cctext" ><br>
+    <button ng-click="addp()">传到父集</button>
+    </div>
+</div>
+<script src="angular.min.js"></script>
+<script>
+var app=angular.module("myapp",[])
+    app.controller("parent",function($scope){
+$scope.addc=function(){
+    $scope.$broadcast("name",$scope.ptext)
+}
+$scope.$on("names",function(even,data){
+$scope.ptext=data
+        })
+    })
+    app.controller("child1",function($scope){
+        $scope.$on("name",function(event,data){
+        $scope.ctext=data
+        })
+    })
+    app.controller("child2",function($scope){
+        $scope.addp=function(){
+            $scope.$emit("names",$scope.cctext)
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table td {
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<table cellpadding="5" cellspacing="3">
+    <tr>
+        <td ng-click="fn('fistname')"
+        ">fistname</td>
+        <td ng-click="fn('lastname')">lastname</td>
+        <td ng-click="fn('gender')">gender</td>
+        <td ng-click="fn('salary')">salary</td>
+        <td ng-click="fn('salary')">salary</td>
+        <td ng-click="fn('birthday')">birthday</td>
+    </tr>
+    <tr ng-repeat="x in arr">
+        <td>{{x.firstName | uppercase}}</td>
+        <td>{{x.lastName | lowercase}}</td>
+        <td>{{x.gender | gen:x.gender}}</td>
+        <td>{{x.salary | number}}</td>
+        <td>{{x.salary | currency:'￥'}}</td>
+        <td>{{x.birthday | date:'yyyy-MM-dd'}}</td>
+    </tr>
+</table>
+<script src="angular.min.js"></script>
+<script>
+    var app = angular.module("myapp", [])
+    var arr = [{
+        firstName: "Fang",
+        lastName: "vane",
+        gender: 1,
+        salary: 12333.496,
+        birthday: new Date('2007-7-11')
+    }, {
+        firstName: "Sara",
+        lastName: "rose",
+        gender: 2,
+        salary: 232334.23,
+        birthday: new Date('1997-2-3')
+    }, {
+        firstName: "Mark",
+        lastName: "bear",
+        gender: 1,
+        salary: 68000,
+        birthday: new Date('1968-03-22')
+    }, {
+        firstName: "Aam",
+        lastName: "hot",
+        gender: 1,
+        salary: 66880.5,
+        birthday: new Date('1986-3-4')
+    }]
+    app.controller("mystr", function ($scope) {
+        $scope.arr = arr;
+    })
+
+
+    app.filter("gen", function () {
+        return function (data, m) {
+            if (m == 1) {
+                return "男"
+            } else if (m == 2) {
+                return "女"
+            }
+        }
+    })
+</script>
+</body>
+</html>

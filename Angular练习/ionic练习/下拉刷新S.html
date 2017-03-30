@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts/ionicons.svg">
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <script src="https://www.runoob.com/static/ionic/js/ionic.bundle.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="mystr">
+<ion-pane>
+    <ion-content >
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item ng-repeat="item in items" ng-bind="item.name"></ion-item>
+        </ion-list>
+    </ion-content>
+</ion-pane>
+<script src="js/angular.min.js"></script>
+<script src="js/ionic.min.js"></script>
+<script>
+    var app=angular.module("myapp",['ionic'])
+    app.controller("mystr",function($scope,$http){
+        $scope.item=$scope.items = [
+            {
+                "name": "HTML5"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "Css3"
+            }
+        ];
+        $scope.doRefresh = function() {
+            $http.get('js/data.json')   //注意改为自己本站的地址，不然会有跨域问题
+                .success(function(newItems) {
+                    $scope.items = newItems;
+                })
+                .finally(function() {
+                    $scope.$broadcast('scroll.refreshComplete');
+                });
+        }
+    })
+</script>
+</body>
+</html>

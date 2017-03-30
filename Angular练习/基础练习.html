@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="new">
+
+<div ng-controller="con">
+    <p ng-style="{
+ 		'width':'300px',
+ 		'height':'50px',
+ 		'background':'#ccc'
+ 	}" ng-click="add()" ng-hide="false">
+        <input type="text" ng-model="name" ng-init="name=100">
+    </p>
+
+    <h1>Hello {{name}}</h1>
+
+    <div ng-class="{box:true}" ng-style="{
+        'width':'300px',
+ 		'height':'50px',
+ 		'background':'#eee'
+    }">
+        <button ng-click="off()">+</button>
+        <input type="text" ng-init="names=10" ng-model="names">
+        <button ng-click="on()">-</button>
+
+        <section ng-bind="ss" ng-init="ss='helo'"></section>
+    </div>
+</body>
+<script>
+    var app = angular.module('new', []);
+
+    app.controller("con", function ($scope) {
+        $scope.off = function () {
+            $scope.names++
+        }
+        $scope.on = function () {
+            $scope.names--
+        }
+        $scope.add = function () {
+            console.log($scope.names)
+        }
+    })
+</script>
+</body>
+</html>

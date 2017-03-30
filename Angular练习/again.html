@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #bigbox {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red
+        }
+    </style>
+</head>
+<body>
+<div id="bigbox">
+    <div id="box"></div>
+</div>
+<script type="text/javascript">
+    var bigbox = document.getElementById('bigbox')
+    var box = document.getElementById('box')
+
+    bigbox.onclick = function () {
+        alert("hello world")
+    }
+</script>
+</body>
+</html>
