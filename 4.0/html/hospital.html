@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>医院详情</title>
+    <meta content="target-densitydpi=320,width=640,user-scalable=no" name="viewport">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -12,6 +14,11 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../lib/css/swiper.min.css">
     <style>
+    /* iphone6 plus */
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+    html{font-size: 129.375px;}
+}
+    html, body, * {     font-family: "Microsoft YaHei" ! important; }   code {     font-family: "Consolas" ! important; }
         html {
             font-size: 20px;
         }
@@ -26,25 +33,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /*头部按钮*/
-        .head_button {
-            height: 2.275rem;
-            width:100%;
-            background-color: #708085;
-            padding-top: 1.225rem;
-            padding-left: 14.025rem;
-            box-sizing: border-box;
-        }
-
-        .head_button a {
-            height: 1.3rem;
-            width: 1.3rem;
-            float:right;
-            margin-top: -.7rem;
-            margin-right:.5rem;
-            background: url(../img/hospital_back.png) no-repeat;
-            background-size: 100%;
-        }
 
         /*头部医院信息*/
         .head_msg {
@@ -268,10 +256,7 @@
     </script>
 </head>
 <body>
-<!--头部按钮-->
-<header class="head_button">
-    <a href=""></a>
-</header>
+
 <!--头部医院信息-->
 <section class="head_msg">
     <div class="head_msg_picture">

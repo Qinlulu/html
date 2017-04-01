@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			cursor: pointer;
+		}
+		div{
+			clear: both;
+		}
+		li{
+			list-style:none;
+			float:left;
+			width:40px;
+			height:40px;
+			text-align:center;
+			line-height:40px;
+			border:1px solid #ccc;
+			margin:5px;
+
+		}
+		.con_l{
+			float:left;
+			width:60px;
+			height:80px;
+			text-align: right;
+		}
+		ul{
+			width:400px;
+			height:47px;
+			overflow: hidden;
+		}
+		.bg{
+			background:blue;
+		}
+		.head{
+			height:45px;
+		}
+		.head span{
+			padding:0 10px;
+			margin:10px;
+			border:1px solid #ccc;
+		}
+		.rad,.check{
+			position:relative;
+			height:100px;
+		}
+		.span{
+			position:absolute;
+			right:0;
+			top:0;
+			padding-right:20px;
+		}
+		#con{
+			width:600px;
+			height:auto;
+			border:1px solid #ccc;
+			margin:50px auto;
+		}
+		.inps{
+			margin:10px;
+			height:25px;
+		}
+		i{
+			position:absolute;
+			right:0;
+			top:5px;
+			border:10px solid transparent;
+			border-top-color:#666;
+		}
+		.i{
+			position:absolute;
+			right:0;
+			top:-5px;
+			border:10px solid transparent;
+			border-bottom-color:#666;
+		}
+	</style>
+</head>
+<body>
+<div id="con"></div>
+<input type="text" class="text">
+
+<script src="jquery-2.1.1.min.js"></script>
+<script src="danduo.js"></script>
+<script>
+var obj={
+rDate:[{
+	"id":"1",
+	"name":"1"
+},
+{
+	"id":"2",
+	"name":"2"
+},
+{
+	"id":"3",
+	"name":"3"
+},
+{
+	"id":"4",
+	"name":"4"
+},
+{
+	"id":"5",
+	"name":"5"
+},
+{
+	"id":"6",
+	"name":"6"
+},
+{
+	"id":"7",
+	"name":"7"
+},
+{
+	"id":"8",
+	"name":"8"
+},
+{
+	"id":"9",
+	"name":"9"
+},
+{
+	"id":"10",
+	"name":"10"
+},
+{
+	"id":"11",
+	"name":"11"
+},
+{
+	"id":"12",
+	"name":"12"
+},
+{
+	"id":"13",
+	"name":"13"
+}
+],
+cDate:[
+{
+	"id":"1",
+	"name":"a1"
+},
+{
+	"id":"2",
+	"name":"a2"
+},
+{
+	"id":"3",
+	"name":"a3"
+},
+{
+	"id":"4",
+	"name":"a4"
+},
+{
+	"id":"5",
+	"name":"a5"
+},
+{
+	"id":"6",
+	"name":"a6"
+},
+{
+	"id":"7",
+	"name":"a7"
+},
+{
+	"id":"8",
+	"name":"a8"
+},
+{
+	"id":"9",
+	"name":"a9"
+},
+{
+	"id":"10",
+	"name":"a10"
+},
+{
+	"id":"11",
+	"name":"a11"
+},
+{
+	"id":"12",
+	"name":"a12"
+},
+{
+	"id":"13",
+	"name":"a13"
+}
+]
+}
+$("#con").filter({
+	obj:obj
+})
+</script>
+</body>
+</html>

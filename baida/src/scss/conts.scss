@@ -1,0 +1,240 @@
+@import "page";
+
+.contts ,.sho{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $bgclor;
+  z-index: 101;
+  transform: translate3d(100%,0,0);
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  .title{
+    width:100%;
+    height:38px;
+    color:#666;
+    background:$bgsclor;
+    line-height:38px;
+    font-size:18px;
+    border-bottom:2px solid #DBDDE3;
+    text-indent: 10px;
+    span,i,em{
+        margin:0 5px;
+    }
+    em{
+        color:$clor;
+    }
+  }
+  .dls{
+    width:100%;
+    height:100%;
+    overflow: auto;
+    .sex{
+      margin-bottom:131px;
+    }
+
+    dl{
+      width:100%;
+      padding:20px 12px;
+      border-bottom:1px solid #ccc;
+      height:100px;
+      box-sizing: border-box;
+      clear: both;
+      dt{
+        width:70px;
+        height:70px;
+        float:left;
+        img{
+         width:70px;
+          height:70px;
+          display:block;
+        }
+      }
+      dd{
+        width:72%;
+        margin-left:10px;
+        position:relative;
+         float:left;
+         box-sizing: border-box;
+        h3{
+          height:16px;
+          width:60%;
+          color:#333;
+          font-size:16px;
+          overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        p{
+          margin:4px 0;
+          width:100%;
+          box-sizing: border-box;
+          mark{
+            background:transparent;
+            color:#F8912A;
+          }
+          strong{
+            width:13px;
+            height:13px;
+            display:inline-block;
+            background: #F99027;
+            color:#fff;
+            text-align: center;
+            line-height: 13px;
+            margin-left:3px;
+            font-size:10px;
+          }
+          &:nth-child(4){
+            span{
+                display: block;
+                width:70%;
+                height:12px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+                float:left;
+            }
+            i{
+              margin-right:5px;
+              float:right;
+            }
+          }
+
+        }
+        .side{
+          position:absolute;
+          top:17px;
+          right:2%;
+          i{
+            color:#F8912A;
+            font-size:25px;
+          }
+          span{
+            color:#F8912A;
+            font-size:20px;
+          }
+          strong{
+           margin-left:5px;
+          }
+        }
+
+      }
+    }
+    .none{
+        display:none;
+    }
+  }
+  .orders{
+    width:400%;
+    position: fixed;
+    bottom:42px;
+    left:0;
+    background:#fff;
+    display:none;
+    .or-list{
+      width:25%;
+      height:auto;
+      float:left;
+      ul{
+        width:100%;
+
+        li{
+          height:40px;
+          line-height:40px;
+          display:flex;
+          justify-content:space-between;
+          padding:0 10px;
+          border-bottom:1px solid #eee;
+          .i{
+            color:$clor;
+          }
+        }
+      }
+    }
+
+  }
+  .footers{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:40px;
+    background:#fff;
+    border-top:2px solid $clor;
+    display:flex;
+    line-height:40px;
+    text-align:center;
+    z-index: 103;
+    a{
+      flex:1;
+      color:#666;
+      font-size:16px;
+      border-right:1px solid #DBDBDB;
+      &:last-child{
+        border:none;
+      }
+    }
+    .o{
+        color:$clor;
+    }
+  }
+}
+.donghua{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 110;
+    display:none;
+    .loading{
+        width:60px;
+        height:60px;
+        position:absolute;
+        left:50%;
+        top:50%;
+
+        margin:-20px -20px;
+        animation:mymove 1s ease-in-out  infinite;
+        @for $i from 0 to 8{
+            
+            .i#{$i}{ 
+                width:14px;
+                height:14px;
+                border-radius: 100%;;
+                position:absolute;
+                left:0;
+                top:0;
+                transform: rotate($i*45deg) ;
+                transform-origin: 30px 30px;
+                }
+                .s#{$i}{ 
+                width:14px;
+                height:14px;
+                border-radius: 100%;;
+                background:green;
+                position:absolute;
+                left:50%;
+                top:50%;
+                margin:-7px -7px;
+                transform:scale(0.15*$i)
+                }
+                
+        }  
+    }
+    @keyframes mymove
+    {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+}
+
+.sho{
+  transform: translate3d(0,0,0);
+  transition: transform 0.5s ease;
+}
+
+

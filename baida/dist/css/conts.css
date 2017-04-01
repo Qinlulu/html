@@ -1,0 +1,324 @@
+.contts, .sho {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 101;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.5s ease;
+  overflow: hidden; }
+  .contts .title, .sho .title {
+    width: 100%;
+    height: 38px;
+    color: #666;
+    background: #f5f6f5;
+    line-height: 38px;
+    font-size: 18px;
+    border-bottom: 2px solid #DBDDE3;
+    text-indent: 10px; }
+    .contts .title span, .contts .title i, .contts .title em, .sho .title span, .sho .title i, .sho .title em {
+      margin: 0 5px; }
+    .contts .title em, .sho .title em {
+      color: #24AEF2; }
+  .contts .dls, .sho .dls {
+    width: 100%;
+    height: 100%;
+    overflow: auto; }
+    .contts .dls .sex, .sho .dls .sex {
+      margin-bottom: 131px; }
+    .contts .dls dl, .sho .dls dl {
+      width: 100%;
+      padding: 20px 12px;
+      border-bottom: 1px solid #ccc;
+      height: 100px;
+      box-sizing: border-box;
+      clear: both; }
+      .contts .dls dl dt, .sho .dls dl dt {
+        width: 70px;
+        height: 70px;
+        float: left; }
+        .contts .dls dl dt img, .sho .dls dl dt img {
+          width: 70px;
+          height: 70px;
+          display: block; }
+      .contts .dls dl dd, .sho .dls dl dd {
+        width: 72%;
+        margin-left: 10px;
+        position: relative;
+        float: left;
+        box-sizing: border-box; }
+        .contts .dls dl dd h3, .sho .dls dl dd h3 {
+          height: 16px;
+          width: 60%;
+          color: #333;
+          font-size: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .contts .dls dl dd p, .sho .dls dl dd p {
+          margin: 4px 0;
+          width: 100%;
+          box-sizing: border-box; }
+          .contts .dls dl dd p mark, .sho .dls dl dd p mark {
+            background: transparent;
+            color: #F8912A; }
+          .contts .dls dl dd p strong, .sho .dls dl dd p strong {
+            width: 13px;
+            height: 13px;
+            display: inline-block;
+            background: #F99027;
+            color: #fff;
+            text-align: center;
+            line-height: 13px;
+            margin-left: 3px;
+            font-size: 10px; }
+          .contts .dls dl dd p:nth-child(4) span, .sho .dls dl dd p:nth-child(4) span {
+            display: block;
+            width: 70%;
+            height: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            float: left; }
+          .contts .dls dl dd p:nth-child(4) i, .sho .dls dl dd p:nth-child(4) i {
+            margin-right: 5px;
+            float: right; }
+        .contts .dls dl dd .side, .sho .dls dl dd .side {
+          position: absolute;
+          top: 17px;
+          right: 2%; }
+          .contts .dls dl dd .side i, .sho .dls dl dd .side i {
+            color: #F8912A;
+            font-size: 25px; }
+          .contts .dls dl dd .side span, .sho .dls dl dd .side span {
+            color: #F8912A;
+            font-size: 20px; }
+          .contts .dls dl dd .side strong, .sho .dls dl dd .side strong {
+            margin-left: 5px; }
+    .contts .dls .none, .sho .dls .none {
+      display: none; }
+  .contts .orders, .sho .orders {
+    width: 400%;
+    position: fixed;
+    bottom: 42px;
+    left: 0;
+    background: #fff;
+    display: none; }
+    .contts .orders .or-list, .sho .orders .or-list {
+      width: 25%;
+      height: auto;
+      float: left; }
+      .contts .orders .or-list ul, .sho .orders .or-list ul {
+        width: 100%; }
+        .contts .orders .or-list ul li, .sho .orders .or-list ul li {
+          height: 40px;
+          line-height: 40px;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 10px;
+          border-bottom: 1px solid #eee; }
+          .contts .orders .or-list ul li .i, .sho .orders .or-list ul li .i {
+            color: #24AEF2; }
+  .contts .footers, .sho .footers {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border-top: 2px solid #24AEF2;
+    display: flex;
+    line-height: 40px;
+    text-align: center;
+    z-index: 103; }
+    .contts .footers a, .sho .footers a {
+      flex: 1;
+      color: #666;
+      font-size: 16px;
+      border-right: 1px solid #DBDBDB; }
+      .contts .footers a:last-child, .sho .footers a:last-child {
+        border: none; }
+    .contts .footers .o, .sho .footers .o {
+      color: #24AEF2; }
+
+.donghua {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  display: none; }
+  .donghua .loading {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -20px -20px;
+    animation: mymove 1s ease-in-out  infinite; }
+    .donghua .loading .i0 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(0deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s0 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0); }
+    .donghua .loading .i1 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(45deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s1 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0.15); }
+    .donghua .loading .i2 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(90deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s2 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0.3); }
+    .donghua .loading .i3 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(135deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s3 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0.45); }
+    .donghua .loading .i4 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(180deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s4 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0.6); }
+    .donghua .loading .i5 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(225deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s5 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0.75); }
+    .donghua .loading .i6 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(270deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s6 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(0.9); }
+    .donghua .loading .i7 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(315deg);
+      transform-origin: 30px 30px; }
+    .donghua .loading .s7 {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      background: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -7px -7px;
+      transform: scale(1.05); }
+
+@keyframes mymove {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.sho {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s ease; }

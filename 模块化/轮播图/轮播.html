@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#wrap{
+			width:900px;
+			height:200px;
+			border:1px solid red;
+			margin:50px 100px;
+			position:relative;
+			overflow: hidden;
+		}
+		#pic{
+			width:1800px;
+			height:200px;
+			position:absolute;
+		}
+		#pic p{
+			float:left;
+			width:300px;
+			height:200px;
+			background:#ccc;
+		}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="pic">
+		<p>第1</p>
+		<p>第2</p>
+		<p>第3</p>
+		<p>第1</p>
+		<p>第2</p>
+		<p>第3</p>
+	</div>
+</div>
+<script src="jquery-2.1.1.min.js"></script>
+<script src="lunbo.js"></script>
+</body>
+</html>

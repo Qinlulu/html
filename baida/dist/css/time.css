@@ -1,0 +1,95 @@
+.time, .shows {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 110;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.5s ease; }
+  .time .title, .shows .title {
+    height: 40px;
+    background: #f5f6f5;
+    line-height: 49px;
+    color: #999;
+    font-size: 16px;
+    text-indent: 15px;
+    border-bottom: 1px solid #eee; }
+  .time .tim, .shows .tim {
+    display: flex;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 2px solid #24AEF2; }
+    .time .tim span, .shows .tim span {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      color: #999; }
+  .time .timm, .shows .timm {
+    width: 100%;
+    background: #f5f6f5;
+    height: auto; }
+    .time .timm table, .shows .timm table {
+      width: 100%; }
+      .time .timm table tr, .shows .timm table tr {
+        display: flex; }
+      .time .timm table td, .shows .timm table td {
+        text-align: center;
+        line-height: 45px;
+        background: #fff;
+        color: #000;
+        flex: 1;
+        border: 1px solid #ccc; }
+      .time .timm table .over, .shows .timm table .over {
+        color: #999; }
+      .time .timm table .overs, .shows .timm table .overs {
+        color: #fff;
+        background: #24AEF2;
+        display: inline-block;
+        width: 100%; }
+  .time .footer, .shows .footer {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ccc; }
+    .time .footer li, .shows .footer li {
+      height: 55px;
+      line-height: 55px;
+      border-bottom: 1px solid #ccc;
+      margin-left: 15px;
+      font-size: 16px;
+      display: flex;
+      text-indent: 5px;
+      justify-content: space-between; }
+      .time .footer li:last-child, .shows .footer li:last-child {
+        border: none; }
+        .time .footer li:last-child strong, .shows .footer li:last-child strong {
+          width: 90px;
+          height: 29px;
+          border-radius: 3px;
+          display: block;
+          display: flex;
+          overflow: hidden;
+          margin-top: 15px; }
+        .time .footer li:last-child button, .shows .footer li:last-child button {
+          display: block;
+          width: 30px;
+          height: 29px;
+          background: #24AEF2;
+          border: none;
+          color: #fff; }
+        .time .footer li:last-child input, .shows .footer li:last-child input {
+          display: block;
+          width: 30px;
+          height: 23px;
+          text-align: center; }
+      .time .footer li span, .shows .footer li span {
+        color: #333; }
+      .time .footer li strong, .shows .footer li strong {
+        margin-right: 20px;
+        color: #999; }
+
+.shows {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s ease; }

@@ -14,11 +14,11 @@
     <h1 v-if="yes" @click="add">Yes!</h1>
     <h1 v-if="no">No!</h1>
     <h1 v-if="age >= 25">Age: {{ age }}</h1>
-    <h1 v-if="names.indexOf('jack') >= 0">Name: {{ names }}</h1>
-    <input type="text" v-model="name">
+    <h1 v-if="names.indexOf('k') >= 0">Name: {{ anames }}</h1>
+   <input type="text" v-on:input="inputs($event.target.value)" v-bind:value="names | uuper">
+    <span>{{anames}}</span>
 </div>
 <script type="text/javascript" src="js/vue.min.js">
-	
 </script>
 <script>
     let data = {
@@ -29,7 +29,7 @@
         names: 'kejool'
        
     }
-    new Vue({
+    var vm=new Vue({
         el: "#app",
         data: data,
          methods:{
@@ -38,12 +38,32 @@
          	},
          	q:function(){
          		alert("123")
-         	}
-         	
-         }
+         	},
+             inputs:function(val){
+                 this.names=val
+             }
+         },
+        filters:{
+            uuper:function(val){
+                return val.toUpperCase()
+            }
+        },
+        computed:{
+            anames:function(){
+                names=90
+                return names
+            }
+
+        }
         
     })
 
+
+    vm.$watch("name",function(val,nol){
+    	console.log(val)
+    },{
+    	deep: true
+    })
 </script>
 </body>
 </html>
