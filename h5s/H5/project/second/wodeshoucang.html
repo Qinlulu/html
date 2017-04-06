@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的收藏</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/swiper.min.css" />
+	<style>
+	html{font-size: 20px;}
+	body{background: #fff; position: relative;}
+	a{-webkit-tap-highlight-color: #fff; -webkit-tap-highlight-color:transparent;}
+	/*头部提示下载模块*/
+	.downApp{height: 2.5rem; width: 100%; background-color: #565a5c; overflow: hidden;}
+	.downApp_left{height: 100%; width: 11.25rem; float: left; overflow: hidden;}
+	.downApp_right{height: 100%; width: 4.75rem; background: #ff5a5f; float: left; font-size: 0.65rem; color: #fff;line-height: 2.5rem; text-align: center;}
+	.logo{height: 1.75rem; width: 1.75rem; background: url(../images/logo.png) no-repeat; background-size: 100%; margin-left: 0.5rem; margin-top: 0.4rem; float: left;}
+	.downApp_msg{float: left; padding-left: 0.45rem;}
+	.downApp_msg h3{ color: #fff; font-size: 0.6rem; padding-top: 0.625rem;}
+	.downApp_msg p{ color: #cccdce; font-size: 0.45rem;padding-top: 0.25rem;}
+	/*头部标题*/
+	.title{height: 1.875rem; width: 100%; background: #fbfbfb; overflow: hidden; }
+	.title a{display: block;height: .7rem; width: 0.375rem; background: url(../images/back.png) no-repeat; background-size: 100%; margin-left: 0.675rem;float: left; margin-top: .6rem;}
+	.title h1{float: left;font-size: .7rem; color: #565c5f; margin-top: .6rem; margin-left: 5.45rem;}
+
+	/*内容选项卡*/
+	.wrap{margin:0 auto;}
+	.tabs{height:1.85rem;background: #fff;width: 100%;text-align: center; border-bottom: 0.05rem solid #e4e4e4;}
+	.tabs .part{display:block;float:left;width:33%;text-align:center;height: 20px;}
+	.tabs a{width:100%;display:block;color:#5f6264;text-align:center;margin:0 auto;font-size:0.6rem;text-decoration:none; height: 1.75rem}
+	.tabs span.active a{color:#ff5e63;border-bottom: 0.1rem solid #ff494f;}
+	.swiper-container{width:100%;border-top:0;margin-top:10px!important}
+	.swiper-slide{width:100%;background:none;color:#373737;}
+	/*收藏文章*/
+	.wenzhang li{height: 9.25rem; width: 100%; background:url(../images/shoucangwenzhang.png) no-repeat; background-size: 100%;}
+	/*圈子*/
+	.quanzi li{width: 100%; padding-left: .7rem; border-bottom: 1px solid #ddd;}
+	.quanzi_man{height:2.5rem; overflow: hidden;}
+	.quanzi_man div{float: left;height: 1.3rem; width: 1.3rem; background-size: 100%; background: url(../images/quanzi_head.png) no-repeat; margin-top: .75rem;}
+	.quanzi_man span{display: block; float: left; font-size: .5rem; color: #252a2d; padding-top: 1rem; padding-left: .4rem;}
+	.quanzi_say{width: 14.65rem; font-size: .65rem; color: #474b4d; line-height: .9rem;}
+	.quanzi_picture{width: 14.3rem; overflow: hidden; }
+	.quanzi_picture li{height: 3.35rem; width: 3.35rem; float: left;margin-right: 0.25rem;}
+	/*视频*/
+	.shipin li{height: 9.25rem; width: 100%; background: url(../images/shoucangshipin.png) no-repeat; background-size: 100%;}
+	</style>
+	<script>
+	//rem
+		;(function (win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		
+		win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+</head>
+<body>
+	<!--头部提示下载模块-->
+<section class="downApp">
+	<div class="downApp_left">
+		<div class="logo"></div>
+		<div class="downApp_msg">
+			<h3>打开当妈啦App</h3>
+			<p>了解更多优惠服务</p>
+		</div>
+	</div>
+	<div class="downApp_right">立即打开</div>
+</section>
+	<!--头部标题-->
+	<header class="title">
+		<a href="../html/wode.html"></a>
+		<h1>我的收藏</h1>
+	</header>
+	<!--内容选项卡-->
+	<div id="wrapper">
+		<!--header end-->
+		<div class="wrap">
+			<div class="tabs">
+				<span class=" part active"><a href="#" hidefocus="true" >收藏的文章</a></span>
+				<span class="part"><a href="#" hidefocus="true">收藏的圈子</a></span>
+				<span class="part"><a href="#" hidefocus="true">收藏的视频</a></span>
+			</div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide swiper-slide-visible swiper-slide-active">
+						<div class="content-slide">
+							<ul class="wenzhang">
+								<a href=""><li></li></a>
+							</ul>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="content-slide">
+							<ul class="quanzi">
+								<a href=""><li>
+									<div class="quanzi_man">
+										<div></div>
+										<span>董波</span>
+									</div>
+									<p class="quanzi_say">嘿嘿，自从用了这个东西太好了！！喜欢喜欢 哦也！</p>
+									<div class="quanzi_msg"></div>
+									<ul class="quanzi_picture">
+										<li></li>
+									</ul>
+								</li></a>
+							</ul>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="content-slide">
+							<ul class="shipin">
+								<a href=""><li></li></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<script type="text/javascript" src="../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../js/idangerous.swiper.min.js"></script>
+	<script type="text/javascript">
+			$(function() {
+	
+		var tabsSwiper;
+		tabsSwiper = new Swiper('.swiper-container', {
+			speed : 500,
+			onSlideChangeStart : function() {
+				$(".tabs .active").removeClass('active');
+				$(".tabs span").eq(tabsSwiper.activeIndex).addClass('active');
+			}
+		});
+	
+		$(".tabs span").on('touchstart mousedown', function(e) {
+			e.preventDefault()
+			$(".tabs .active").removeClass('active');
+			$(this).addClass('active');
+			tabsSwiper.swipeTo($(this).index());
+	
+		});
+	
+		$(".tabs span").click(function(e) {
+			e.preventDefault();
+		});
+	});//end
+		</script>
+</body>
+</html>

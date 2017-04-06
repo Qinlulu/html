@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+	<link rel="stylesheet" href="gwc.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="header-left">返回</div>
+			<div class="header-center">我的购物车</div>
+		</header>
+		<section class="main">
+			<!-- <div class="main-title"><span>分期提示：在项目上向左滑动可删除项目</span></div> -->
+			<div class="gwc-box" v-for="info in arr">
+				<div class="yy-title"><span class="checkAll iconfont icon-tn-radio" @click="flagFn"></span>{{ info.title }}</div>
+				<div class="yy-xm" v-for="info1 in info.con">
+					<div class="xm-name"><span><input type="checkbox" v-model="info1.check">
+					</span>{{ info1.name }}</div>
+					<div class="jg-xp">
+						<span class="dj">{{ "￥"+info1.price*info1.num }}</span>
+						<p class="sl">.
+							<span class="jBtn" @click="info1.num <= 1 ? 1 : info1.num -= 1">-</span>
+							<span class="sl-box">{{ info1.num }}</span>
+							<span class="addBtn" @click="info1.num >= 10 ? 10 : info1.num += 1">+</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="zje-box">
+				<span class="zje">总额：</span>
+				<span class="je">{{ "￥"+getJg_sum }}</span>
+			</div>
+			<div class="fq">
+				申请分期
+			</div>
+		</footer>
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="vue.min.js"></script>
+	<script>
+		var obj = {
+			arr: [],
+			getZj : [],
+			message: 0
+		};
+		$.ajax( {
+			url: "data.json",
+			dataType: "json",
+			success: function( data ){
+				obj.arr = data;
+			}
+		} )
+
+		var vm = new Vue( {
+			el: ".container",
+			data: obj,
+			methods: {
+				flagFn: function( event ){
+					var index = $(event.path[2]).index();
+					if( event.target.classList.contains( "icon-tn-radio" ) ){
+						event.target.classList.add( "icon-radio" );
+						event.target.classList.remove( "icon-tn-radio" );						
+						for( var j=0; j<this.arr[index].con.length; j++ ){
+							this.arr[index].con[j].check = true;
+						}
+					}else{
+						event.target.classList.add( "icon-tn-radio" );
+						event.target.classList.remove( "icon-radio" );
+						for( var j=0; j<this.arr[index].con.length; j++ ){
+							this.arr[index].con[j].check = false;
+						}
+					}
+				}
+			},
+			computed: {
+				getJg_sum: function(){
+					this.message = 0;
+					for( var i=0; i<this.arr.length; i++ ){
+						for( var j=0; j<this.arr[i].con.length; j++ ){
+							if( this.arr[i].con[j].check ){
+								this.message += this.arr[i].con[j].num*this.arr[i].con[j].price;
+							}
+						}
+					}
+					return this.message;
+				}
+			}
+		} )
+	</script>
+</body>
+</html>

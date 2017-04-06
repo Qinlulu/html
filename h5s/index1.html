@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body,html{
+				font-family: "微软雅黑";
+				font-size: 14px;
+			}
+			ul,ol,dl{
+				list-style: none;
+			}
+			li{
+				float: left;
+				cursor:pointer;
+			}
+			li:first-child{
+				cursor: default;
+			}
+			b{
+				float: left;
+				margin-left: 5px;;
+			}
+			.bigbox{
+				margin: 10px auto;
+				width: 800px;
+			}
+			.top{
+				width: 800px;
+				line-height: 35px;
+				border: 1px solid #009999;
+				border-bottom: 0px;
+			}
+			.top>p{
+				float: left;
+				margin-left: 10px;
+			}
+			.top>span{				
+				color:#0000FF;
+				margin-left: 10px;
+			}
+			.top>a{
+				font-size:16px;
+				color:#ccc;
+			}
+			.tj{
+				display: inline-block;
+				margin: 0px 5px;
+				border: 1px solid #FF5500;
+				font-size: 16px;
+				line-height: 16px;
+				padding: 0px 0px 0px 5px;
+				color: #FF5500;
+			}
+			.clo{
+				font-family: '宋体';
+				float: right;
+				cursor: pointer;
+			    display: inline-block;
+			    background: #FF5500;
+			    color: #fff;
+			    width: 18px;
+			    font-size: 20px;
+			    line-height: 18px;
+			    text-align: center;
+			    margin-left: 5px;
+			}
+			.addBox{
+				display: inline-block;
+			}
+			.addBox>u{
+				position: relative;
+				text-decoration: none;
+				/*display: inline-block;
+				line-height: 20px;;*/
+				color: #FF5500;
+				margin-left: 10px;;
+				
+				padding:0px 15px 0px 5px;
+			}
+			.addBox>u>span{
+				width: 20px;
+				height: 20px;
+				font-style: normal;
+				position: absolute;
+			}			
+			#del{
+				cursor: pointer;
+			}			
+			.main{
+				width: 800px;
+				
+				border: 1px solid #009999;
+				
+			}
+			.main ul,.mainlis ul{
+				margin:0px 10px;
+				height: 25px;
+				margin-top: 10px;
+			    padding-bottom: 10px;
+			    border-bottom: 1px dotted #ccc;				
+			}
+
+			.main ul>li,.mainlis ul>li{
+				float: left;
+				margin-left: 5px;
+				padding: 2px 5px;
+			}
+			.mainlis ul{
+					margin-top: 5px;
+				 	padding-bottom: 5px;
+			}
+
+			.Lis{
+				background: #009999;				
+				color: #fff;
+			}
+			#btn{
+				background: #fafbfd;
+				display: block;
+				margin: 10px auto;
+				margin-bottom: 0px;
+				padding: 2px 5px;
+				border: 1px solid #ccc;
+				border-bottom: none;
+				color: #06527D;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="bigbox">
+					<div class="top">
+						<p>已选条件：</p>
+						<div class="addBox">
+						</div>
+						<a id="G">|</a>
+						<span id="del">清除全部</span>
+					</div>
+				<div class="main">	
+			        <ul>
+			             	<li><b>级别：</b></li>
+			             	<li class="Lis">全部</li>
+			             	<li>微型车</li>
+			             	<li>小型车</li>
+			             	<li>紧凑型车</li>
+			             	<li>中型车</li>
+			             	<li>中大型车</li>
+			             	<li>大型车</li>
+			             	<li>全部SUV</li>
+			        </ul>
+        		<div class="mainlis" display='block'>
+			            <ul>
+			             	<li><b>价格：</b></li>
+			             	<li class="Lis">全部</li>
+			             	<li>10万以下</li>
+			             	<li>10-15万</li>
+			             	<li>15-20万</li>
+			             	<li>20-30万</li>
+			             	<li>30-50万</li>
+			             	<li>50万以上</li>
+			            </ul>
+			             <ul>
+			             	<li><b>排量：</b></li>
+			             	<li class="Lis">全部</li>
+			             	<li>1.0L及以下</li>
+			             	<li>1.1-1.6L</li>
+			             	<li>1.7-2.0L</li>
+			             	<li>2.1-2.5L</li>
+			             	<li>2.6-3.0L</li>
+			             	<li>3.1-4.0L</li>
+			             	<li>4.0L以上</li>
+			             </ul>
+			             <ul>
+			             	<li><b>燃料：</b></li>
+			             	<li class="Lis">全部</li>
+			             	<li>汽油</li>
+			             	<li>柴油</li>
+			             	<li>油电混合</li>
+			             	<li>纯电动</li>
+			             	<li>插电式混动</li>
+			             </ul>
+			             <ul>
+			             	<li><b>国别：</b></li>
+			             	<li class="Lis">全部</li>
+			             	<li>中国</li>
+			             	<li>德国</li>
+			             	<li>日本</li>
+			             	<li>美国</li>
+			             	<li>韩国</li>
+			             	<li>其他</li>
+			             </ul>
+			             <ul>
+			             	<li><b>座位：</b></li>
+			             	<li class="Lis">全部</li>
+			             	<li>5座</li>
+			             	<li>7座</li>
+			             	<li>其他</li>
+			             </ul>  			
+        		</div>       		
+        		<input type="button" value="点击收起" id="btn" />
+				</div>			
+		</div>		
+	</body>
+	<script>
+		var ul=document.getElementsByTagName('ul');
+		var addbox=document.getElementsByClassName('addBox')[0];
+		for(var i=0;i<ul.length;i++){
+			var lis=ul[i].getElementsByTagName('li');
+			for(var a=2;a<lis.length;a++){
+				lis[a].setAttribute('index',i);
+				lis[a].onclick=function(){
+					for(var e=0;e<this.parentNode.children.length;e++){
+						this.parentNode.children[e].className=''
+					}
+					this.className='Lis'
+					var neirong=this.innerHTML;
+					var newdiv=this.cloneNode(true);
+					var spa=document.createElement('span');
+					spa.className='clo';
+					spa.innerHTML='x';
+					newdiv.appendChild(spa);
+					newdiv.className='tj';
+					var ind=this.getAttribute('index');
+					var divs=addbox.getElementsByTagName('li');
+					for(var o=0;o<divs.length;o++){
+						if(divs[o].getAttribute('index')==ind){
+							addbox.replaceChild(newdiv,divs[o]);
+						}
+					}
+					addbox.appendChild(newdiv);
+					var a=document.getElementsByClassName('clo');
+					for(var w=0;w<a.length;w++){
+						a[w].onclick=function(){
+							addbox.removeChild(this.parentNode);
+							var ind=this.parentNode.getAttribute('index');
+							var liss=ul[ind].getElementsByTagName('li');
+							for(var r=0;r<liss.length;r++){
+								liss[r].className='';
+								liss[1].className='Lis';
+							}
+							
+						}
+					}
+				}
+			}
+		}
+		var btn=document.getElementById('btn');
+		var mainlis=document.getElementsByClassName('mainlis')[0];
+		//隐藏
+		btn.onclick=function(){
+			if(mainlis.style.display=='none'){
+				mainlis.style.display='block';
+				this.value='点击隐藏';
+			}else{
+				mainlis.style.display='none';
+				this.value='点击显示';
+			}
+		}
+		var delete1=document.getElementById('del');
+		delete1.onclick=function(){
+			var lisss=this.parentNode.getElementsByTagName('li');
+			for(var i=lisss.length-1;i>=0;i--){
+				addbox.removeChild(lisss[i]);
+			}
+			for(var j=0;j<ul.length;j++){
+				var alis=ul[j].getElementsByTagName('li');
+				for(var p=0;p<alis.length;p++){
+					alis[p].className='';
+					alis[1].className='Lis';
+				}
+			}
+		}
+	</script>
+</html>
