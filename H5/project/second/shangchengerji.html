@@ -220,17 +220,18 @@
         .dls dl dt{
             width:100%;
             height: 7.25rem;
-            background: url(../images/shop_picture1.png) no-repeat;
-            background-size: cover;
+            position: relative;
         }
+        .dls dl dt img{ width: 100%; display: block;}
         .dls dl dt span{
             border: 2px solid #ff5a5f;
             font-size: .5rem;
             color: #ff5a5f;
             text-align: center;
             line-height: .9rem;
-            margin-top: 6.075rem;
-            margin-left: 0.375rem;
+            position: absolute;
+            top: 5.8rem;
+            left: 0.375rem;
             background: transparent;
         }
        .dls dl dd{
@@ -279,6 +280,7 @@
         //显示下拉
         $(document).ready(function () {
             $(".screening ul li").on("click", function () {
+
                 var a = $(this).index()
                 if ($(this).hasClass("i")) {
                     $(this).removeClass("i")
@@ -293,33 +295,54 @@
                     $(".zhezhao>div").eq(a).slideDown(300).siblings().slideUp(10)
                 }
 
-               
-                //点击时 进行接口连接   ajax
+
+              /*  //点击时 进行接口连接   ajax
                 $(".meishi22").eq(0).find(".meishia-w  li").on("click", function () {
                     $(".meishi ").html($(this).find("div").html())
-                    
-                    
+
                 })
                 $(".meishi22").eq(1).find(".meishia-w  li").on("click", function () {
                     $(".Regional ").html($(this).find("div").html())
-                    
-                })
 
+                })*/
             })
         })
         //点击li 加对号
-        $(document).ready(function () {
+       /* $(document).ready(function () {
             $(".meishi22 .meishia-w  li").on("click", function () {
                 $(this).addClass("list").siblings().removeClass("list")
                 $(".screening ul li").removeClass("i")
                 $(".zhezhao").css("display", "none")
                 $(".zhezhao>div").slideUp(10)
             })
-        })
+        })*/
 
 
         //内容部分
+        $(document).ready(function () {
+            $(".meishi22").on("click","li", function () {
+                var arr=[]
+                if($(this).parent().parent().hasClass("meishi33")){
+                    $(".Regional").text($(this).find("div").text())
+                }else{
+                    $(".meishi").text($(this).find("div").text())
+                }
 
+                arr.push($(".meishi").text())
+                arr.push($(".Regional").text())
+
+                $(".screening ul li").removeClass("i")
+                $(this).addClass("list").siblings().removeClass("list")
+                $(".zhezhao").css("display", "none")
+                $(".zhezhao>div").slideUp(10)
+
+                $("body").css("overflow","auto")
+                //这是最后的数据  数组格式
+                console.log(arr)
+
+
+            })
+        })
     </script>
 </head>
 <body>
@@ -375,7 +398,7 @@
             </li>
         </ul>
     </div>
-    <div class="meishi22">
+    <div class="meishi22 meishi33">
         <ul class="meishia-w">
             <li class="list">
                 <div>综合排序</div>
@@ -402,6 +425,7 @@
 <div class="dls">
     <dl>
         <dt class="goods_img">
+            <img src="../images/shop_picture1.png" alt="">
             <span>3.5折</span>
         </dt>
         <dd>

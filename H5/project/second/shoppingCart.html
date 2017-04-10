@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none"/>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<style>
+	html{font-size: 20px;}
+	body{background: #fff; position: relative;-webkit-user-select:none;
+    -webkit-text-size-adjust:none;}
+	a{-webkit-tap-highlight-color: #fff; -webkit-tap-highlight-color:transparent;}
+	/*头部提示下载模块*/
+	.downApp{height: 2.5rem; width: 100%; background-color: #565a5c; overflow: hidden;}
+	.downApp_left{height: 100%; width: 11.25rem; float: left; overflow: hidden;}
+	.downApp_right{height: 100%; width: 4.75rem; background: #ff5a5f; float: left; font-size: 0.65rem; color: #fff;line-height: 2.5rem; text-align: center;}
+	.logo{height: 1.75rem; width: 1.75rem; background: url(../images/logo.png) no-repeat; background-size: 100%; margin-left: 0.5rem; margin-top: 0.4rem; float: left;}
+	.downApp_msg{float: left; padding-left: 0.45rem;}
+	.downApp_msg h3{ color: #fff; font-size: 0.6rem; padding-top: 0.625rem;}
+	.downApp_msg p{ color: #cccdce; font-size: 0.45rem;padding-top: 0.25rem;}
+	/*头部返回*/
+	.back{height: 1.275rem;padding-left: .675rem;padding-top: .6rem; overflow: hidden; z-index: 1; background: #fbfbfb}
+	.back a{height: .7rem; width: .375rem; display: block; background: url(../images/back.png) no-repeat; background-size: 100%; display: block;float:left;}
+	.back h1{font-size: .7rem; color: #3e4347; float: left; padding-left: 5.875rem;}
+	/*购物车内容（无商品）*/
+	.content{ background: #f0f0f0; text-align: center; overflow: hidden; height: 13rem; display: none;}
+	.content_car{height:2.975rem ; background: url(../images/shopping_car.png) no-repeat; background-size: 100%; width: 3.9rem; margin-left: 6.45rem; margin-top: 2.45rem; }
+	.content_no{font-size: .65rem; color: #767d82; padding-top: .925rem; }
+	.content_see{font-size: .55rem; color: #5e6263; text-align: center; height:1.5rem; line-height: 1.5rem; width: 4.65rem; border: 1px solid #808385; margin-left: 5.6rem; margin-top: 1.15rem;}
+	/*购物车内容（有商品）*/
+	.cont{width: 100%; }
+	.cont_goods{width: 100%}
+	.cont_goods_title{height: 2rem; border-bottom: 1px solid #dbdbdb; overflow: hidden;}
+	.shop_picture{float: left; height: .7rem; width: .7rem; background: url(../images/shop_picture.png) no-repeat; background-size: 100%; margin-left: .5rem; margin-top: .675rem;}
+	.shop_name{font-size: .65rem; color: #686c6d; padding-top: .7rem; padding-left: .55rem;}
+	.cont_goods_commodity li{ height: 5.175rem; }
+	.cont_goods_commodity_msg{height: 5.1rem; float: left;border-bottom: 1px solid #f4f4f4;overflow: hidden; margin-left: .5rem; width: 13.25rem;}
+	.cont_goods_commodity_msg_picture{background:url(../images/car_shangpin.png) no-repeat; background-size: 100%; height: 3.6rem; width: 4.075rem; float: left; margin-top: .45rem;}
+	.cont_goods_commodity_msg_mine{float: left;}
+	.cont_goods_commodity_msg_mine h3{font-size: .55rem; color: #474c4e; width: 8.55rem; line-height: .75rem; padding-top: .3rem; padding-left: .6rem;}
+	.cont_goods_commodity_msg_mine p{font-size: .5rem; color: #8d969a; padding-top: .1rem; padding-left: .6rem;}
+	.moneyNumber{overflow: hidden; width: 8.5rem;}
+	.moneyNumber span{display: block;float: left;padding-left: .6rem; font-size: .5rem; color: #ff3238; padding-top: .425rem;}
+	.moneyNumber em{display: block;float: right; font-size: .5rem; color: #4c5052; padding-top: .425rem;}
+	/*商品推荐*/
+	.goods{ z-index: 2; width: 100%; background:#fff;}
+	.goods_title{overflow: hidden;height: 2.5rem; padding-left: 3.85rem; padding-right: 4rem;}
+	.goods_title_line1{height: 0.05rem; width: 1.5rem; background:#abb1b4; float: left; margin-top: 1.2rem;}
+	.goods_title_picture{height: .5rem; width: .6rem; background: url(../images/goods_title_picture.png) no-repeat; background-size: 100%;float: left;margin-top: 1rem; margin-left: .7rem;}
+	.goods_title p{font-size: .65rem; color: #565a5c; float: left; padding-left: .35rem; padding-top: .95rem;}
+	.goods_title_line2{height: 0.05rem; width: 1.5rem; background:#abb1b4; float: left; margin-top: 1.2rem; margin-left: .75rem;}
+	.goods_cont{overflow: hidden; padding-left: .675rem;}
+	.goods_cont li{ float: left; padding-right: .75rem;}
+	.goods_cont_picture{height: 6.85rem; width: 6.85rem; display: block;}
+	.goods_cont li h3{font-size: .55rem; color: #3c4143; padding-top: 0.125rem; line-height: .8rem; width: 6.25rem;}
+	.goods_cont li p{font-size: .5rem; color: #ff4449; padding-top: 0.4rem; font-weight: 500}
+	/*底部结算*/
+	.balance{height: 2.1rem; width: 100%; z-index: 100; background: #fff; position: fixed; bottom: 0; left: 0; overflow: hidden; display: none}
+	.balance_left{  float: left; width: 11.9rem; border-top: 1px solid #dedede;height: 2.05rem;overflow: hidden;}
+	.balance_right{float: left;background: #ff5a5f; width: 4.1rem; height: 2.1rem; text-align: center;line-height: 2.1rem; font-size: .7rem; color: #fff;}
+	.balance_left_all{width: 4.5rem; height: 2.05rem; float: left; overflow: hidden;}
+	.balance_left_all_picture{height: .875rem; width: .875rem; background: url(../images/balance_all.png) no-repeat; background-size: 100%; float: left; margin-top: .6rem;  margin-left: .675rem;}
+	.balance_left_all p{float: left; padding-left: .375rem; font-size: .55rem; color: #4c5052;  padding-top: .75rem; }
+	.balance_left_money{float: right; padding-right: .6rem; text-align: right; padding-top: .4rem;}
+	.balance_left_money h3{font-size: .5rem; color: #5d6163;}
+	.balance_left_money p{font-size: .5rem; color: #5d6163; padding-top: .25rem;}
+	.balance_left_money h3 span{color: #ff5b60; font-weight: 600}
+	.balance_left_money p span{color: #ff5b60; font-weight: 600}
+	</style>
+	<script>
+		;(function (win,doc){
+		function change(){
+			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+		}
+		change();
+		
+		win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+</head>
+<body>
+<!--头部提示下载模块-->
+<section class="downApp">
+	<div class="downApp_left">
+		<div class="logo"></div>
+		<div class="downApp_msg">
+			<h3>打开当妈啦App</h3>
+			<p>了解更多优惠服务</p>
+		</div>
+	</div>
+	<div class="downApp_right">立即打开</div>
+</section>
+<!--头部返回-->
+<header class="back">
+	<a href=""></a>
+	<h1>购物车</h1>
+</header>
+<!--购物车内容(无)-->
+<section class="content">
+	<div class="content_car"></div>
+	<p class="content_no">购物车没有商品哦~</p>
+	<a href=""><div class="content_see">去看看</div></a>
+</section>
+<!--购物车内容(有)-->
+<section class="cont">
+	<div class="cont_goods">
+		<div class="cont_goods_title">
+			<div class="balance_left_all_picture"></div>
+			<div class="shop_picture"></div>
+			<div class="shop_name">美琪玩具</div>
+		</div>
+		<ul class="cont_goods_commodity">
+			<a href=""><li>
+				<div class="balance_left_all_picture"></div>
+				<div class="cont_goods_commodity_msg">
+					<div class="cont_goods_commodity_msg_picture"></div>
+					<div class="cont_goods_commodity_msg_mine">
+						<h3>美琪经典全人物玩具可多选可随机底下带台座乐高玩具</h3>
+						<p>规格尺寸： “大型号”</p>
+						<div class="moneyNumber">
+							<span>¥450</span>
+							<em>×1</em>
+						</div>
+					</div>
+				</div>
+			</li></a>
+		</ul>
+	</div>
+</section>
+<!--商品推荐-->
+<section class="goods">
+	<div class="goods_title">
+		<div class="goods_title_line1"></div>
+		<div class="goods_title_picture"></div>
+		<p>猜你喜欢</p>
+		<div class="goods_title_line2"></div>
+	</div>
+	<ul class="goods_cont">
+		<a href=""><li>
+			<img src="../images/goods_cont_picture.png" alt="" class="goods_cont_picture">
+			<h3>美琪益智拼乐高休闲超好玩具</h3>
+			<p>¥450</p>
+		</li></a>
+		<a href=""><li>
+			<img src="../images/goods_cont_picture.png" alt="" class="goods_cont_picture">
+			<h3>美琪益智拼乐高休闲超好玩具</h3>
+			<p>¥450</p>
+		</li></a>
+		<a href=""><li>
+			<img src="../images/goods_cont_picture.png" alt="" class="goods_cont_picture">
+			<h3>美琪益智拼乐高休闲超好玩具</h3>
+			<p>¥450</p>
+		</li></a>
+	</ul>
+</section>
+<!--底部结算-->
+<footer class="balance">
+	<div class="balance_left">
+		<div class="balance_left_all">
+			<div class="balance_left_all_picture"></div>
+			<p>全选</p>
+		</div>
+		<div class="balance_left_money">
+			<h3>总计：<span>¥900</span></h3>
+			<p>优惠： <span>¥0</span></p>
+		</div>
+	</div>
+	<a href=""><div class="balance_right">去结算</div></a>
+</footer>
+</body>
+</html>
